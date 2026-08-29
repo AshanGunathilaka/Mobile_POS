@@ -187,7 +187,7 @@ return [
          * This setting determines the default DPI setting for images and fonts.  The
          * DPI may be overridden for inline images by explictly setting the
          * image's width & height style attributes (i.e. if the image's native
-         * width is 600 pixels and you specify the image's width as 72 points,
+         * width is 600 pixels and you specify the image's width as 72 pointsts,
          * the image will have a DPI of 600 in the rendered PDF.  The DPI of
          * background images can not be overridden and is controlled entirely
          * via this parameter.

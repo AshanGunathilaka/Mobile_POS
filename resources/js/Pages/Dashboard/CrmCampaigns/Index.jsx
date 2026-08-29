@@ -73,7 +73,7 @@ export default function Index({ campaigns, filters }) {
                     </div>
                 </div>
 
-                <Table.Card title="Daftar CRM Campaign">
+                <Table.Card title="Register CRM Campaign">
                     <Table>
                         <Table.Thead>
                             <tr>

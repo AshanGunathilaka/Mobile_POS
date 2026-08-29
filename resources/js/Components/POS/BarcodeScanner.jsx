@@ -34,7 +34,7 @@ export default function BarcodeScanner({ onScan, onClose }) {
                 );
             } catch (err) {
                 if (mounted) {
-                    setError(err?.message || "Kamera tidak tersedia atau ditolak.");
+                    setError(err?.message || "Camera is unavailable or permission was denied.");
                     setScanning(false);
                 }
             }
@@ -86,7 +86,7 @@ export default function BarcodeScanner({ onScan, onClose }) {
             )}
 
             <div className="p-4 text-center text-xs text-white/50">
-                Atau tutup untuk input manual
+                Or close to enter manually
             </div>
         </div>
     );

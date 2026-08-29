@@ -59,7 +59,7 @@ class FeatureCoverageSeeder extends Seeder
             return;
         }
 
-        $this->command?->info('Seeding feature coverage data...');
+        $this->command?->info('Seeding feature coverage records...');
 
         $this->resetFeatureData();
         $this->seedStoreSettings();
@@ -114,7 +114,7 @@ class FeatureCoverageSeeder extends Seeder
 
         AuditLog::query()
             ->where('module', 'payable')
-            ->where('description', 'like', 'Hutang otomatis dari penerimaan PO %')
+            ->where('description', 'like', 'Automatic payable from PO receiving %')
             ->delete();
 
         AuditLog::query()
@@ -122,7 +122,7 @@ class FeatureCoverageSeeder extends Seeder
             ->where(function ($query) {
                 $query
                     ->where('description', 'like', 'Stock added from goods receiving %')
-                    ->orWhere('description', 'like', 'Stock keluar dari retur supplier %')
+                    ->orWhere('description', 'like', 'Stock out from supplier return %')
                     ->orWhere('description', 'Stock opname difinalisasi.%')
                     ->orWhere('description', 'like', 'Stock product disesuaikan melalui stock opname.%');
             })
@@ -156,13 +156,13 @@ class FeatureCoverageSeeder extends Seeder
     {
         $settings = [
             'monthly_sales_target' => ['value' => '15000000', 'description' => 'Target penjualan bulanan'],
-            'store_name' => ['value' => 'Store Maju Bersama', 'description' => 'Name toko'],
-            'store_logo' => ['value' => null, 'description' => 'Logo toko'],
-            'store_address' => ['value' => 'Jl. Sukajadi No. 88, Bandung', 'description' => 'Alamat lengkap toko'],
-            'store_phone' => ['value' => '022-6012345', 'description' => 'Nomor telepon toko'],
-            'store_email' => ['value' => 'halo@majubersama.test', 'description' => 'Email toko'],
-            'store_website' => ['value' => 'https://majubersama.test', 'description' => 'Website atau sosial media'],
-            'store_city' => ['value' => 'Bandung', 'description' => 'Kota/Kabupaten toko'],
+            'store_name' => ['value' => 'Maju Bersama Store', 'description' => 'Store name'],
+            'store_logo' => ['value' => null, 'description' => 'Store logo'],
+            'store_address' => ['value' => 'Jl. Sukajadi No. 88, Bandung', 'description' => 'Full store address'],
+            'store_phone' => ['value' => '022-6012345', 'description' => 'Store phone number'],
+            'store_email' => ['value' => 'halo@majubersama.test', 'description' => 'Store email'],
+            'store_website' => ['value' => 'https://majubersama.test', 'description' => 'Website or social media'],
+            'store_city' => ['value' => 'Bandung', 'description' => 'Store city/regency'],
         ];
 
         foreach ($settings as $key => $payload) {
@@ -348,7 +348,7 @@ class FeatureCoverageSeeder extends Seeder
                     'notes' => 'Sebagian snack diterima sesuai surat jalan pertama.',
                 ],
             ],
-            'Penerimaan pertama untuk PO restock mingguan.',
+            'First receiving for weekly restock PO.',
             $cashier->id,
         );
 
@@ -366,7 +366,7 @@ class FeatureCoverageSeeder extends Seeder
         $completedOrder = $purchaseOrderService->createOrder(
             [
                 'supplier_id' => $suppliers->get('PT Segar Sentosa Abadi')?->id,
-                'notes' => 'PO lengkap untuk frozen food dan product susu.',
+                'notes' => 'Complete PO for frozen food and dairy products.',
             ],
             [
                 [
@@ -400,9 +400,9 @@ class FeatureCoverageSeeder extends Seeder
             $completedOrder->items->map(fn (PurchaseOrderItem $item) => [
                 'purchase_order_item_id' => $item->id,
                 'qty_received' => $item->qty_ordered,
-                'notes' => 'Diterima penuh dari supplier.',
+                'notes' => 'Fully received from supplier.',
             ])->all(),
-            'Seluruh item diterima lengkap dan langsung masuk gudang.',
+            'All items were received in full and moved directly into the warehouse.',
             $cashier->id,
         );
 
@@ -449,7 +449,7 @@ class FeatureCoverageSeeder extends Seeder
                 'supplier_id' => $completedOrder->supplier_id,
                 'goods_receiving_id' => $completedReceiving->id,
                 'payable_id' => $completedPayable?->id,
-                'notes' => 'Draft retur untuk yogurt penyok, menunggu persetujuan supplier.',
+                'notes' => 'Draft return for dented yogurt, waiting for supplier approval.',
             ],
             [
                 [
@@ -458,7 +458,7 @@ class FeatureCoverageSeeder extends Seeder
                     'qty_returned' => 1,
                     'unit_price' => $completedReceiving->items->last()?->purchaseOrderItem?->unit_price ?? 0,
                     'reason' => 'Kemasan penyok',
-                    'notes' => 'Belum diproses, masih menunggu pickup.',
+                    'notes' => 'Not processed yet, still waiting for pickup.',
                 ],
             ],
             $admin->id,
@@ -505,7 +505,7 @@ class FeatureCoverageSeeder extends Seeder
         $draftOpname = StockOpname::create([
             'code' => 'SO-DRAFT-001',
             'status' => 'draft',
-            'notes' => 'Sesi stock opname rak depan, belum semua item dihitung.',
+            'notes' => 'Front shelf stock count session, not all items counted yet.',
             'created_by' => $admin->id,
             'created_at' => now()->subHours(5),
             'updated_at' => now()->subHours(5),
@@ -530,7 +530,7 @@ class FeatureCoverageSeeder extends Seeder
         $finalizedOpname = StockOpname::create([
             'code' => 'SO-FINAL-001',
             'status' => 'draft',
-            'notes' => 'Opname gudang pendingin untuk batch awal pekan.',
+            'notes' => 'Cold storage stock count for the early-week batch.',
             'created_by' => $admin->id,
             'created_at' => now()->subHours(3),
             'updated_at' => now()->subHours(3),
@@ -644,9 +644,9 @@ class FeatureCoverageSeeder extends Seeder
             event: 'store.setting.updated',
             module: 'store_settings',
             auditable: ['target_label' => 'Store Profile'],
-            description: 'Profil toko diperbarui.',
+            description: 'Store profile updated.',
             before: [
-                'store_name' => 'Store Anda',
+                'store_name' => 'Your Store',
                 'store_address' => 'Address not set',
                 'store_phone' => '',
                 'store_email' => '',
@@ -687,7 +687,7 @@ class FeatureCoverageSeeder extends Seeder
             event: 'bank_account.reordered',
             module: 'bank_accounts',
             auditable: ['target_label' => 'Bank Accounts'],
-            description: 'Urutan rekening bank diperbarui.',
+            description: 'Bank account order updated.',
             before: [
                 'order' => [
                     ['bank_name' => 'Mandiri', 'sort_order' => 0],
@@ -708,7 +708,7 @@ class FeatureCoverageSeeder extends Seeder
             event: 'payment.setting.updated',
             module: 'payment_settings',
             auditable: PaymentSetting::first(),
-            description: 'Konfigurasi payment gateway diperbarui.',
+            description: 'Payment gateway configuration updated.',
             before: [
                 'default_gateway' => 'cash',
                 'bank_transfer_enabled' => false,
@@ -731,7 +731,7 @@ class FeatureCoverageSeeder extends Seeder
         $auditLogService->log(
             event: 'cashier.shift.reviewed',
             module: 'cashier_shifts',
-            auditable: ['target_label' => 'Shift Cashier Aktif'],
+            auditable: ['target_label' => 'Active Cashier Shift'],
             description: 'Supervisor meninjau ringkasan shift cashier aktif.',
             meta: [
                 'reviewed_by' => $admin->name,

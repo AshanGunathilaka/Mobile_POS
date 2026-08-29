@@ -33,11 +33,11 @@ export default function Index({ receivings, filters }) {
 
     return (
         <>
-            <Head title="Penerimaan Barang" />
+            <Head title="Goods Receiving" />
             <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        Penerimaan Barang
+                        Goods Receiving
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         Record goods received from suppliers.
@@ -49,7 +49,7 @@ export default function Index({ receivings, filters }) {
                         href={route("goods-receivings.create")}
                         icon={<IconCirclePlus size={18} />}
                         className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
-                        label="Terima Barang"
+                        label="Receive Goods"
                     />
                 )}
             </div>
@@ -69,7 +69,7 @@ export default function Index({ receivings, filters }) {
                 </div>
             </div>
 
-            <Table.Card title="Daftar Penerimaan Barang">
+            <Table.Card title="Register Goods Receiving">
                 <Table>
                     <Table.Thead>
                         <tr>
@@ -77,7 +77,7 @@ export default function Index({ receivings, filters }) {
                             <Table.Th>PO Referensi</Table.Th>
                             <Table.Th>Supplier</Table.Th>
                             <Table.Th>Date Terima</Table.Th>
-                            <Table.Th>Diterima Oleh</Table.Th>
+                            <Table.Th>Accepted Oleh</Table.Th>
                             <Table.Th className="w-24 text-center">Aksi</Table.Th>
                         </tr>
                     </Table.Thead>
@@ -114,7 +114,7 @@ export default function Index({ receivings, filters }) {
                         ) : (
                             <Table.Empty colSpan={6} message={
                                 <div className="text-slate-500 dark:text-slate-400">
-                                    No goods receiving records yet.
+                                    No goods receiving data yet.
                                 </div>
                             }>
                                 <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">

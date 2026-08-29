@@ -120,7 +120,7 @@ class BankAccountController extends Controller
             event: 'bank_account.updated',
             module: 'bank_accounts',
             auditable: $bankAccount,
-            description: 'Rekening bank diperbarui.',
+            description: 'Bank account updated.',
             before: $before,
             after: $this->bankAccountPayload($bankAccount->fresh())
         );
@@ -181,7 +181,7 @@ class BankAccountController extends Controller
             event: 'bank_account.toggled',
             module: 'bank_accounts',
             auditable: $bankAccount,
-            description: "Status rekening bank {$status}.",
+            description: "Bank account status {$status}.",
             before: $before,
             after: $this->bankAccountPayload($bankAccount->fresh())
         );
@@ -227,7 +227,7 @@ class BankAccountController extends Controller
             event: 'bank_account.reordered',
             module: 'bank_accounts',
             auditable: ['target_label' => 'Bank Accounts'],
-            description: 'Urutan rekening bank diperbarui.',
+            description: 'Bank account order updated.',
             before: ['order' => $beforeOrder],
             after: ['order' => $afterOrder]
         );

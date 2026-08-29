@@ -23,7 +23,7 @@ class PaginationTest extends TestCase
         ]);
 
         $this->category = \App\Models\Category::create([
-            'name' => 'Test Kategori',
+            'name' => 'Test Category',
             'image' => '',
             'description' => '',
         ]);
@@ -69,7 +69,7 @@ class PaginationTest extends TestCase
     public function test_products_page_2_keeps_search_query_string(): void
     {
         for ($i = 1; $i <= 23; $i++) {
-            $this->makeProduct('Produk Segar '.$i, $i);
+            $this->makeProduct('Fresh Product '.$i, $i);
         }
         $this->makeProduct('Minyak Goreng', 99);
 
@@ -83,10 +83,10 @@ class PaginationTest extends TestCase
                 ->where('products.last_page', 3)
                 ->where('products.total', 23);
 
-            // Pagination link ke halaman 2 harus menyertakan query search
+            // Pagination link to page 2 must include the search query
             $links = $page->toArray()['props']['products']['links'] ?? [];
             $page2Link = collect($links)->first(fn ($l) => ($l['label'] ?? '') === '2');
-            $this->assertNotNull($page2Link, 'Link halaman 2 tidak ditemukan');
+            $this->assertNotNull($page2Link, 'Page 2 link was not found');
             $this->assertStringContainsString('search=Segar', $page2Link['url']);
         });
     }
@@ -94,7 +94,7 @@ class PaginationTest extends TestCase
     public function test_per_page_query_is_honored(): void
     {
         for ($i = 1; $i <= 30; $i++) {
-            $this->makeProduct('Produk '.$i, $i);
+            $this->makeProduct('Product '.$i, $i);
         }
 
         $response = $this->actingAs($this->adminUser())
@@ -109,7 +109,7 @@ class PaginationTest extends TestCase
 
     public function test_per_page_is_clamped_to_max_100(): void
     {
-        $this->makeProduct('Produk A', 1);
+        $this->makeProduct('Product A', 1);
 
         $response = $this->actingAs($this->adminUser())
             ->get('/dashboard/products?per_page=9999');

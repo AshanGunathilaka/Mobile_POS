@@ -48,7 +48,7 @@ export default function Index({ areas }) {
     const submit = (e) => {
         e.preventDefault();
         const onSuccess = () => {
-            toast.success(editingArea ? "Area successfully diperbarui." : "Area successfully ditambahkan.");
+            toast.success(editingArea ? "Area updated successfully." : "Area successfully ditambahkan.");
             setModalOpen(false);
         };
         const onError = () => toast.error("Failed menyimpan area.");
@@ -122,7 +122,7 @@ export default function Index({ areas }) {
                                     </Table.Td>
                                     <Table.Td>
                                         <span className="text-sm text-slate-500 dark:text-slate-400">
-                                            {area.tables?.length ?? 0} meja
+                                            {area.tables?.length ?? 0} tables
                                         </span>
                                     </Table.Td>
                                     <Table.Td>
@@ -133,7 +133,7 @@ export default function Index({ areas }) {
                                                     : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
                                             }`}
                                         >
-                                            {area.is_active ? "Aktif" : "Nonaktif"}
+                                            {area.is_active ? "Active" : "Inactive"}
                                         </span>
                                     </Table.Td>
                                     <Table.Td>
@@ -174,7 +174,7 @@ export default function Index({ areas }) {
                         Belum Ada Area
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Addkan area dine-in pertama Anda.
+                        Add your first dine-in area.
                     </p>
                     {canCreate && (
                         <Button

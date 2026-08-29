@@ -65,7 +65,7 @@ Header pesanan pelanggan.
 | `payment_reference` | string | Reference dari gateway (nullable) |
 | `payment_url` | string | URL pembayaran (nullable) |
 | `cashier_id` | foreignId | Kasir yang konfirmasi (nullable) |
-| `transaction_id` | foreignId | Transaksi terkait (nullable) |
+| `transaction_id` | foreignId | Transaction terkait (nullable) |
 | `subtotal` | integer | Total pesanan |
 | `item_count` | integer | Jumlah item |
 
@@ -75,7 +75,7 @@ Item-item dalam pesanan.
 | Field | Tipe | Deskripsi |
 |-------|------|-----------|
 | `dine_order_id` | foreignId | Header pesanan |
-| `product_id` | foreignId | Produk dipesan |
+| `product_id` | foreignId | Product dipesan |
 | `unit_id` | foreignId | Unit (nullable) |
 | `qty` | integer | Jumlah |
 | `price` | integer | Harga saat pemesanan |
@@ -132,7 +132,7 @@ Dikontrol via `Setting` table:
 
 **Role cashier** mendapat: `dine-orders-access` + `dine-orders-process`
 
-## Fitur Utama
+## Fitur Main
 
 ### Floor Plan Editor (SVG Grid)
 - Tampilan grid SVG 25x15 cell (40px/cell)

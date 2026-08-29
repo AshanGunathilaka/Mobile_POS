@@ -33,7 +33,7 @@ export default function Show({ receiving }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar penerimaan
+                    Back to receiving list
                 </Link>
                 <div className="flex items-center gap-2">
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -49,7 +49,7 @@ export default function Show({ receiving }) {
                         {receiving.purchase_order?.document_number || "-"}
                     </Link>
                     {" "}&bull; Supplier: {receiving.supplier?.name || "-"}
-                    {" "}&bull; Diterima oleh {receiving.receiver?.name || "-"}
+                    {" "}&bull; Accepted oleh {receiving.receiver?.name || "-"}
                     {" "}&bull; {formatDateTime(receiving.received_at)}
                 </p>
             </div>
@@ -57,14 +57,14 @@ export default function Show({ receiving }) {
             <div className="grid gap-6 xl:grid-cols-[1.7fr_1fr]">
                 <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                     <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                        Item Diterima
+                        Item Accepted
                     </h2>
                     <Table>
                         <Table.Thead>
                             <tr>
                                 <Table.Th>Product</Table.Th>
-                                <Table.Th>Qty Diterima</Table.Th>
-                                <Table.Th>Price Satuan</Table.Th>
+                                <Table.Th>Qty Received</Table.Th>
+                                <Table.Th>Unit Price</Table.Th>
                                 <Table.Th>Subtotal</Table.Th>
                                 <Table.Th>Catatan</Table.Th>
                             </tr>
@@ -129,7 +129,7 @@ export default function Show({ receiving }) {
                                 <span className="font-medium text-slate-800 dark:text-slate-200">{formatDateTime(receiving.received_at)}</span>
                             </div>
                             <div className="flex justify-between">
-                                <span className="text-slate-500">Diterima Oleh</span>
+                                <span className="text-slate-500">Accepted Oleh</span>
                                 <span className="font-medium text-slate-800 dark:text-slate-200">{receiving.receiver?.name || "-"}</span>
                             </div>
                         </div>

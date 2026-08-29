@@ -252,7 +252,7 @@ class PosApiController extends Controller
         $shift = $this->cashierShiftService->getActiveShiftForUser($request->user()->id);
 
         if (! $shift) {
-            return $this->error('Shift cashier belum dibuka.', 422);
+            return $this->error('Cashier shift has not been opened.', 422);
         }
 
         $warehouseId = $shift->warehouse_id;
@@ -337,7 +337,7 @@ class PosApiController extends Controller
         $shift = $this->cashierShiftService->getActiveShiftForUser($request->user()->id);
 
         if (! $shift) {
-            return $this->error('Shift cashier belum dibuka.', 422);
+            return $this->error('Cashier shift has not been opened.', 422);
         }
 
         $warehouseId = $shift->warehouse_id;
@@ -361,7 +361,7 @@ class PosApiController extends Controller
             : $this->unitConversionService->getSellPrice($product, $cart->unit_id) * $validated['qty'];
         $cart->save();
 
-        return $this->ok(new CartResource($cart->load('product', 'unit')), 'Keranjang diperbarui');
+        return $this->ok(new CartResource($cart->load('product', 'unit')), 'Cart updated');
     }
 
     /**
@@ -408,7 +408,7 @@ class PosApiController extends Controller
         }
 
         $holdId = 'HOLD-'.strtoupper(Str::random(10));
-        $label = $validated['label'] ?? 'Transaksi '.now()->format('H:i');
+        $label = $validated['label'] ?? 'Transaction '.now()->format('H:i');
 
         Cart::where('cashier_id', $userId)->active()->update([
             'hold_id' => $holdId,
@@ -519,7 +519,7 @@ class PosApiController extends Controller
         if ($paymentGateway) {
             $paymentSetting = PaymentSetting::first();
             if (! $paymentSetting || ! $paymentSetting->isGatewayReady($paymentGateway)) {
-                return $this->error('Gateway payment belum dikonfigurasi.', 422);
+                return $this->error('Payment gateway has not been configured.', 422);
             }
         }
 
@@ -690,7 +690,7 @@ class PosApiController extends Controller
 
             return $this->ok(
                 new TransactionResource($transaction->load('details.product', 'customer', 'cashier')),
-                'Transaksi menunggu approval supervisor.',
+                'Transaction is waiting for supervisor approval.',
                 202
             );
         }

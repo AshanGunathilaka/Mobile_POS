@@ -42,7 +42,7 @@ class DocumentController extends Controller
         }
 
         return [
-            'name' => Setting::get('store_name', 'Store Anda'),
+            'name' => Setting::get('store_name', 'Your Store'),
             'logo' => $logo,
             'logo_data' => $logoData,
             'address' => Setting::get('store_address', ''),
@@ -94,7 +94,7 @@ class DocumentController extends Controller
             ->firstOrFail();
 
         $template = $size === '58' ? 'pdf.receipt_58' : 'pdf.receipt_80';
-        $width = $size === '58' ? 164.4 : 226.8; // points (mm*2.8346)
+        $width = $size === '58' ? 164.4 : 226.8; // pointsts (mm*2.8346)
         $pdf = Pdf::loadView($template, [
             'transaction' => $transaction,
             'store' => $this->storeProfile(),

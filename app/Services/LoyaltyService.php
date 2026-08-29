@@ -90,19 +90,19 @@ class LoyaltyService
         Setting::setMany([
             'loyalty_enable_earn' => [
                 'value' => $payload['enable_earn'] ? '1' : '0',
-                'description' => 'Aktifkan perolehan poin loyalty',
+                'description' => 'Enable loyalty pointst earning',
             ],
             'loyalty_enable_redeem' => [
                 'value' => $payload['enable_redeem'] ? '1' : '0',
-                'description' => 'Aktifkan redeem poin loyalty',
+                'description' => 'Enable loyalty pointst redemption',
             ],
             'loyalty_earn_rate_amount' => [
                 'value' => (string) $payload['earn_rate_amount'],
-                'description' => 'Nominal belanja untuk mendapatkan 1 poin',
+                'description' => 'Purchase amount required to earn 1 pointst',
             ],
             'loyalty_redeem_point_value' => [
                 'value' => (string) $payload['redeem_point_value'],
-                'description' => 'Sri Lankan rupee value for 1 redeemed point',
+                'description' => 'Sri Lankan rupee value for 1 redeemed pointst',
             ],
             'loyalty_tier_regular_threshold' => [
                 'value' => (string) $payload['tiers'][self::TIER_REGULAR],
@@ -337,7 +337,7 @@ class LoyaltyService
                 LoyaltyPointHistory::TYPE_REDEEM,
                 -$redeemedPoints,
                 (int) ($transaction->loyalty_discount_total ?? 0),
-                'Redeemed points on transaction '.$transaction->invoice
+                'Redeemed pointsts on transaction '.$transaction->invoice
             );
         }
 
@@ -382,7 +382,7 @@ class LoyaltyService
                 LoyaltyPointHistory::TYPE_EARN,
                 $earnedPoints,
                 (int) $transaction->grand_total,
-                'Transaction points '.$transaction->invoice
+                'Transaction pointsts '.$transaction->invoice
             );
         }
 

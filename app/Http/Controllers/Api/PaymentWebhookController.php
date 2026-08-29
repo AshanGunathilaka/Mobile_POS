@@ -23,7 +23,7 @@ class PaymentWebhookController extends Controller
                 return response()->json(['status' => 'error', 'message' => 'Midtrans not configured'], 400);
             }
 
-            // Get notification data
+            // Get notification records
             $orderId = $request->input('order_id');
             $statusCode = $request->input('status_code');
             $grossAmount = $request->input('gross_amount');

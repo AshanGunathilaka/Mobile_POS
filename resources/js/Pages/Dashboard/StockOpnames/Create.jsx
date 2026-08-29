@@ -43,7 +43,7 @@ export default function Create({ warehouses = [] }) {
                 <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                     <div className="mb-4">
                         <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Warehouse / Cabang
+                            Warehouse / Branch
                         </label>
                         <select
                             value={data.warehouse_id}

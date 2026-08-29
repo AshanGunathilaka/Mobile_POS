@@ -68,7 +68,7 @@ export default function Print({ transaction }) {
 
     const store = useMemo(
         () => ({
-            name: storeProfile?.name || "Store Anda",
+            name: storeProfile?.name || "Your Store",
             logo: storeProfile?.logo || null,
             address: storeProfile?.address || "",
             phone: storeProfile?.phone || "",
@@ -83,7 +83,7 @@ export default function Print({ transaction }) {
         bank_transfer: "Transfer Bank",
         midtrans: "Midtrans",
         xendit: "Xendit",
-        pay_later: "Piutang",
+        pay_later: "Receivable",
     };
     const paymentMethodKey = (
         transaction?.payment_method || "cash"
@@ -91,17 +91,17 @@ export default function Print({ transaction }) {
     const paymentMethodLabel = paymentLabels[paymentMethodKey] ?? "Cash";
 
     const paymentStatuses = {
-        paid: "Lunas",
-        pending: transaction?.payment_method === "pay_later" ? "Belum Lunas" : "Menunggu",
+        paid: "Paid",
+        pending: transaction?.payment_method === "pay_later" ? "Unpaid" : "Pending",
         failed: "Failed",
-        expired: "Kedaluwarsa",
-        unpaid: "Belum Lunas",
+        expired: "Expired",
+        unpaid: "Unpaid",
         partial: "Parsial",
     };
     const paymentStatusKey = (transaction?.payment_status || "").toLowerCase();
     const paymentStatusLabel =
         paymentStatuses[paymentStatusKey] ??
-        (paymentMethodKey === "cash" ? "Lunas" : "Menunggu");
+        (paymentMethodKey === "cash" ? "Paid" : "Pending");
 
     const statusColors = {
         paid: "bg-success-100 text-success-700 dark:bg-success-900/50 dark:text-success-400",
@@ -152,7 +152,7 @@ export default function Print({ transaction }) {
 
     return (
         <>
-            <Head title="Invoice Penjualan" />
+            <Head title="Sales Invoice" />
 
             <div className="min-h-screen bg-slate-100 dark:bg-slate-950 py-8 px-4 print:bg-white print:p-0">
                 <div className="max-w-4xl mx-auto space-y-6">
@@ -282,7 +282,7 @@ export default function Print({ transaction }) {
                                         className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-success-500 hover:bg-success-600 text-sm font-semibold text-white transition-colors w-full sm:w-auto"
                                     >
                                         <IconCheck size={18} />
-                                        Konfirmasi Bayar
+                                        Confirm Payment
                                     </button>
                                 )}
 
@@ -493,7 +493,7 @@ export default function Print({ transaction }) {
                                 transaction.bank_account && (
                                     <div className="mx-6 mb-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                                         <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">
-                                            Silakan Transfer ke Rekening
+                                            Please Transfer to Account
                                         </p>
                                         <p className="text-lg font-bold text-slate-900 dark:text-white">
                                             {transaction.bank_account.bank_name}
@@ -703,7 +703,7 @@ export default function Print({ transaction }) {
                                 <SimpleBarcode value={transaction.invoice} />
                                 <div className="text-center mt-4">
                                     <p className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-widest">
-                                        Terima kasih telah berbelanja
+                                        Thank you for shopping with us
                                     </p>
                                 </div>
                             </div>
@@ -781,9 +781,9 @@ export default function Print({ transaction }) {
                                     className="text-warning-600 dark:text-warning-400 flex-shrink-0 mt-0.5"
                                 />
                                 <p className="text-sm text-warning-800 dark:text-warning-300">
-                                    Pastikan dana sudah diterima sebelum
+                                    Make sure the funds have been received before
                                     mengkonfirmasi payment ini. Tindakan ini
-                                    tidak dapat dibatalkan.
+                                    cannot be canceled.
                                 </p>
                             </div>
                         </div>
@@ -846,7 +846,7 @@ export default function Print({ transaction }) {
                                 ) : (
                                     <>
                                         <IconCheck size={18} />
-                                        Konfirmasi Lunas
+                                        Confirm Paid
                                     </>
                                 )}
                             </button>

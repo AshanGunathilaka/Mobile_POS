@@ -40,7 +40,7 @@ class ConfirmablePasswordController extends Controller
                 event: 'auth.password_confirmation_failed',
                 module: 'auth',
                 auditable: $request->user(),
-                description: 'Konfirmasi password untuk aksi sensitif failed.',
+                description: 'Password confirmation for sensitive action failed.',
                 meta: [
                     'severity' => 'warning',
                     'route' => $request->route()?->getName(),

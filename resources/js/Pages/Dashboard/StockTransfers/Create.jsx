@@ -21,7 +21,7 @@ export default function Create({ warehouses, products }) {
 
     const addItem = (product) => {
         if (data.items.some((i) => i.product_id === product.id)) {
-            toast.error("Product sudah ada di daftar.");
+            toast.error("Product is already in the list.");
             return;
         }
         setData("items", [...data.items, { product_id: product.id, product_title: product.title, product_sku: product.sku || "-", qty: 1 }]);
@@ -37,11 +37,11 @@ export default function Create({ warehouses, products }) {
     const submit = (e) => {
         e.preventDefault();
         if (data.items.length === 0) {
-            toast.error("Addkan minimal satu item.");
+            toast.error("Add at least one item.");
             return;
         }
         if (data.source_warehouse_id === data.destination_warehouse_id) {
-            toast.error("Warehouse asal dan tujuan harus berbeda.");
+            toast.error("Source and destination warehouses must be different.");
             return;
         }
         post(route("stock-transfers.store"), {
@@ -107,7 +107,7 @@ export default function Create({ warehouses, products }) {
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                         <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Item Transfer</h2>
                         <div className="mb-4">
-                            <input type="text" value={searchProduct} onChange={(e) => setSearchProduct(e.target.value)} placeholder="Search product untuk ditambahkan..." className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
+                            <input type="text" value={searchProduct} onChange={(e) => setSearchProduct(e.target.value)} placeholder="Search products to add..." className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
                         </div>
                         {searchProduct && filteredProducts.length > 0 && (
                             <div className="mb-4 max-h-48 space-y-2 overflow-y-auto rounded-xl border border-slate-200 p-3 dark:border-slate-700">
@@ -152,7 +152,7 @@ export default function Create({ warehouses, products }) {
                         ) : (
                             <div className="rounded-xl border border-dashed border-slate-200 p-8 text-center dark:border-slate-700">
                                 <IconPackage size={40} className="mx-auto text-slate-300 dark:text-slate-600" />
-                                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Search product di atas untuk ditambahkan ke transfer.</p>
+                                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Search for products above to add them to the transfer.</p>
                             </div>
                         )}
                     </div>

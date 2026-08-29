@@ -15,7 +15,7 @@ Kembali ke indeks dokumentasi: `docs/README.md`
 | `XENDIT_PUBLIC_KEY` | Public key Xendit |
 | `XENDIT_CALLBACK_TOKEN` | Callback token verifikasi webhook Xendit |
 | `AUTH_PUBLIC_REGISTRATION` | Aktifkan registrasi publik (`true`/`false`, default: `false`) |
-| `WA_SERVICE_URL` | Alamat Node.js WhatsApp service (default: `http://localhost:3001`) |
+| `WA_SERVICE_URL` | Address Node.js WhatsApp service (default: `http://localhost:3001`) |
 
 ## APP_URL
 
@@ -92,7 +92,7 @@ Detail setup: `docs/features/whatsapp-gateway.md`
 
 Konfigurasi di `dashboard/settings/warehouses`:
 
-- **Main Warehouse** — gudang pusat, dibuat otomatis saat seeding
+- **Main Warehouse** — central warehouse, created automatically during seeding
 - **Branch Warehouse** — cabang toko yang juga menjual langsung
 - **Stock Warehouse** — gudang penyangga (tidak menjual langsung)
 - Stok produk dipisah per warehouse di tabel `product_warehouse`

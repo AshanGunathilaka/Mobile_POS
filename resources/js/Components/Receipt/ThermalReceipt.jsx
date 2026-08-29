@@ -192,7 +192,7 @@ export default function ThermalReceipt({
                 )}
                 {loyaltyDiscount > 0 && (
                     <div className="flex justify-between">
-                        <span>Redeem Poin</span>
+                        <span>Redeem Points</span>
                         <span>-{formatPrice(loyaltyDiscount)}</span>
                     </div>
                 )}
@@ -234,9 +234,9 @@ export default function ThermalReceipt({
 
             {/* Footer */}
             <div className="text-center mt-2">
-                <p className="text-xs">Terima kasih</p>
-                <p className="text-xs">Barang yang sudah dibeli</p>
-                <p className="text-xs">tidak dapat ditukar/dikembalikan</p>
+                <p className="text-xs">Thank you</p>
+                <p className="text-xs">Purchased goods</p>
+                <p className="text-xs">cannot be exchanged or returned</p>
                 <p className="text-xs mt-1">#{transaction?.invoice}</p>
                 <SimpleBarcode value={transaction?.invoice} />
             </div>
@@ -393,7 +393,7 @@ export function ThermalReceipt58mm({
             )}
             {loyaltyDiscount > 0 && (
                 <div className="flex justify-between">
-                    <span>Poin</span>
+                    <span>Points</span>
                     <span>-{formatPrice(loyaltyDiscount)}</span>
                 </div>
             )}
@@ -422,7 +422,7 @@ export function ThermalReceipt58mm({
                 <span>{formatPrice(transaction?.change)}</span>
             </div>
             <pre>{line}</pre>
-            <p className="text-center">Terima kasih!</p>
+            <p className="text-center">Thank you!</p>
             <SimpleBarcode value={transaction?.invoice} />
 
             <style>{`

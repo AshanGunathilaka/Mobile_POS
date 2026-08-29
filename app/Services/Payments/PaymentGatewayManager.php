@@ -18,7 +18,7 @@ class PaymentGatewayManager
         return match ($gateway) {
             PaymentSetting::GATEWAY_MIDTRANS => $this->midtransGateway->createCharge($transaction, $setting->midtransConfig()),
             PaymentSetting::GATEWAY_XENDIT => $this->xenditGateway->createInvoice($transaction, $setting->xenditConfig()),
-            default => throw new PaymentGatewayException("Gateway {$gateway} belum didukung."),
+            default => throw new PaymentGatewayException("Gateway {$gateway} is not supported yet."),
         };
     }
 }

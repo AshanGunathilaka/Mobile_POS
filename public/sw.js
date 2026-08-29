@@ -14,7 +14,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
 
-    // Cache-first for master data API
+    // Cache-first for master records API
     if (MASTER_API_PATTERNS.some((p) => url.pathname.includes(p))) {
         event.respondWith(
             caches.open(CACHE_NAME).then((cache) =>

@@ -37,7 +37,7 @@ class CashierShiftService
 
         if (! $shift) {
             throw ValidationException::withMessages([
-                'shift' => 'Shift cashier belum dibuka.',
+                'shift' => 'Cashier shift has not been opened.',
             ]);
         }
 
@@ -119,7 +119,7 @@ class CashierShiftService
     ): CashierShift {
         if (! $shift->isOpen()) {
             throw ValidationException::withMessages([
-                'shift' => 'Shift yang sudah ditutup tidak dapat diubah.',
+                'shift' => 'Closed shifts cannot be changed.',
             ]);
         }
 
@@ -128,7 +128,7 @@ class CashierShiftService
 
             if (! $lockedShift->isOpen()) {
                 throw ValidationException::withMessages([
-                    'shift' => 'Shift yang sudah ditutup tidak dapat diubah.',
+                    'shift' => 'Closed shifts cannot be changed.',
                 ]);
             }
 

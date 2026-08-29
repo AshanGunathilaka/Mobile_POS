@@ -29,7 +29,7 @@ npm start
 
 | Fitur | Fungsi |
 |-------|--------|
-| URL Service | Alamat Node service (default: `http://localhost:3001`) |
+| URL Service | Address Node service (default: `http://localhost:3001`) |
 | Hubungkan | Init Client WA, generate QR code |
 | QR Scan | Scan dengan WhatsApp > Perangkat Tertaut > Perangkat Baru |
 | Putuskan | Hapus session + disconnect |

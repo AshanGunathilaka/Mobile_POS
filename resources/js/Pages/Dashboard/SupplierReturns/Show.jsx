@@ -37,7 +37,7 @@ const statusBadge = (status) => {
     const labels = {
         draft: "Draft",
         completed: "Completed",
-        cancelled: "Dibatalkan",
+        cancelled: "Canceled",
     };
     return <span className={`${base} ${map[status] || map.draft}`}>{labels[status] || status}</span>;
 };
@@ -49,7 +49,7 @@ export default function Show({ return: ret }) {
     const completeReturn = () => {
         router.post(route("supplier-returns.complete", ret.id), {}, {
             preserveScroll: true,
-            onSuccess: () => toast.success("Retur supplier successfully diselesaikan"),
+            onSuccess: () => toast.success("Supplier return completed successfully"),
             onError: () => toast.error("Failed menyelesaikan retur"),
         });
     };
@@ -57,7 +57,7 @@ export default function Show({ return: ret }) {
     const cancelReturn = () => {
         router.post(route("supplier-returns.cancel", ret.id), {}, {
             preserveScroll: true,
-            onSuccess: () => toast.success("Retur supplier dibatalkan"),
+            onSuccess: () => toast.success("Supplier return canceled"),
             onError: () => toast.error("Failed membatalkan retur"),
         });
     };
@@ -99,7 +99,7 @@ export default function Show({ return: ret }) {
                                     type="button"
                                     icon={<IconCheck size={18} />}
                                     className="bg-success-500 hover:bg-success-600 text-white"
-                                    label="Completedkan Retur"
+                                    label="Complete Return"
                                     onClick={completeReturn}
                                 />
                                 <Button
@@ -118,12 +118,12 @@ export default function Show({ return: ret }) {
             <div className="grid gap-6 xl:grid-cols-[1.7fr_1fr]">
                 <div className="space-y-6">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Item Retur</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Return Items</h2>
                         <Table>
                             <Table.Thead>
                                 <tr>
                                     <Table.Th>Product</Table.Th>
-                                    <Table.Th>Qty Retur</Table.Th>
+                                    <Table.Th>Return Qty</Table.Th>
                                     <Table.Th>Price</Table.Th>
                                     <Table.Th>Subtotal</Table.Th>
                                     <Table.Th>Alasan</Table.Th>
@@ -149,7 +149,7 @@ export default function Show({ return: ret }) {
                                     ))
                                 ) : (
                                     <Table.Empty colSpan={5} message={
-                                        <div className="text-slate-500 dark:text-slate-400">Tidak ada item.</div>
+                                        <div className="text-slate-500 dark:text-slate-400">No items.</div>
                                     }>
                                         <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                             <IconTruckReturn size={28} className="text-slate-400" />
@@ -161,7 +161,7 @@ export default function Show({ return: ret }) {
                         {ret.items?.length > 0 && (
                             <div className="mt-4 flex justify-end border-t border-slate-100 pt-4 dark:border-slate-800">
                                 <div className="text-right">
-                                    <p className="text-sm font-semibold text-slate-500">Total Retur</p>
+                                    <p className="text-sm font-semibold text-slate-500">Total Return</p>
                                     <p className="text-xl font-bold text-danger-600">{formatCurrency(total)}</p>
                                 </div>
                             </div>
@@ -197,7 +197,7 @@ export default function Show({ return: ret }) {
                             )}
                             {ret.payable && (
                                 <div className="flex justify-between">
-                                    <span className="text-slate-500">Hutang Supplier</span>
+                                    <span className="text-slate-500">Supplier Payable</span>
                                     <Link
                                         href={route("payables.show", ret.payable.id)}
                                         className="font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400"

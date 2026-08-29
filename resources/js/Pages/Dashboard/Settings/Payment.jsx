@@ -64,7 +64,7 @@ export default function Payment({
         if (source.managed_by_environment) {
             return (
                 <p className="text-xs text-amber-600 dark:text-amber-400">
-                    Secret dikelola oleh environment dan tidak bisa diubah dari dashboard.
+                    Secrets are managed by the environment and cannot be changed from the dashboard.
                 </p>
             );
         }
@@ -82,12 +82,12 @@ export default function Payment({
 
     return (
         <>
-            <Head title="Pengaturan Payment" />
+            <Head title="Payment Settings" />
 
             <div className="mb-6">
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconCreditCard size={28} className="text-primary-500" />
-                    Pengaturan Payment Gateway
+                    Payment Gateway Settings
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                     Konfigurasi metode payment dan gateway
@@ -102,12 +102,12 @@ export default function Payment({
                         Gateway Default
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Gateway payment default yang digunakan cashier saat
+                        Default payment gateway used by the cashier when
                         opening the transaction page.
                     </p>
                     {!canUpdatePaymentSettings && (
                         <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-300">
-                            Anda hanya memiliki akses lihat. Perubahan payment settings memerlukan permission update dan konfirmasi password ulang.
+                            You only have view access. Payment setting changes require update permission and password confirmation.
                         </div>
                     )}
                     <div>
@@ -165,11 +165,11 @@ export default function Payment({
                                 }
                                 disabled={!canUpdatePaymentSettings}
                             />
-                            {data.bank_transfer_enabled ? "Aktif" : "Nonaktif"}
+                            {data.bank_transfer_enabled ? "Active" : "Inactive"}
                         </label>
                     </div>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Payment manual via transfer bank. Cashier akan
+                        Manual payment by bank transfer. Cashiers will
                         creating a transaction with pending status, then
                         admin mengkonfirmasi setelah dana diterima.
                     </p>
@@ -205,13 +205,13 @@ export default function Payment({
                                 }
                                 disabled={!canUpdatePaymentSettings}
                             />
-                            {data.midtrans_enabled ? "Aktif" : "Nonaktif"}
+                            {data.midtrans_enabled ? "Active" : "Inactive"}
                         </label>
                     </div>
                     <div
                         className={`space-y-4 ${
                             !data.midtrans_enabled
-                                ? "opacity-50 pointer-events-none"
+                                ? "opacity-50 pointster-events-none"
                                 : ""
                         }`}
                     >
@@ -229,7 +229,7 @@ export default function Payment({
                                 errors={errors?.midtrans_server_key}
                                 placeholder={
                                     paymentSettingSources?.midtrans_server_key?.configured
-                                        ? "Kosongkan untuk mempertahankan nilai saat ini"
+                                        ? "Leave blank to keep the current value"
                                         : "SB-Mid-server-xxx"
                                 }
                                 disabled={
@@ -295,13 +295,13 @@ export default function Payment({
                                 }
                                 disabled={!canUpdatePaymentSettings}
                             />
-                            {data.xendit_enabled ? "Aktif" : "Nonaktif"}
+                            {data.xendit_enabled ? "Active" : "Inactive"}
                         </label>
                     </div>
                     <div
                         className={`space-y-4 ${
                             !data.xendit_enabled
-                                ? "opacity-50 pointer-events-none"
+                                ? "opacity-50 pointster-events-none"
                                 : ""
                         }`}
                     >
@@ -316,7 +316,7 @@ export default function Payment({
                                 errors={errors?.xendit_secret_key}
                                 placeholder={
                                     paymentSettingSources?.xendit_secret_key?.configured
-                                        ? "Kosongkan untuk mempertahankan nilai saat ini"
+                                        ? "Leave blank to keep the current value"
                                         : "xnd_development_xxx"
                                 }
                                 disabled={
@@ -350,7 +350,7 @@ export default function Payment({
                             errors={errors?.xendit_callback_token}
                             placeholder={
                                 paymentSettingSources?.xendit_callback_token?.configured
-                                    ? "Kosongkan untuk mempertahankan nilai saat ini"
+                                    ? "Leave blank to keep the current value"
                                     : "xendit-callback-token"
                             }
                             disabled={
@@ -386,7 +386,7 @@ export default function Payment({
                         🔗 Webhook URLs
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Salin URL berikut dan paste ke dashboard Midtrans/Xendit
+                        Copy the URL below and paste it into the Midtrans/Xendit dashboard
                         sebagai Notification/Callback URL.
                     </p>
                     {webhookWarnings.length > 0 && (

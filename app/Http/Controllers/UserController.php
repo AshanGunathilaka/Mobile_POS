@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        // get all users data
+        // get all users records
         $users = User::query()
             ->with('roles')
             ->when(request()->search, fn ($query) => $query->where('name', 'like', '%'.request()->search.'%'))
@@ -41,7 +41,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        // get all role data
+        // get all role records
         $roles = Role::query()
             ->select('id', 'name')
             ->orderBy('name')
@@ -64,7 +64,7 @@ class UserController extends Controller
             $avatarPath = $request->file('avatar')->store('avatars', 'public');
         }
 
-        // create new user data
+        // create new user records
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -79,7 +79,7 @@ class UserController extends Controller
             event: 'user.created',
             module: 'users',
             auditable: $user,
-            description: 'Pengguna baru dibuat.',
+            description: 'New user created.',
             after: $this->userPayload(
                 $user,
                 $this->auditLogService->roleNames($request->selectedRoles),
@@ -96,7 +96,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        // get all role data
+        // get all role records
         $roles = Role::query()
             ->select('id', 'name')
             ->orderBy('name')
@@ -133,13 +133,13 @@ class UserController extends Controller
 
         // check if user send request password
         if ($request->password) {
-            // update user data password
+            // update user records password
             $user->update([
                 'password' => bcrypt($request->password),
             ]);
         }
 
-        // update user data name
+        // update user records name
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -156,7 +156,7 @@ class UserController extends Controller
             event: 'user.updated',
             module: 'users',
             auditable: $user,
-            description: 'Data pengguna diperbarui.',
+            description: 'User records updated.',
             before: $before,
             after: $after,
         );
@@ -166,7 +166,7 @@ class UserController extends Controller
                 event: 'user.role_changed',
                 module: 'users',
                 auditable: $user,
-                description: 'Role pengguna diperbarui.',
+                description: 'User role updated.',
                 before: ['roles' => array_values($beforeRoles)],
                 after: ['roles' => array_values($afterRoles)],
             );

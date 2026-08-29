@@ -11,13 +11,13 @@ return new class extends Migration
     public function up(): void
     {
         $defaults = [
-            ['key' => 'store_name', 'value' => 'Store Anda', 'description' => 'Name toko'],
-            ['key' => 'store_logo', 'value' => null, 'description' => 'Logo toko'],
+            ['key' => 'store_name', 'value' => 'Your Store', 'description' => 'Store name'],
+            ['key' => 'store_logo', 'value' => null, 'description' => 'Store logo'],
             ['key' => 'store_address', 'value' => 'Address not set', 'description' => 'Full store address'],
-            ['key' => 'store_phone', 'value' => '', 'description' => 'Nomor telepon toko'],
-            ['key' => 'store_email', 'value' => '', 'description' => 'Email toko'],
-            ['key' => 'store_website', 'value' => '', 'description' => 'Website atau sosial media'],
-            ['key' => 'store_city', 'value' => '', 'description' => 'Kota/Kabupaten toko'],
+            ['key' => 'store_phone', 'value' => '', 'description' => 'Store phone number'],
+            ['key' => 'store_email', 'value' => '', 'description' => 'Store email'],
+            ['key' => 'store_website', 'value' => '', 'description' => 'Website or social media'],
+            ['key' => 'store_city', 'value' => '', 'description' => 'Store city/regency'],
         ];
 
         foreach ($defaults as $row) {

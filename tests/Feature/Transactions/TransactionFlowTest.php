@@ -286,7 +286,7 @@ class TransactionFlowTest extends TestCase
             ]);
 
         $response->assertRedirect(route('transactions.index'));
-        $response->assertSessionHas('error', 'Shift kasir belum dibuka.');
+        $response->assertSessionHas('error', 'Cashier shift has not been opened.');
         $this->assertDatabaseCount('transactions', 0);
     }
 
@@ -306,7 +306,7 @@ class TransactionFlowTest extends TestCase
     {
         $category = Category::create([
             'name' => 'Sembako',
-            'description' => 'Kategori pengujian',
+            'description' => 'Test category',
             'image' => 'category.png',
         ]);
 
@@ -314,8 +314,8 @@ class TransactionFlowTest extends TestCase
             'category_id' => $category->id,
             'image' => 'product.png',
             'barcode' => 'BRCD-'.Str::upper(Str::random(10)),
-            'title' => 'Produk Uji',
-            'description' => 'Deskripsi produk uji.',
+            'title' => 'Test Product',
+            'description' => 'Test product description.',
             'buy_price' => 45000,
             'sell_price' => 60000,
             'stock' => 25,

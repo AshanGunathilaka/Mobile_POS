@@ -35,7 +35,7 @@ const agingBucketLabel = (bucket) => {
         "31-60": "31-60 Hari",
         "61-90": "61-90 Hari",
         "90+": "90+ Hari",
-        paid: "Lunas",
+        paid: "Paid",
     };
     return map[bucket] || bucket;
 };
@@ -71,7 +71,7 @@ export default function AgingIndex() {
                         Aging & Pengingat
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Ringkasan receivables dan payables berdasarkan aging bucket, plus pengingat jatuh tempo.
+                        Ringkasan receivables dan payables berdasarkan aging bucket, plus pengingat due date.
                     </p>
                 </div>
 
@@ -82,12 +82,12 @@ export default function AgingIndex() {
                             <div className="p-2 rounded-lg bg-rose-50 dark:bg-rose-950/30">
                                 <IconTruck size={20} className="text-rose-500" />
                             </div>
-                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Total Hutang</p>
+                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Total Payable</p>
                         </div>
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">
                             {formatCurrency(payableTotalOutstanding)}
                         </p>
-                        <p className="text-xs text-slate-500 mt-1">{payablesDueSoon} akan jatuh tempo</p>
+                        <p className="text-xs text-slate-500 mt-1">{payablesDueSoon} due soon</p>
                     </div>
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
@@ -95,12 +95,12 @@ export default function AgingIndex() {
                             <div className="p-2 rounded-lg bg-primary-50 dark:bg-primary-950/30">
                                 <IconReceipt size={20} className="text-primary-500" />
                             </div>
-                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Total Piutang</p>
+                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Total Receivable</p>
                         </div>
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">
                             {formatCurrency(receivableTotalOutstanding)}
                         </p>
-                        <p className="text-xs text-slate-500 mt-1">{receivablesDueSoon} akan jatuh tempo</p>
+                        <p className="text-xs text-slate-500 mt-1">{receivablesDueSoon} due soon</p>
                     </div>
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
@@ -108,7 +108,7 @@ export default function AgingIndex() {
                             <div className="p-2 rounded-lg bg-amber-50 dark:bg-amber-950/30">
                                 <IconAlertTriangle size={20} className="text-amber-500" />
                             </div>
-                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Hutang Overdue</p>
+                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Payable Overdue</p>
                         </div>
                         <p className="text-2xl font-bold text-amber-600">
                             {formatCurrency(
@@ -124,7 +124,7 @@ export default function AgingIndex() {
                             <div className="p-2 rounded-lg bg-rose-50 dark:bg-rose-950/30">
                                 <IconReceipt size={20} className="text-rose-500" />
                             </div>
-                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Piutang Overdue</p>
+                            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Receivable Overdue</p>
                         </div>
                         <p className="text-2xl font-bold text-rose-600">
                             {formatCurrency(
@@ -142,7 +142,7 @@ export default function AgingIndex() {
                         <div className="px-5 py-4 border-b border-slate-100 dark:border-slate-800">
                             <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
                                 <IconTruck size={20} className="text-rose-500" />
-                                Aging Hutang Supplier
+                                Aging Supplier Payable
                             </h2>
                         </div>
                         <div className="p-5">
@@ -195,7 +195,7 @@ export default function AgingIndex() {
                         <div className="px-5 py-4 border-b border-slate-100 dark:border-slate-800">
                             <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
                                 <IconReceipt size={20} className="text-primary-500" />
-                                Aging Piutang Customer
+                                Aging Receivable Customer
                             </h2>
                         </div>
                         <div className="p-5">

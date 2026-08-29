@@ -11,7 +11,7 @@ class XenditGateway
     public function createInvoice(Transaction $transaction, array $config): array
     {
         if (! ($config['enabled'] ?? false)) {
-            throw new PaymentGatewayException('Xendit tidak aktif atau belum dikonfigurasi.');
+            throw new PaymentGatewayException('Xendit is inactive or has not been configured.');
         }
 
         $customer = $transaction->customer;

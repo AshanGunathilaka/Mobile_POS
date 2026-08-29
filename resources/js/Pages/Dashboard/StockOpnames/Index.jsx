@@ -49,7 +49,7 @@ export default function Index({ stockOpnames, filters, warehouses = [] }) {
                         Stock Opname
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Kelola sesi audit stock fisik dan finalisasi adjustment stock.
+                        Manage physical stock audit sessions and finalize stock adjustments.
                     </p>
                 </div>
                 {canCreateStockOpnames && (
@@ -122,7 +122,7 @@ export default function Index({ stockOpnames, filters, warehouses = [] }) {
                 </div>
             </div>
 
-            <Table.Card title="Daftar Sesi Stock Opname">
+            <Table.Card title="Stock Count Session List">
                 <Table>
                     <Table.Thead>
                         <tr>
@@ -186,7 +186,7 @@ export default function Index({ stockOpnames, filters, warehouses = [] }) {
                                 colSpan={6}
                                 message={
                                     <div className="text-slate-500 dark:text-slate-400">
-                                        Belum ada sesi stock opname.
+                                        No stock count sessions yet.
                                     </div>
                                 }
                             >

@@ -158,7 +158,7 @@ export default function Index() {
             showCancelButton: true,
             confirmButtonColor: "#ef4444",
             cancelButtonColor: "#64748b",
-            confirmButtonText: "Ya, Delete!",
+            confirmButtonText: "Yes, delete!",
             cancelButtonText: "Cancel",
         }).then((result) => {
             if (result.isConfirmed) {
@@ -427,10 +427,10 @@ export default function Index() {
                         />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Belum Ada Pengguna
+                        No Users Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Addkan pengguna pertama Anda.
+                        Add your first user.
                     </p>
                     {canCreateUsers && (
                         <Button

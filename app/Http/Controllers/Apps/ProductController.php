@@ -101,7 +101,7 @@ class ProductController extends Controller
             event: 'product.created',
             module: 'products',
             auditable: $product,
-            description: 'Product baru dibuat.',
+            description: 'New product created.',
             after: $this->productAuditPayload($product->fresh())
         );
 
@@ -233,7 +233,7 @@ class ProductController extends Controller
             event: 'product.updated',
             module: 'products',
             auditable: $product,
-            description: 'Data product diperbarui.',
+            description: 'Product records updated.',
             before: $before,
             after: $after
         );
@@ -246,7 +246,7 @@ class ProductController extends Controller
                 event: 'product.price_updated',
                 module: 'products',
                 auditable: $product,
-                description: 'Price product diperbarui.',
+                description: 'Product price updated.',
                 before: [
                     'buy_price' => $before['buy_price'],
                     'sell_price' => $before['sell_price'],

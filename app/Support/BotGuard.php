@@ -37,7 +37,7 @@ class BotGuard
 
         $honeypotField = config('security.bot_guard.honeypot_field', 'company_website');
         $tokenField = config('security.bot_guard.token_field', 'bot_guard_token');
-        $message = config('security.bot_guard.message', 'Permintaan tidak valid. Silakan coba lagi.');
+        $message = config('security.bot_guard.message', 'Invalid request. Please try again.');
 
         $reason = null;
 

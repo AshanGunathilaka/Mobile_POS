@@ -24,7 +24,7 @@ export default function Button({
             showCancelButton: true,
             confirmButtonColor: "#6366f1",
             cancelButtonColor: "#64748b",
-            confirmButtonText: "Ya, Delete!",
+            confirmButtonText: "Yes, delete!",
             cancelButtonText: "Cancel",
         }).then((result) => {
             if (result.isConfirmed) {

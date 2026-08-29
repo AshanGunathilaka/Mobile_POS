@@ -20,7 +20,7 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        // get all role data
+        // get all role records
         $roles = Role::query()
             ->with('permissions')
             ->when(request()->search, fn ($query) => $query->where('name', 'like', '%'.request()->search.'%'))
@@ -29,7 +29,7 @@ class RoleController extends Controller
             ->paginate(7)
             ->withQueryString();
 
-        // get all permission data
+        // get all permission records
         $permissions = Permission::query()
             ->select('id', 'name')
             ->orderBy('name')
@@ -47,7 +47,7 @@ class RoleController extends Controller
      */
     public function store(RoleRequest $request)
     {
-        // create new role data
+        // create new role records
         $role = Role::create(['name' => $request->name]);
 
         // give permissions to role
@@ -57,7 +57,7 @@ class RoleController extends Controller
             event: 'role.created',
             module: 'roles',
             auditable: $role,
-            description: 'Role baru dibuat.',
+            description: 'New role created.',
             after: [
                 'name' => $role->name,
                 'permissions' => $this->auditLogService->permissionNames($request->selectedPermission),
@@ -79,7 +79,7 @@ class RoleController extends Controller
             'permissions' => array_values($beforePermissions),
         ];
 
-        // update role data
+        // update role records
         $role->update(['name' => $request->name]);
 
         // sync role permissions
@@ -91,7 +91,7 @@ class RoleController extends Controller
             event: 'role.updated',
             module: 'roles',
             auditable: $role,
-            description: 'Role diperbarui.',
+            description: 'Role updated.',
             before: $before,
             after: [
                 'name' => $role->fresh()->name,
@@ -104,7 +104,7 @@ class RoleController extends Controller
                 event: 'role.permission_changed',
                 module: 'roles',
                 auditable: $role,
-                description: 'Permission role diperbarui.',
+                description: 'Role permissions updated.',
                 before: ['permissions' => array_values($beforePermissions)],
                 after: ['permissions' => array_values($afterPermissions)],
             );
@@ -124,7 +124,7 @@ class RoleController extends Controller
             'permissions' => $role->permissions()->pluck('name')->all(),
         ];
 
-        // delete role data
+        // delete role records
         $role->delete();
 
         $this->auditLogService->log(

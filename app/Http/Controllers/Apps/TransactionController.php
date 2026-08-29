@@ -549,7 +549,7 @@ class TransactionController extends Controller
             if (! $paymentSetting || ! $paymentSetting->isGatewayReady($paymentGateway)) {
                 return redirect()
                     ->route('transactions.index')
-                    ->with('error', 'Gateway payment belum dikonfigurasi.');
+                    ->with('error', 'Payment gateway has not been configured.');
             }
         }
 

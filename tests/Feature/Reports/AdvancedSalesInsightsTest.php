@@ -304,7 +304,7 @@ class AdvancedSalesInsightsTest extends TestCase
         AuditLog::create([
             'event' => 'pricing_rule.created',
             'module' => 'pricing_rules',
-            'description' => 'Rule promo dibuat.',
+            'description' => 'Promo rule created.',
             'created_at' => now(),
         ]);
 
@@ -327,7 +327,7 @@ class AdvancedSalesInsightsTest extends TestCase
         CustomerVoucher::create([
             'customer_id' => $member->id,
             'code' => 'VC-ACTIVE',
-            'name' => 'Voucher Aktif',
+            'name' => 'Active Voucher',
             'discount_type' => CustomerVoucher::TYPE_FIXED_AMOUNT,
             'discount_value' => 10_000,
             'minimum_order' => 50_000,

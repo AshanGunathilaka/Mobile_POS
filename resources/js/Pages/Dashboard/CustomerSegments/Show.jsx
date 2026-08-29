@@ -133,7 +133,7 @@ export default function Show({ segment, customers = [] }) {
                                     disabled={processing}
                                     className="w-full rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-600 disabled:opacity-50"
                                 >
-                                    Addkan ke Segment
+                                    Add to Segment
                                 </button>
                             </form>
                         </div>
@@ -155,7 +155,7 @@ export default function Show({ segment, customers = [] }) {
                             </div>
                             <div className="flex items-center justify-between gap-4">
                                 <dt className="text-slate-500">Status</dt>
-                                <dd className="font-medium text-slate-800 dark:text-slate-200">{segment.is_active ? "Aktif" : "Nonaktif"}</dd>
+                                <dd className="font-medium text-slate-800 dark:text-slate-200">{segment.is_active ? "Active" : "Inactive"}</dd>
                             </div>
                         </dl>
                     </div>

@@ -9,8 +9,8 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Setting::set('discount_approval_threshold', '0', 'Nominal diskon maksimal tanpa approval. 0 = nonaktif');
-        Setting::set('discount_approval_percent_threshold', '0', 'Persentase diskon maksimal tanpa approval. 0 = nonaktif');
+        Setting::set('discount_approval_threshold', '0', 'Maximum discount amount without approval. 0 = inactive');
+        Setting::set('discount_approval_percent_threshold', '0', 'Maximum discount percentage without approval. 0 = inactive');
         Setting::set('discount_approval_timeout', '300', 'Timeout approval dalam detik');
 
         Schema::table('transactions', function (Blueprint $table) {

@@ -14,21 +14,21 @@ export default function Printer({ settings }) {
         e.preventDefault();
         post(route("settings.printer.update"), {
             preserveScroll: true,
-            onSuccess: () => toast.success("Pengaturan printer disimpan"),
+            onSuccess: () => toast.success("Printer settings saved"),
             onError: () => toast.error("Failed menyimpan"),
         });
     };
 
     return (
         <>
-            <Head title="Pengaturan Printer" />
+            <Head title="Printer Settings" />
             <div className="space-y-6">
                 <div>
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                         <IconPrinter size={28} className="text-primary-500" />
-                        Pengaturan Printer
+                        Printer Settings
                     </h1>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Atur printer thermal untuk cetak struk otomatis</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Configure the thermal printer for automatic receipt printing</p>
                 </div>
 
                 <form onSubmit={submit} className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-6 max-w-lg">
@@ -51,7 +51,7 @@ export default function Printer({ settings }) {
                         <p className="text-sm text-slate-500 mb-3">Printer thermal terhubung via WebUSB (Chrome/Edge)</p>
                         <button type="submit" disabled={processing}
                             className="px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors disabled:opacity-50">
-                            {processing ? "Saving..." : "Save Pengaturan"}
+                            {processing ? "Saving..." : "Save Settings"}
                         </button>
                     </div>
                 </form>

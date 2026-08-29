@@ -147,7 +147,7 @@ const ProfitReport = ({
             gradient: "from-warning-500 to-warning-600",
         },
         {
-            title: "Transaksi Terbaik",
+            title: "Transaction Terbaik",
             value: stats.best_invoice,
             description: formatCurrency(stats.best_profit),
             icon: <IconReceipt />,
@@ -325,7 +325,7 @@ const ProfitReport = ({
                                             Item
                                         </th>
                                         <th className="px-4 py-4 text-right text-xs font-semibold text-slate-500 uppercase">
-                                            Penjualan
+                                            Sales
                                         </th>
                                         <th className="px-4 py-4 text-right text-xs font-semibold text-slate-500 uppercase">
                                             Profit
@@ -439,10 +439,10 @@ const ProfitReport = ({
                             />
                         </div>
                         <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                            Tidak Ada Data
+                            No Data
                         </h3>
                         <p className="text-sm text-slate-500">
-                            Tidak ada transaksi sesuai filter.
+                            No transactions match the filter.
                         </p>
                     </div>
                 )}

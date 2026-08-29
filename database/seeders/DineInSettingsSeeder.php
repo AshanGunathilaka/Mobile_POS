@@ -12,15 +12,15 @@ class DineInSettingsSeeder extends Seeder
         Setting::setMany([
             'dine_in_enabled' => [
                 'value' => '1',
-                'description' => 'Aktifkan fitur dine-in QR menu',
+                'description' => 'Enable dine-in QR menu feature',
             ],
             'dine_in_self_order_enabled' => [
                 'value' => '1',
-                'description' => 'Izinkan customer memesan langsung dari QR menu',
+                'description' => 'Allow customers to order directly from the QR menu',
             ],
             'dine_in_pay_online_enabled' => [
                 'value' => '1',
-                'description' => 'Izinkan payment online via QR menu',
+                'description' => 'Allow online payments through the QR menu',
             ],
         ]);
     }

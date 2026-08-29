@@ -18,7 +18,7 @@ Sistem kasir berbasis Laravel + Inertia + React untuk transaksi penjualan, inven
 
 ---
 
-## Fitur Utama
+## Fitur Main
 
 ### POS & Transaksi
 - Pencarian produk via barcode / keyword
@@ -59,7 +59,7 @@ Sistem kasir berbasis Laravel + Inertia + React untuk transaksi penjualan, inven
 ### CRM & Loyalty
 - Customer management + wilayah Indonesia
 - Member tiers (regular, silver, gold, platinum)
-- Poin loyalty (earn/redeem)
+- Points loyalty (earn/redeem)
 - Voucher customer
 - Customer segments (manual & auto)
 - Campaign automation (reminder, promo broadcast)
@@ -145,7 +145,7 @@ curl https://dikasir.web.id/api/v1/products \
 | Modul | Endpoint | Keterangan |
 |-------|----------|------------|
 | Auth | `auth/login`, `auth/logout`, `auth/me`, `auth/register` | Token-based (Sanctum) |
-| Produk | `products` | CRUD + search + kategori |
+| Product | `products` | CRUD + search + kategori |
 | Pelanggan | `customers` | CRUD + loyalty member |
 | Kategori | `categories` | CRUD |
 | Gudang | `warehouses` | CRUD (multi-warehouse) |

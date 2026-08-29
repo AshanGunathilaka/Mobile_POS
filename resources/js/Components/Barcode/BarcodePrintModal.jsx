@@ -103,7 +103,7 @@ export default function BarcodePrintModal({
                     <div className="flex items-center gap-2">
                         <IconBarcode size={24} className="text-primary-500" />
                         <h2 className="text-lg font-bold text-slate-800 dark:text-white">
-                            Cetak Barcode
+                            Print Barcode
                         </h2>
                         <span className="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-medium rounded-full">
                             {productsToPrint.length} product
@@ -245,7 +245,7 @@ export default function BarcodePrintModal({
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors"
                     >
                         <IconPrinter size={18} />
-                        Cetak
+                        Print
                     </button>
                 </div>
             </div>

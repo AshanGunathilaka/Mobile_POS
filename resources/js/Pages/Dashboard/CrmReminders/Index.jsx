@@ -17,7 +17,7 @@ export default function Index({ campaigns, filters }) {
                 <div className="mb-6">
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">CRM Reminders</h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Queue reminder internal untuk receivables, repeat order, invoice share, dan promo broadcast.
+                        Internal reminder queue for receivables, repeat orders, invoice sharing, and promo broadcasts.
                     </p>
                 </div>
 
@@ -91,7 +91,7 @@ export default function Index({ campaigns, filters }) {
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={4} message="Belum ada reminder atau campaign queue.">
+                                <Table.Empty colSpan={4} message="No reminders or campaign queue yet.">
                                     <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                         <IconBellRinging size={28} className="text-slate-400" />
                                     </div>

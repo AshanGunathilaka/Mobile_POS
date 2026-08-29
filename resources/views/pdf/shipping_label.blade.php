@@ -44,7 +44,7 @@
         .header {
             width: 100%;
             table-layout: auto !important;
-            /* Memungkinkan kolom logo merapat ke teks */
+            /* Allows the logo column to sit close to the text */
             margin-bottom: 5pt;
         }
 
@@ -69,7 +69,7 @@
             border-radius: 6pt;
             padding: 6pt;
             height: 65pt;
-            /* Tinggi tetap agar tidak mendorong footer */
+            /* Fixed height so it does not push the footer */
         }
 
         .title-label {
@@ -121,7 +121,7 @@
             max-width: 220pt;
             display: block;
             margin-left: auto;
-            /* Aliran ke kanan */
+            /* Flow to the right */
         }
 
         .invoice-number {
@@ -210,7 +210,7 @@
                 </td>
                 <td style="padding-left: 5pt; width: 35%;">
                     <div class="section-box">
-                        <div class="title-label">Ringkasan Pesanan</div>
+                        <div class="title-label">Order Summary</div>
                         <table class="text-small">
                             <tr>
                                 <td>Item</td>

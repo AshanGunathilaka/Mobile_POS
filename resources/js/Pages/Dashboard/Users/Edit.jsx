@@ -40,7 +40,7 @@ export default function Edit() {
     const submit = (e) => {
         e.preventDefault();
         post(route("users.update", user.id), {
-            onSuccess: () => toast.success("Pengguna successfully diperbarui"),
+            onSuccess: () => toast.success("User updated successfully"),
             onError: () => toast.error("Failed memperbarui pengguna"),
         });
     };
@@ -55,7 +55,7 @@ export default function Edit() {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600 mb-3"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke Pengguna
+                    Back to Users
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUserEdit size={28} className="text-primary-500" />
@@ -71,7 +71,7 @@ export default function Edit() {
                     {/* Account Info */}
                     <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
                         <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4">
-                            Informasi Akun
+                            Account Information
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="md:col-span-2">
@@ -135,8 +135,8 @@ export default function Edit() {
                             />
                             <Input
                                 type="password"
-                                label="Kata Sandi Baru"
-                                placeholder="Kosongkan jika tidak diubah"
+                                label="New Password"
+                                placeholder="Leave blank if unchanged"
                                 value={data.password}
                                 onChange={(e) =>
                                     setData("password", e.target.value)
@@ -145,7 +145,7 @@ export default function Edit() {
                             />
                             <Input
                                 type="password"
-                                label="Konfirmasi Kata Sandi"
+                                label="Confirm Password"
                                 placeholder="Ulangi kata sandi baru"
                                 value={data.password_confirmation}
                                 onChange={(e) =>

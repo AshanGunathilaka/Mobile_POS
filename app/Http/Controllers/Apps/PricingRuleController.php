@@ -133,7 +133,7 @@ class PricingRuleController extends Controller
 
         return redirect()
             ->route('pricing-rules.index')
-            ->with('success', 'Rule promo successfully dibuat.');
+            ->with('success', 'Promo rule created successfully.');
     }
 
     public function edit(PricingRule $pricingRule)
@@ -187,7 +187,7 @@ class PricingRuleController extends Controller
 
         return redirect()
             ->route('pricing-rules.index')
-            ->with('success', 'Rule promo successfully diperbarui.');
+            ->with('success', 'Promo rule updated successfully.');
     }
 
     public function destroy(PricingRule $pricingRule)

@@ -129,7 +129,7 @@ function ProductCard({
             <div className="p-3 sm:p-4">
                 <div className="flex items-start justify-between gap-2 mb-2">
                     <span className="px-2 py-0.5 text-xs font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-400 rounded-md truncate">
-                        {product.category?.name || "Kategori"}
+                        {product.category?.name || "Category"}
                     </span>
                 </div>
                 <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 line-clamp-2 mb-1">
@@ -248,7 +248,7 @@ export default function Index({ products }) {
                             className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors w-full sm:w-auto"
                         >
                             <IconBarcode size={18} />
-                            Cetak All Barcode
+                            Print All Barcodes
                         </button>
                         {canCreateProducts && (
                             <>
@@ -333,7 +333,7 @@ export default function Index({ products }) {
                             className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors"
                         >
                             <IconPrinter size={18} />
-                            Cetak Terpilih ({selectedProducts.length})
+                            Print Selected ({selectedProducts.length})
                         </button>
                     )}
                     <button
@@ -388,7 +388,7 @@ export default function Index({ products }) {
                                 <tr>
                                     <Table.Th className="w-10">No</Table.Th>
                                     <Table.Th>Product</Table.Th>
-                                    <Table.Th>Kategori</Table.Th>
+                                    <Table.Th>Category</Table.Th>
                                     <Table.Th>Price Beli</Table.Th>
                                     <Table.Th>Price Jual</Table.Th>
                                     <Table.Th>Stock</Table.Th>
@@ -527,7 +527,7 @@ export default function Index({ products }) {
                         Belum Ada Product
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Addkan product pertama Anda untuk memulai.
+                        Add your first product to get started.
                     </p>
                     {canCreateProducts && (
                         <Button

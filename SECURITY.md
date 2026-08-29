@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-Jika Anda menemukan kerentanan keamanan di Point of Sales, **jangan buat issue publik**. Kirim laporan langsung ke:
+If you find a security vulnerability in Point of Sales, **do not create a public issue**. Send the report directly to:
 
 **Email:** aryadptr.developer@gmail.com
 

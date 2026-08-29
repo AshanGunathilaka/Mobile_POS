@@ -54,7 +54,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
             case "paid":
                 return (
                     <span className={`${base} bg-success-100 text-success-700`}>
-                        Lunas
+                        Paid
                     </span>
                 );
             case "partial":
@@ -72,7 +72,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
             default:
                 return (
                     <span className={`${base} bg-amber-100 text-amber-700`}>
-                        Belum Lunas
+                        Unpaid
                     </span>
                 );
         }
@@ -95,7 +95,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
 
     return (
         <>
-            <Head title={`Hutang ${payable.document_number}`} />
+            <Head title={`Payable ${payable.document_number}`} />
             <div className="space-y-6">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                     <div className="flex items-center gap-3">
@@ -212,7 +212,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
 
                     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 print:hidden">
                         <p className="text-sm font-semibold text-slate-800 dark:text-white mb-3">
-                            Detail Hutang
+                            Detail Payable
                         </p>
                         <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                             <div className="flex justify-between">
@@ -301,7 +301,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                             }
                                             className="w-full h-11 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500"
                                         >
-                                            <option value="">Select rekening</option>
+                                            <option value="">Select account</option>
                                             {bankAccounts.map((bank) => (
                                                 <option key={bank.id} value={bank.id}>
                                                     {bank.bank_name} - {bank.account_number}
@@ -350,7 +350,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                     <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-3xl relative overflow-hidden">
                         <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-800">
                             <div>
-                                <p className="text-xs text-slate-500">Preview Hutang</p>
+                                <p className="text-xs text-slate-500">Preview Payable</p>
                                 <p className="text-sm font-semibold text-slate-800 dark:text-white">
                                     {payable.document_number}
                                 </p>
@@ -363,7 +363,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                     className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold"
                                 >
                                     <IconPrinter size={16} />
-                                    PDF / Cetak
+                                    PDF / Print
                                 </a>
                                 <button
                                     onClick={() => setShowPreview(false)}

@@ -66,25 +66,25 @@ export default function Create({ orders }) {
         setData("items", validItems);
         post(route("goods-receivings.store"), {
             onSuccess: () => toast.success("Goods receiving recorded successfully."),
-            onError: () => toast.error("Failed mencatat penerimaan"),
+            onError: () => toast.error("Failed to record receiving"),
             preserveScroll: true,
         });
     };
 
     return (
         <>
-            <Head title="Terima Barang" />
+            <Head title="Receive Goods" />
             <div className="mb-6">
                 <Link
                     href={route("goods-receivings.index")}
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar penerimaan
+                    Back to receiving list
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconTruckDelivery size={28} className="text-primary-500" />
-                    Terima Barang
+                    Receive Goods
                 </h1>
             </div>
 
@@ -97,7 +97,7 @@ export default function Create({ orders }) {
                             onChange={(e) => selectPO(e.target.value)}
                             className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         >
-                            <option value="">Select PO yang sudah dipesan...</option>
+                            <option value="">Select an ordered PO...</option>
                             {orders.map((order) => (
                                 <option key={order.id} value={order.id}>
                                     {order.document_number} - {order.supplier?.name || "Tanpa Supplier"}
@@ -110,7 +110,7 @@ export default function Create({ orders }) {
                     {selectedOrder && data.items.length > 0 && (
                         <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                             <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                                Item Diterima
+                                Item Accepted
                             </h2>
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm">
@@ -118,9 +118,9 @@ export default function Create({ orders }) {
                                         <tr className="border-b border-slate-200 dark:border-slate-700">
                                             <th className="px-3 py-2 text-left font-semibold text-slate-700 dark:text-slate-200">Product</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty PO</th>
-                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Sudah Diterima</th>
+                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Sudah Accepted</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Sisa</th>
-                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty Diterima</th>
+                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty Received</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Catatan</th>
                                         </tr>
                                     </thead>
@@ -190,7 +190,7 @@ export default function Create({ orders }) {
                                 type="submit"
                                 icon={<IconTruckDelivery size={18} />}
                                 className="bg-success-500 hover:bg-success-600 text-white shadow-lg shadow-success-500/30"
-                                label={processing ? "Saving..." : "Konfirmasi Penerimaan"}
+                                label={processing ? "Saving..." : "Confirm Penerimaan"}
                                 disabled={processing}
                             />
                         )}

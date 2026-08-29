@@ -32,7 +32,7 @@ class StockMutationService
             'qty' => $initialStock,
             'stock_before' => 0,
             'stock_after' => $initialStock,
-            'notes' => 'Initial stock saat product dibuat.',
+            'notes' => 'Initial stock when product was created.',
             'created_by' => $userId,
         ]);
 
@@ -46,7 +46,7 @@ class StockMutationService
                 'stock_before' => 0,
                 'stock_after' => 0,
                 'difference' => 0,
-                'reason' => 'Initial stock saat product dibuat.',
+                'reason' => 'Initial stock when product was created.',
                 'reference' => 'product:'.$product->id,
             ],
             after: [
@@ -54,7 +54,7 @@ class StockMutationService
                 'stock_before' => 0,
                 'stock_after' => $initialStock,
                 'difference' => $initialStock,
-                'reason' => 'Initial stock saat product dibuat.',
+                'reason' => 'Initial stock when product was created.',
                 'reference' => 'product:'.$product->id,
             ],
             meta: [
@@ -89,7 +89,7 @@ class StockMutationService
             'qty' => abs($stockAfter - $stockBefore),
             'stock_before' => $stockBefore,
             'stock_after' => $stockAfter,
-            'notes' => $reason ?: 'Adjustment dari stock opname.',
+            'notes' => $reason ?: 'Adjustment from stock count.',
             'created_by' => $userId,
         ]);
 
@@ -111,7 +111,7 @@ class StockMutationService
                 'stock_before' => $stockBefore,
                 'stock_after' => $stockAfter,
                 'difference' => $stockAfter - $stockBefore,
-                'reason' => $reason ?: 'Adjustment dari stock opname.',
+                'reason' => $reason ?: 'Adjustment from stock count.',
                 'reference' => $stockOpname->code,
             ],
             meta: [
@@ -146,7 +146,7 @@ class StockMutationService
             'qty' => abs($stockAfter - $stockBefore),
             'stock_before' => $stockBefore,
             'stock_after' => $stockAfter,
-            'notes' => $reason ?: 'Restock dari retur penjualan.',
+            'notes' => $reason ?: 'Restock from sales return.',
             'created_by' => $userId,
         ]);
 
@@ -154,7 +154,7 @@ class StockMutationService
             event: 'stock.adjusted',
             module: 'stock',
             auditable: $product,
-            description: 'Stock product bertambah dari restock retur penjualan.',
+            description: 'Product stock increased from sales return restock.',
             before: [
                 'product_id' => $product->id,
                 'stock_before' => $stockBefore,
@@ -168,7 +168,7 @@ class StockMutationService
                 'stock_before' => $stockBefore,
                 'stock_after' => $stockAfter,
                 'difference' => $stockAfter - $stockBefore,
-                'reason' => $reason ?: 'Restock dari retur penjualan.',
+                'reason' => $reason ?: 'Restock from sales return.',
                 'reference' => $salesReturn->code,
             ],
             meta: [
@@ -260,7 +260,7 @@ class StockMutationService
             event: 'stock.adjusted',
             module: 'stock',
             auditable: $product,
-            description: 'Stock keluar dari retur supplier '.$supplierReturn->document_number,
+            description: 'Stock out from supplier return '.$supplierReturn->document_number,
             before: [
                 'product_id' => $product->id,
                 'stock_before' => $stockBefore,

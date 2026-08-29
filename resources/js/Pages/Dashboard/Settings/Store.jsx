@@ -45,10 +45,10 @@ export default function Store({ settings }) {
         post(route("settings.store.update"), {
             preserveScroll: true,
             onSuccess: () => {
-                toast.success("Profil toko disimpan");
+                toast.success("Store profile saved");
                 reset("store_logo");
             },
-            onError: () => toast.error("Failed menyimpan profil toko"),
+            onError: () => toast.error("Failed to save store profile"),
         });
     };
 
@@ -59,10 +59,10 @@ export default function Store({ settings }) {
             <div className="space-y-6">
                 <div>
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        Pengaturan Store
+                        Store Settings
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Atur identitas toko yang muncul di struk dan laporan.
+                        Configure the store identity shown on receipts and reports.
                     </p>
                 </div>
 
@@ -112,10 +112,10 @@ export default function Store({ settings }) {
                                 value={data.store_name}
                                 errors={errors.store_name}
                                 onChange={(e) => setData("store_name", e.target.value)}
-                                placeholder="Name toko"
+                                placeholder="Store name"
                             />
                             <Textarea
-                                label="Alamat Lengkap"
+                                label="Full Address"
                                 value={data.store_address}
                                 errors={errors.store_address}
                                 onChange={(e) => setData("store_address", e.target.value)}
@@ -123,7 +123,7 @@ export default function Store({ settings }) {
                             />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <Input
-                                    label="Kota/Kabupaten"
+                                    label="City/Kabupaten"
                                     value={data.store_city}
                                     errors={errors.store_city}
                                     onChange={(e) => setData("store_city", e.target.value)}
@@ -131,7 +131,7 @@ export default function Store({ settings }) {
                                     icon={<IconMapPin size={16} />}
                                 />
                                 <Input
-                                    label="Nomor Telepon"
+                                    label="Phone Number"
                                     value={data.store_phone}
                                     errors={errors.store_phone}
                                     onChange={(e) => setData("store_phone", e.target.value)}
@@ -146,7 +146,7 @@ export default function Store({ settings }) {
                                     value={data.store_email}
                                     errors={errors.store_email}
                                     onChange={(e) => setData("store_email", e.target.value)}
-                                    placeholder="email@toko.com"
+                                    placeholder="email@store.com"
                                     icon={<IconMail size={16} />}
                                 />
                                 <Input
@@ -197,7 +197,7 @@ export default function Store({ settings }) {
                                 placeholder="11.00"
                             />
                             <p className="mt-1 text-xs text-slate-400">
-                                Tarif default untuk product baru. Dapat diubah per product.
+                                Default rate for new products. Can be changed per product.
                             </p>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ export default function BankAccountForm({ bankAccount = null }) {
     const { can } = useAuthorization();
     const canUpdatePaymentSettings = can("payment-settings-update");
     const { data, setData, post, processing, errors } = useForm({
-    _method: isEdit ? "PUT" : "POST", // Addkan ini
+    _method: isEdit ? "PUT" : "POST", // Add this
     bank_name: bankAccount?.bank_name || "",
     account_number: bankAccount?.account_number || "",
     account_name: bankAccount?.account_name || "",
@@ -32,7 +32,7 @@ export default function BankAccountForm({ bankAccount = null }) {
     const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Selalu gunakan post() karena Inertia akan otomatis
+    // Always use post() because Inertia will automatically
     // menangani spoofing method lewat data._method
     if (isEdit) {
         post(route("settings.bank-accounts.update", bankAccount.id), {
@@ -92,7 +92,7 @@ export default function BankAccountForm({ bankAccount = null }) {
                     </div>
                     <Input
                         label="Atas Name"
-                        placeholder="Name pemilik rekening"
+                        placeholder="Account holder name"
                         value={data.account_name}
                         onChange={(e) => setData("account_name", e.target.value)}
                         errors={errors.account_name}
@@ -128,7 +128,7 @@ export default function BankAccountForm({ bankAccount = null }) {
                                     disabled={!canUpdatePaymentSettings}
                                     className="rounded border-slate-300 dark:border-slate-600 text-primary-600 focus:ring-primary-500"
                                 />
-                                Aktif
+                                Active
                             </label>
                         </div>
                     </div>

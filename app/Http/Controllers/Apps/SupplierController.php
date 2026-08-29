@@ -43,7 +43,7 @@ class SupplierController extends Controller
 
         $supplier->update($data);
 
-        return back()->with('success', 'Supplier successfully diperbarui.');
+        return back()->with('success', 'Supplier updated successfully.');
     }
 
     public function destroy(Supplier $supplier)

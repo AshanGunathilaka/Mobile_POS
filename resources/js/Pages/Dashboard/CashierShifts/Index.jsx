@@ -101,7 +101,7 @@ export default function Index({
                             className="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-primary-500/30 transition-colors hover:bg-primary-600"
                         >
                             <IconEye size={18} />
-                            <span>Lihat Shift Aktif</span>
+                            <span>View Active Shift</span>
                         </Link>
                     )}
                 </div>
@@ -136,7 +136,7 @@ export default function Index({
                             </div>
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Warehouse / Cabang
+                                    Warehouse / Branch
                                 </label>
                                 <select
                                     value={warehouseId}
@@ -179,7 +179,7 @@ export default function Index({
                     <div className="grid gap-4 md:grid-cols-4">
                         <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-900/50 dark:bg-emerald-950/30">
                             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                                Shift Aktif
+                                Active Shift
                             </p>
                             <p className="mt-2 text-lg font-semibold text-emerald-900 dark:text-emerald-100">
                                 {activeShift.user?.name}
@@ -211,7 +211,7 @@ export default function Index({
                         </div>
                         <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
                             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                                Total Transaksi
+                                Total Transactions
                             </p>
                             <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-white">
                                 {activeShift.transactions_count}

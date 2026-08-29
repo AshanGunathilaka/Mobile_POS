@@ -39,8 +39,8 @@ Berikut adalah seluruh screenshot fitur Point of Sales.
 
 | Screenshot | Deskripsi |
 |------------|-----------|
-| ![Receivables](screenshots/12-receivables.png) | Piutang pelanggan dengan aging |
-| ![Payables](screenshots/13-payables.png) | Hutang supplier |
+| ![Receivables](screenshots/12-receivables.png) | Receivable pelanggan dengan aging |
+| ![Payables](screenshots/13-payables.png) | Payable supplier |
 | ![Aging](screenshots/14-aging.png) | Aging analysis receivables & payables |
 
 ## Reports

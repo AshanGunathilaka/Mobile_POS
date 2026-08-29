@@ -188,7 +188,7 @@ export default function DineMenu({ table, categories, products, selfOrderEnabled
                 <dialog id="cart-modal" className="modal modal-bottom sm:modal-middle">
                     <div className="modal-box max-w-lg mx-auto">
                         <div className="flex items-center justify-between mb-4">
-                            <h3 className="font-bold text-lg">Pesanan Anda</h3>
+                            <h3 className="font-bold text-lg">Your Order</h3>
                             <form method="dialog">
                                 <button className="btn btn-sm btn-circle btn-ghost">✕</button>
                             </form>

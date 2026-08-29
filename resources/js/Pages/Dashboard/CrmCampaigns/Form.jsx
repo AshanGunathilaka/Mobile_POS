@@ -9,7 +9,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
         name: campaign?.name ?? "",
         type: campaign?.type ?? "promo_broadcast",
         channel: campaign?.channel ?? "whatsapp_link",
-        message_template: campaign?.message_template ?? "Halo {{name}}, ada promo spesial untuk Anda.",
+        message_template: campaign?.message_template ?? "Hello {{name}}, there is a special promo for you.",
         save_as_draft: true,
         audience_filters: {
             segment_ids: campaign?.audience_filters?.segment_ids ?? [],
@@ -50,7 +50,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                         {isEdit ? "Edit CRM Campaign" : "Buat CRM Campaign"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Bangun audience dari segment dan siapkan campaign WhatsApp/manual follow-up.
+                        Bangun audience of segment dan siapkan campaign WhatsApp/manual follow-up.
                     </p>
                 </div>
 
@@ -149,7 +149,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                                 </select>
                             </div>
                             <div>
-                                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Status Piutang</label>
+                                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Status Receivable</label>
                                 <select
                                     value={data.audience_filters.receivable_status}
                                     onChange={(event) => setAudienceFilter("receivable_status", event.target.value)}

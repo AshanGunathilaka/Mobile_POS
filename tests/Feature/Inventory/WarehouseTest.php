@@ -31,7 +31,7 @@ class WarehouseTest extends TestCase
         // Seed default warehouse
         $pusat = Warehouse::create([
             'code' => 'PUSAT',
-            'name' => 'Gudang Pusat',
+            'name' => 'Main Warehouse',
             'type' => 'main',
             'is_active' => true,
             'sort_order' => 0,
@@ -76,7 +76,7 @@ class WarehouseTest extends TestCase
         $response = $this->from(route('settings.warehouses.index'))
             ->post(route('settings.warehouses.store'), [
                 'code' => 'CABANG-A',
-                'name' => 'Cabang A',
+                'name' => 'Branch A',
                 'type' => 'branch',
                 'address' => 'Jl. Merdeka No. 1',
                 'phone' => '021-123456',
@@ -95,7 +95,7 @@ class WarehouseTest extends TestCase
         $this->from(route('settings.warehouses.index'))
             ->post(route('settings.warehouses.store'), [
                 'code' => 'CABANG-B',
-                'name' => 'Cabang B',
+                'name' => 'Branch B',
                 'type' => 'branch',
                 'sort_order' => 2,
             ]);
@@ -107,18 +107,18 @@ class WarehouseTest extends TestCase
 
     public function test_admin_can_update_warehouse()
     {
-        $warehouse = Warehouse::factory()->create(['code' => 'GUDANG-1', 'name' => 'Gudang 1']);
+        $warehouse = Warehouse::factory()->create(['code' => 'GUDANG-1', 'name' => 'Warehouse 1']);
 
         $this->from(route('settings.warehouses.index'))
             ->put(route('settings.warehouses.update', $warehouse->id), [
                 'code' => 'GUDANG-1',
-                'name' => 'Gudang 1 Updated',
+                'name' => 'Warehouse 1 Updated',
                 'type' => 'warehouse',
                 'sort_order' => 0,
                 'is_active' => true,
             ])->assertSessionHas('success');
 
-        $this->assertDatabaseHas('warehouses', ['name' => 'Gudang 1 Updated']);
+        $this->assertDatabaseHas('warehouses', ['name' => 'Warehouse 1 Updated']);
     }
 
     public function test_cannot_delete_main_warehouse()

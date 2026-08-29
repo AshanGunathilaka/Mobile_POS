@@ -7,7 +7,7 @@ const formatDate = (v) => v ? new Date(v).toLocaleString("en-LK", { dateStyle: "
 
 const statusBadge = (status) => {
     const styles = { paid: "bg-emerald-100 text-emerald-700", pending: "bg-amber-100 text-amber-700", unpaid: "bg-rose-100 text-rose-700", pending_approval: "bg-slate-100 text-slate-700" };
-    const labels = { paid: "Lunas", pending: "Menunggu", unpaid: "Belum Lunas", pending_approval: "Menunggu Approval" };
+    const labels = { paid: "Paid", pending: "Pending", unpaid: "Unpaid", pending_approval: "Waiting for Approval" };
     return <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${styles[status] || "bg-slate-100 text-slate-600"}`}>{labels[status] || status}</span>;
 };
 
@@ -85,7 +85,7 @@ export default function TransactionDetail({ transaction, token }) {
                     </div>
 
                     <div className="px-6 py-4 border-t border-slate-100 text-center text-xs text-slate-400">
-                        Terima kasih telah berbelanja
+                        Thank you for shopping with us
                     </div>
                 </div>
             </div>

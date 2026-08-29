@@ -40,7 +40,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
 
     const addItemFromProduct = (product) => {
         if (data.items.some((i) => i.product_id === product.id)) {
-            toast.error("Product sudah ada di daftar.");
+            toast.error("Product is already in the list.");
             return;
         }
         setData("items", [
@@ -59,7 +59,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
 
     const addItemFromGr = (grItem) => {
         if (data.items.some((i) => i.goods_receiving_item_id === grItem.id)) {
-            toast.error("Item sudah ada di daftar.");
+            toast.error("Item is already in the list.");
             return;
         }
         setData("items", [
@@ -96,7 +96,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
     const submit = (e) => {
         e.preventDefault();
         if (data.items.length === 0) {
-            toast.error("Addkan minimal satu item.");
+            toast.error("Add at least one item.");
             return;
         }
         if (!data.supplier_id) {
@@ -112,7 +112,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
 
     return (
         <>
-            <Head title="Buat Retur Supplier" />
+            <Head title="Buat Supplier Return" />
             <div className="mb-6">
                 <Link
                     href={route("supplier-returns.index")}
@@ -123,14 +123,14 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconTruckReturn size={28} className="text-primary-500" />
-                    Buat Retur Supplier
+                    Buat Supplier Return
                 </h1>
             </div>
 
             <form onSubmit={submit} className="max-w-5xl">
                 <div className="space-y-6">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Informasi Retur</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Return Information</h2>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                             <div>
                                 <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Supplier</label>
@@ -150,7 +150,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                             </div>
                             <div>
                                 <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">
-                                    Penerimaan Barang (Opsional)
+                                    Goods Receiving (Optional)
                                 </label>
                                 <select
                                     value={selectedGrId}
@@ -161,7 +161,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                                     disabled={!data.supplier_id}
                                     className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 disabled:opacity-50"
                                 >
-                                    <option value="">Tidak terkait GR</option>
+                                    <option value="">No terkait GR</option>
                                     {goodsReceivings.map((gr) => (
                                         <option key={gr.id} value={gr.id}>
                                             {gr.document_number} ({gr.items?.length || 0} item)
@@ -183,12 +183,12 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                     </div>
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Item Retur</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Return Items</h2>
 
                         {selectedGr && (
                             <div className="mb-4">
                                 <p className="mb-2 text-sm font-medium text-slate-600 dark:text-slate-400">
-                                    Item dari GR {selectedGr.document_number}
+                                    Items from GR {selectedGr.document_number}
                                 </p>
                                 <div className="max-h-48 space-y-2 overflow-y-auto rounded-xl border border-slate-100 p-3 dark:border-slate-700">
                                     {selectedGr.items?.map((grItem) => {
@@ -221,7 +221,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                                 type="text"
                                 value={searchProduct}
                                 onChange={(e) => setSearchProduct(e.target.value)}
-                                placeholder="Search product untuk ditambahkan..."
+                                placeholder="Search products to add..."
                                 className="h-11 flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                             />
                         </div>
@@ -319,7 +319,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                         ) : (
                             <div className="rounded-xl border border-dashed border-slate-200 p-8 text-center dark:border-slate-700">
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Select supplier, lalu tambahkan item dari GR atau cari product di atas.
+                                    Select a supplier, then add items from a GR or search for products above.
                                 </p>
                             </div>
                         )}
@@ -336,7 +336,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                             type="submit"
                             icon={<IconPlus size={18} />}
                             className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
-                            label={processing ? "Saving..." : "Save Retur"}
+                            label={processing ? "Saving..." : "Save Return"}
                             disabled={processing}
                         />
                     </div>

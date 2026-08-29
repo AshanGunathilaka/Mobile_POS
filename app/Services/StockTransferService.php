@@ -58,7 +58,7 @@ class StockTransferService
                 event: 'stock_transfer.created',
                 module: 'stock',
                 auditable: $transfer,
-                description: 'Transfer stock '.$transfer->document_number.' dibuat.',
+                description: 'Stock transfer '.$transfer->document_number.' created.',
                 after: [
                     'document_number' => $transfer->document_number,
                     'source_warehouse_id' => $transfer->source_warehouse_id,
@@ -77,7 +77,7 @@ class StockTransferService
     {
         if (! $transfer->isDraft()) {
             throw ValidationException::withMessages([
-                'transfer' => 'Hanya transfer dengan status draft yang bisa dikirim.',
+                'transfer' => 'Only draft transfers can be sent.',
             ]);
         }
 
@@ -139,7 +139,7 @@ class StockTransferService
                 event: 'stock_transfer.sent',
                 module: 'stock',
                 auditable: $transfer,
-                description: 'Transfer stock '.$transfer->document_number.' dikirim.',
+                description: 'Stock transfer '.$transfer->document_number.' dikirim.',
                 before: ['status' => $before->status],
                 after: ['status' => 'in_transit'],
                 meta: ['stock_transfer_id' => $transfer->id],
@@ -151,7 +151,7 @@ class StockTransferService
     {
         if (! $transfer->isInTransit()) {
             throw ValidationException::withMessages([
-                'transfer' => 'Hanya transfer dengan status in_transit yang bisa diterima.',
+                'transfer' => 'Only in-transit transfers can be received.',
             ]);
         }
 
@@ -193,7 +193,7 @@ class StockTransferService
                 event: 'stock_transfer.received',
                 module: 'stock',
                 auditable: $transfer,
-                description: 'Transfer stock '.$transfer->document_number.' diterima.',
+                description: 'Stock transfer '.$transfer->document_number.' diterima.',
                 before: ['status' => $before->status],
                 after: ['status' => 'completed'],
                 meta: ['stock_transfer_id' => $transfer->id],
@@ -205,7 +205,7 @@ class StockTransferService
     {
         if (! in_array($transfer->status, ['draft', 'in_transit'])) {
             throw ValidationException::withMessages([
-                'transfer' => 'Hanya transfer draft atau in_transit yang bisa dibatalkan.',
+                'transfer' => 'Only draft or in-transit transfers can be canceled.',
             ]);
         }
 

@@ -159,7 +159,7 @@ export default function POSLayout({ children }) {
                     <button
                         onClick={toggleFullscreen}
                         className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors min-w-touch min-h-touch flex items-center justify-center"
-                        title={isFullscreen ? "Keluar Fullscreen" : "Fullscreen"}
+                        title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
                     >
                         {isFullscreen ? (
                             <IconArrowsMinimize size={20} className="text-slate-500" />
@@ -222,7 +222,7 @@ export default function POSLayout({ children }) {
 
             {!isOnline && (
                 <div className="bg-amber-500 text-white text-center text-xs font-medium py-1 px-4">
-                    Transaksi disimpan offline — akan dikirim saat online kembali
+                    Transaction saved offline - it will be sent when you are back online
                 </div>
             )}
 
@@ -250,7 +250,7 @@ export default function POSLayout({ children }) {
                             >
                                 <IconHistory size={20} />
                                 <span className="font-medium">
-                                    History Transaksi
+                                    Transaction History
                                 </span>
                             </Link>
                             <Link
@@ -268,7 +268,7 @@ export default function POSLayout({ children }) {
                                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-danger-600 hover:bg-danger-50 dark:hover:bg-danger-950/50 transition-colors w-full"
                             >
                                 <IconLogout size={20} />
-                                <span className="font-medium">Keluar</span>
+                                <span className="font-medium">Log Out</span>
                             </Link>
                         </nav>
                     </div>

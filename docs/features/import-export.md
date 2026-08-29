@@ -53,7 +53,7 @@ Import master data (produk, customer) dari spreadsheet. Export data ke Excel unt
 ## Catatan
 
 - Import produk menggunakan `updateOrCreate` berdasarkan barcode — aman untuk re-import
-- Kategori otomatis dibuat jika belum ada
+- Categories are created automatically if they do not exist yet
 - Format file: `.xlsx`, `.xls`, `.csv` (max 5MB)
 - Import diproses dalam batch (100 per batch) untuk performa
-- Tombol export/import ada di halaman Produk dan Customer
+- Tombol export/import ada di halaman Product dan Customer

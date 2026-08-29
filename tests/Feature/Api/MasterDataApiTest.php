@@ -97,10 +97,10 @@ class MasterDataApiTest extends TestCase
     public function test_categories_crud(): void
     {
         $response = $this->postJson('/api/v1/categories', [
-            'name' => 'Minuman',
-            'description' => 'Kategori minuman',
+            'name' => 'Beverages',
+            'description' => 'Beverage category',
         ])->assertCreated()
-            ->assertJsonPath('data.name', 'Minuman');
+            ->assertJsonPath('data.name', 'Beverages');
 
         $categoryId = $response->json('data.id');
 
@@ -108,18 +108,18 @@ class MasterDataApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('meta.total', 1);
 
-        $this->putJson("/api/v1/categories/{$categoryId}", ['name' => 'Minuman Segar'])
+        $this->putJson("/api/v1/categories/{$categoryId}", ['name' => 'Beverages Segar'])
             ->assertOk()
-            ->assertJsonPath('data.name', 'Minuman Segar');
+            ->assertJsonPath('data.name', 'Beverages Segar');
 
         $this->deleteJson("/api/v1/categories/{$categoryId}")->assertStatus(204);
     }
 
     public function test_categories_duplicate_name_rejected(): void
     {
-        Category::create(['name' => 'Minuman', 'image' => '', 'description' => '']);
+        Category::create(['name' => 'Beverages', 'image' => '', 'description' => '']);
 
-        $this->postJson('/api/v1/categories', ['name' => 'Minuman'])
+        $this->postJson('/api/v1/categories', ['name' => 'Beverages'])
             ->assertStatus(422)
             ->assertJsonValidationErrors('name');
     }

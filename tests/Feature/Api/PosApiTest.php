@@ -33,7 +33,7 @@ class PosApiTest extends TestCase
         $this->cashier = User::factory()->create();
         $this->warehouse = Warehouse::create([
             'code' => 'WH-1',
-            'name' => 'Gudang Utama',
+            'name' => 'Gudang Main',
             'status' => 'active',
         ]);
         $this->category = Category::create([
@@ -42,7 +42,7 @@ class PosApiTest extends TestCase
             'description' => '',
         ]);
         $this->product = Product::create([
-            'title' => 'Produk Kasir',
+            'title' => 'Product Kasir',
             'barcode' => 'POS-001',
             'sku' => 'SKU-POS-001',
             'image' => '',
@@ -106,7 +106,7 @@ class PosApiTest extends TestCase
 
         $this->postJson('/api/v1/pos/products/scan', ['barcode' => 'POS-001'])
             ->assertOk()
-            ->assertJsonPath('data.title', 'Produk Kasir')
+            ->assertJsonPath('data.title', 'Product Kasir')
             ->assertJsonPath('data.stock', 50);
     }
 
@@ -131,7 +131,7 @@ class PosApiTest extends TestCase
 
         $response = $this->getJson('/api/v1/pos/cart');
         $response->assertOk()
-            ->assertJsonPath('data.items.0.product.title', 'Produk Kasir')
+            ->assertJsonPath('data.items.0.product.title', 'Product Kasir')
             ->assertJsonPath('data.items.0.qty', 2)
             ->assertJsonPath('data.summary.grand_total', 20000);
     }

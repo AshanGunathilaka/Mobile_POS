@@ -56,7 +56,7 @@ class CrmCoreTest extends TestCase
                 'name' => 'VIP Offline',
                 'type' => CustomerSegment::TYPE_MANUAL,
                 'is_active' => true,
-                'description' => 'Tag manual untuk pelanggan prioritas.',
+                'description' => 'Manual tag for priority customers.',
             ])
             ->assertRedirect(route('customer-segments.index'));
 

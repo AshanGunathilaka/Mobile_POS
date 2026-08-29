@@ -15,11 +15,11 @@ import { useAuthorization } from "@/Utils/authorization";
 import toast from "react-hot-toast";
 
 const STATUS_CONFIG = {
-    submitted: { label: "Menunggu", color: "bg-warning-100 text-warning-700 dark:bg-warning-900/50 dark:text-warning-400", icon: IconClock },
-    accepted: { label: "Diterima", color: "bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-400", icon: IconCheck },
+    submitted: { label: "Pending", color: "bg-warning-100 text-warning-700 dark:bg-warning-900/50 dark:text-warning-400", icon: IconClock },
+    accepted: { label: "Accepted", color: "bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-400", icon: IconCheck },
     completed: { label: "Completed", color: "bg-success-100 text-success-700 dark:bg-success-900/50 dark:text-success-400", icon: IconCheck },
-    rejected: { label: "Ditolak", color: "bg-danger-100 text-danger-700 dark:bg-danger-900/50 dark:text-danger-400", icon: IconX },
-    cancelled: { label: "Dibatalkan", color: "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400", icon: IconX },
+    rejected: { label: "Rejected", color: "bg-danger-100 text-danger-700 dark:bg-danger-900/50 dark:text-danger-400", icon: IconX },
+    cancelled: { label: "Canceled", color: "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400", icon: IconX },
 };
 
 const PAY_CONFIG = {
@@ -38,7 +38,7 @@ export default function Index({ orders }) {
             route("dine-orders.accept", order.id),
             {},
             {
-                onSuccess: () => toast.success("Pesanan diterima."),
+                onSuccess: () => toast.success("Order accepted."),
                 onError: () => toast.error("Failed menerima pesanan."),
             }
         );
@@ -51,7 +51,7 @@ export default function Index({ orders }) {
             route("dine-orders.reject", order.id),
             { reason },
             {
-                onSuccess: () => toast.success("Pesanan ditolak."),
+                onSuccess: () => toast.success("Order rejected."),
                 onError: () => toast.error("Failed menolak pesanan."),
             }
         );
@@ -59,13 +59,13 @@ export default function Index({ orders }) {
 
     return (
         <>
-            <Head title="Pesanan Dine-In" />
+            <Head title="Dine-In Orders" />
 
             <div className="mb-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                            Pesanan Dine-In
+                            Dine-In Orders
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             {orders.length} pesanan
@@ -179,10 +179,10 @@ export default function Index({ orders }) {
                         <IconDatabaseOff size={32} className="text-slate-400" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Tidak Ada Pesanan
+                        No Orders Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Pesanan dari customer akan muncul di sini.
+                        Customer orders will appear here.
                     </p>
                 </div>
             )}

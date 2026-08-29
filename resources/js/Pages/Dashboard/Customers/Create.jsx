@@ -118,7 +118,7 @@ export default function Create() {
                             <Input
                                 type="text"
                                 label="Name Customer"
-                                placeholder="Masukkan nama lengkap"
+                                placeholder="Enter full name"
                                 errors={errors.name}
                                 onChange={(e) => setData("name", e.target.value)}
                                 value={data.name}
@@ -142,7 +142,7 @@ export default function Create() {
                                         Aktivasi Loyalty Member
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                                        Member mendapat poin, voucher, dan harga khusus.
+                                        Members earn pointsts, receive vouchers, and get special prices.
                                     </p>
                                 </div>
                                 <label className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -192,14 +192,14 @@ export default function Create() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Provinsi
+                                    Province
                                 </label>
                                 <select
                                     value={data.province_id}
                                     onChange={(e) => setData("province_id", e.target.value)}
                                     className="w-full h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 text-sm"
                                 >
-                                    <option value="">Select Provinsi</option>
+                                    <option value="">Select Province</option>
                                     {provinces.map((prov) => (
                                         <option key={prov.code} value={prov.code}>
                                             {prov.name}
@@ -214,7 +214,7 @@ export default function Create() {
                             </div>
                             <div>
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Kota/Kabupaten
+                                    City/Kabupaten
                                 </label>
                                 <select
                                     value={data.regency_id}
@@ -222,7 +222,7 @@ export default function Create() {
                                     className="w-full h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 text-sm"
                                     disabled={!data.province_id}
                                 >
-                                    <option value="">Select Kota/Kabupaten</option>
+                                    <option value="">Select City/Kabupaten</option>
                                     {regencies.map((item) => (
                                         <option key={item.code} value={item.code}>
                                             {item.name}
@@ -240,7 +240,7 @@ export default function Create() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Kecamatan
+                                    District
                                 </label>
                                 <select
                                     value={data.district_id}
@@ -248,7 +248,7 @@ export default function Create() {
                                     className="w-full h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 text-sm"
                                     disabled={!data.regency_id}
                                 >
-                                    <option value="">Select Kecamatan</option>
+                                    <option value="">Select District</option>
                                     {districts.map((item) => (
                                         <option key={item.code} value={item.code}>
                                             {item.name}
@@ -293,8 +293,8 @@ export default function Create() {
                         </div>
 
                         <Textarea
-                            label="Alamat Detail"
-                            placeholder="Alamat lengkap customer"
+                            label="Address Detail"
+                            placeholder="Address lengkap customer"
                             errors={errors.address}
                             onChange={(e) => setData("address", e.target.value)}
                             value={data.address}

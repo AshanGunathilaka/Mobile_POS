@@ -132,7 +132,7 @@ class CashierShiftTest extends TestCase
         $customer = Customer::create([
             'name' => 'Customer Shift',
             'no_telp' => '0812000000',
-            'address' => 'Alamat Shift',
+            'address' => 'Shift Address',
         ]);
 
         $category = Category::create([
@@ -146,8 +146,8 @@ class CashierShiftTest extends TestCase
             'image' => 'shift-product.png',
             'barcode' => 'BRCD-'.Str::upper(Str::random(8)),
             'sku' => 'SKU-'.Str::upper(Str::random(8)),
-            'title' => 'Produk Shift',
-            'description' => 'Produk Shift',
+            'title' => 'Shift Product',
+            'description' => 'Shift Product',
             'buy_price' => 40000,
             'sell_price' => 60000,
             'stock' => 10,

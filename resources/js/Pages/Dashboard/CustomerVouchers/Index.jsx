@@ -36,7 +36,7 @@ const statusBadge = (voucher) => {
 
     if (!voucher.is_active) {
         return {
-            label: "Nonaktif",
+            label: "Inactive",
             className:
                 "bg-rose-100 text-rose-700 dark:bg-rose-950/40 dark:text-rose-300",
         };
@@ -59,7 +59,7 @@ const statusBadge = (voucher) => {
     }
 
     return {
-        label: "Aktif",
+        label: "Active",
         className:
             "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300",
     };
@@ -88,7 +88,7 @@ export default function Index({ vouchers, filters = {} }) {
                             Voucher Customer
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Voucher personal untuk promosi retensi dan reward customer.
+                            Personal vouchers for retention promotions and customer rewards.
                         </p>
                     </div>
                     {can("customer-vouchers-create") && (
@@ -117,16 +117,16 @@ export default function Index({ vouchers, filters = {} }) {
                             className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         >
                             <option value="">All Status</option>
-                            <option value="active">Aktif</option>
+                            <option value="active">Active</option>
                             <option value="scheduled">Terjadwal</option>
                             <option value="expired">Expired</option>
                             <option value="used">Sudah Dipakai</option>
-                            <option value="inactive">Nonaktif</option>
+                            <option value="inactive">Inactive</option>
                         </select>
                     </div>
                 </div>
 
-                <Table.Card title="Daftar Voucher">
+                <Table.Card title="Register Voucher">
                     <Table>
                         <Table.Thead>
                             <tr>
@@ -134,7 +134,7 @@ export default function Index({ vouchers, filters = {} }) {
                                 <Table.Th>Customer</Table.Th>
                                 <Table.Th>Benefit</Table.Th>
                                 <Table.Th>Status</Table.Th>
-                                <Table.Th>Kedaluwarsa</Table.Th>
+                                <Table.Th>Expired</Table.Th>
                                 <Table.Th className="w-28 text-center">Aksi</Table.Th>
                             </tr>
                         </Table.Thead>

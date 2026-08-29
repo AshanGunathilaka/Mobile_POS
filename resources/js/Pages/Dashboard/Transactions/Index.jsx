@@ -477,14 +477,14 @@ export default function Index({
         }
 
         if (!payLater && isCashPayment && cash < payable) {
-            toast.error("Amount payment kurang dari total");
+            toast.error("Payment amount is less than the total");
             return;
         }
 
         // Validate bank transfer requires bank selection
         const isBankTransfer = paymentMethod === "bank_transfer";
         if (isBankTransfer && !selectedBankAccount) {
-            toast.error("Select rekening bank tujuan");
+            toast.error("Select destination bank account");
             return;
         }
 
@@ -507,7 +507,7 @@ export default function Index({
             queueTransaction(payload).then(() => {
                 setCarts([]);
                 setPricingPreview(initialPricingPreview);
-                toast.success("Transaksi disimpan offline. Akan dikirim saat online.");
+                toast.success("Transaction saved offline. It will be sent when online.");
             });
             setIsSubmitting(false);
             return;
@@ -544,7 +544,7 @@ export default function Index({
                     setPayLater(false);
                     setDueDate("");
                     setIsSubmitting(false);
-                    toast.success("Transaksi successfully!");
+                    toast.success("Transaction successfully!");
                 },
                 onError: () => {
                     setIsSubmitting(false);
@@ -583,7 +583,7 @@ export default function Index({
                             <IconWallet size={28} />
                         </div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                            Shift cashier belum dibuka
+                            Cashier shift has not been opened
                         </h1>
                         <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                             Open a shift first to enable transactions, cart actions, and cash closing.
@@ -647,7 +647,7 @@ export default function Index({
 
     return (
         <>
-            <Head title="Transaksi" />
+            <Head title="Transactions" />
 
             <div className="h-[calc(100vh-4rem)] flex flex-col lg:flex-row">
                 {/* Mobile Tab Switcher */}
@@ -916,7 +916,7 @@ export default function Index({
                             <div className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
                                 <div>
                                     <p className="text-sm font-semibold text-slate-800 dark:text-white">
-                                        Bayar Belakangan (Nota Barang)
+                                        Bayar Belakangan (Credit Sale)
                                     </p>
                                     <p className="text-xs text-slate-500">
                                         No payment is needed now; record it as a receivable.
@@ -1135,7 +1135,7 @@ export default function Index({
                                                 Promo otomatis aktif
                                             </p>
                                             <p className="text-xs text-emerald-600/80 dark:text-emerald-400/80">
-                                                Price item sudah disesuaikan berdasarkan rule promo yang berlaku.
+                                                Item prices have been adjusted based on the active promo rules.
                                             </p>
                                         </div>
                                         <span className="text-sm font-bold text-emerald-700 dark:text-emerald-300">
@@ -1157,7 +1157,7 @@ export default function Index({
                                                 {pricingPreview?.summary
                                                     ?.available_loyalty_points ??
                                                     0}{" "}
-                                                poin
+                                                points
                                             </p>
                                         </div>
                                     </div>
@@ -1167,7 +1167,7 @@ export default function Index({
                             {selectedCustomer?.is_loyalty_member && (
                                 <div>
                                     <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
-                                        Redeem Poin
+                                        Redeem Points
                                     </label>
                                     <input
                                         type="text"
@@ -1184,7 +1184,7 @@ export default function Index({
                                         placeholder={`Maks ${
                                             pricingPreview?.summary
                                                 ?.available_loyalty_points ?? 0
-                                        } poin`}
+                                        } pointsts`}
                                         className="w-full h-10 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500"
                                     />
                                 </div>
@@ -1350,7 +1350,7 @@ export default function Index({
                         {(pricingPreview?.applied_groups || []).length > 0 && (
                             <div className="mb-3 rounded-xl border border-slate-200 bg-white/70 p-2 dark:border-slate-700 dark:bg-slate-900/60">
                                 <div className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                                    Grup Promo Aktif
+                                    Active Promo Group
                                 </div>
                                 <div className="space-y-1.5">
                                     {(pricingPreview?.applied_groups || []).map(
@@ -1382,7 +1382,7 @@ export default function Index({
                         {loyaltyDiscount > 0 && (
                             <div className="flex justify-between items-center mb-2 text-sm">
                                 <span className="text-slate-500">
-                                    Redeem Poin
+                                    Redeem Points
                                 </span>
                                 <span className="text-primary-600">
                                     -{formatPrice(loyaltyDiscount)}
@@ -1474,7 +1474,7 @@ export default function Index({
                                               )}`
                                             : isLoadingPricing
                                             ? "Menghitung Promo..."
-                                            : "Completedkan Transaksi"}
+                                            : "Complete Transaction"}
                                     </span>
                                 </>
                             )}
@@ -1508,7 +1508,7 @@ export default function Index({
                         <div className="space-y-3">
                             {[
                                 ["F1", "Open Numpad"],
-                                ["F2", "Completedkan Transaksi"],
+                                ["F2", "Complete Transaction"],
                                 ["F3", "Toggle Products/Cart"],
                                 ["F4", "Tampilkan Bantuan"],
                                 ["Esc", "Tutup Modal"],

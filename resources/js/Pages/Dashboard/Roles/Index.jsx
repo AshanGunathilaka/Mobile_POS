@@ -228,7 +228,7 @@ export default function Index() {
                         <Input
                             label={"Name group"}
                             type={"text"}
-                            placeholder={"Masukan nama group"}
+                            placeholder={"Enter group name"}
                             value={data.name}
                             onChange={(e) => setData("name", e.target.value)}
                             errors={errors.name}
@@ -278,10 +278,10 @@ export default function Index() {
                         />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Belum Ada Group
+                        No Groups Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Addkan group akses pertama.
+                        Add your first access group.
                     </p>
                     <Button
                         type={"button"}

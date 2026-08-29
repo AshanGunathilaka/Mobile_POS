@@ -37,7 +37,7 @@ export default function Index({ stockMutations, products, warehouses = [], filte
                     Mutasi Stock
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Histori perubahan stock dari stock opname dan initial stock product.
+                    Histori perubahan stock of stock opname dan initial stock product.
                 </p>
             </div>
 

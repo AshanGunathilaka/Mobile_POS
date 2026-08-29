@@ -16,7 +16,7 @@ Satu produk dalam multiple satuan — pcs, box, karton, kg — dengan konversi s
 ## Fitur Saat Ini
 
 - 8 default unit: PCS, BOX, KARTON, KG, LITER, METER, PAK, DUS
-- Produk bisa memiliki multiple satuan dengan konversi berbeda
+- Product bisa memiliki multiple satuan dengan konversi berbeda
 - Harga beli dan jual berbeda per satuan
 - Satuan dasar (base unit) untuk stok
 - Barcode spesifik per satuan
@@ -50,6 +50,6 @@ Satu produk dalam multiple satuan — pcs, box, karton, kg — dengan konversi s
 
 ## Catatan
 
-- Produk existing dianggap punya base unit PCS dengan conversion factor 1
+- Product existing dianggap punya base unit PCS dengan conversion factor 1
 - Unit tidak bisa dihapus jika masih dipakai produk
 - Harga per unit disimpan di pivot, bukan hitungan dari base price * factor

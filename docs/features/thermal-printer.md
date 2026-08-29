@@ -48,9 +48,9 @@ Tgl: 22/06/2026 14:30
 Kasir: Arya
 Pelanggan: Umum
 --------------------------------
-Produk A
+Product A
 2x @ 10.000          20.000
-Produk B
+Product B
 1x @ 15.000          15.000
 --------------------------------
 Subtotal             35.000

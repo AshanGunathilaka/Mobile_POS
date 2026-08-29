@@ -29,9 +29,9 @@ Menjaga akurasi stok melalui master produk, stock opname, dan histori mutasi sto
 
 ## Alur User
 
-1. produk dibuat dengan initial stock
+1. product is created with initial stock
 2. initial stock menghasilkan stock mutation awal
-3. stock opname dibuat sebagai draft
+3. stock count is created as a draft
 4. produk ditambahkan ke sesi opname
 5. stok fisik diisi per item
 6. finalize mengubah stok produk dan membuat stock mutation adjustment

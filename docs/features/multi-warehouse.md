@@ -10,7 +10,7 @@ Memisahkan stok produk per lokasi fisik (gudang pusat, cabang toko, gudang penya
 
 | Istilah | Arti |
 |---------|------|
-| Main Warehouse | Gudang utama, dibuat otomatis saat seeding |
+| Main Warehouse | Primary warehouse, created automatically during seeding |
 | Branch Warehouse | Cabang toko yang juga menjual langsung |
 | Stock Warehouse | Gudang penyangga (tidak menjual langsung) |
 
@@ -26,7 +26,7 @@ Memisahkan stok produk per lokasi fisik (gudang pusat, cabang toko, gudang penya
 
 ### Product-Warehouse Pivot
 - Stok disimpan per produk per warehouse di `product_warehouse`
-- Saat warehouse baru dibuat, semua produk otomatis ter-sync dengan stok 0
+- When a new warehouse is created, all products are automatically synced with 0 stock
 - Saat seeder, semua stok produk existing dipindah ke warehouse PUSAT
 
 ### Warehouse di Shift
@@ -35,10 +35,10 @@ Memisahkan stok produk per lokasi fisik (gudang pusat, cabang toko, gudang penya
 - Admin bisa lihat warehouse asal di detail shift
 
 ### Warehouse di Transaksi
-- Produk yang tampil di POS hanya yang punya stok > 0 di warehouse shift aktif
+- Product yang tampil di POS hanya yang punya stok > 0 di warehouse shift aktif
 - Cart menyimpan `warehouse_id`
 - Checkout decrement stok di pivot warehouse
-- Transaksi tercatat dengan `warehouse_id`
+- Transaction tercatat dengan `warehouse_id`
 - Search product by barcode — hanya produk yang ada di warehouse shift aktif
 
 ### Warehouse di Purchasing
@@ -93,4 +93,4 @@ Memisahkan stok produk per lokasi fisik (gudang pusat, cabang toko, gudang penya
 
 - Semua tabel stok & transaksi punya `warehouse_id` nullable (backward compat)
 - Jika `warehouse_id` null, fallback ke `products.stock` (legacy single-warehouse)
-- Seed data: warehouse PUSAT (main) dibuat otomatis, stok existing dipindah ke pivot
+- Seed data: the PUSAT warehouse (main) is created automatically, and existing stock is moved to the pivot table

@@ -207,7 +207,7 @@ export default function NumpadModal({
                         }`}
                     >
                         <IconCheck size={22} />
-                        Konfirmasi
+                        Confirm
                     </button>
                 </div>
             </div>

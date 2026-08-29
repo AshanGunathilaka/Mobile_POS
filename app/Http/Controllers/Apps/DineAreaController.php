@@ -41,13 +41,13 @@ class DineAreaController extends Controller
 
         $dineArea->update($validated);
 
-        return back()->with('success', 'Area successfully diperbarui.');
+        return back()->with('success', 'Area updated successfully.');
     }
 
     public function destroy(DineArea $dineArea)
     {
         if ($dineArea->tables()->exists()) {
-            return back()->with('error', 'Area memiliki meja. Delete atau pindahkan meja terlebih dahulu.');
+            return back()->with('error', 'Area has tables. Delete or move the tables first.');
         }
 
         $dineArea->delete();

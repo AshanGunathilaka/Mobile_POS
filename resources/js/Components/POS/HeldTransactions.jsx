@@ -98,7 +98,7 @@ export default function HeldTransactions({
                         {heldCarts.length}
                     </div>
                     <span className="text-sm font-medium text-amber-700 dark:text-amber-300">
-                        Transaksi Ditahan
+                        Transaction Ditahan
                     </span>
                     <span className="text-xs text-amber-600 dark:text-amber-400">
                         • {formatPrice(totalHeldAmount)}
@@ -119,7 +119,7 @@ export default function HeldTransactions({
                         {heldCarts.length}
                     </div>
                     <span className="text-sm font-medium text-amber-700 dark:text-amber-300">
-                        Transaksi Ditahan
+                        Transaction Ditahan
                     </span>
                 </div>
                 <button

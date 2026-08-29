@@ -71,7 +71,7 @@ export default function Index() {
                         Belum Ada Hak Akses
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Hak akses tidak ditemukan.
+                        Access rights were not found.
                     </p>
                 </div>
             )}

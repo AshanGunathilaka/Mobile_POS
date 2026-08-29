@@ -31,10 +31,10 @@ const statusBadge = (status) => {
     };
     const labels = {
         draft: "Draft",
-        ordered: "Dipesan",
-        partial_received: "Sebagian Diterima",
+        ordered: "Ordered",
+        partial_received: "Partially Received",
         completed: "Completed",
-        cancelled: "Dibatalkan",
+        cancelled: "Canceled",
     };
     return <span className={`${base} ${map[status] || map.draft}`}>{labels[status] || status}</span>;
 };
@@ -93,10 +93,10 @@ export default function Index({ orders, filters, suppliers }) {
                 >
                     <option value="">All Status</option>
                     <option value="draft">Draft</option>
-                    <option value="ordered">Dipesan</option>
-                    <option value="partial_received">Sebagian Diterima</option>
+                    <option value="ordered">Ordered</option>
+                    <option value="partial_received">Partially Received</option>
                     <option value="completed">Completed</option>
-                    <option value="cancelled">Dibatalkan</option>
+                    <option value="cancelled">Canceled</option>
                 </select>
                 <select
                     value={filters.supplier || ""}
@@ -110,7 +110,7 @@ export default function Index({ orders, filters, suppliers }) {
                 </select>
             </div>
 
-            <Table.Card title="Daftar Purchase Order">
+            <Table.Card title="Purchase Order List">
                 <Table>
                     <Table.Thead>
                         <tr>

@@ -37,7 +37,7 @@ export default function ConfirmPassword({ challenge = null }) {
 
     return (
         <>
-            <Head title="Konfirmasi Password" />
+            <Head title="Confirm Password" />
 
             <div className="min-h-screen flex bg-slate-50 dark:bg-slate-950">
                 <div className="flex-1 flex items-center justify-center p-8">
@@ -55,10 +55,10 @@ export default function ConfirmPassword({ challenge = null }) {
                                 <IconShieldLock size={28} className="text-primary-600 dark:text-primary-400" />
                             </div>
                             <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-                                Konfirmasi Password
+                                Confirm Password
                             </h1>
                             <p className="mt-2 text-slate-600 dark:text-slate-400">
-                                Untuk melanjutkan {challengeLabel}, masukkan kembali password akun Anda.
+                                To continue {challengeLabel}, re-enter your account password.
                             </p>
                         </div>
 
@@ -122,7 +122,7 @@ export default function ConfirmPassword({ challenge = null }) {
                         </div>
                         <h2 className="text-3xl font-bold mb-4">Proteksi Aksi Admin</h2>
                         <p className="text-lg opacity-90">
-                            Konfirmasi password ulang membantu menahan aksi sensitif saat sesi admin sudah lama aktif.
+                            Password confirmation helps protect sensitive actions when an admin session has been active for a long time.
                         </p>
                     </div>
                 </div>

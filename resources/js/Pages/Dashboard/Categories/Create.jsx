@@ -33,14 +33,14 @@ export default function Create() {
     const submit = (e) => {
         e.preventDefault();
         post(route("categories.store"), {
-            onSuccess: () => toast.success("Kategori successfully ditambahkan"),
+            onSuccess: () => toast.success("Category added successfully"),
             onError: () => toast.error("Failed menyimpan kategori"),
         });
     };
 
     return (
         <>
-            <Head title="Add Kategori" />
+            <Head title="Add Category" />
 
             <div className="mb-6">
                 <Link
@@ -48,11 +48,11 @@ export default function Create() {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600 mb-3"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke Kategori
+                    Back to Categories
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconCategory size={28} className="text-primary-500" />
-                    Add Kategori Baru
+                    Add New Category
                 </h1>
             </div>
 
@@ -92,7 +92,7 @@ export default function Create() {
                             <div className="space-y-4">
                                 <Input
                                     type="text"
-                                    label="Name Kategori"
+                                    label="Category Name"
                                     placeholder="Enter name"
                                     errors={errors.name}
                                     onChange={(e) =>
@@ -101,8 +101,8 @@ export default function Create() {
                                     value={data.name}
                                 />
                                 <Textarea
-                                    label="Deskripsi"
-                                    placeholder="Deskripsi kategori"
+                                    label="Description"
+                                    placeholder="Description kategori"
                                     errors={errors.description}
                                     onChange={(e) =>
                                         setData("description", e.target.value)

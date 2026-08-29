@@ -74,8 +74,8 @@ export default function Show({
                                     }`}
                                 >
                                     {member.is_loyalty_member
-                                        ? "Aktif"
-                                        : "Nonaktif"}
+                                        ? "Active"
+                                        : "Inactive"}
                                 </span>
                             </div>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -90,7 +90,7 @@ export default function Show({
                         <div className="flex items-center gap-2">
                             <span className="inline-flex items-center gap-1 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-950/40 dark:text-primary-300">
                                 <IconCoins size={14} />
-                                {member.loyalty_points || 0} poin
+                                {member.loyalty_points || 0} pointsts
                             </span>
                             <Link
                                 href={route("members.edit", member.id)}
@@ -112,7 +112,7 @@ export default function Show({
                             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                                 <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Total Transaksi
+                                        Total Transactions
                                     </p>
                                     <p className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
                                         {stats?.total_transactions || 0}
@@ -157,7 +157,7 @@ export default function Show({
                             <div className="mb-4 flex items-center gap-2">
                                 <IconReceipt size={18} className="text-primary-500" />
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    Transaksi Member
+                                    Transaction Member
                                 </h2>
                             </div>
                             {hasRecentTransactions ? (
@@ -225,7 +225,7 @@ export default function Show({
                                                         {history.points_delta >= 0
                                                             ? "+"
                                                             : ""}
-                                                        {history.points_delta} poin
+                                                        {history.points_delta} pointsts
                                                     </p>
                                                     <p className="text-xs text-slate-500 dark:text-slate-400">
                                                         {formatDateTime(history.created_at)}
@@ -262,15 +262,15 @@ export default function Show({
                                 </div>
                                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Saldo Poin
+                                        Saldo Points
                                     </p>
                                     <p className="mt-1 font-semibold text-slate-900 dark:text-white">
-                                        {member.loyalty_points || 0} poin
+                                        {member.loyalty_points || 0} pointsts
                                     </p>
                                 </div>
                                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Total Nilai Transaksi
+                                        Total Transaction Value
                                     </p>
                                     <p className="mt-1 font-semibold text-slate-900 dark:text-white">
                                         {formatPrice(stats?.total_spent || 0)}
@@ -308,7 +308,7 @@ export default function Show({
                                 <div className="rounded-2xl bg-slate-50 px-4 py-8 text-center dark:bg-slate-800/50">
                                     <IconDatabaseOff size={28} className="mx-auto mb-3 text-slate-400" />
                                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                                        Belum ada segment untuk member ini.
+                                        No segments for this member yet.
                                     </p>
                                 </div>
                             )}
@@ -372,7 +372,7 @@ export default function Show({
                                 <div className="rounded-2xl bg-slate-50 px-4 py-8 text-center dark:bg-slate-800/50">
                                     <IconDatabaseOff size={28} className="mx-auto mb-3 text-slate-400" />
                                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                                        Belum ada voucher untuk member ini.
+                                        No vouchers for this member yet.
                                     </p>
                                 </div>
                             )}

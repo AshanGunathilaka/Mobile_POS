@@ -22,7 +22,7 @@ export default function Index({ segments, filters }) {
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Customer Segments</h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Kelola tag manual dan auto segment untuk CRM dan automation.
+                            Manage manual tags and automatic segments for CRM and automation.
                         </p>
                     </div>
                     {can("customer-segments-create") && (
@@ -62,7 +62,7 @@ export default function Index({ segments, filters }) {
                     </div>
                 </div>
 
-                <Table.Card title="Daftar Segment">
+                <Table.Card title="Register Segment">
                     <Table>
                         <Table.Thead>
                             <tr>
@@ -96,7 +96,7 @@ export default function Index({ segments, filters }) {
                                         <Table.Td>{segment.memberships_count}</Table.Td>
                                         <Table.Td>
                                             <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${segment.is_active ? "bg-success-100 text-success-700 dark:bg-success-950/30 dark:text-success-400" : "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300"}`}>
-                                                {segment.is_active ? "Aktif" : "Nonaktif"}
+                                                {segment.is_active ? "Active" : "Inactive"}
                                             </span>
                                         </Table.Td>
                                         <Table.Td className="text-center">

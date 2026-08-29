@@ -71,7 +71,7 @@ class DineTableController extends Controller
 
         $dineTable->update($validated);
 
-        return back()->with('success', 'Meja successfully diperbarui.');
+        return back()->with('success', 'Table updated successfully.');
     }
 
     public function destroy(DiningTable $dineTable)

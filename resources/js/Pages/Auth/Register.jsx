@@ -37,7 +37,7 @@ export default function Register({ botGuard }) {
 
     return (
         <>
-            <Head title="Daftar" />
+            <Head title="Register" />
 
             <div className="min-h-screen flex bg-slate-50 dark:bg-slate-950">
                 {/* Left - Decoration */}
@@ -50,12 +50,12 @@ export default function Register({ botGuard }) {
                             Bergabung Bersama Kami
                         </h2>
                         <p className="text-lg opacity-90">
-                            Mulai kelola bisnis Anda dengan sistem Point of Sale
-                            yang modern, cepat, dan mudah digunakan.
+                            Start managing your business with a modern Point of Sale system
+                            that is fast and easy to use.
                         </p>
                         <div className="mt-8 space-y-3">
                             {[
-                                "Gratis untuk memulai",
+                                "Free to start",
                                 "Setup dalam 5 menit",
                                 "Dukungan penuh",
                             ].map((feature, i) => (
@@ -94,10 +94,10 @@ export default function Register({ botGuard }) {
                                 </span>
                             </Link>
                             <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-                                Buat Akun Baru
+                                Create New Account
                             </h1>
                             <p className="mt-2 text-slate-600 dark:text-slate-400">
-                                Daftarkan bisnis Anda sekarang
+                                Register your business now
                             </p>
                         </div>
 
@@ -128,7 +128,7 @@ export default function Register({ botGuard }) {
                                         onChange={(e) =>
                                             setData("name", e.target.value)
                                         }
-                                        placeholder="Name Anda"
+                                        placeholder="Your name"
                                         className={`w-full h-12 pl-12 pr-4 rounded-xl border-2 ${
                                             errors.name
                                                 ? "border-danger-500 focus:border-danger-500"
@@ -221,7 +221,7 @@ export default function Register({ botGuard }) {
                             {/* Confirm Password */}
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                                    Konfirmasi Password
+                                    Confirm Password
                                 </label>
                                 <div className="relative">
                                     <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
@@ -285,7 +285,7 @@ export default function Register({ botGuard }) {
                                         Memproses...
                                     </>
                                 ) : (
-                                    "Daftar Sekarang"
+                                    "Register Now"
                                 )}
                             </button>
 

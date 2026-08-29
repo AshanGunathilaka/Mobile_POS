@@ -53,7 +53,7 @@ class SalesReturnTest extends TestCase
             ->actingAs($user)
             ->post(route('sales-returns.store', $transaction), [
                 'return_type' => 'refund_cash',
-                'notes' => 'Retur karena salah ukuran',
+                'notes' => 'Return due to wrong size',
                 'items' => [
                     [
                         'transaction_detail_id' => $detail->id,
@@ -106,7 +106,7 @@ class SalesReturnTest extends TestCase
             'qty_return' => 1,
             'unit_price' => 60000,
             'subtotal' => 60000,
-            'return_reason' => 'Retur pertama',
+            'return_reason' => 'First return',
             'restock_to_inventory' => true,
         ]);
 
@@ -161,7 +161,7 @@ class SalesReturnTest extends TestCase
             'qty_return' => 1,
             'unit_price' => 60000,
             'subtotal' => 60000,
-            'return_reason' => 'Barang dikembalikan',
+            'return_reason' => 'Goods returned',
             'restock_to_inventory' => true,
         ]);
 
@@ -270,7 +270,7 @@ class SalesReturnTest extends TestCase
                 [
                     'transaction_detail_id' => $detail->id,
                     'qty_return' => 1,
-                    'return_reason' => 'Barang dibatalkan',
+                    'return_reason' => 'Item canceled',
                     'restock_to_inventory' => true,
                 ],
             ],
@@ -312,7 +312,7 @@ class SalesReturnTest extends TestCase
             'qty_return' => 1,
             'unit_price' => 60000,
             'subtotal' => 60000,
-            'return_reason' => 'Tidak jadi beli',
+            'return_reason' => 'Customer changed their mind',
             'restock_to_inventory' => true,
         ]);
 
@@ -353,7 +353,7 @@ class SalesReturnTest extends TestCase
     ): array {
         $category = Category::create([
             'name' => 'Kategori '.Str::upper(Str::random(5)),
-            'description' => 'Kategori pengujian',
+            'description' => 'Test category',
             'image' => 'category.png',
         ]);
 
@@ -362,8 +362,8 @@ class SalesReturnTest extends TestCase
             'image' => 'product.png',
             'barcode' => 'BRCD-'.Str::upper(Str::random(10)),
             'sku' => 'SKU-'.Str::upper(Str::random(10)),
-            'title' => 'Produk Uji '.Str::upper(Str::random(4)),
-            'description' => 'Deskripsi produk uji.',
+            'title' => 'Test Product '.Str::upper(Str::random(4)),
+            'description' => 'Test product description.',
             'buy_price' => 45000,
             'sell_price' => 60000,
             'stock' => $stock,

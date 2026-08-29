@@ -75,7 +75,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
             if ($request->expectsJson()) {
                 $message = $exception instanceof UnauthorizedException
-                    ? __('Anda tidak memiliki izin untuk mengakses halaman tersebut.')
+                    ? __('You do not have permission to access that page.')
                     : ($exception->getMessage() ?: Response::$statusTexts[$status] ?? 'Server Error');
 
                 return response()->json([

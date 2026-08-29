@@ -236,18 +236,18 @@ export default function Dashboard({
                 labels,
                 datasets: [
                     {
-                        label: "Pendapatan",
+                        label: "Revenue",
                         data: totals,
                         borderColor: "#6366f1",
                         backgroundColor: gradient,
                         borderWidth: 3,
                         fill: true,
                         tension: 0.4,
-                        pointRadius: 0,
-                        pointHoverRadius: 6,
-                        pointHoverBackgroundColor: "#6366f1",
-                        pointHoverBorderColor: "#fff",
-                        pointHoverBorderWidth: 2,
+                        pointstRadius: 0,
+                        pointstHoverRadius: 6,
+                        pointstHoverBackgroundColor: "#6366f1",
+                        pointstHoverBorderColor: "#fff",
+                        pointstHoverBorderWidth: 2,
                     },
                 ],
             },
@@ -313,7 +313,7 @@ export default function Dashboard({
                             Dashboard
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Ringkasan aktivitas bisnis Anda
+                            Summary of your business activity
                         </p>
                     </div>
                     <Link
@@ -321,14 +321,14 @@ export default function Dashboard({
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors shadow-lg shadow-primary-500/30"
                     >
                         <IconShoppingCart size={18} />
-                        <span>Transaksi Baru</span>
+                        <span>Transaction Baru</span>
                     </Link>
                 </div>
 
                 {/* Main Stat Cards - Reorganized */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <StatCard
-                        title="Penjualan Hari Ini"
+                        title="Sales Hari Ini"
                         value={formatCurrency(todaySales)}
                         subtitle="Total penjualan hari ini"
                         icon={IconCoin}
@@ -349,9 +349,9 @@ export default function Dashboard({
                         icon={IconTarget}
                     />
                     <StatCard
-                        title="Transaksi Hari Ini"
+                        title="Transaction Hari Ini"
                         value={todayTransactions}
-                        subtitle="Transaksi"
+                        subtitle="Transactions"
                         icon={IconClock}
                         gradient="from-warning-500 to-warning-600"
                     />
@@ -360,7 +360,7 @@ export default function Dashboard({
                 {/* Secondary Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <InfoCard
-                        title="Total Kategori"
+                        title="Total Categories"
                         value={totalCategories}
                         icon={IconCategory}
                     />
@@ -370,7 +370,7 @@ export default function Dashboard({
                         icon={IconBox}
                     />
                     <InfoCard
-                        title="Total Transaksi"
+                        title="Total Transactions"
                         value={totalTransactions}
                         icon={IconMoneybag}
                     />
@@ -383,7 +383,7 @@ export default function Dashboard({
 
                 {/* Revenue Chart - Full Width */}
                 <ListCard
-                    title="Tren Pendapatan"
+                    title="Revenue Trend"
                     subtitle="12 data terakhir"
                     icon={IconChartBar}
                     emptyMessage="Belum ada data pendapatan"
@@ -398,10 +398,10 @@ export default function Dashboard({
                 {/* 4-Column Bottom Widgets */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <ListCard
-                        title="Shift Aktif"
+                        title="Active Shift"
                         subtitle="Pemantauan cashier"
                         icon={IconWallet}
-                        emptyMessage="Tidak ada shift aktif"
+                        emptyMessage="No active shift"
                     >
                         {activeShifts.length > 0 && (
                             <div className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -473,7 +473,7 @@ export default function Dashboard({
                     {/* Slow Moving Products */}
                     <ListCard
                         title="Slow Moving"
-                        subtitle="Tidak terjual 30 hari"
+                        subtitle="No terjual 30 hari"
                         icon={IconPackageOff}
                         emptyMessage="All product laku"
                     >
@@ -568,7 +568,7 @@ export default function Dashboard({
 
                 {/* Recent Transactions */}
                 <ListCard
-                    title="Transaksi Terbaru"
+                    title="Transaction Terbaru"
                     subtitle="5 transaksi terakhir"
                     icon={IconReceipt}
                     emptyMessage="Belum ada transaksi"

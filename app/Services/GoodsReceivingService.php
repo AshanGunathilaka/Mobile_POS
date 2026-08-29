@@ -86,7 +86,7 @@ class GoodsReceivingService
                     qty: $qtyReceived,
                     stockBefore: (int) $product->stock + $qtyReceived,
                     stockAfter: (int) $product->stock,
-                    notes: 'Penerimaan dari PO '.$order->document_number,
+                    notes: 'Receiving from PO '.$order->document_number,
                     userId: $userId,
                 );
             }
@@ -101,7 +101,7 @@ class GoodsReceivingService
                 event: 'goods_receiving.created',
                 module: 'purchase',
                 auditable: $receiving,
-                description: 'Barang diterima dari PO '.$order->document_number,
+                description: 'Goods received from PO '.$order->document_number,
                 after: [
                     'document_number' => $receiving->document_number,
                     'purchase_order_id' => $order->id,
@@ -145,7 +145,7 @@ class GoodsReceivingService
                 'paid' => 0,
                 'due_date' => now()->addDays(30),
                 'status' => 'unpaid',
-                'note' => 'Otomatis dari penerimaan PO '.$order->document_number,
+                'note' => 'Automatic from PO receiving '.$order->document_number,
             ]
         );
 
@@ -154,7 +154,7 @@ class GoodsReceivingService
                 event: 'payable.created_from_receiving',
                 module: 'payable',
                 auditable: $payable,
-                description: 'Hutang otomatis dari penerimaan PO '.$order->document_number,
+                description: 'Automatic payable from PO receiving '.$order->document_number,
                 after: [
                     'payable_id' => $payable->id,
                     'supplier_id' => $payable->supplier_id,

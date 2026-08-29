@@ -152,7 +152,7 @@ export default function PaymentPanel({
         if (!selectedCustomer) return "Select Customer";
         if (isCashPayment && remaining > 0)
             return `Kurang ${formatPrice(remaining)}`;
-        return "Completedkan Transaksi";
+        return "Complete Transaction";
     }, [hasItems, selectedCustomer, isCashPayment, remaining]);
 
     return (
@@ -198,7 +198,7 @@ export default function PaymentPanel({
                     </div>
                     <div className="flex justify-between text-sm">
                         <span className="text-slate-500 dark:text-slate-400">
-                            Redeem Poin
+                            Redeem Points
                         </span>
                         <span className="font-medium text-danger-500">
                             - {formatPrice(loyaltyDiscount)}
@@ -237,7 +237,7 @@ export default function PaymentPanel({
                     <>
                         <div>
                             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                                Redeem Poin
+                                Redeem Points
                             </label>
                             <input
                                 type="text"
@@ -248,14 +248,14 @@ export default function PaymentPanel({
                                         e.target.value.replace(/[^\d]/g, "")
                                     )
                                 }
-                                placeholder={`Maks ${availablePoints} poin`}
+                                placeholder={`Maks ${availablePoints} pointsts`}
                                 className="w-full h-11 px-4 rounded-xl border border-slate-200 dark:border-slate-700
                                     bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200
                                     focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500
                                     transition-all text-base"
                             />
                             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                                Saldo tersedia: {availablePoints} poin
+                                Saldo tersedia: {availablePoints} pointsts
                             </p>
                         </div>
 

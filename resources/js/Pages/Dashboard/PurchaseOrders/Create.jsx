@@ -37,7 +37,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
 
     const addItem = (product) => {
         if (data.items.some((i) => i.product_id === product.id)) {
-            toast.error("Product sudah ada di daftar.");
+            toast.error("Product is already in the list.");
             return;
         }
         setData("items", [
@@ -68,7 +68,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
     const submit = (e) => {
         e.preventDefault();
         if (data.items.length === 0) {
-            toast.error("Addkan minimal satu item.");
+            toast.error("Add at least one item.");
             return;
         }
         post(route("purchase-orders.store"), {
@@ -87,7 +87,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar PO
+                    Back to PO list
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconShoppingCart size={28} className="text-primary-500" />
@@ -132,7 +132,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                                     type="text"
                                     value={data.document_number}
                                     onChange={(e) => setData("document_number", e.target.value)}
-                                    placeholder="Kosongkan untuk auto-generate"
+                                    placeholder="Leave blank to auto-generate"
                                     className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                 />
                             </div>
@@ -151,13 +151,13 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                     </div>
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Item Pembelian</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Purchase Items</h2>
                         <div className="mb-4 flex gap-3">
                             <input
                                 type="text"
                                 value={searchProduct}
                                 onChange={(e) => setSearchProduct(e.target.value)}
-                                placeholder="Search product untuk ditambahkan..."
+                                placeholder="Search products to add..."
                                 className="h-11 flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                             />
                         </div>
@@ -246,7 +246,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                         ) : (
                             <div className="rounded-xl border border-dashed border-slate-200 p-8 text-center dark:border-slate-700">
                                 <IconPackage size={40} className="mx-auto text-slate-300 dark:text-slate-600" />
-                                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Search product di atas untuk ditambahkan ke PO.</p>
+                                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Search for products above to add them to the PO.</p>
                             </div>
                         )}
                     </div>

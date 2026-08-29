@@ -29,7 +29,7 @@ class PaymentSettingController extends Controller
         if (blank($appUrl)) {
             $webhookWarnings[] = 'APP_URL is not set. Generated webhook URLs may be invalid for Midtrans/Xendit.';
         } elseif ($this->isLocalAppUrl($appUrl)) {
-            $webhookWarnings[] = 'APP_URL still points to localhost or 127.0.0.1. Payment gateways require a public internet-accessible URL.';
+            $webhookWarnings[] = 'APP_URL still pointsts to localhost or 127.0.0.1. Payment gateways require a public internet-accessible URL.';
         }
 
         if ($setting->xendit_enabled && ! $setting->secretConfigured('xendit_callback_token')) {

@@ -39,17 +39,17 @@ export default function Index({ members, filters, tierOptions, summary }) {
         {
             label: "Total Member",
             value: summary?.total_members || 0,
-            helper: "Seluruh member yang pernah terdaftar",
+            helper: "All members ever registered",
         },
         {
-            label: "Member Aktif",
+            label: "Active Member",
             value: summary?.active_members || 0,
             helper: "Masih menerima benefit member",
         },
         {
             label: "Omzet Member",
             value: formatCurrency(summary?.member_revenue || 0),
-            helper: "Kontribusi transaksi dari member",
+            helper: "Kontribusi transaksi of member",
         },
         {
             label: "Repeat Rate",
@@ -72,7 +72,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                             Member
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Kelola pendaftaran, status, dan performa member tanpa memisahkan data dari customer inti.
+                            Kelola pendaftaran, status, dan performa member tanpa memisahkan data of customer inti.
                         </p>
                     </div>
                     <Link
@@ -80,7 +80,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                         className="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:bg-primary-600"
                     >
                         <IconCirclePlus size={18} />
-                        Daftarkan Member
+                        Register Member
                     </Link>
                 </div>
 
@@ -112,7 +112,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                                 onChange={(event) =>
                                     handleFilterChange("search", event.target.value)
                                 }
-                                placeholder="Search nama member atau nomor anggota..."
+                                placeholder="Search member name or member number..."
                                 className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pr-11 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                             />
                             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400">
@@ -142,22 +142,22 @@ export default function Index({ members, filters, tierOptions, summary }) {
                             }
                             className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         >
-                            <option value="active">Member Aktif</option>
-                            <option value="inactive">Member Nonaktif</option>
+                            <option value="active">Active Member</option>
+                            <option value="inactive">Inactive Members</option>
                             <option value="all">All Status</option>
                         </select>
                     </div>
                 </div>
 
-                <Table.Card title="Daftar Member">
+                <Table.Card title="Register Member">
                     <Table>
                         <Table.Thead>
                             <tr>
                                 <Table.Th>Member</Table.Th>
                                 <Table.Th>Tier</Table.Th>
-                                <Table.Th>Poin</Table.Th>
+                                <Table.Th>Points</Table.Th>
                                 <Table.Th>Total Belanja</Table.Th>
-                                <Table.Th>Transaksi</Table.Th>
+                                <Table.Th>Transactions</Table.Th>
                                 <Table.Th>Terakhir Belanja</Table.Th>
                                 <Table.Th className="w-28 text-center">
                                     Aksi
@@ -188,8 +188,8 @@ export default function Index({ members, filters, tierOptions, summary }) {
                                             </span>
                                             <p className="mt-2 text-[11px] text-slate-500 dark:text-slate-400">
                                                 {member.is_loyalty_member
-                                                    ? "Aktif"
-                                                    : "Nonaktif"}
+                                                    ? "Active"
+                                                    : "Inactive"}
                                             </p>
                                         </Table.Td>
                                         <Table.Td>{member.loyalty_points || 0}</Table.Td>
@@ -217,7 +217,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                             ) : (
                                 <Table.Empty
                                     colSpan={7}
-                                    message="Belum ada member yang sesuai dengan filter."
+                                    message="No members match the filter."
                                 >
                                     <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                         <IconUsers size={28} className="text-slate-400" />
@@ -258,7 +258,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                                 Bantuan cepat
                             </p>
                             <p className="mt-1 text-xs leading-6 text-slate-500 dark:text-slate-400">
-                                Daftarkan member baru dari halaman ini atau langsung dari POS. Untuk upgrade customer biasa menjadi member, gunakan tombol upgrade di detail customer atau picker customer di POS.
+                                Register new members from this page or directly from POS. To upgrade a regular customer to a member, use the upgrade button on the customer detail page or the customer picker in POS.
                             </p>
                         </div>
                     </div>

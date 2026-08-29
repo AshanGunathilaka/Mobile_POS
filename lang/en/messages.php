@@ -39,7 +39,7 @@ return [
     */
     'products' => [
         'created' => 'New product added successfully.',
-        'updated' => 'Product data updated successfully.',
+        'updated' => 'Product records updated successfully.',
         'deleted' => 'Product deleted successfully.',
         'not_found' => 'Product not found.',
         'import_success' => 'Product import successful. :count products imported.',
@@ -70,7 +70,7 @@ return [
     */
     'customers' => [
         'created' => 'Customer added successfully.',
-        'updated' => 'Customer data updated successfully.',
+        'updated' => 'Customer records updated successfully.',
         'deleted' => 'Customer deleted successfully.',
         'not_found' => 'Customer not found.',
         'import_success' => 'Customer import successful.',
@@ -86,7 +86,7 @@ return [
     */
     'suppliers' => [
         'created' => 'Supplier added successfully.',
-        'updated' => 'Supplier data updated successfully.',
+        'updated' => 'Supplier records updated successfully.',
         'deleted' => 'Supplier deleted successfully.',
         'not_found' => 'Supplier not found.',
     ],

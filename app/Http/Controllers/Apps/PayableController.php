@@ -78,7 +78,7 @@ class PayableController extends Controller
 
         return redirect()
             ->route('payables.index')
-            ->with('success', 'Hutang supplier successfully dibuat.');
+            ->with('success', 'Supplier payable created successfully.');
     }
 
     public function show(Payable $payable)

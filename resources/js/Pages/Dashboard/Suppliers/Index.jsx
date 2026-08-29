@@ -66,7 +66,7 @@ export default function SuppliersIndex({ suppliers = [] }) {
                             Supplier
                         </h1>
                         <p className="text-sm text-slate-500">
-                            Data supplier untuk pencatatan payables.
+                            Supplier data for payable data.
                         </p>
                     </div>
                     {canManageSuppliers && (
@@ -98,7 +98,7 @@ export default function SuppliersIndex({ suppliers = [] }) {
                     </div>
                     <div>
                         <label className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Telepon
+                            Phone
                         </label>
                         <input
                             className="w-full h-11 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm"
@@ -119,7 +119,7 @@ export default function SuppliersIndex({ suppliers = [] }) {
                     </div>
                     <div className="md:col-span-1">
                         <label className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Alamat
+                            Address
                         </label>
                         <textarea
                             rows={1}
@@ -191,7 +191,7 @@ export default function SuppliersIndex({ suppliers = [] }) {
                         ))
                     ) : (
                         <div className="p-6 text-center text-slate-500">
-                            Belum ada supplier.
+                            No suppliers yet.
                         </div>
                     )}
                 </div>

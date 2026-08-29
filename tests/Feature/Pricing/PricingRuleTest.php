@@ -47,15 +47,15 @@ class PricingRuleTest extends TestCase
             'pricing-rules-create',
         ]);
         $category = Category::create([
-            'name' => 'Minuman',
-            'description' => 'Kategori uji',
+            'name' => 'Beverages',
+            'description' => 'Test category',
             'image' => 'category.png',
         ]);
 
         $response = $this
             ->actingAs($user)
             ->post(route('pricing-rules.store'), [
-                'name' => 'Promo Minuman Pagi',
+                'name' => 'Promo Beverages Pagi',
                 'kind' => PricingRule::KIND_STANDARD_DISCOUNT,
                 'is_active' => true,
                 'priority' => 120,
@@ -71,7 +71,7 @@ class PricingRuleTest extends TestCase
 
         $response->assertRedirect(route('pricing-rules.index'));
         $this->assertDatabaseHas('pricing_rules', [
-            'name' => 'Promo Minuman Pagi',
+            'name' => 'Promo Beverages Pagi',
             'target_type' => 'category',
             'category_id' => $category->id,
             'discount_type' => 'percentage',
@@ -93,7 +93,7 @@ class PricingRuleTest extends TestCase
         $customer = Customer::create([
             'name' => 'Registered Customer',
             'no_telp' => '62812345678',
-            'address' => 'Jl. Uji Pelanggan',
+            'address' => 'Test Customer St.',
         ]);
 
         Cart::create([
@@ -104,7 +104,7 @@ class PricingRuleTest extends TestCase
         ]);
 
         PricingRule::create([
-            'name' => 'Harga Member',
+            'name' => 'Member Price',
             'is_active' => true,
             'priority' => 200,
             'target_type' => 'product',
@@ -155,7 +155,7 @@ class PricingRuleTest extends TestCase
         ]);
 
         $rule = PricingRule::create([
-            'name' => 'Harga Grosir Produk',
+            'name' => 'Product Wholesale Price',
             'kind' => PricingRule::KIND_QTY_BREAK,
             'is_active' => true,
             'priority' => 250,
@@ -196,8 +196,8 @@ class PricingRuleTest extends TestCase
             'cashier-shifts-close',
         ]);
         $this->openShiftFor($cashier);
-        $productA = $this->createProduct('Produk Bundle A');
-        $productB = $this->createProduct('Produk Bundle B');
+        $productA = $this->createProduct('Bundle Product A');
+        $productB = $this->createProduct('Bundle Product B');
 
         Cart::create([
             'cashier_id' => $cashier->id,
@@ -248,8 +248,8 @@ class PricingRuleTest extends TestCase
             'cashier-shifts-close',
         ]);
         $this->openShiftFor($cashier);
-        $buyProduct = $this->createProduct('Produk Buy');
-        $getProduct = $this->createProduct('Produk Get');
+        $buyProduct = $this->createProduct('Buy Product');
+        $getProduct = $this->createProduct('Get Product');
 
         Cart::create([
             'cashier_id' => $cashier->id,
@@ -318,7 +318,7 @@ class PricingRuleTest extends TestCase
         ]);
 
         PricingRule::create([
-            'name' => 'Harga Spesial Produk',
+            'name' => 'Special Product Price',
             'is_active' => true,
             'priority' => 300,
             'target_type' => 'product',
@@ -354,7 +354,7 @@ class PricingRuleTest extends TestCase
         $this->assertSame(50000, (int) $detail->unit_price);
         $this->assertSame(100000, (int) $detail->price);
         $this->assertSame(20000, (int) $detail->discount_total);
-        $this->assertSame('Harga Spesial Produk', $detail->pricing_rule_name);
+        $this->assertSame('Special Product Price', $detail->pricing_rule_name);
 
         $profit = $transaction->profits->first();
         $this->assertSame(5000, (int) $profit->total);
@@ -388,7 +388,7 @@ class PricingRuleTest extends TestCase
     {
         $category = Category::create([
             'name' => 'Snack Promo '.Str::upper(Str::random(4)),
-            'description' => 'Kategori promo',
+            'description' => 'Promo category',
             'image' => 'category.png',
         ]);
 
@@ -397,8 +397,8 @@ class PricingRuleTest extends TestCase
             'image' => 'product.png',
             'barcode' => 'BRCD-'.Str::upper(Str::random(10)),
             'sku' => 'SKU-'.Str::upper(Str::random(8)),
-            'title' => $title ?? 'Produk Promo',
-            'description' => 'Produk untuk pengujian promo.',
+            'title' => $title ?? 'Promo Product',
+            'description' => 'Product for promo testing.',
             'buy_price' => 45000,
             'sell_price' => 60000,
             'stock' => 25,

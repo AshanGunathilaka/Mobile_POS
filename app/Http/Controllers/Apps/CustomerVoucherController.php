@@ -75,13 +75,13 @@ class CustomerVoucherController extends Controller
             event: 'customer_voucher.created',
             module: 'customer_vouchers',
             auditable: $voucher,
-            description: 'Voucher customer dibuat.',
+            description: 'Customer voucher created.',
             after: $this->auditPayload($voucher->fresh('customer'))
         );
 
         return redirect()
             ->route('customer-vouchers.index')
-            ->with('success', 'Voucher customer successfully dibuat.');
+            ->with('success', 'Customer voucher created successfully.');
     }
 
     public function edit(CustomerVoucher $customerVoucher)
@@ -106,14 +106,14 @@ class CustomerVoucherController extends Controller
             event: 'customer_voucher.updated',
             module: 'customer_vouchers',
             auditable: $customerVoucher,
-            description: 'Voucher customer diperbarui.',
+            description: 'Customer voucher updated.',
             before: $before,
             after: $this->auditPayload($customerVoucher->fresh('customer'))
         );
 
         return redirect()
             ->route('customer-vouchers.index')
-            ->with('success', 'Voucher customer successfully diperbarui.');
+            ->with('success', 'Customer voucher updated successfully.');
     }
 
     public function destroy(CustomerVoucher $customerVoucher)

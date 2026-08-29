@@ -53,7 +53,7 @@ class AuthController extends Controller
             );
 
             throw ValidationException::withMessages([
-                'email' => ['Kredensial yang diberikan tidak cocok dengan data kami.'],
+                'email' => ['The provided credentials do not match our records.'],
             ]);
         }
 

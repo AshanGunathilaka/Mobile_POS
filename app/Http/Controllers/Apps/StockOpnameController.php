@@ -140,7 +140,7 @@ class StockOpnameController extends Controller
 
         $stockOpname->update($request->validated());
 
-        return back()->with('success', 'Catatan stock opname successfully diperbarui.');
+        return back()->with('success', 'Stock count record updated successfully.');
     }
 
     public function storeItem(StoreStockOpnameItemRequest $request, StockOpname $stockOpname): RedirectResponse
@@ -151,7 +151,7 @@ class StockOpnameController extends Controller
 
         if ($stockOpname->items()->where('product_id', $product->id)->exists()) {
             throw ValidationException::withMessages([
-                'product_id' => 'Product sudah ada di sesi stock opname ini.',
+                'product_id' => 'Product already exists in this stock count session.',
             ]);
         }
 
@@ -166,7 +166,7 @@ class StockOpnameController extends Controller
             'system_stock' => $systemStock,
         ]);
 
-        return back()->with('success', 'Product successfully ditambahkan ke stock opname.');
+        return back()->with('success', 'Product added to stock count successfully.');
     }
 
     public function updateItem(
@@ -201,7 +201,7 @@ class StockOpnameController extends Controller
             'adjustment_reason' => $adjustmentReason,
         ]);
 
-        return back()->with('success', 'Item stock opname successfully diperbarui.');
+        return back()->with('success', 'Stock count item updated successfully.');
     }
 
     public function finalize(Request $request, StockOpname $stockOpname): RedirectResponse
@@ -214,7 +214,7 @@ class StockOpnameController extends Controller
         foreach ($stockOpname->items as $item) {
             if ($item->difference !== null && $item->difference !== 0 && blank($item->adjustment_reason)) {
                 throw ValidationException::withMessages([
-                    'finalize' => 'Masih ada item selisih yang belum memiliki alasan adjustment.',
+                    'finalize' => 'Some variance items still do not have an adjustment reason.',
                 ]);
             }
         }
@@ -295,7 +295,7 @@ class StockOpnameController extends Controller
     {
         if (! $stockOpname->isDraft()) {
             throw ValidationException::withMessages([
-                'stock_opname' => 'Sesi stock opname yang sudah final tidak dapat diubah.',
+                'stock_opname' => 'Finalized stock count sessions cannot be changed.',
             ]);
         }
     }

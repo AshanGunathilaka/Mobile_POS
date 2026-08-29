@@ -1,7 +1,7 @@
 {
     "name": "Point of Sales",
     "short_name": "POS",
-    "description": "Sistem kasir online untuk UMKM",
+    "description": "Online POS system for small businesses",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

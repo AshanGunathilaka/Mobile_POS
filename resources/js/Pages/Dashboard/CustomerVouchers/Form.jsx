@@ -70,7 +70,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                             : "Buat Voucher Customer"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Distribusikan voucher promosi untuk customer tertentu.
+                        Distribute promotional vouchers to selected customers.
                     </p>
                 </div>
 
@@ -107,7 +107,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                                         <option key={customer.id} value={customer.id}>
                                             {customer.name} | {customer.no_telp || "-"} |{" "}
                                             {customer.is_loyalty_member
-                                                ? `${customer.loyalty_tier} / ${customer.loyalty_points} poin`
+                                                ? `${customer.loyalty_tier} / ${customer.loyalty_points} pointsts`
                                                 : "non-member"}
                                         </option>
                                     ))}
@@ -128,7 +128,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                                             event.target.value.toUpperCase()
                                         )
                                     }
-                                    placeholder="Kosongkan untuk generate otomatis"
+                                    placeholder="Leave blank to generate automatically"
                                     className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                 />
                                 <InputError message={errors.code} />

@@ -38,9 +38,9 @@ class MemberManagementTest extends TestCase
         $user = $this->createUserWithPermissions(['customers-access']);
 
         $activeMember = Customer::create([
-            'name' => 'Member Aktif',
+            'name' => 'Active Member',
             'no_telp' => '62811001',
-            'address' => 'Jl. Aktif',
+            'address' => 'Active St.',
             'is_loyalty_member' => true,
             'member_code' => 'MEM-1001',
             'loyalty_tier' => LoyaltyService::TIER_GOLD,
@@ -53,7 +53,7 @@ class MemberManagementTest extends TestCase
         Customer::create([
             'name' => 'Mantan Member',
             'no_telp' => '62811002',
-            'address' => 'Jl. Nonaktif',
+            'address' => 'Inactive St.',
             'is_loyalty_member' => false,
             'member_code' => 'MEM-1002',
             'loyalty_tier' => LoyaltyService::TIER_SILVER,
@@ -137,7 +137,7 @@ class MemberManagementTest extends TestCase
             'regency_id' => '11.01',
             'regency_name' => 'Kabupaten Test',
             'district_id' => '11.01.01',
-            'district_name' => 'Kecamatan Test',
+            'district_name' => 'District Test',
             'village_id' => '11.01.01.1001',
             'village_name' => 'Kelurahan Test',
         ]);
@@ -235,7 +235,7 @@ class MemberManagementTest extends TestCase
 
         DB::table('districts')->insert([
             'code' => '11.01.01',
-            'name' => 'Kecamatan Test',
+            'name' => 'District Test',
             'city_code' => '11.01',
         ]);
 

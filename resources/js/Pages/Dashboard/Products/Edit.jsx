@@ -59,8 +59,8 @@ export default function Edit({ categories, product }) {
     const submit = (e) => {
         e.preventDefault();
         post(route("products.update", product.id), {
-            onSuccess: () => toast.success("Product successfully diperbarui"),
-            onError: () => toast.error("Failed memperbarui product"),
+            onSuccess: () => toast.success("Product updated successfully"),
+            onError: () => toast.error("Failed to update product"),
         });
     };
 
@@ -131,7 +131,7 @@ export default function Edit({ categories, product }) {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="md:col-span-2">
                                     <InputSelect
-                                        label="Kategori"
+                                        label="Category"
                                         data={categories}
                                         selected={selectedCategory}
                                         setSelected={setSelectedCategoryHandler}
@@ -171,8 +171,8 @@ export default function Edit({ categories, product }) {
                                 />
                                 <div className="md:col-span-2">
                                     <Textarea
-                                        label="Deskripsi"
-                                        placeholder="Deskripsi product"
+                                        label="Description"
+                                        placeholder="Product description"
                                         errors={errors.description}
                                         onChange={(e) =>
                                             setData(
@@ -223,7 +223,7 @@ export default function Edit({ categories, product }) {
                                     {product.stock}
                                 </p>
                                 <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                                    Perubahan stock dilakukan melalui transaksi atau stock opname.
+                                    Stock changes are made through transactions or stock counts.
                                 </p>
                             </div>
 

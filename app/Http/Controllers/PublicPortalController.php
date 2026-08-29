@@ -60,7 +60,7 @@ class PublicPortalController extends Controller
         $gateway = $paymentSetting?->default_gateway ?? 'midtrans';
 
         if (! $paymentSetting || ! $paymentSetting->isGatewayReady($gateway)) {
-            return back()->with('error', 'Gateway payment belum dikonfigurasi.');
+            return back()->with('error', 'Payment gateway has not been configured.');
         }
 
         $response = $paymentGateway->createPayment($transaction, $gateway, $paymentSetting);

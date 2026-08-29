@@ -40,10 +40,10 @@ const statusBadge = (status) => {
     };
     const labels = {
         draft: "Draft",
-        ordered: "Dipesan",
-        partial_received: "Sebagian Diterima",
+        ordered: "Ordered",
+        partial_received: "Partially Received",
         completed: "Completed",
-        cancelled: "Dibatalkan",
+        cancelled: "Canceled",
     };
     return <span className={`${base} ${map[status] || map.draft}`}>{labels[status] || status}</span>;
 };
@@ -64,7 +64,7 @@ export default function Show({ order }) {
     const cancelOrder = () => {
         router.post(route("purchase-orders.cancel", order.id), {}, {
             preserveScroll: true,
-            onSuccess: () => toast.success("PO dibatalkan"),
+            onSuccess: () => toast.success("PO canceled"),
             onError: () => toast.error("Failed membatalkan PO"),
         });
     };
@@ -81,7 +81,7 @@ export default function Show({ order }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar PO
+                    Back to PO list
                 </Link>
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div>
@@ -95,7 +95,7 @@ export default function Show({ order }) {
                             Supplier: {order.supplier?.name || "-"} &bull; Dibuat oleh {order.creator?.name || "-"} &bull; {formatDateTime(order.created_at)}
                         </p>
                         {order.ordered_at && (
-                            <p className="text-sm text-slate-500">Dipesan: {formatDateTime(order.ordered_at)}</p>
+                            <p className="text-sm text-slate-500">Ordered: {formatDateTime(order.ordered_at)}</p>
                         )}
                     </div>
                     <div className="flex gap-2">
@@ -104,7 +104,7 @@ export default function Show({ order }) {
                                 type="button"
                                 icon={<IconCheck size={18} />}
                                 className="bg-primary-500 hover:bg-primary-600 text-white"
-                                label="Pesan ke Supplier"
+                                label="Send to Supplier"
                                 onClick={placeOrder}
                             />
                         )}
@@ -123,7 +123,7 @@ export default function Show({ order }) {
                                 href={route("goods-receivings.create", { purchase_order_id: order.id })}
                                 icon={<IconTruckDelivery size={18} />}
                                 className="bg-success-500 hover:bg-success-600 text-white"
-                                label="Terima Barang"
+                                label="Receive Goods"
                             />
                         )}
                     </div>
@@ -140,10 +140,10 @@ export default function Show({ order }) {
                             <Table.Thead>
                                 <tr>
                                     <Table.Th>Product</Table.Th>
-                                    <Table.Th>Qty Dipesan</Table.Th>
-                                    <Table.Th>Qty Diterima</Table.Th>
+                                    <Table.Th>Qty Ordered</Table.Th>
+                                    <Table.Th>Qty Received</Table.Th>
                                     <Table.Th>Sisa</Table.Th>
-                                    <Table.Th>Price Satuan</Table.Th>
+                                    <Table.Th>Unit Price</Table.Th>
                                     <Table.Th>Subtotal</Table.Th>
                                 </tr>
                             </Table.Thead>
@@ -187,7 +187,7 @@ export default function Show({ order }) {
                     {order.goods_receivings?.length > 0 && (
                         <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                             <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                                History Penerimaan Barang
+                                Goods Receiving History
                             </h2>
                             <Table>
                                 <Table.Thead>
@@ -230,7 +230,7 @@ export default function Show({ order }) {
 
                     {order.payable && (
                         <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Hutang Supplier</h2>
+                            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Supplier Payable</h2>
                             <div className="space-y-2 text-sm">
                                 <div className="flex justify-between">
                                     <span className="text-slate-500">Dokumen</span>
@@ -241,14 +241,14 @@ export default function Show({ order }) {
                                     <span className="font-medium text-slate-800 dark:text-slate-200">{formatCurrency(order.payable.total)}</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <span className="text-slate-500">Dibayar</span>
+                                    <span className="text-slate-500">Paid</span>
                                     <span className="font-medium text-slate-800 dark:text-slate-200">{formatCurrency(order.payable.paid)}</span>
                                 </div>
                                 <Link
                                     href={route("payables.show", order.payable.id)}
                                     className="mt-3 inline-flex text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400"
                                 >
-                                    Lihat Detail Hutang &rarr;
+                                    View Payable Details &rarr;
                                 </Link>
                             </div>
                         </div>
@@ -260,10 +260,10 @@ export default function Show({ order }) {
                             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                                 <p className="font-medium text-slate-700 dark:text-slate-200">Alur PO</p>
                                 <ul className="mt-2 space-y-2">
-                                    <li>1. Buat PO dengan status Draft.</li>
-                                    <li>2. Pesan ke supplier untuk mengubah status menjadi Ordered.</li>
+                                    <li>1. Create a PO with Draft status.</li>
+                                    <li>2. Send it to the supplier to change the status to Ordered.</li>
                                     <li>3. Receive goods through the Goods Receiving menu.</li>
-                                    <li>4. Hutang supplier akan otomatis tercatat.</li>
+                                    <li>4. Supplier payable will be recorded automatically.</li>
                                 </ul>
                             </div>
                         </div>

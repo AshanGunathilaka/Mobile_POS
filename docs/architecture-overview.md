@@ -57,11 +57,11 @@ Kembali ke indeks dokumentasi: `docs/README.md`
 | `CashierShiftService` | Lifecycle shift: open, close, force-close, summary |
 | `StockMutationService` | Catat semua perubahan stok dengan audit trail |
 | `PricingService` | Engine promo: qty break, bundle, buy-x-get-y |
-| `LoyaltyService` | Poin, tier, voucher — earn/redeem |
+| `LoyaltyService` | Points, tier, voucher — earn/redeem |
 | `TaxService` | Hitung PPN exclusive/inclusive per item |
 | `UnitConversionService` | Konversi antar satuan (pcs ↔ box ↔ kg) |
 | `BatchService` | Alokasi FEFO batch, expiring alerts |
-| `ReorderService` | Produk perlu restock, buat draft PO |
+| `ReorderService` | Product perlu restock, buat draft PO |
 | `PriceListService` | Harga khusus per kelompok pelanggan |
 | `StockTransferService` | Lifecycle transfer stok antar gudang |
 | `ThermalPrintService` | Generate teks receipt ESC/POS |

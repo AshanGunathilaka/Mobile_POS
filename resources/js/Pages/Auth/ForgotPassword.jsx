@@ -24,7 +24,7 @@ export default function ForgotPassword({ status, botGuard }) {
 
     return (
         <>
-            <Head title="Lupa Password" />
+            <Head title="Forgot Password" />
 
             <div className="min-h-screen flex bg-slate-50 dark:bg-slate-950">
                 <div className="flex-1 flex items-center justify-center p-8">
@@ -124,7 +124,7 @@ export default function ForgotPassword({ status, botGuard }) {
                         <div className="w-24 h-24 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-8">
                             <IconMail size={48} />
                         </div>
-                        <h2 className="text-3xl font-bold mb-4">Pemulihan Akun Aman</h2>
+                        <h2 className="text-3xl font-bold mb-4">Secure Account Recovery</h2>
                         <p className="text-lg opacity-90">
                             Link reset password membantu memulihkan akses akun tanpa membuka jalur bypass ke dashboard.
                         </p>

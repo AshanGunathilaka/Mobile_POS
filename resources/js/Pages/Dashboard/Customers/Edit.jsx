@@ -124,7 +124,7 @@ export default function Edit({ customer }) {
     const submit = (e) => {
         e.preventDefault();
         post(route("customers.update", customer.id), {
-            onSuccess: () => toast.success("Customer successfully diperbarui"),
+            onSuccess: () => toast.success("Customer updated successfully"),
             onError: () => toast.error("Failed memperbarui customer"),
         });
     };
@@ -177,7 +177,7 @@ export default function Edit({ customer }) {
                                         Status Loyalty
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                                        Member code: {customer.member_code || "-"} | poin saat ini: {customer.loyalty_points || 0}
+                                        Member code: {customer.member_code || "-"} | points saat ini: {customer.loyalty_points || 0}
                                     </p>
                                 </div>
                                 <label className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -227,7 +227,7 @@ export default function Edit({ customer }) {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Provinsi
+                                    Province
                                 </label>
                                 <select
                                     value={data.province_id}
@@ -236,7 +236,7 @@ export default function Edit({ customer }) {
                                     }
                                     className="w-full h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 text-sm"
                                 >
-                                    <option value="">Select Provinsi</option>
+                                    <option value="">Select Province</option>
                                     {provinces.map((prov) => (
                                         <option key={prov.code} value={prov.code}>
                                             {prov.name}
@@ -251,7 +251,7 @@ export default function Edit({ customer }) {
                             </div>
                             <div>
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Kota/Kabupaten
+                                    City/Kabupaten
                                 </label>
                                 <select
                                     value={data.regency_id}
@@ -261,7 +261,7 @@ export default function Edit({ customer }) {
                                     className="w-full h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 text-sm"
                                     disabled={!data.province_id}
                                 >
-                                    <option value="">Select Kota/Kabupaten</option>
+                                    <option value="">Select City/Kabupaten</option>
                                     {regencyList.map((item) => (
                                         <option key={item.code} value={item.code}>
                                             {item.name}
@@ -279,7 +279,7 @@ export default function Edit({ customer }) {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Kecamatan
+                                    District
                                 </label>
                                 <select
                                     value={data.district_id}
@@ -289,7 +289,7 @@ export default function Edit({ customer }) {
                                     className="w-full h-11 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 text-sm"
                                     disabled={!data.regency_id}
                                 >
-                                    <option value="">Select Kecamatan</option>
+                                    <option value="">Select District</option>
                                     {districtList.map((item) => (
                                         <option key={item.code} value={item.code}>
                                             {item.name}
@@ -330,8 +330,8 @@ export default function Edit({ customer }) {
                             </div>
                         </div>
                         <Textarea
-                            label="Alamat Detail"
-                            placeholder="Alamat lengkap"
+                            label="Address Detail"
+                            placeholder="Address lengkap"
                             errors={errors.address}
                             onChange={(e) => setData("address", e.target.value)}
                             value={data.address}

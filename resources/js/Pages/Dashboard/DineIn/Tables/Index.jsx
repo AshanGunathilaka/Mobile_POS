@@ -61,7 +61,7 @@ function TableShape({ table, onDragStart, isSelected, onClick }) {
                 y={table.pos_y * GRID_SIZE + GRID_SIZE / 2}
                 textAnchor="middle"
                 dominantBaseline="central"
-                className={`${textClass} text-xs font-semibold pointer-events-none select-none`}
+                className={`${textClass} text-xs font-semibold pointster-events-none select-none`}
                 fontSize={10}
             >
                 {name}
@@ -115,7 +115,7 @@ export default function Index({ tables, areas, filters }) {
 
             patch(route("dine-tables.update", dragItem.current.id), {
                 data: { ...dragItem.current, pos_x: clampedX, pos_y: clampedY },
-                onSuccess: () => toast.success("Posisi meja diperbarui."),
+                onSuccess: () => toast.success("Table position updated."),
                 preserveScroll: true,
             });
             dragItem.current = null;
@@ -160,10 +160,10 @@ export default function Index({ tables, areas, filters }) {
     const submit = (e) => {
         e.preventDefault();
         const onSuccess = () => {
-            toast.success(editingTable ? "Meja successfully diperbarui." : "Meja successfully ditambahkan.");
+            toast.success(editingTable ? "Table updated successfully." : "Meja successfully ditambahkan.");
             setModalOpen(false);
         };
-        const onError = () => toast.error("Failed menyimpan meja.");
+        const onError = () => toast.error("Failed to save table.");
 
         if (editingTable) {
             patch(route("dine-tables.update", editingTable.id), { onSuccess, onError });
@@ -173,10 +173,10 @@ export default function Index({ tables, areas, filters }) {
     };
 
     const handleDelete = (table) => {
-        if (!confirm(`Delete meja "${table.name}"?`)) return;
+        if (!confirm(`Delete table "${table.name}"?`)) return;
         router.delete(route("dine-tables.destroy", table.id), {
             onSuccess: () => toast.success("Table deleted successfully."),
-            onError: () => toast.error("Failed menghapus meja."),
+            onError: () => toast.error("Failed to delete table."),
         });
     };
 
@@ -211,13 +211,13 @@ export default function Index({ tables, areas, filters }) {
                             Meja Dine-In
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            {tables.length} meja terdaftar
+                            {tables.length} registered tables
                         </p>
                     </div>
                     <div className="flex gap-2">
                         <Button
                             type={"button"}
-                            label={activeView === "grid" ? "Daftar" : "Peta"}
+                            label={activeView === "grid" ? "Register" : "Map"}
                             onClick={() => setActiveView(activeView === "grid" ? "list" : "grid")}
                             className={
                                 "border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
@@ -303,7 +303,7 @@ export default function Index({ tables, areas, filters }) {
                     </svg>
                 </div>
             ) : tables.length > 0 ? (
-                <Table.Card title={"Daftar Meja"}>
+                <Table.Card title={"Register Meja"}>
                     <Table>
                         <Table.Thead>
                             <tr>
@@ -346,7 +346,7 @@ export default function Index({ tables, areas, filters }) {
                                                     : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
                                             }`}
                                         >
-                                            {table.is_active ? "Aktif" : "Nonaktif"}
+                                            {table.is_active ? "Active" : "Inactive"}
                                         </span>
                                     </Table.Td>
                                     <Table.Td>
@@ -397,7 +397,7 @@ export default function Index({ tables, areas, filters }) {
                         Belum Ada Meja
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Addkan meja dine-in pertama Anda.
+                        Add your first dine-in table.
                     </p>
                     {canCreate && (
                         <Button
@@ -457,7 +457,7 @@ export default function Index({ tables, areas, filters }) {
                                 onChange={(e) => setData("shape", e.target.value)}
                                 className="w-full px-3 py-1.5 border border-slate-300 dark:border-slate-700 rounded-lg text-sm bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-0"
                             >
-                                <option value="square">Kotak</option>
+                                <option value="square">Cityk</option>
                                 <option value="circle">Bulat</option>
                             </select>
                         </div>

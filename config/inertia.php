@@ -126,7 +126,7 @@ return [
     | History
     |--------------------------------------------------------------------------
     |
-    | Enable `encrypt` to encrypt page data before it is stored in the
+    | Enable `encrypt` to encrypt page records before it is stored in the
     | browser's history state, preventing sensitive information from
     | being accessible after logout. Can also be enabled per-request
     | or via the `inertia.encrypt` middleware.

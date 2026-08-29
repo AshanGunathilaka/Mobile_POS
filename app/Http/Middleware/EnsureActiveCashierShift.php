@@ -18,7 +18,7 @@ class EnsureActiveCashierShift
         $user = $request->user();
 
         if (! $user || ! $this->cashierShiftService->getActiveShiftForUser($user->id)) {
-            $message = 'Shift cashier belum dibuka.';
+            $message = 'Cashier shift has not been opened.';
 
             if ($request->expectsJson()) {
                 return response()->json([

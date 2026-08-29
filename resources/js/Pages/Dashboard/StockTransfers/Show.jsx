@@ -24,7 +24,7 @@ export default function Show({ transfer }) {
     const { can } = useAuthorization();
 
     const confirmAction = (action, label) => {
-        if (!confirm(`Yakin ingin ${label} transfer ini?`)) return;
+        if (!confirm(`Yeskin ingin ${label} transfer ini?`)) return;
         router.post(route(`stock-transfers.${action}`, transfer.id));
     };
 
@@ -109,7 +109,7 @@ export default function Show({ transfer }) {
                                 <div className="mt-4 space-y-3">
                                     {can("stock-transfers-send") && (
                                         <button onClick={() => confirmAction("send", "mengirim")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-600">
-                                            <IconSend size={18} /> Kirim Barang
+                                            <IconSend size={18} /> Send Goods
                                         </button>
                                     )}
                                     {can("stock-transfers-cancel") && (
@@ -127,7 +127,7 @@ export default function Show({ transfer }) {
                                 <div className="mt-4 space-y-3">
                                     {can("stock-transfers-receive") && (
                                         <button onClick={() => confirmAction("receive", "menerima")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-emerald-600">
-                                            <IconCheck size={18} /> Terima Barang
+                                            <IconCheck size={18} /> Receive Goods
                                         </button>
                                     )}
                                     {can("stock-transfers-cancel") && (

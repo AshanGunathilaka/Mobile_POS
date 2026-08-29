@@ -18,7 +18,7 @@ class ProductionSecurityBaseline
         if (config('app.debug')) {
             $issues[] = [
                 'key' => 'app_debug',
-                'message' => 'APP_DEBUG masih aktif. Nonaktifkan debug di production.',
+                'message' => 'APP_DEBUG masih aktif. Inactivekan debug di production.',
             ];
         }
 
@@ -27,7 +27,7 @@ class ProductionSecurityBaseline
         if (blank($appUrl) || ! str_starts_with($appUrl, 'https://')) {
             $issues[] = [
                 'key' => 'app_url_https',
-                'message' => 'APP_URL harus menggunakan HTTPS yang valid di production.',
+                'message' => 'APP_URL must use valid HTTPS in production.',
             ];
         }
 

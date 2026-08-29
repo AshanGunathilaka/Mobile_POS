@@ -111,7 +111,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                         }`}
                     >
                         {cashierShift.status === "open"
-                            ? "Shift Aktif"
+                            ? "Active Shift"
                             : cashierShift.status === "force_closed"
                               ? "Force Closed"
                               : "Shift Closed"}
@@ -121,7 +121,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     <MetricCard title="Modal Awal" value={formatCurrency(cashierShift.opening_cash)} icon={IconWallet} />
                     <MetricCard title="Expected Cash" value={formatCurrency(cashierShift.expected_cash)} icon={IconCashBanknote} />
-                    <MetricCard title="Penjualan Cash" value={formatCurrency(cashierShift.cash_sales_total)} icon={IconReceipt} />
+                    <MetricCard title="Cash Sales" value={formatCurrency(cashierShift.cash_sales_total)} icon={IconReceipt} />
                     <MetricCard title="Refund Cash" value={formatCurrency(cashierShift.cash_refund_total)} icon={IconRotateClockwise2} />
                 </div>
 
@@ -136,7 +136,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.user?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Warehouse / Cabang</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Warehouse / Branch</p>
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.warehouse?.name || "-"}</p>
                             </div>
                             <div>
@@ -152,15 +152,15 @@ export default function Show({ cashierShift, canForceClose = false }) {
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.closed_by?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Total Transaksi</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Total Transactions</p>
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.transactions_count}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Total Retur</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Total Return</p>
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.sales_returns_count}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Penjualan Non Cash</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Non-Cash Sales</p>
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{formatCurrency(cashierShift.non_cash_sales_total)}</p>
                             </div>
                             <div>
@@ -212,7 +212,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                                     Tutup Shift
                                 </h2>
                                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                                    Input kas fisik akhir untuk finalisasi cash closing.
+                                    Enter final physical cash to finalize cash closing.
                                 </p>
                                 <form onSubmit={handleCloseShift} className="mt-4 space-y-4">
                                     <div>

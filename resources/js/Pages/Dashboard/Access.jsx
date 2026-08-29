@@ -13,7 +13,7 @@ import hasAnyPermission from "@/Utils/Permission";
 
 const cards = [
     {
-        title: "Transaksi",
+        title: "Transactions",
         desc: "Start cashier transactions",
         icon: <IconShoppingCart size={22} />,
         route: "transactions.index",
@@ -27,14 +27,14 @@ const cards = [
         perms: ["customers-access"],
     },
     {
-        title: "Piutang",
+        title: "Receivable",
         desc: "Customer pay later notes",
         icon: <IconFileInvoice size={22} />,
         route: "receivables.index",
         perms: ["receivables-access"],
     },
     {
-        title: "Hutang",
+        title: "Payable",
         desc: "Catat payables supplier",
         icon: <IconCurrencyDollar size={22} />,
         route: "payables.index",
@@ -49,7 +49,7 @@ const cards = [
     },
     {
         title: "Laporan",
-        desc: "Lihat laporan penjualan",
+        desc: "View sales reports",
         icon: <IconChartArrowsVertical size={22} />,
         route: "reports.sales.index",
         perms: ["reports-access"],
@@ -72,7 +72,7 @@ function AccessPage() {
                         Select Akses
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Halaman ini muncul ketika Anda tidak memiliki akses
+                        This page appears when you do not have access
                         dashboard.
                     </p>
                 </div>

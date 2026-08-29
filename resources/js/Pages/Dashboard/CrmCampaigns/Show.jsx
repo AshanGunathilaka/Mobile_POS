@@ -23,7 +23,7 @@ export default function Show({ campaign }) {
     const cancelCampaign = () => {
         router.post(route("crm-campaigns.cancel", campaign.id), {}, {
             preserveScroll: true,
-            onSuccess: () => toast.success("Campaign dibatalkan"),
+            onSuccess: () => toast.success("Campaign canceled"),
             onError: () => toast.error("Failed membatalkan campaign"),
         });
     };
@@ -121,7 +121,7 @@ export default function Show({ campaign }) {
                                         </tr>
                                     ))
                                 ) : (
-                                    <Table.Empty colSpan={4} message="Belum ada delivery log untuk campaign ini." />
+                                    <Table.Empty colSpan={4} message="No delivery logs for this campaign yet." />
                                 )}
                             </Table.Tbody>
                         </Table>

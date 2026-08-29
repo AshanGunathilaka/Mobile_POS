@@ -137,7 +137,7 @@ export default function CustomerHistoryPanel({
                     <p className="text-lg font-bold text-slate-900 dark:text-white">
                         {stats.total_transactions}
                     </p>
-                    <p className="text-xs text-slate-500">Transaksi</p>
+                    <p className="text-xs text-slate-500">Transactions</p>
                 </div>
                 <div className="bg-white dark:bg-slate-900 p-3 text-center">
                     <div className="flex items-center justify-center mb-1">
@@ -173,7 +173,7 @@ export default function CustomerHistoryPanel({
                     <p className="text-sm font-bold text-primary-600 dark:text-primary-300">
                         {loyalty?.points || 0}
                     </p>
-                    <p className="text-xs text-slate-500">Poin</p>
+                    <p className="text-xs text-slate-500">Points</p>
                 </div>
             </div>
 
@@ -181,7 +181,7 @@ export default function CustomerHistoryPanel({
                 <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
                     <p className="text-xs font-semibold text-slate-500 uppercase mb-2 flex items-center gap-1">
                         <IconGift size={12} />
-                        Voucher Aktif
+                        Active Voucher
                     </p>
                     <div className="space-y-2">
                         {eligible_vouchers.map((voucher) => (
@@ -228,7 +228,7 @@ export default function CustomerHistoryPanel({
             {recent_transactions && recent_transactions.length > 0 && (
                 <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
                     <p className="text-xs font-semibold text-slate-500 uppercase mb-2">
-                        Transaksi Terakhir
+                        Transaction Terakhir
                     </p>
                     <div className="space-y-2 max-h-[150px] overflow-y-auto">
                         {recent_transactions.map((tx) => (
@@ -280,7 +280,7 @@ export default function CustomerHistoryPanel({
                                     }`}
                                 >
                                     {entry.points_delta >= 0 ? "+" : ""}
-                                    {entry.points_delta} poin
+                                    {entry.points_delta} pointsts
                                 </p>
                             </div>
                         ))}

@@ -15,13 +15,13 @@ export default function PriceListItems({ priceList, products }) {
     const existingProductIds = priceList.items.map(i => i.product_id);
 
     const addPrice = (product) => {
-        const price = prompt(`Price untuk ${product.title}:`, String(product.sell_price));
+        const price = prompt(`Price for ${product.title}:`, String(product.sell_price));
         if (price === null) return;
         router.post(route("price-lists.items.update", priceList.id), { product_id: product.id, price: parseInt(price) });
     };
 
     const removeItem = (item) => {
-        if (!confirm(`Delete ${item.product?.title} dari price list?`)) return;
+        if (!confirm(`Delete ${item.product?.title} of price list?`)) return;
         router.delete(route("price-lists.items.destroy", [priceList.id, item.product_id]));
     };
 

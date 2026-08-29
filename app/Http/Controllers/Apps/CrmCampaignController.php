@@ -59,7 +59,7 @@ class CrmCampaignController extends Controller
 
         return redirect()
             ->route('crm-campaigns.show', $campaign)
-            ->with('success', 'Campaign CRM successfully dibuat.');
+            ->with('success', 'CRM campaign created successfully.');
     }
 
     public function show(CustomerCampaign $crmCampaign)
@@ -91,7 +91,7 @@ class CrmCampaignController extends Controller
 
         return redirect()
             ->route('crm-campaigns.show', $crmCampaign)
-            ->with('success', 'Campaign CRM successfully diperbarui.');
+            ->with('success', 'CRM campaign updated successfully.');
     }
 
     public function destroy(CustomerCampaign $crmCampaign)
@@ -109,7 +109,7 @@ class CrmCampaignController extends Controller
 
         return redirect()
             ->route('crm-campaigns.show', $crmCampaign)
-            ->with('success', 'Campaign successfully diproses ke audience.');
+            ->with('success', 'Campaign processed for the audience successfully.');
     }
 
     public function cancel(CustomerCampaign $crmCampaign)
@@ -118,7 +118,7 @@ class CrmCampaignController extends Controller
 
         return redirect()
             ->route('crm-campaigns.show', $crmCampaign)
-            ->with('success', 'Campaign dibatalkan.');
+            ->with('success', 'Campaign canceled.');
     }
 
     public function markLogSent(CustomerCampaignLog $log)
@@ -150,7 +150,7 @@ class CrmCampaignController extends Controller
 
         return redirect()
             ->route('crm-campaigns.show', $campaign)
-            ->with('success', 'Campaign share receivables successfully dibuat.');
+            ->with('success', 'Receivables sharing campaign created successfully.');
     }
 
     private function validateCampaign(Request $request): array

@@ -13,7 +13,7 @@ import {
 const targetOptions = [
     { value: "all", label: "All Product" },
     { value: "product", label: "Product Tertentu" },
-    { value: "category", label: "Kategori Tertentu" },
+    { value: "category", label: "Specific Category" },
 ];
 
 const customerScopeOptions = [
@@ -171,20 +171,20 @@ export default function Form({
                         href={route("pricing-rules.index")}
                         icon={<IconArrowLeft size={18} />}
                         className="mb-3 border-none bg-transparent px-0 text-slate-500 shadow-none hover:bg-transparent hover:text-primary-600 dark:text-slate-400"
-                        label="Back ke promo harga"
+                        label="Back to price promos"
                     />
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                         {isEdit ? "Edit Promo Price" : "Buat Promo Price"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Kelola promo standar, grosir, bundle, dan buy x get y dalam satu engine.
+                        Manage standard, wholesale, bundle, and buy X get Y promos in one engine.
                     </p>
                 </div>
 
                 <form onSubmit={submit} className="space-y-6">
                     <CardSection
                         title="Informasi Rule"
-                        description="Identitas dasar rule, jenis promo, dan prioritas penerapan."
+                        description="Basic rule identity, promo type, and application priority."
                     >
                         <div className="grid gap-4 md:grid-cols-2">
                             <div>
@@ -256,7 +256,7 @@ export default function Form({
 
                     <CardSection
                         title="Target & Scope"
-                        description="Tentukan product/kategori yang terkena promo dan siapa yang berhak."
+                        description="Define which products/categories receive the promo and who is eligible."
                     >
                         <div className="grid gap-4 md:grid-cols-2">
                             <div>
@@ -320,7 +320,7 @@ export default function Form({
                             {data.target_type === "category" && (
                                 <div className="md:col-span-2">
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Kategori
+                                        Category
                                     </label>
                                     <select
                                         value={data.category_id}
@@ -342,7 +342,7 @@ export default function Form({
                             {data.customer_scope === "member" && (
                                 <div className="md:col-span-2">
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Tier Member yang Berhak
+                                        Eligible Member Tier
                                     </label>
                                     <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
                                         {tierOptions.map((tier) => {
@@ -389,7 +389,7 @@ export default function Form({
                         data.kind === "qty_break") && (
                         <CardSection
                             title="Discount Rule"
-                            description="Tentukan tipe diskon yang dipakai rule ini."
+                            description="Define the discount type used by this rule."
                         >
                             <div className="grid gap-4 md:grid-cols-2">
                                 <div>
@@ -522,7 +522,7 @@ export default function Form({
                     {data.kind === "bundle_price" && (
                         <CardSection
                             title="Bundle Price"
-                            description="Select kombinasi product dan harga paket final."
+                            description="Select the product combination and final package price."
                         >
                             <div className="mb-4">
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -608,7 +608,7 @@ export default function Form({
                     {data.kind === "buy_x_get_y" && (
                         <CardSection
                             title="Buy X Get Y"
-                            description="Atur item pembelian (buy) dan item hadiah/diskon (get)."
+                            description="Configure purchase items (buy) and reward/discount items (get)."
                         >
                             <div className="space-y-3">
                                 {data.buy_get_items.map((row, index) => (
@@ -744,7 +744,7 @@ export default function Form({
                                         setData("is_active", event.target.checked)
                                     }
                                 />
-                                Aktifkan rule ini
+                                Activekan rule ini
                             </label>
                         </div>
                     </CardSection>

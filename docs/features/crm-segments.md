@@ -22,7 +22,7 @@ Segmentasi pelanggan, campaign automation, dan reminder untuk meningkatkan engag
 - Cancel campaign jika diperlukan
 
 ### Reminders
-- Due-soon receivable reminder (3 hari sebelum jatuh tempo)
+- Due-soon receivable reminder (3 hari sebelum due date)
 - Overdue receivable reminder
 - Repeat order reminder untuk customer yang sudah lama tidak belanja
 

@@ -59,13 +59,13 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
         const base = "px-2 py-1 text-xs font-semibold rounded-full";
         switch (value) {
             case "paid":
-                return <span className={`${base} bg-success-100 text-success-700`}>Lunas</span>;
+                return <span className={`${base} bg-success-100 text-success-700`}>Paid</span>;
             case "partial":
                 return <span className={`${base} bg-primary-100 text-primary-700`}>Parsial</span>;
             case "overdue":
                 return <span className={`${base} bg-rose-100 text-rose-700`}>Jatuh Tempo</span>;
             default:
-                return <span className={`${base} bg-amber-100 text-amber-700`}>Belum Lunas</span>;
+                return <span className={`${base} bg-amber-100 text-amber-700`}>Unpaid</span>;
         }
     };
 
@@ -80,13 +80,13 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
 
     return (
         <>
-            <Head title="Hutang Supplier" />
+            <Head title="Supplier Payable" />
             <div className="space-y-6">
                 <div className="flex items-center justify-between flex-wrap gap-3">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                             <IconClockHour6 size={26} className="text-primary-500" />
-                            Hutang Supplier
+                            Supplier Payable
                         </h1>
                         <p className="text-sm text-slate-500">
                             Catat dan lacak payment payables ke supplier.
@@ -218,9 +218,9 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                             className="w-full h-11 pl-10 pr-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm"
                         >
                             <option value="">All Status</option>
-                            <option value="unpaid">Belum Lunas</option>
+                            <option value="unpaid">Unpaid</option>
                             <option value="partial">Parsial</option>
-                            <option value="paid">Lunas</option>
+                            <option value="paid">Paid</option>
                             <option value="overdue">Jatuh Tempo</option>
                         </select>
                     </div>

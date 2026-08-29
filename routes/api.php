@@ -81,7 +81,7 @@ Route::prefix('v1')->group(function () {
             'destroy' => 'api.suppliers.destroy',
         ]);
 
-        // POS (mobile kasir)
+        // POS (mobile cashier)
         Route::prefix('pos')->group(function () {
             // Shift
             Route::get('/shift', [PosApiController::class, 'currentShift'])->name('api.pos.shift');

@@ -312,7 +312,7 @@ class CustomerController extends Controller
 
         $this->segmentationService->syncManualSegments($customer, $validated['segment_ids'] ?? []);
 
-        return back()->with('success', 'Segment manual customer successfully diperbarui.');
+        return back()->with('success', 'Manual customer segment updated successfully.');
     }
 
     /**

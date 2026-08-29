@@ -43,7 +43,7 @@ const discountLabel = (rule) => {
 const targetLabel = (rule) => {
     if (rule.target_type === "product") return rule.product?.title || "Product";
     if (rule.target_type === "category") {
-        return rule.category?.name || "Kategori";
+        return rule.category?.name || "Category";
     }
 
     return "All Product";
@@ -86,7 +86,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                             Promo Price
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Atur diskon dan harga otomatis untuk POS.
+                            Configure automatic discounts and prices for POS.
                         </p>
                     </div>
                     {can("pricing-rules-create") && (
@@ -102,7 +102,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
 
                 <div className="mb-4 grid gap-3 md:grid-cols-4">
                     {[
-                        { label: "Aktif", value: summary.active || 0 },
+                        { label: "Active", value: summary.active || 0 },
                         { label: "Terjadwal", value: summary.scheduled || 0 },
                         { label: "Expired", value: summary.expired || 0 },
                         { label: "Inactive", value: summary.inactive || 0 },
@@ -145,8 +145,8 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                             className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         >
                             <option value="">All Status</option>
-                            <option value="active">Aktif</option>
-                            <option value="inactive">Nonaktif</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
                         </select>
                         <select
                             value={filters.target_type || ""}
@@ -158,7 +158,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                             <option value="">All Target</option>
                             <option value="all">All Product</option>
                             <option value="product">Product</option>
-                            <option value="category">Kategori</option>
+                            <option value="category">Category</option>
                         </select>
                         <select
                             value={filters.kind || ""}
@@ -176,7 +176,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                     </div>
                 </div>
 
-                <Table.Card title="Daftar Rule Pricing">
+                <Table.Card title="Pricing Rule List">
                     <Table>
                         <Table.Thead>
                             <tr>
@@ -263,7 +263,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                             ) : (
                                 <Table.Empty
                                     colSpan={8}
-                                    message="Belum ada rule promo harga."
+                                    message="No price promo rules yet."
                                 >
                                     <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                         <IconChartInfographic

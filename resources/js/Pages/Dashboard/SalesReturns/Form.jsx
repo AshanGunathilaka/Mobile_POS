@@ -166,7 +166,7 @@ export default function SalesReturnForm({
             preserveScroll: true,
             onSuccess: () =>
                 toast.success(
-                    salesReturn ? "Draft retur diperbarui" : "Draft retur dibuat"
+                    salesReturn ? "Return draft updated" : "Return draft created"
                 ),
             onError: () => toast.error("Failed menyimpan draft retur"),
         });
@@ -178,7 +178,7 @@ export default function SalesReturnForm({
             {},
             {
                 preserveScroll: true,
-                onSuccess: () => toast.success("Retur penjualan diselesaikan"),
+                onSuccess: () => toast.success("Sales return completed"),
                 onError: () => toast.error("Failed menyelesaikan retur"),
             }
         );
@@ -247,11 +247,11 @@ export default function SalesReturnForm({
                             .toUpperCase()}
                     />
                     <InfoCard
-                        label="Total Transaksi"
+                        label="Total Transactions"
                         value={formatCurrency(transaction.grand_total)}
                     />
                     <InfoCard
-                        label="Nominal Retur"
+                        label="Return Amount"
                         value={formatCurrency(summary.totalAmount)}
                     />
                 </div>
@@ -263,7 +263,7 @@ export default function SalesReturnForm({
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                         <div className="mb-4 flex items-center justify-between">
                             <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                Item Retur
+                                Return Items
                             </h2>
                             {canEdit && (
                                 <Button
@@ -281,9 +281,9 @@ export default function SalesReturnForm({
                                 <tr>
                                     <Table.Th>Product</Table.Th>
                                     <Table.Th>Qty Beli</Table.Th>
-                                    <Table.Th>Sudah Retur</Table.Th>
+                                    <Table.Th>Already Returned</Table.Th>
                                     <Table.Th>Sisa</Table.Th>
-                                    <Table.Th>Qty Retur</Table.Th>
+                                    <Table.Th>Return Qty</Table.Th>
                                     <Table.Th>Alasan</Table.Th>
                                     <Table.Th>Restock</Table.Th>
                                     <Table.Th>Subtotal</Table.Th>
@@ -375,7 +375,7 @@ export default function SalesReturnForm({
                     <div className="space-y-6">
                         <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                             <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                                Penyelesaian Retur
+                                Return Settlement
                             </h2>
 
                             <div className="space-y-4">
@@ -405,7 +405,7 @@ export default function SalesReturnForm({
                                     </select>
                                     {!transaction.customer && (
                                         <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                                            Transaksi tanpa customer hanya
+                                            Transaction tanpa customer hanya
                                             dapat memakai refund tunai.
                                         </p>
                                     )}
@@ -455,7 +455,7 @@ export default function SalesReturnForm({
                                     value={formatCurrency(summary.refundAmount)}
                                 />
                                 <PreviewRow
-                                    label="Saldo toko"
+                                    label="Store credit"
                                     value={formatCurrency(
                                         summary.creditedAmount
                                     )}
@@ -463,13 +463,13 @@ export default function SalesReturnForm({
                                 {transaction.receivable && (
                                     <>
                                         <PreviewRow
-                                            label="Piutang saat ini"
+                                            label="Receivable saat ini"
                                             value={formatCurrency(
                                                 transaction.receivable.total
                                             )}
                                         />
                                         <PreviewRow
-                                            label="Piutang setelah retur"
+                                            label="Receivable setelah retur"
                                             value={formatCurrency(
                                                 summary.receivableAfter ?? 0
                                             )}
@@ -489,7 +489,7 @@ export default function SalesReturnForm({
                                         type="button"
                                         icon={<IconCheck size={18} />}
                                         className="w-full bg-success-500 text-white hover:bg-success-600 disabled:opacity-50"
-                                        label="Completedkan Retur"
+                                        label="Complete Return"
                                         onClick={complete}
                                         disabled={
                                             !summary.hasSelectedItems ||

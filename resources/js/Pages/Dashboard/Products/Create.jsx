@@ -122,7 +122,7 @@ export default function Create({ categories }) {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="md:col-span-2">
                                     <InputSelect
-                                        label="Kategori"
+                                        label="Category"
                                         data={categories}
                                         selected={selectedCategory}
                                         setSelected={setSelectedCategoryHandler}
@@ -140,7 +140,7 @@ export default function Create({ categories }) {
                                         setData("barcode", e.target.value)
                                     }
                                     errors={errors.barcode}
-                                    placeholder="Masukkan kode product"
+                                    placeholder="Enter product code"
                                 />
                                 <Input
                                     type="text"
@@ -148,7 +148,7 @@ export default function Create({ categories }) {
                                     value={data.sku}
                                     onChange={(e) => setData("sku", e.target.value)}
                                     errors={errors.sku}
-                                    placeholder="Masukkan SKU unik"
+                                    placeholder="Enter a unique SKU"
                                 />
                                 <Input
                                     type="text"
@@ -158,12 +158,12 @@ export default function Create({ categories }) {
                                         setData("title", e.target.value)
                                     }
                                     errors={errors.title}
-                                    placeholder="Masukkan nama product"
+                                    placeholder="Enter product name"
                                 />
                                 <div className="md:col-span-2">
                                     <Textarea
-                                        label="Deskripsi"
-                                        placeholder="Deskripsi product (opsional)"
+                                        label="Description"
+                                        placeholder="Product description (optional)"
                                         errors={errors.description}
                                         onChange={(e) =>
                                             setData(

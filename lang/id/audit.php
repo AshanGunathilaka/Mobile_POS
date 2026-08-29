@@ -8,7 +8,7 @@ return [
     */
     'products' => [
         'created' => 'New product created',
-        'updated' => 'Product data updated',
+        'updated' => 'Product records updated',
         'deleted' => 'Product deleted',
     ],
     'categories' => [
@@ -18,12 +18,12 @@ return [
     ],
     'customers' => [
         'created' => 'New customer created',
-        'updated' => 'Customer data updated',
+        'updated' => 'Customer records updated',
         'deleted' => 'Customer deleted',
     ],
     'suppliers' => [
         'created' => 'New supplier created',
-        'updated' => 'Supplier data updated',
+        'updated' => 'Supplier records updated',
         'deleted' => 'Supplier deleted',
     ],
     'transactions' => [
@@ -49,7 +49,7 @@ return [
     ],
     'users' => [
         'created' => 'New user created',
-        'updated' => 'User data updated',
+        'updated' => 'User records updated',
         'deleted' => 'User deleted',
         'role_changed' => 'User role changed',
     ],

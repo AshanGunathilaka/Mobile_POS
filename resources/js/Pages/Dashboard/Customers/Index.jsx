@@ -55,7 +55,7 @@ function CustomerCard({ customer, canUpdate, canDelete }) {
                                     : "non-member"}
                             </span>
                             <span className="inline-flex rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                                {customer.loyalty_points || 0} poin
+                                {customer.loyalty_points || 0} pointsts
                             </span>
                         </div>
                     </div>
@@ -232,8 +232,8 @@ export default function Index({ customers }) {
                                     <Table.Th className="w-10">No</Table.Th>
                                     <Table.Th>Customer</Table.Th>
                                     <Table.Th>Loyalty</Table.Th>
-                                    <Table.Th>No. Telepon</Table.Th>
-                                    <Table.Th>Alamat</Table.Th>
+                                    <Table.Th>No. Phone</Table.Th>
+                                    <Table.Th>Address</Table.Th>
                                     <Table.Th></Table.Th>
                                 </tr>
                             </Table.Thead>
@@ -286,7 +286,7 @@ export default function Index({ customers }) {
                                                 <span className="text-xs text-slate-500 dark:text-slate-400">
                                                     {customer.loyalty_points ||
                                                         0}{" "}
-                                                    poin
+                                                    points
                                                 </span>
                                             </div>
                                         </Table.Td>
@@ -364,7 +364,7 @@ export default function Index({ customers }) {
                         Belum Ada Customer
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                        Addkan customer pertama Anda.
+                        Add your first customer.
                     </p>
                     <Button
                         type={"link"}

@@ -61,7 +61,7 @@ class StockTransferController extends Controller
 
         return redirect()
             ->route('stock-transfers.show', $transfer)
-            ->with('success', 'Transfer stock successfully dibuat.');
+            ->with('success', 'Stock transfer created successfully.');
     }
 
     public function show(StockTransfer $stockTransfer): Response
@@ -82,20 +82,20 @@ class StockTransferController extends Controller
     {
         $this->stockTransferService->send($stockTransfer, $request->user()->id);
 
-        return back()->with('success', 'Transfer stock successfully dikirim.');
+        return back()->with('success', 'Stock transfer sent successfully.');
     }
 
     public function receive(Request $request, StockTransfer $stockTransfer): RedirectResponse
     {
         $this->stockTransferService->receive($stockTransfer, $request->user()->id);
 
-        return back()->with('success', 'Transfer stock successfully diterima.');
+        return back()->with('success', 'Stock transfer successfully diterima.');
     }
 
     public function cancel(Request $request, StockTransfer $stockTransfer): RedirectResponse
     {
         $this->stockTransferService->cancel($stockTransfer, $request->user()->id);
 
-        return back()->with('success', 'Transfer stock dibatalkan.');
+        return back()->with('success', 'Stock transfer canceled.');
     }
 }

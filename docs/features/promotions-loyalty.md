@@ -24,7 +24,7 @@ Engine promo dan loyalty untuk meningkatkan penjualan dan retensi pelanggan.
 
 ### Loyalty Program
 - **Tiers**: Regular → Silver → Gold → Platinum
-- **Poin**: earn point per transaksi, redeem untuk diskon
+- **Points**: earn point per transaksi, redeem untuk diskon
 - **Auto tier sync**: tier otomatis naik berdasarkan total belanja
 - **Settings**: enable/disable earn & redeem, rate amount, point value
 

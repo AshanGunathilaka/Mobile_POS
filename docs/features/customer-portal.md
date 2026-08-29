@@ -9,9 +9,9 @@ Pelanggan bisa melihat invoice, status pembayaran, dan membayar piutang secara o
 ## Fitur Saat Ini
 
 - **Invoice detail** — lihat item, harga, diskon, PPN, total
-- **Status pembayaran** — Lunas, Menunggu, Belum Lunas
+- **Status pembayaran** — Paid, Pending, Unpaid
 - **Riwayat transaksi** — untuk customer yang sama (via token akses)
-- **Bayar piutang online** — jika status `pay_later` dan belum Lunas, ada tombol "Bayar Sekarang" yang mengarah ke payment gateway
+- **Bayar piutang online** — jika status `pay_later` dan belum Paid, ada tombol "Bayar Sekarang" yang mengarah ke payment gateway
 - **Token-based access** — URL unik per transaksi, tidak bisa ditebak (UUID v4)
 - **Guest layout** — halaman publik, tidak perlu login
 - **Share button** — di halaman print transaksi, copy link portal ke clipboard
@@ -20,14 +20,14 @@ Pelanggan bisa melihat invoice, status pembayaran, dan membayar piutang secara o
 
 - Token akses: UUID v4 — tidak bisa ditebak
 - Token hanya untuk 1 invoice (tidak bisa akses invoice lain)
-- Tidak ada data sensitif yang ditampilkan
+- No sensitive data is displayed
 - Rate limit per IP
 
 ## Database
 
 - `transactions.access_token` — UUID, unique
 - `receivables.access_token` — UUID, unique
-- Token auto-generated saat transaksi dibuat
+- Token is auto-generated when the transaction is created
 
 ## Halaman dan Route
 

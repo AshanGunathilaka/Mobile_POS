@@ -59,7 +59,7 @@ class CustomerSegmentController extends Controller
 
         return redirect()
             ->route('customer-segments.index')
-            ->with('success', 'Segment customer successfully dibuat.');
+            ->with('success', 'Customer segment created successfully.');
     }
 
     public function show(CustomerSegment $customerSegment)
@@ -114,7 +114,7 @@ class CustomerSegmentController extends Controller
 
         return redirect()
             ->route('customer-segments.show', $customerSegment)
-            ->with('success', 'Segment customer successfully diperbarui.');
+            ->with('success', 'Customer segment updated successfully.');
     }
 
     public function destroy(CustomerSegment $customerSegment)
@@ -128,7 +128,7 @@ class CustomerSegmentController extends Controller
 
     public function storeMember(Request $request, CustomerSegment $customerSegment)
     {
-        abort_if($customerSegment->type !== CustomerSegment::TYPE_MANUAL, 422, 'Segment otomatis tidak dapat diubah manual.');
+        abort_if($customerSegment->type !== CustomerSegment::TYPE_MANUAL, 422, 'Automatic segments cannot be changed manually.');
 
         $validated = $request->validate([
             'customer_id' => ['required', 'exists:customers,id'],
@@ -144,12 +144,12 @@ class CustomerSegmentController extends Controller
             ->all();
         $this->segmentationService->syncManualSegments($customer, $manualIds);
 
-        return back()->with('success', 'Customer ditambahkan ke segment manual.');
+        return back()->with('success', 'Customer added to manual segment.');
     }
 
     public function destroyMember(CustomerSegment $customerSegment, Customer $customer)
     {
-        abort_if($customerSegment->type !== CustomerSegment::TYPE_MANUAL, 422, 'Segment otomatis tidak dapat diubah manual.');
+        abort_if($customerSegment->type !== CustomerSegment::TYPE_MANUAL, 422, 'Automatic segments cannot be changed manually.');
 
         $manualIds = $customer->segmentMemberships()
             ->where('source', 'manual')

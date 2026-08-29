@@ -55,7 +55,7 @@ export default function Index({ transfers }) {
                     )}
                 </div>
 
-                <Table.Card title="Daftar Transfer Stock">
+                <Table.Card title="Stock Transfer List">
                     <Table>
                         <Table.Thead>
                             <tr>
@@ -91,7 +91,7 @@ export default function Index({ transfers }) {
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={7} message={<div className="text-slate-500 dark:text-slate-400">Belum ada transfer stock.</div>} />
+                                <Table.Empty colSpan={7} message={<div className="text-slate-500 dark:text-slate-400">No stock transfers yet.</div>} />
                             )}
                         </Table.Tbody>
                     </Table>

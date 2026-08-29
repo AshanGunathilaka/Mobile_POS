@@ -147,7 +147,7 @@ export default function Show({
 
         notesForm.patch(route("stock-opnames.update", stockOpname.id), {
             preserveScroll: true,
-            onSuccess: () => toast.success("Catatan sesi diperbarui"),
+            onSuccess: () => toast.success("Session notes updated"),
             onError: () => toast.error("Failed memperbarui catatan sesi"),
         });
     };
@@ -218,7 +218,7 @@ export default function Show({
             },
             {
                 preserveScroll: true,
-                onSuccess: () => toast.success("Item opname diperbarui"),
+                onSuccess: () => toast.success("Stock count item updated"),
                 onError: () => toast.error("Failed memperbarui item opname"),
                 onFinish: () => setSavingItemId(null),
             }
@@ -233,7 +233,7 @@ export default function Show({
                 preserveScroll: true,
                 onSuccess: () => toast.success("Stock opname difinalisasi"),
                 onError: () =>
-                    toast.error("Failed finalize. Periksa item yang belum valid."),
+                    toast.error("Failed to finalize. Check the invalid items."),
             }
         );
     };
@@ -399,7 +399,7 @@ export default function Show({
                                                         }`}
                                                     >
                                                         {item.physical_stock === null
-                                                            ? "Belum dihitung"
+                                                            ? "Not Counted"
                                                             : difference > 0
                                                               ? `+${difference}`
                                                               : difference}
@@ -420,7 +420,7 @@ export default function Show({
                                                         placeholder={
                                                             isDifferent
                                                                 ? "Wajib isi alasan"
-                                                                : "Tidak perlu"
+                                                                : "No perlu"
                                                         }
                                                         className="h-10 w-full min-w-48 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                                     />
@@ -447,7 +447,7 @@ export default function Show({
                                         colSpan={6}
                                         message={
                                             <div className="text-slate-500 dark:text-slate-400">
-                                                Belum ada product pada sesi ini.
+                                                No products in this session yet.
                                             </div>
                                         }
                                     >
@@ -501,7 +501,7 @@ export default function Show({
                                     Cara penggunaan
                                 </p>
                                 <ul className="mt-2 space-y-2">
-                                    <li>1. Addkan product ke sesi stock opname.</li>
+                                    <li>1. Add products to the stock count session.</li>
                                     <li>2. Input stock fisik hasil hitung lapangan.</li>
                                     <li>3. Isi alasan jika terdapat selisih stock.</li>
                                     <li>4. Finalize setelah semua item valid.</li>
@@ -518,7 +518,7 @@ export default function Show({
                 title={
                     <div className="flex items-center gap-2">
                         <IconClipboardCheck size={18} />
-                        Search Product untuk Stock Opname
+                        Search Product for Stock Count
                     </div>
                 }
                 maxWidth="2xl"
@@ -532,7 +532,7 @@ export default function Show({
                             onChange={(event) =>
                                 setProductSearchInput(event.target.value)
                             }
-                            placeholder="Search nama product, barcode, atau SKU..."
+                            placeholder="Search product name, barcode, or SKU..."
                             className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pr-11 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         />
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400">
@@ -542,7 +542,7 @@ export default function Show({
 
                     {isWaitingSearch ? (
                         <div className="rounded-xl border border-dashed border-slate-200 p-6 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
-                            Menunggu input selesai, pencarian akan dijalankan dalam 1-2 detik.
+                            Waiting for input to finish; search will run in 1-2 seconds.
                         </div>
                     ) : filters.product_search ? (
                         availableProducts.length > 0 ? (
@@ -573,12 +573,12 @@ export default function Show({
                             </div>
                         ) : (
                             <div className="rounded-xl border border-dashed border-slate-200 p-6 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
-                                Tidak ada product yang cocok dengan kata kunci pencarian.
+                                No products match the search keyword.
                             </div>
                         )
                     ) : (
                         <div className="rounded-xl border border-dashed border-slate-200 p-6 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
-                            Ketik kata kunci, lalu tunggu sebentar untuk menampilkan hasil pencarian product.
+                            Type a keyword, then wait briefly to show matching products.
                         </div>
                     )}
                 </div>

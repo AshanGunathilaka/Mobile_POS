@@ -51,7 +51,7 @@ class SupplierController extends Controller
             'address' => $validated['address'] ?? '',
         ]);
 
-        return $this->created(new SupplierResource($supplier), 'Supplier successfully dibuat');
+        return $this->created(new SupplierResource($supplier), 'Supplier created successfully');
     }
 
     /**
@@ -76,7 +76,7 @@ class SupplierController extends Controller
 
         $supplier->update($validated);
 
-        return $this->ok(new SupplierResource($supplier), 'Supplier successfully diperbarui');
+        return $this->ok(new SupplierResource($supplier), 'Supplier updated successfully');
     }
 
     /**

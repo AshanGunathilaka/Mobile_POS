@@ -49,7 +49,7 @@ export default function Index({
                     Audit Log
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Histori aktivitas sensitif untuk investigasi operasional dan administratif.
+                    History of sensitive activity for operational and administrative investigations.
                 </p>
             </div>
 
@@ -141,7 +141,7 @@ export default function Index({
                             search: event.target.value,
                         })
                     }
-                    placeholder="Search target atau deskripsi"
+                    placeholder="Search target or description"
                     className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                 />
             </div>
@@ -155,7 +155,7 @@ export default function Index({
                             <Table.Th>Modul</Table.Th>
                             <Table.Th>Event</Table.Th>
                             <Table.Th>Target</Table.Th>
-                            <Table.Th>Deskripsi</Table.Th>
+                            <Table.Th>Description</Table.Th>
                             <Table.Th className="w-20 text-center">Aksi</Table.Th>
                         </tr>
                     </Table.Thead>

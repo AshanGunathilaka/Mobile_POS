@@ -62,7 +62,7 @@ export default function Form({ mode = "create", segment = null }) {
                         {isEdit ? "Edit Segment Customer" : "Buat Segment Customer"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Kelompokkan customer secara manual atau otomatis berdasarkan perilaku bisnis.
+                        Group customers manually or automatically based on business behavior.
                     </p>
                 </div>
 
@@ -110,7 +110,7 @@ export default function Form({ mode = "create", segment = null }) {
                             </div>
                             <div className="md:col-span-2">
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Deskripsi
+                                    Description
                                 </label>
                                 <textarea
                                     rows="3"
@@ -172,7 +172,7 @@ export default function Form({ mode = "create", segment = null }) {
                                     <>
                                         <div>
                                             <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                                Minimum Amount Transaksi
+                                                Minimum Transaction Amount
                                             </label>
                                             <input
                                                 type="number"

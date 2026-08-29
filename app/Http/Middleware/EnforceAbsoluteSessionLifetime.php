@@ -47,6 +47,6 @@ class EnforceAbsoluteSessionLifetime
 
         return redirect()
             ->route('login')
-            ->with('error', 'Sesi Anda sudah berakhir. Silakan masuk kembali.');
+            ->with('error', 'Your session has ended. Please sign in again.');
     }
 }

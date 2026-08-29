@@ -51,7 +51,7 @@ class PurchaseOrderService
                 event: 'purchase_order.created',
                 module: 'purchase',
                 auditable: $order,
-                description: 'Purchase order '.$order->document_number.' dibuat.',
+                description: 'Purchase order '.$order->document_number.' created.',
                 after: [
                     'document_number' => $order->document_number,
                     'supplier_id' => $order->supplier_id,
@@ -100,7 +100,7 @@ class PurchaseOrderService
                 event: 'purchase_order.cancelled',
                 module: 'purchase',
                 auditable: $order,
-                description: 'Purchase order '.$order->document_number.' dibatalkan.',
+                description: 'Purchase order '.$order->document_number.' canceled.',
                 before: ['status' => $before->status],
                 after: ['status' => 'cancelled'],
                 meta: ['purchase_order_id' => $order->id],

@@ -30,7 +30,7 @@ const statusBadge = (status) => {
     const labels = {
         draft: "Draft",
         completed: "Completed",
-        cancelled: "Dibatalkan",
+        cancelled: "Canceled",
     };
     return <span className={`${base} ${map[status] || map.draft}`}>{labels[status] || status}</span>;
 };
@@ -48,11 +48,11 @@ export default function Index({ returns, filters, suppliers }) {
 
     return (
         <>
-            <Head title="Retur Supplier" />
+            <Head title="Supplier Return" />
             <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        Retur Supplier
+                        Supplier Return
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         Kelola retur barang ke supplier.
@@ -64,7 +64,7 @@ export default function Index({ returns, filters, suppliers }) {
                         href={route("supplier-returns.create")}
                         icon={<IconCirclePlus size={18} />}
                         className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
-                        label="Buat Retur"
+                        label="Create Return"
                     />
                 )}
             </div>
@@ -90,7 +90,7 @@ export default function Index({ returns, filters, suppliers }) {
                     <option value="">All Status</option>
                     <option value="draft">Draft</option>
                     <option value="completed">Completed</option>
-                    <option value="cancelled">Dibatalkan</option>
+                    <option value="cancelled">Canceled</option>
                 </select>
                 <select
                     value={filters.supplier || ""}
@@ -104,7 +104,7 @@ export default function Index({ returns, filters, suppliers }) {
                 </select>
             </div>
 
-            <Table.Card title="Daftar Retur Supplier">
+            <Table.Card title="Register Supplier Return">
                 <Table>
                     <Table.Thead>
                         <tr>
@@ -143,7 +143,7 @@ export default function Index({ returns, filters, suppliers }) {
                         ) : (
                             <Table.Empty colSpan={7} message={
                                 <div className="text-slate-500 dark:text-slate-400">
-                                    Belum ada data retur supplier.
+                                    No supplier return data yet.
                                 </div>
                             }>
                                 <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">

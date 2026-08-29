@@ -13,37 +13,37 @@ import { useTheme } from "@/Context/ThemeSwitcherContext";
 const errorContent = {
     401: {
         title: "Autentikasi Dibutuhkan",
-        description: "Sesi atau akses Anda tidak valid. Silakan masuk kembali untuk melanjutkan.",
+        description: "Your session or access is invalid. Please sign in again to continue.",
         icon: IconLock,
     },
     403: {
-        title: "Akses Ditolak",
-        description: "Anda tidak memiliki izin untuk membuka halaman ini.",
+        title: "Akses Rejected",
+        description: "You do not have permission to open this page.",
         icon: IconLock,
     },
     404: {
-        title: "Halaman Tidak Ditemukan",
-        description: "Halaman yang Anda cari tidak tersedia, dipindahkan, atau URL yang dimasukkan tidak tepat.",
+        title: "Page Not Found",
+        description: "The page you are looking for is unavailable, has moved, or the URL is incorrect.",
         icon: IconAlertTriangle,
     },
     419: {
-        title: "Sesi Kedaluwarsa",
+        title: "Session Expired",
         description: "Sesi keamanan telah berakhir. Muat ulang halaman lalu coba kembali.",
         icon: IconRefresh,
     },
     429: {
         title: "Terlalu Banyak Permintaan",
-        description: "Permintaan Anda dibatasi sementara. Tunggu sebentar sebelum mencoba lagi.",
+        description: "Your requests are temporarily limited. Wait a moment before trying again.",
         icon: IconAlertTriangle,
     },
     500: {
         title: "Terjadi Kesalahan Server",
-        description: "Ada gangguan pada sistem. Silakan coba lagi dalam beberapa saat.",
+        description: "The system encountered a problem. Please try again shortly.",
         icon: IconServerOff,
     },
     503: {
-        title: "Layanan Sementara Tidak Tersedia",
-        description: "Aplikasi sedang dalam pemeliharaan atau belum siap melayani permintaan ini.",
+        title: "Service Temporarily Unavailable",
+        description: "The application is under maintenance or is not ready to handle this request.",
         icon: IconServerOff,
     },
 };
@@ -138,7 +138,7 @@ export default function Error({ status, homeUrl, homeLabel }) {
                                                 {status}
                                             </div>
                                             <div className="mt-4 rounded-2xl border border-slate-200 bg-white/80 p-4 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-950/70 dark:text-slate-400">
-                                                Pastikan URL, hak akses, atau status layanan sudah sesuai sebelum mencoba lagi.
+                                                Make sure the URL, access rights, or service status is correct before trying again.
                                             </div>
                                         </div>
                                     </div>

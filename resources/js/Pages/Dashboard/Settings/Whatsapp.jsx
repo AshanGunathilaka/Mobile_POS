@@ -59,7 +59,7 @@ export default function Whatsapp({ settings, waStatus }) {
         e.preventDefault();
         post(route("settings.whatsapp.update"), {
             preserveScroll: true,
-            onSuccess: () => toast.success("Pengaturan WhatsApp disimpan"),
+            onSuccess: () => toast.success("WhatsApp settings saved"),
             onError: () => toast.error("Failed menyimpan"),
         });
     };
@@ -76,7 +76,7 @@ export default function Whatsapp({ settings, waStatus }) {
 
     return (
         <>
-            <Head title="Pengaturan WhatsApp" />
+            <Head title="WhatsApp Settings" />
             <div className="space-y-6">
                 <div>
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -84,7 +84,7 @@ export default function Whatsapp({ settings, waStatus }) {
                         WhatsApp Gateway
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        Hubungkan WhatsApp untuk kirim pesan otomatis via campaign CRM
+                        Connect WhatsApp to send automatic messages through CRM campaigns
                     </p>
                 </div>
 
@@ -105,7 +105,7 @@ export default function Whatsapp({ settings, waStatus }) {
                         <div className="mb-4 text-center">
                             <img src={status.qr} alt="QR Code" className="mx-auto w-48 h-48" />
                             <p className="text-xs text-slate-400 mt-2">
-                                Scan dengan WhatsApp &gt; Perangkat Tertaut &gt; Perangkat Baru
+                                Scan with WhatsApp &gt; Linked Devices &gt; New Device
                             </p>
                         </div>
                     )}
@@ -133,13 +133,13 @@ export default function Whatsapp({ settings, waStatus }) {
                         <input type="text" value={data.wa_service_url} onChange={(e) => setData("wa_service_url", e.target.value)}
                             className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm"
                             placeholder="http://localhost:3001" />
-                        <p className="text-xs text-slate-400 mt-1">Alamat Node.js service whatsapp-web.js</p>
+                        <p className="text-xs text-slate-400 mt-1">whatsapp-web.js Node.js service address</p>
                     </div>
 
                     <label className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
                         <input type="checkbox" checked={data.wa_enabled} onChange={(e) => setData("wa_enabled", e.target.checked)}
                             className="rounded border-slate-300 text-primary-600 focus:ring-primary-500" />
-                        Aktifkan WhatsApp Gateway
+                        Activekan WhatsApp Gateway
                     </label>
 
                     <div className="border-t border-slate-100 dark:border-slate-800 pt-4">
@@ -159,7 +159,7 @@ export default function Whatsapp({ settings, waStatus }) {
                     <div className="flex justify-end pt-4 border-t border-slate-100 dark:border-slate-800">
                         <button type="submit" disabled={processing}
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors disabled:opacity-50">
-                            Save Pengaturan
+                            Save Settings
                         </button>
                     </div>
                 </form>

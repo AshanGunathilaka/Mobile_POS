@@ -13,7 +13,7 @@
 
 | Modul | File | Status |
 |-------|------|--------|
-| Produk & Kategori | `docs/features/inventory-stock.md` | ✅ |
+| Product & Kategori | `docs/features/inventory-stock.md` | ✅ |
 | Stock Opname | `docs/features/inventory-stock.md` | ✅ |
 | Stock Mutation | `docs/features/inventory-stock.md` | ✅ |
 | Multi-Warehouse & Stock Transfer | `docs/features/multi-warehouse.md` | ✅ |
@@ -30,8 +30,8 @@
 | Goods Receiving | `docs/features/purchasing-chain.md` | ✅ |
 | Supplier Returns | `docs/features/purchasing-chain.md` | ✅ |
 | Supplier | `docs/features/payables-suppliers.md` | ✅ |
-| Payables (Hutang) | `docs/features/payables-suppliers.md` | ✅ |
-| Receivables (Piutang) | `docs/features/receivables.md` | ✅ |
+| Payables (Payable) | `docs/features/payables-suppliers.md` | ✅ |
+| Receivables (Receivable) | `docs/features/receivables.md` | ✅ |
 
 ## Pricing & Promo
 

@@ -170,9 +170,9 @@ const Sales = ({ transactions, summary, filters, cashiers, customers, warehouses
 
     const summaryCards = [
         {
-            title: "Pendapatan Bersih",
+            title: "Net Revenue",
             value: formatCurrency(safeSummary.revenue_total),
-            description: "Total setelah diskon",
+            description: "Total after discount",
             icon: <IconReceipt2 />,
             gradient: "from-primary-500 to-primary-700",
         },
@@ -203,7 +203,7 @@ const Sales = ({ transactions, summary, filters, cashiers, customers, warehouses
 
     return (
         <>
-            <Head title="Laporan Penjualan" />
+            <Head title="Sales Report" />
 
             <div className="space-y-6">
                 {/* Header */}
@@ -214,7 +214,7 @@ const Sales = ({ transactions, summary, filters, cashiers, customers, warehouses
                                 size={28}
                                 className="text-primary-500"
                             />
-                            Laporan Penjualan
+                            Sales Report
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             Analisis dan ringkasan penjualan
@@ -422,10 +422,10 @@ const Sales = ({ transactions, summary, filters, cashiers, customers, warehouses
                             />
                         </div>
                         <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                            Tidak Ada Data
+                            No Data
                         </h3>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Tidak ada transaksi sesuai filter.
+                            No transactions match the filter.
                         </p>
                     </div>
                 )}

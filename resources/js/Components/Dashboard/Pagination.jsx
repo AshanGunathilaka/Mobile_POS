@@ -41,7 +41,7 @@ export default function Pagination({ links }) {
         "inline-flex items-center justify-center min-w-[34px] h-[34px] text-sm border rounded-lg bg-white text-slate-500 hover:bg-slate-100 dark:bg-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:border-slate-800 transition-colors";
     const activeBtn =
         "border-primary-500 bg-primary-50 text-primary-700 font-semibold dark:bg-primary-950/60 dark:text-primary-300 dark:border-primary-700";
-    const disabledBtn = "opacity-40 pointer-events-none";
+    const disabledBtn = "opacity-40 pointster-events-none";
 
     const isPrev = (item, i) =>
         i === 0 ||
@@ -61,7 +61,7 @@ export default function Pagination({ links }) {
         >
             <div className="order-2 sm:order-1 flex items-center gap-3 flex-wrap">
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Halaman <span className="font-medium text-slate-700 dark:text-slate-200">{current}</span> dari{" "}
+                    Page <span className="font-medium text-slate-700 dark:text-slate-200">{current}</span> of{" "}
                     <span className="font-medium text-slate-700 dark:text-slate-200">{total}</span>
                 </p>
 
@@ -89,7 +89,7 @@ export default function Pagination({ links }) {
                                 key={i}
                                 href={item.url}
                                 className={baseBtn}
-                                aria-label="Halaman sebelumnya"
+                                aria-label="Page sebelumnya"
                             >
                                 <IconChevronLeft size={18} strokeWidth={1.5} />
                             </Link>
@@ -98,7 +98,7 @@ export default function Pagination({ links }) {
                                 key={i}
                                 className={`${baseBtn} ${disabledBtn}`}
                                 aria-disabled="true"
-                                aria-label="Halaman sebelumnya"
+                                aria-label="Page sebelumnya"
                             >
                                 <IconChevronLeft size={18} strokeWidth={1.5} />
                             </span>
@@ -111,7 +111,7 @@ export default function Pagination({ links }) {
                                 key={i}
                                 href={item.url}
                                 className={baseBtn}
-                                aria-label="Halaman berikutnya"
+                                aria-label="Page berikutnya"
                             >
                                 <IconChevronRight size={18} strokeWidth={1.5} />
                             </Link>
@@ -120,7 +120,7 @@ export default function Pagination({ links }) {
                                 key={i}
                                 className={`${baseBtn} ${disabledBtn}`}
                                 aria-disabled="true"
-                                aria-label="Halaman berikutnya"
+                                aria-label="Page berikutnya"
                             >
                                 <IconChevronRight size={18} strokeWidth={1.5} />
                             </span>

@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="doc">
-                <div class="badge">Nota Barang</div>
+                <div class="badge">Credit Sale</div>
                 <div class="doc-number">{{ $receivable->invoice }}</div>
                 <div class="muted">Due date: {{ $receivable->due_date ?? '-' }}</div>
             </div>

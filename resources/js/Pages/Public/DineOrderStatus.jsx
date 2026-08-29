@@ -5,11 +5,11 @@ import { IconCheck, IconClock, IconX, IconRefresh } from "@tabler/icons-react";
 const fmt = (v) => Number(v || 0).toLocaleString("en-LK", { style: "currency", currency: "LKR", minimumFractionDigits: 2 });
 
 const STATUS_CONFIG = {
-    submitted: { label: "Menunggu Konfirmasi", color: "bg-amber-100 text-amber-700", icon: IconClock, desc: "Pesanan Anda sedang menunggu konfirmasi dari staff." },
-    accepted: { label: "Diterima", color: "bg-primary-100 text-primary-700", icon: IconCheck, desc: "Pesanan diterima. Silakan menuju cashier untuk payment." },
-    completed: { label: "Completed", color: "bg-emerald-100 text-emerald-700", icon: IconCheck, desc: "Pesanan sudah selesai." },
-    rejected: { label: "Ditolak", color: "bg-rose-100 text-rose-700", icon: IconX, desc: "Pesanan ditolak oleh staff." },
-    cancelled: { label: "Dibatalkan", color: "bg-slate-100 text-slate-500", icon: IconX, desc: "Pesanan dibatalkan." },
+    submitted: { label: "Waiting for Confirmation", color: "bg-amber-100 text-amber-700", icon: IconClock, desc: "Your order is waiting for staff confirmation." },
+    accepted: { label: "Accepted", color: "bg-primary-100 text-primary-700", icon: IconCheck, desc: "Order accepted. Please proceed to the cashier for payment." },
+    completed: { label: "Completed", color: "bg-emerald-100 text-emerald-700", icon: IconCheck, desc: "Order has been completed." },
+    rejected: { label: "Rejected", color: "bg-rose-100 text-rose-700", icon: IconX, desc: "Order was rejected by staff." },
+    cancelled: { label: "Canceled", color: "bg-slate-100 text-slate-500", icon: IconX, desc: "Order canceled." },
 };
 
 export default function DineOrderStatus({ order, table, storeName }) {
@@ -43,7 +43,7 @@ export default function DineOrderStatus({ order, table, storeName }) {
 
     return (
         <>
-            <Head title={`Status Pesanan — ${storeName}`} />
+            <Head title={`Order Status — ${storeName}`} />
             <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-4 py-8">
                 <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     <div className="bg-gradient-to-r from-primary-500 to-primary-700 px-6 py-5 text-white text-center">
@@ -91,7 +91,7 @@ export default function DineOrderStatus({ order, table, storeName }) {
 
                         <div className="mt-4 flex flex-col gap-2">
                             <div className="flex items-center justify-between text-xs text-slate-400">
-                                <span>No. Pesanan: {currentOrder.id}</span>
+                                <span>Order No.: {currentOrder.id}</span>
                                 <button
                                     onClick={() => window.location.reload()}
                                     className="flex items-center gap-1 hover:text-slate-600 transition-colors"

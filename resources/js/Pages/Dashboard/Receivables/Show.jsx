@@ -63,7 +63,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
             case "paid":
                 return (
                     <span className={`${base} bg-success-100 text-success-700`}>
-                        Lunas
+                        Paid
                     </span>
                 );
             case "partial":
@@ -81,7 +81,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
             default:
                 return (
                     <span className={`${base} bg-amber-100 text-amber-700`}>
-                        Belum Lunas
+                        Unpaid
                     </span>
                 );
         }
@@ -276,7 +276,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                             </div>
                             {receivable.transaction_id && (
                                 <div className="flex justify-between">
-                                    <span>ID Transaksi</span>
+                                    <span>Transaction ID</span>
                                     <Link
                                         href={route("transactions.print", receivable.invoice)}
                                         className="text-primary-600 font-semibold"
@@ -387,7 +387,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                             }
                                             className="w-full h-11 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500"
                                         >
-                                            <option value="">Select rekening</option>
+                                            <option value="">Select account</option>
                                             {bankAccounts.map((bank) => (
                                                 <option key={bank.id} value={bank.id}>
                                                     {bank.bank_name} - {bank.account_number}
@@ -438,7 +438,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                     <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-3xl relative overflow-hidden">
                         <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-800">
                             <div>
-                                <p className="text-xs text-slate-500">Preview Nota Barang</p>
+                                <p className="text-xs text-slate-500">Preview Credit Sale</p>
                                 <p className="text-sm font-semibold text-slate-800 dark:text-white">
                                     {receivable.invoice}
                                 </p>
@@ -451,7 +451,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                     className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold"
                                 >
                                     <IconPrinter size={16} />
-                                    PDF / Cetak
+                                    PDF / Print
                                 </a>
                                 <button
                                     onClick={() => setShowPreview(false)}

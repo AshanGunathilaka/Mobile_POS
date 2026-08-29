@@ -37,14 +37,14 @@ export default function Edit({ category }) {
     const submit = (e) => {
         e.preventDefault();
         post(route("categories.update", category.id), {
-            onSuccess: () => toast.success("Kategori successfully diperbarui"),
+            onSuccess: () => toast.success("Category updated successfully"),
             onError: () => toast.error("Failed memperbarui kategori"),
         });
     };
 
     return (
         <>
-            <Head title="Edit Kategori" />
+            <Head title="Edit Category" />
 
             <div className="mb-6">
                 <Link
@@ -52,11 +52,11 @@ export default function Edit({ category }) {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600 mb-3"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke Kategori
+                    Back to Categories
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconCategory size={28} className="text-primary-500" />
-                    Edit Kategori
+                    Edit Category
                 </h1>
                 <p className="text-sm text-slate-500 mt-1">{category.name}</p>
             </div>
@@ -95,7 +95,7 @@ export default function Edit({ category }) {
                             <div className="space-y-4">
                                 <Input
                                     type="text"
-                                    label="Name Kategori"
+                                    label="Category Name"
                                     placeholder="Enter name"
                                     errors={errors.name}
                                     onChange={(e) =>
@@ -104,8 +104,8 @@ export default function Edit({ category }) {
                                     value={data.name}
                                 />
                                 <Textarea
-                                    label="Deskripsi"
-                                    placeholder="Deskripsi kategori"
+                                    label="Description"
+                                    placeholder="Description kategori"
                                     errors={errors.description}
                                     onChange={(e) =>
                                         setData("description", e.target.value)
