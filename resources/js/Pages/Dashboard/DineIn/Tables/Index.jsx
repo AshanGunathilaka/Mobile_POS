@@ -61,7 +61,7 @@ function TableShape({ table, onDragStart, isSelected, onClick }) {
                 y={table.pos_y * GRID_SIZE + GRID_SIZE / 2}
                 textAnchor="middle"
                 dominantBaseline="central"
-                className={`${textClass} text-xs font-semibold pointster-events-none select-none`}
+                className={`${textClass} text-xs font-semibold pointer-events-none select-none`}
                 fontSize={10}
             >
                 {name}
@@ -160,7 +160,7 @@ export default function Index({ tables, areas, filters }) {
     const submit = (e) => {
         e.preventDefault();
         const onSuccess = () => {
-            toast.success(editingTable ? "Table updated successfully." : "Meja successfully ditambahkan.");
+            toast.success(editingTable ? "Table updated successfully." : "Table added successfully.");
             setModalOpen(false);
         };
         const onError = () => toast.error("Failed to save table.");
@@ -394,7 +394,7 @@ export default function Index({ tables, areas, filters }) {
                         <IconDatabaseOff size={32} className="text-slate-400" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Belum Ada Meja
+                        No Tables Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                         Add your first dine-in table.

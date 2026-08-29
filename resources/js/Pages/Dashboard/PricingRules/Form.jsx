@@ -162,7 +162,7 @@ export default function Form({
 
     return (
         <>
-            <Head title={isEdit ? "Edit Promo Price" : "Buat Promo Price"} />
+            <Head title={isEdit ? "Edit Promo Price" : "Create Promo Price"} />
 
             <div className="w-full">
                 <div className="mb-6">
@@ -174,7 +174,7 @@ export default function Form({
                         label="Back to price promos"
                     />
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {isEdit ? "Edit Promo Price" : "Buat Promo Price"}
+                        {isEdit ? "Edit Promo Price" : "Create Promo Price"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         Manage standard, wholesale, bundle, and buy X get Y promos in one engine.
@@ -183,7 +183,7 @@ export default function Form({
 
                 <form onSubmit={submit} className="space-y-6">
                     <CardSection
-                        title="Informasi Rule"
+                        title="Rule Information"
                         description="Basic rule identity, promo type, and application priority."
                     >
                         <div className="grid gap-4 md:grid-cols-2">
@@ -329,7 +329,7 @@ export default function Form({
                                         }
                                         className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                     >
-                                        <option value="">Select kategori</option>
+                                        <option value="">Select category</option>
                                         {categories.map((category) => (
                                             <option key={category.id} value={category.id}>
                                                 {category.name}
@@ -394,7 +394,7 @@ export default function Form({
                             <div className="grid gap-4 md:grid-cols-2">
                                 <div>
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Tipe Discount
+                                        Discount Type
                                     </label>
                                     <select
                                         value={data.discount_type}
@@ -694,7 +694,7 @@ export default function Form({
 
                     <CardSection
                         title="Jadwal & Catatan"
-                        description="Gunakan jadwal bila promo hanya aktif pada periode tertentu."
+                        description="Use a schedule when the promotion should only be active during a specific period."
                     >
                         <div className="grid gap-4 md:grid-cols-2">
                             <div>
@@ -751,7 +751,7 @@ export default function Form({
 
                     <CardSection
                         title="Preview Draft"
-                        description="Simulasikan rule ini terhadap contoh product sebelum disimpan."
+                        description="Simulate this rule against a sample product before saving."
                     >
                         <div className="mb-4 flex flex-wrap gap-3">
                             <button

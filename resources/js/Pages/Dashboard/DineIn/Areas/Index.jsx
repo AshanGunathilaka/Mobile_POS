@@ -48,7 +48,7 @@ export default function Index({ areas }) {
     const submit = (e) => {
         e.preventDefault();
         const onSuccess = () => {
-            toast.success(editingArea ? "Area updated successfully." : "Area successfully ditambahkan.");
+            toast.success(editingArea ? "Area updated successfully." : "Area added successfully.");
             setModalOpen(false);
         };
         const onError = () => toast.error("Failed menyimpan area.");
@@ -64,7 +64,7 @@ export default function Index({ areas }) {
         if (!confirm(`Delete area "${area.name}"?`)) return;
         router.delete(route("dine-areas.destroy", area.id), {
             onSuccess: () => toast.success("Area deleted successfully."),
-            onError: () => toast.error("Failed menghapus area."),
+            onError: () => toast.error("Failed to delete area."),
         });
     };
 
@@ -171,7 +171,7 @@ export default function Index({ areas }) {
                         <IconDatabaseOff size={32} className="text-slate-400" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Belum Ada Area
+                        No Areas Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                         Add your first dine-in area.

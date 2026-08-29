@@ -84,7 +84,7 @@ class LoginRequest extends FormRequest
             event: 'auth.locked_out',
             module: 'auth',
             auditable: User::query()->where('email', $this->string('email')->toString())->first(),
-            description: 'Permintaan login diblokir karena terlalu banyak percobaan.',
+            description: 'Login request blocked because of too many attempts.',
             meta: [
                 'severity' => 'warning',
                 'route' => $this->route()?->getName(),

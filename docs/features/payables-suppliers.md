@@ -1,21 +1,21 @@
 # Payables & Suppliers
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Menangani master supplier dan pencatatan hutang supplier beserta pelunasannya.
+Handles supplier master data and supplier payable records with settlement.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 - CRUD supplier
 - list payables
 - detail payable
-- pembayaran hutang supplier
-- status hutang
+- payments supplier payables
+- payable status
 - PDF payable
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/suppliers`
 - `dashboard/payables`
@@ -31,10 +31,10 @@ Menangani master supplier dan pencatatan hutang supplier beserta pelunasannya.
 
 ## Alur User
 
-1. admin/kasir mengelola data supplier
-2. hutang supplier dicatat pada modul payable
-3. pembayaran dicatat bertahap sampai lunas
-4. user dapat membuka detail dan dokumen hutang
+1. admin/cashier manages supplier data
+2. supplier payables are recorded in the payables module
+3. payments are recorded gradually until fully paid
+4. users can open payable details and documents
 
 ## Integrasi Data
 
@@ -45,13 +45,13 @@ Menangani master supplier dan pencatatan hutang supplier beserta pelunasannya.
 
 ## Efek Bisnis Penting
 
-- payable tidak hanya master data; status hutang menentukan visibilitas kewajiban operasional
-- dokumen PDF hutang tersedia untuk kebutuhan administrasi
+- payables are not just master data; payable status determines operational liability visibility
+- payable PDF documents are available for administration
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- belum terhubung ke purchase order formal
-- belum ada supplier return flow
+- not yet connected to formal purchase orders
+- no supplier return flow yet
 
 ## File Sentral
 

@@ -152,7 +152,7 @@ export default function Index() {
 
     const deleteData = async (id) => {
         Swal.fire({
-            title: "Delete Pengguna?",
+            title: "Delete User?",
             text: "Deleted data cannot be restored.",
             icon: "warning",
             showCancelButton: true,
@@ -177,17 +177,17 @@ export default function Index() {
 
     return (
         <>
-            <Head title="Pengguna" />
+            <Head title="Users" />
 
             {/* Header */}
             <div className="mb-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                            Pengguna
+                            Users
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            {users.total || users.data?.length || 0} pengguna
+                            {users.total || users.data?.length || 0} users
                             terdaftar
                         </p>
                     </div>
@@ -216,7 +216,7 @@ export default function Index() {
                                 className={
                                     "bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
                                 }
-                                label={"Add Pengguna"}
+                                label={"Add User"}
                             />
                         )}
                     </div>
@@ -228,7 +228,7 @@ export default function Index() {
                 <div className="w-full sm:w-80">
                     <Search
                         url={route("users.index")}
-                        placeholder="Search pengguna..."
+                        placeholder="Search users..."
                     />
                 </div>
                 <div className="flex items-center gap-2">
@@ -274,7 +274,7 @@ export default function Index() {
                         ))}
                     </div>
                 ) : (
-                    <Table.Card title={"Data Pengguna"}>
+                    <Table.Card title={"User Data"}>
                         <Table>
                             <Table.Thead>
                                 <tr>
@@ -301,7 +301,7 @@ export default function Index() {
                                         )}
                                     </Table.Th>
                                     <Table.Th className={"w-10"}>No</Table.Th>
-                                    <Table.Th>Pengguna</Table.Th>
+                                    <Table.Th>Users</Table.Th>
                                     <Table.Th>Group Akses</Table.Th>
                                     <Table.Th></Table.Th>
                                 </tr>
@@ -439,7 +439,7 @@ export default function Index() {
                             className={
                                 "bg-primary-500 hover:bg-primary-600 text-white"
                             }
-                            label={"Add Pengguna"}
+                            label={"Add User"}
                             href={route("users.create")}
                         />
                     )}

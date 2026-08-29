@@ -68,7 +68,7 @@ export default function Index({ orders, filters, suppliers }) {
                         href={route("purchase-orders.create")}
                         icon={<IconCirclePlus size={18} />}
                         className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
-                        label="Buat PO"
+                        label="Create PO"
                     />
                 )}
             </div>
@@ -114,12 +114,12 @@ export default function Index({ orders, filters, suppliers }) {
                 <Table>
                     <Table.Thead>
                         <tr>
-                            <Table.Th>Dokumen</Table.Th>
+                            <Table.Th>Document</Table.Th>
                             <Table.Th>Supplier</Table.Th>
                             <Table.Th>Status</Table.Th>
                             <Table.Th>Item</Table.Th>
-                            <Table.Th>Dibuat Oleh</Table.Th>
-                            <Table.Th className="w-24 text-center">Aksi</Table.Th>
+                            <Table.Th>Created By</Table.Th>
+                            <Table.Th className="w-24 text-center">Actions</Table.Th>
                         </tr>
                     </Table.Thead>
                     <Table.Tbody>

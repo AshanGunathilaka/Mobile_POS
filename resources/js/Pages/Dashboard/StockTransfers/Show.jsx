@@ -36,7 +36,7 @@ export default function Show({ transfer }) {
                 <div className="flex items-start justify-between">
                     <div>
                         <Link href={route("stock-transfers.index")} className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600">
-                            <IconArrowLeft size={16} /> Back ke daftar transfer
+                            <IconArrowLeft size={16} /> Back to transfer list
                         </Link>
                         <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                             <IconArrowsLeftRight size={28} className="text-primary-500" />
@@ -51,19 +51,19 @@ export default function Show({ transfer }) {
                         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Detail Transfer</h2>
                         <div className="mt-5 grid gap-4 sm:grid-cols-2">
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Warehouse Asal</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Source Warehouse</p>
                                 <p className="mt-1 text-sm text-slate-900 dark:text-white">{transfer.source_warehouse?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Warehouse Tujuan</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Destination Warehouse</p>
                                 <p className="mt-1 text-sm text-slate-900 dark:text-white">{transfer.destination_warehouse?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Dibuat Oleh</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Created By</p>
                                 <p className="mt-1 text-sm text-slate-900 dark:text-white">{transfer.creator?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Dibuat Pada</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Created At</p>
                                 <p className="mt-1 text-sm text-slate-900 dark:text-white">{formatDateTime(transfer.created_at)}</p>
                             </div>
                             {transfer.completed_at && (
@@ -105,7 +105,7 @@ export default function Show({ transfer }) {
                     <div className="space-y-4">
                         {transfer.status === "draft" && (
                             <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Aksi</h2>
+                                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Actions</h2>
                                 <div className="mt-4 space-y-3">
                                     {can("stock-transfers-send") && (
                                         <button onClick={() => confirmAction("send", "mengirim")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-600">
@@ -113,7 +113,7 @@ export default function Show({ transfer }) {
                                         </button>
                                     )}
                                     {can("stock-transfers-cancel") && (
-                                        <button onClick={() => confirmAction("cancel", "membatalkan")} className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-50 dark:border-rose-900 dark:text-rose-400 dark:hover:bg-rose-950/20">
+                                        <button onClick={() => confirmAction("cancel", "cancel")} className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-50 dark:border-rose-900 dark:text-rose-400 dark:hover:bg-rose-950/20">
                                             <IconX size={18} /> Cancelkan
                                         </button>
                                     )}
@@ -123,7 +123,7 @@ export default function Show({ transfer }) {
 
                         {transfer.status === "in_transit" && (
                             <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Aksi</h2>
+                                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Actions</h2>
                                 <div className="mt-4 space-y-3">
                                     {can("stock-transfers-receive") && (
                                         <button onClick={() => confirmAction("receive", "menerima")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-emerald-600">
@@ -131,7 +131,7 @@ export default function Show({ transfer }) {
                                         </button>
                                     )}
                                     {can("stock-transfers-cancel") && (
-                                        <button onClick={() => confirmAction("cancel", "membatalkan")} className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-50 dark:border-rose-900 dark:text-rose-400 dark:hover:bg-rose-950/20">
+                                        <button onClick={() => confirmAction("cancel", "cancel")} className="flex w-full items-center justify-center gap-2 rounded-xl border border-rose-200 px-4 py-2.5 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-50 dark:border-rose-900 dark:text-rose-400 dark:hover:bg-rose-950/20">
                                             <IconX size={18} /> Cancelkan & Backkan
                                         </button>
                                     )}

@@ -72,7 +72,7 @@ class ConfirmablePasswordController extends Controller
             event: 'security.privileged_action_confirmed',
             module: 'security',
             auditable: $request->user(),
-            description: 'Aksi sensitif diotorisasi setelah konfirmasi password.',
+            description: 'Sensitive action authorized after password confirmation.',
             meta: [
                 'severity' => 'high',
                 'challenge' => $challenge,

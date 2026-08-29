@@ -39,14 +39,14 @@ export default function Create() {
     const submit = (e) => {
         e.preventDefault();
         post(route("users.store"), {
-            onSuccess: () => toast.success("Pengguna successfully ditambahkan"),
-            onError: () => toast.error("Failed menyimpan pengguna"),
+            onSuccess: () => toast.success("User added successfully"),
+            onError: () => toast.error("Failed to save user"),
         });
     };
 
     return (
         <>
-            <Head title="Add Pengguna" />
+            <Head title="Add User" />
 
             <div className="mb-6">
                 <Link
@@ -58,7 +58,7 @@ export default function Create() {
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUserPlus size={28} className="text-primary-500" />
-                    Add Pengguna Baru
+                    Add User Baru
                 </h1>
             </div>
 

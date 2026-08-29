@@ -217,7 +217,7 @@ const Sales = ({ transactions, summary, filters, cashiers, customers, warehouses
                             Sales Report
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Analisis dan ringkasan penjualan
+                            Sales analysis and summary
                         </p>
                     </div>
                     <button

@@ -24,7 +24,7 @@ const formatPrice = (value = 0) =>
 const statusBadge = (voucher) => {
     if (voucher.is_used) {
         return {
-            label: "Sudah Dipakai",
+            label: "Already Used",
             className:
                 "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
         };
@@ -97,7 +97,7 @@ export default function Index({ vouchers, filters = {} }) {
                             href={route("customer-vouchers.create")}
                             icon={<IconCirclePlus size={18} />}
                             className="bg-primary-500 text-white hover:bg-primary-600 shadow-lg shadow-primary-500/30"
-                            label="Buat Voucher"
+                            label="Create Voucher"
                         />
                     )}
                 </div>
@@ -120,7 +120,7 @@ export default function Index({ vouchers, filters = {} }) {
                             <option value="active">Active</option>
                             <option value="scheduled">Terjadwal</option>
                             <option value="expired">Expired</option>
-                            <option value="used">Sudah Dipakai</option>
+                            <option value="used">Already Used</option>
                             <option value="inactive">Inactive</option>
                         </select>
                     </div>
@@ -135,7 +135,7 @@ export default function Index({ vouchers, filters = {} }) {
                                 <Table.Th>Benefit</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th>Expired</Table.Th>
-                                <Table.Th className="w-28 text-center">Aksi</Table.Th>
+                                <Table.Th className="w-28 text-center">Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>
@@ -223,7 +223,7 @@ export default function Index({ vouchers, filters = {} }) {
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={6} message="Belum ada voucher customer.">
+                                <Table.Empty colSpan={6} message="No customer vouchers yet.">
                                     <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                         <IconDatabaseOff
                                             size={28}

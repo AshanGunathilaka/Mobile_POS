@@ -92,7 +92,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                             className="mb-3 inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
                         >
                             <IconArrowLeft size={16} />
-                            <span>Back ke histori shift</span>
+                            <span>Back to shift history</span>
                         </Link>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                             Shift Cashier {cashierShift.user?.name || "-"}

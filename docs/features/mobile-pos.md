@@ -1,36 +1,36 @@
 # Mobile POS / PWA
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Akses POS dari tablet/handphone dengan barcode scanner via kamera, install ke home screen, dan fullscreen mode.
+POS access from tablet/phone with barcode scanner via camera, install to the home screen, and fullscreen mode.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 ### Camera Barcode Scanner
 - Library: `html5-qrcode`
-- Scan barcode via kamera belakang (environment-facing)
-- Auto-search produk setelah scan
-- Modal fullscreen scanner — buka kamera, scan, tutup otomatis
-- Tombol kamera di search bar POS
+- Scan barcode via camera rear (environment-facing)
+- Auto-search products setelah scan
+- Modal fullscreen scanner — buka camera, scan, tutup otomatis
+- Camera button in search bar POS
 
 ### Progressive Web App (PWA)
 - `manifest.json` — name, icons, display standalone, theme color
-- `sw.js` — service worker untuk cache asset + API master data
+- `sw.js` — service worker for cache asset + API master data
 - Theme-color meta tag
-- Install prompt ke home screen (Android Chrome)
-- Support offline (cache-first untuk master data)
+- Install prompt to the home screen (Android Chrome)
+- Support offline (cache-first for master data)
 
 ### Fullscreen Mode
-- Tombol fullscreen di header POS
+- Fullscreen button in header POS
 - Sembunyikan browser chrome
-- Toggle masuk/keluar fullscreen
+- Toggle incoming/outgoing fullscreen
 
 ### Touch Optimization
-- Semua interactive element: `min-h-touch` (44px) dan `min-w-touch`
-- Gap aman antar tombol
-- Layout responsive untuk tablet landscape
+- All interactive element: `min-h-touch` (44px) and `min-w-touch`
+- Gap safe antar tombol
+- Layout responsive for tablet landscape
 
 ## File Terkait
 
@@ -46,17 +46,17 @@ Akses POS dari tablet/handphone dengan barcode scanner via kamera, install ke ho
 ## Cara Pakai
 
 ### Barcode Scanner
-1. Klik ikon kamera di search bar POS
-2. Izinkan akses kamera
-3. Arahkan kamera ke barcode produk
-4. Scanner otomatis mencari produk dan menutup
+1. Klik ikon camera in search bar POS
+2. Izinkan akses camera
+3. Point the camera to barcode products
+4. Scanner automatically searches products and close
 
 ### PWA Install
-1. Buka aplikasi di Chrome Android
-2. Muncul prompt "Add to Home Screen"
-3. Install — aplikasi terbuka tanpa browser chrome
+1. Open the app in Chrome Android
+2. The "Add to Home Screen" prompt appears
+3. Install it; the app opens without browser chrome
 
 ### Fullscreen
-1. Klik ikon fullscreen di header POS
-2. Browser masuk mode fullscreen
-3. Klik lagi untuk keluar
+1. Klik ikon fullscreen in header POS
+2. Browser incoming mode fullscreen
+3. Click again for outgoing

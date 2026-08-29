@@ -41,13 +41,13 @@ export default function Edit() {
         e.preventDefault();
         post(route("users.update", user.id), {
             onSuccess: () => toast.success("User updated successfully"),
-            onError: () => toast.error("Failed memperbarui pengguna"),
+            onError: () => toast.error("Failed to update user"),
         });
     };
 
     return (
         <>
-            <Head title="Edit Pengguna" />
+            <Head title="Edit User" />
 
             <div className="mb-6">
                 <Link
@@ -59,7 +59,7 @@ export default function Edit() {
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUserEdit size={28} className="text-primary-500" />
-                    Edit Pengguna
+                    Edit User
                 </h1>
                 <p className="text-sm text-slate-500 mt-1">
                     {user.name} • {user.email}
@@ -115,7 +115,7 @@ export default function Edit() {
                             <Input
                                 type="text"
                                 label="Name Lengkap"
-                                placeholder="Name pengguna"
+                                placeholder="User name"
                                 value={data.name}
                                 onChange={(e) =>
                                     setData("name", e.target.value)
@@ -209,7 +209,7 @@ export default function Edit() {
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors disabled:opacity-50"
                         >
                             <IconDeviceFloppy size={18} />
-                            {processing ? "Saving..." : "Save Perubahan"}
+                            {processing ? "Saving..." : "Save Changes"}
                         </button>
                     </div>
                 </div>

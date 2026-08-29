@@ -23,7 +23,7 @@ return new class extends Migration
         DB::table('settings')->insert([
             'key' => 'monthly_sales_target',
             'value' => '0',
-            'description' => 'Target penjualan bulanan',
+            'description' => 'Monthly sales target',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

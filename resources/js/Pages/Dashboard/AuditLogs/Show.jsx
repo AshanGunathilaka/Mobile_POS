@@ -72,7 +72,7 @@ export default function Show({ auditLog }) {
                             Detail Audit Log
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Event {auditLog.event} pada modul {auditLog.module}.
+                            Event {auditLog.event} in module {auditLog.module}.
                         </p>
                     </div>
                     <Link

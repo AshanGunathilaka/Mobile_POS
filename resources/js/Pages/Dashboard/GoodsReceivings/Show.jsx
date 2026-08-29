@@ -49,7 +49,7 @@ export default function Show({ receiving }) {
                         {receiving.purchase_order?.document_number || "-"}
                     </Link>
                     {" "}&bull; Supplier: {receiving.supplier?.name || "-"}
-                    {" "}&bull; Accepted oleh {receiving.receiver?.name || "-"}
+                    {" "}&bull; Accepted by {receiving.receiver?.name || "-"}
                     {" "}&bull; {formatDateTime(receiving.received_at)}
                 </p>
             </div>
@@ -109,10 +109,10 @@ export default function Show({ receiving }) {
                         </div>
                     )}
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Informasi</h2>
+                        <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Information</h2>
                         <div className="space-y-2 text-sm">
                             <div className="flex justify-between">
-                                <span className="text-slate-500">Dokumen</span>
+                                <span className="text-slate-500">Document</span>
                                 <span className="font-medium text-slate-800 dark:text-slate-200">{receiving.document_number}</span>
                             </div>
                             <div className="flex justify-between">
@@ -125,7 +125,7 @@ export default function Show({ receiving }) {
                                 </Link>
                             </div>
                             <div className="flex justify-between">
-                                <span className="text-slate-500">Date Terima</span>
+                                <span className="text-slate-500">Received Date</span>
                                 <span className="font-medium text-slate-800 dark:text-slate-200">{formatDateTime(receiving.received_at)}</span>
                             </div>
                             <div className="flex justify-between">

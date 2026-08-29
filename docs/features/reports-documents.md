@@ -1,22 +1,22 @@
 # Reports & Documents
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Menyediakan visibilitas operasional melalui laporan dan dokumen siap cetak / share.
+Provides operational visibility through reports and print/share-ready documents.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- laporan penjualan
-- laporan profit
-- invoice transaksi publik dan internal
+- reports sales
+- reports profit
+- public transaction invoices and internal
 - receipt thermal 58mm / 80mm
 - shipping label
 - PDF receivable
 - PDF payable
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/reports/sales`
 - `dashboard/reports/profits`
@@ -30,14 +30,14 @@ Menyediakan visibilitas operasional melalui laporan dan dokumen siap cetak / sha
 
 - `reports-access`
 - `profits-access`
-- akses dokumen mengikuti modul asal seperti `transactions-access`, `receivables-access`, dan `payables-access`
+- document access follows the source module permissions such as `transactions-access`, `receivables-access`, and `payables-access`
 
 ## Alur User
 
-1. user membuka laporan sales atau profit
-2. user memfilter data
-3. user membuka dokumen transaksi atau finansial terkait
-4. dokumen bisa dipakai untuk print/share
+1. user open reports sales or profit
+2. users filter data
+3. users open related transaction or financial documents
+4. documents can be printed/shared
 
 ## Integrasi Data
 
@@ -46,17 +46,17 @@ Menyediakan visibilitas operasional melalui laporan dan dokumen siap cetak / sha
 - `profits`
 - `receivables`
 - `payables`
-- `settings` untuk identitas toko
+- `settings` for identitas toko
 
 ## Efek Bisnis Penting
 
-- laporan sales dan profit bergantung pada kualitas data transaksi
-- sales return dan inventory correction dapat memengaruhi pembacaan operasional pada laporan terkait
+- sales and profit reports depend on transaction data quality
+- sales returns and inventory corrections can affect operational readings in related reports
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- laporan lebih fokus pada kebutuhan operasional dasar
-- tidak semua analitik lanjutan owner tersedia
+- reports focus more on basic operational needs
+- not all advanced owner analytics available
 
 ## File Sentral
 

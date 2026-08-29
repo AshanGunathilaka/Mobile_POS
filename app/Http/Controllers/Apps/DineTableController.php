@@ -53,7 +53,7 @@ class DineTableController extends Controller
 
         DiningTable::create($validated);
 
-        return back()->with('success', 'Meja successfully ditambahkan.');
+        return back()->with('success', 'Table added successfully.');
     }
 
     public function update(Request $request, DiningTable $dineTable)

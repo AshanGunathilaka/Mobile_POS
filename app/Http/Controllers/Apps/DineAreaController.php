@@ -28,7 +28,7 @@ class DineAreaController extends Controller
 
         DineArea::create($validated);
 
-        return back()->with('success', 'Area successfully ditambahkan.');
+        return back()->with('success', 'Area added successfully.');
     }
 
     public function update(Request $request, DineArea $dineArea)

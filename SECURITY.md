@@ -6,11 +6,11 @@ If you find a security vulnerability in Point of Sales, **do not create a public
 
 **Email:** aryadptr.developer@gmail.com
 
-Laporan akan ditanggapi dalam **maksimal 48 jam**. Kami akan merilis patch sesegera mungkin setelah konfirmasi.
+Reports will be answered dalam **within 48 jam**. We will release a patch as soon as possible after confirmation.
 
-## Apa yang Dilaporkan
+## What to Report
 
-Kami menerima laporan untuk:
+We accept reports for:
 - XSS (Cross-Site Scripting)
 - CSRF
 - SQL Injection
@@ -19,21 +19,21 @@ Kami menerima laporan untuk:
 - Remote code execution
 - Privilege escalation
 
-## Informasi yang Dibutuhkan
+## Required Information
 
-Sertakan dalam laporan:
-- Versi aplikasi (commit hash atau tag)
-- Langkah-langkah untuk mereproduksi
+Include in the report:
+- Versi aplikasi (commit hash or tag)
+- Steps to reproduce
 - Dampak potensial
-- (Opsional) Saran mitigasi
+- (Optiononal) Saran mitigasi
 
-## Security Practices di Repo Ini
+## Security Practices in Repo Ini
 
 | Area | Praktik |
 |------|---------|
 | Password | Bcrypt hashing |
 | Session | Regenerate after login, absolute lifetime timeout |
-| CSRF | Laravel CSRF protection on all routes |
+| CSRF | Laravel CSRF protection on all routess |
 | Auth | Rate limiting, honeypot + timer (bot.guard middleware) |
 | RBAC | Spatie Permission + step_up middleware for sensitive actions |
 | Payment secrets | Encrypted at rest (Xendit/Midtrans keys) |

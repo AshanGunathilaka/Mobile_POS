@@ -117,7 +117,7 @@ export default function PublicLayout({ children, active = "" }) {
                     </div>
 
                     <p className="text-sm text-slate-500">
-                        © {new Date().getFullYear()} Dibuat oleh Arya Dwi Putra
+                        © {new Date().getFullYear()} Created by Arya Dwi Putra
                     </p>
                 </div>
             </footer>

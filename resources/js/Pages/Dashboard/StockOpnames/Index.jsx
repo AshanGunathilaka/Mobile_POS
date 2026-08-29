@@ -58,7 +58,7 @@ export default function Index({ stockOpnames, filters, warehouses = [] }) {
                         href={route("stock-opnames.create")}
                         icon={<IconCirclePlus size={18} strokeWidth={1.5} />}
                         className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
-                        label="Buat Sesi Opname"
+                        label="Create Stock Count Session"
                     />
                 )}
             </div>
@@ -129,9 +129,9 @@ export default function Index({ stockOpnames, filters, warehouses = [] }) {
                             <Table.Th>Kode</Table.Th>
                             <Table.Th>Status</Table.Th>
                             <Table.Th>Amount Item</Table.Th>
-                            <Table.Th>Dibuat Oleh</Table.Th>
+                            <Table.Th>Created By</Table.Th>
                             <Table.Th>Finalized</Table.Th>
-                            <Table.Th className="w-24 text-center">Aksi</Table.Th>
+                            <Table.Th className="w-24 text-center">Actions</Table.Th>
                         </tr>
                     </Table.Thead>
                     <Table.Tbody>

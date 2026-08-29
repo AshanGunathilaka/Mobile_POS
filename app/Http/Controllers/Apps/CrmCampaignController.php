@@ -125,14 +125,14 @@ class CrmCampaignController extends Controller
     {
         $this->crmAutomationService->markLog($log, CustomerCampaignLog::STATUS_SENT);
 
-        return back()->with('success', 'Log campaign ditandai sebagai terkirim.');
+        return back()->with('success', 'Campaign log marked as sent.');
     }
 
     public function markLogSkipped(CustomerCampaignLog $log)
     {
         $this->crmAutomationService->markLog($log, CustomerCampaignLog::STATUS_SKIPPED);
 
-        return back()->with('success', 'Log campaign dilewati.');
+        return back()->with('success', 'Campaign log skipped.');
     }
 
     public function shareTransaction(Transaction $transaction, Request $request)

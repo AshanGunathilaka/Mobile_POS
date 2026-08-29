@@ -80,7 +80,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
 
     return (
         <>
-            <Head title="Buat Purchase Order" />
+            <Head title="Create Purchase Order" />
             <div className="mb-6">
                 <Link
                     href={route("purchase-orders.index")}
@@ -91,14 +91,14 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconShoppingCart size={28} className="text-primary-500" />
-                    Buat Purchase Order
+                    Create Purchase Order
                 </h1>
             </div>
 
             <form onSubmit={submit} className="max-w-5xl">
                 <div className="space-y-6">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Informasi PO</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">PO Information</h2>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                             <div>
                                 <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Supplier</label>
@@ -114,7 +114,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                                 </select>
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Tujuan Warehouse</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Destination Warehouse</label>
                                 <select
                                     value={data.warehouse_id}
                                     onChange={(e) => setData("warehouse_id", e.target.value)}
@@ -127,7 +127,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                                 </select>
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Nomor Dokumen</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Document Number</label>
                                 <input
                                     type="text"
                                     value={data.document_number}

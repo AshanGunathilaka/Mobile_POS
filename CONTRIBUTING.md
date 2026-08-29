@@ -1,26 +1,26 @@
 # Contributing to Point of Sales
 
-Terima kasih sudah tertarik untuk berkontribusi! 🎉
+Thank you for your interest in contributing! 🎉
 
 ## Git Workflow
 
-Repo ini menggunakan **Git Flow** dengan branch sebagai berikut:
+This repository uses **Git Flow** with the following branches:
 
 | Branch | Fungsi |
 |--------|--------|
-| `main` | Production. Hanya diisi dari PR `development` |
+| `main` | Production. Only updated from PRs `development` |
 | `development` | Integrasi. Feature branch merge via PR |
-| `feature/*` | Kerja fitur. Branch dari `development`, PR ke `development` |
-| `fix/*` | Hotfix. Branch dari `main`, PR ke `main` + `development` |
-| `release/*` | Release candidate. Dari `development`, merge ke `main` |
+| `feature/*` | Feature work. Branch from `development`, PR to `development` |
+| `fix/*` | Hotfix. Branch from `main`, PR to `main` + `development` |
+| `release/*` | Release candidate. From `development`, merge to `main` |
 
 ## Cara Berkontribusi
 
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/aryadwiputra/point-of-sales.git
-cd point-of-sales
+git clone https://github.com/aryadwiputra/pointst-of-sales.git
+cd pointst-of-sales
 cp .env.example .env
 composer install && npm install
 php artisan key:generate
@@ -30,29 +30,29 @@ npm run dev
 php artisan serve
 ```
 
-### 2. Buat Branch Fitur
+### 2. Create Branch Features
 
 ```bash
 git checkout development
-git checkout -b feature/nama-fitur-anda
+git checkout -b feature/name-feature-anda
 ```
 
 ### 3. Kerja & Commit
 
-Gunakan **Conventional Commits**:
+Use **Conventional Commits**:
 
 ```
-feat: tambah fitur X
-fix: perbaiki bug Y
-docs: update dokumentasi Z
+feat: add feature X
+fix: fix bug Y
+docs: update documentation Z
 chore: update dependency
 refactor: refactor fungsi A
-test: tambah test untuk B
+test: add tests for B
 ```
 
-### 4. Sebelum Pull Request
+### 4. Before Pull Request
 
-Pastikan semua lulus:
+Make sure everything passes:
 
 ```bash
 vendor/bin/pint                    # PHP formatter
@@ -62,31 +62,31 @@ npm run build                      # Production build OK
 
 ### 5. Pull Request
 
-1. Push branch ke GitHub
-2. Buat PR ke branch `development`
-3. Deskripsikan perubahan:
-   - **Apa yang diubah**
-   - **Kenapa diubah**
+1. Push branch to GitHub
+2. Create a PR to branch `development`
+3. Describe the changes:
+   - **What changed**
+   - **Why it changed**
    - **Cara testing**
-4. Pastikan PR title mengikuti conventional commits
+4. Make sure PR title mengikuti conventional commits
 
-### 6. Setelah PR
+### 6. After PR
 
-- PR akan direview oleh maintainer
-- Jika ada perubahan yang diminta, push ke branch yang sama
-- Setelah approved, maintainer akan merge
+- PR will be reviewed by a maintainer
+- If changes are requested, push to the same branch
+- After approval, the maintainer will merge
 
 ## Development Tips
 
-- Set `tax_rate=0` pada `Product::create` di test untuk menghindari perubahan grand_total
-- Jalankan `php artisan migrate` jika modul baru belum punya tabel
-- Baca `AGENTS.md` untuk informasi developer commands
-- Lihat `docs/` untuk dokumentasi fitur
+- Set `tax_rate=0` on `Product::create` in tests to avoid changing `grand_total`
+- Jalankan `php artisan migrate` if modul baru not yet punya tabel
+- Read `AGENTS.md` for developer command information
+- View `docs/` for feature documentation
 
 ## Reporting Bugs
 
-Buka issue baru di GitHub dengan template Bug Report.
+Open a new issue in GitHub with template Bug Report.
 
 ## Feature Request
 
-Buka issue baru di GitHub dengan template Feature Request.
+Open a new issue in GitHub with template Feature Request.

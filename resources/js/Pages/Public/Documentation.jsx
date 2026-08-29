@@ -47,7 +47,7 @@ const categories = [
         title: "CRM & Loyalty",
         docs: [
             { file: "features/crm-segments.md", title: "Segments & Campaigns", desc: "Automatic segmentation and marketing campaigns." },
-            { file: "features/member-management.md", title: "Member Management", desc: "Member tiers and loyalty pointsts." },
+            { file: "features/member-management.md", title: "Member Management", desc: "Member tiers and loyalty points." },
             { file: "features/promotions-loyalty.md", title: "Promotions & Loyalty", desc: "Pricing rules, vouchers, and loyalty programs." },
         ],
     },

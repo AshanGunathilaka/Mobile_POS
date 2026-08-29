@@ -68,7 +68,7 @@
                     <div class="stat-value">{{ number_format($payable->total,0,',','.') }}</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-label">Terbayar</div>
+                    <div class="stat-label">Paid</div>
                     <div class="stat-value stat-positive">{{ number_format($payable->paid,0,',','.') }}</div>
                 </div>
                 <div class="stat" style="grid-column: span 2;">
@@ -105,7 +105,7 @@
         </div>
 
         <div class="footer">
-            <div class="muted" style="font-size:11px;">Dicetak pada {{ now()->format('d M Y') }}</div>
+            <div class="muted" style="font-size:11px;">Printed on {{ now()->format('d M Y') }}</div>
             <div class="barcode" style="text-align:right;">
                 <img src="{{ $barcode }}" alt="barcode">
                 <div style="font-size:10px; text-align:right;">{{ $payable->document_number }}</div>

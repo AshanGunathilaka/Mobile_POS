@@ -68,7 +68,7 @@ export default function Index() {
                         />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Belum Ada Hak Akses
+                        No Access Rights Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         Access rights were not found.

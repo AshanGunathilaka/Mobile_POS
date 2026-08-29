@@ -60,7 +60,7 @@ export default function Create({ orders }) {
         }
         const validItems = data.items.filter((item) => item.qty_received > 0);
         if (validItems.length === 0) {
-            toast.error("Terima minimal satu item.");
+            toast.error("Receive at least one item.");
             return;
         }
         setData("items", validItems);
@@ -118,7 +118,7 @@ export default function Create({ orders }) {
                                         <tr className="border-b border-slate-200 dark:border-slate-700">
                                             <th className="px-3 py-2 text-left font-semibold text-slate-700 dark:text-slate-200">Product</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty PO</th>
-                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Sudah Accepted</th>
+                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Already Accepted</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Sisa</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty Received</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Catatan</th>

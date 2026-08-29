@@ -41,12 +41,12 @@ export default function Pagination({ links }) {
         "inline-flex items-center justify-center min-w-[34px] h-[34px] text-sm border rounded-lg bg-white text-slate-500 hover:bg-slate-100 dark:bg-slate-950 dark:text-slate-400 dark:hover:bg-slate-900 dark:border-slate-800 transition-colors";
     const activeBtn =
         "border-primary-500 bg-primary-50 text-primary-700 font-semibold dark:bg-primary-950/60 dark:text-primary-300 dark:border-primary-700";
-    const disabledBtn = "opacity-40 pointster-events-none";
+    const disabledBtn = "opacity-40 pointer-events-none";
 
     const isPrev = (item, i) =>
         i === 0 ||
         item.label.includes("Previous") ||
-        item.label.includes("Sebelumnya");
+        item.label.includes("Previous");
     const isNext = (item, i) =>
         i === links.length - 1 ||
         item.label.includes("Next") ||
@@ -89,7 +89,7 @@ export default function Pagination({ links }) {
                                 key={i}
                                 href={item.url}
                                 className={baseBtn}
-                                aria-label="Page sebelumnya"
+                                aria-label="Previous page"
                             >
                                 <IconChevronLeft size={18} strokeWidth={1.5} />
                             </Link>
@@ -98,7 +98,7 @@ export default function Pagination({ links }) {
                                 key={i}
                                 className={`${baseBtn} ${disabledBtn}`}
                                 aria-disabled="true"
-                                aria-label="Page sebelumnya"
+                                aria-label="Previous page"
                             >
                                 <IconChevronLeft size={18} strokeWidth={1.5} />
                             </span>

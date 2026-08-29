@@ -248,14 +248,14 @@ export default function PaymentPanel({
                                         e.target.value.replace(/[^\d]/g, "")
                                     )
                                 }
-                                placeholder={`Maks ${availablePoints} pointsts`}
+                                placeholder={`Maks ${availablePoints} points`}
                                 className="w-full h-11 px-4 rounded-xl border border-slate-200 dark:border-slate-700
                                     bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200
                                     focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500
                                     transition-all text-base"
                             />
                             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                                Saldo tersedia: {availablePoints} pointsts
+                                Saldo tersedia: {availablePoints} points
                             </p>
                         </div>
 

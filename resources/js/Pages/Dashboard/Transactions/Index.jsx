@@ -131,7 +131,7 @@ export default function Index({
             if (product) {
                 if (product.stock > 0) {
                     handleAddToCart(product);
-                    toast.success(`${product.title} ditambahkan (barcode)`);
+                    toast.success(`${product.title} added (barcode)`);
                 } else {
                     toast.error(`${product.title} stock habis`);
                 }
@@ -328,7 +328,7 @@ export default function Index({
             {
                 preserveScroll: true,
                 onSuccess: () => {
-                    toast.success(`${product.title} ditambahkan`);
+                    toast.success(`${product.title} added`);
                     setAddingProductId(null);
                 },
                 onError: () => {
@@ -636,7 +636,7 @@ export default function Index({
                                 onClick={() => router.visit(route("cashier-shifts.index"))}
                                 className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 px-5 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
                             >
-                                <span>Lihat Histori Shift</span>
+                                <span>View Shift History</span>
                             </button>
                         </div>
                     </div>
@@ -916,7 +916,7 @@ export default function Index({
                             <div className="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
                                 <div>
                                     <p className="text-sm font-semibold text-slate-800 dark:text-white">
-                                        Bayar Belakangan (Credit Sale)
+                                        Pay Later (Credit Sale)
                                     </p>
                                     <p className="text-xs text-slate-500">
                                         No payment is needed now; record it as a receivable.
@@ -1026,7 +1026,7 @@ export default function Index({
                                 !payLater && (
                                     <div>
                                         <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
-                                            Rekening Tujuan
+                                            Destination Account
                                         </label>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                             {bankAccounts.map((bank) => {
@@ -1085,7 +1085,7 @@ export default function Index({
                                                         </div>
                                                         {isActive && (
                                                             <span className="text-[11px] font-semibold text-primary-600">
-                                                                Dipilih
+                                                                Selected
                                                             </span>
                                                         )}
                                                     </button>
@@ -1184,7 +1184,7 @@ export default function Index({
                                         placeholder={`Maks ${
                                             pricingPreview?.summary
                                                 ?.available_loyalty_points ?? 0
-                                        } pointsts`}
+                                        } points`}
                                         className="w-full h-10 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500"
                                     />
                                 </div>

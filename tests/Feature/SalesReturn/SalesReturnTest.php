@@ -325,7 +325,7 @@ class SalesReturnTest extends TestCase
                     [
                         'transaction_detail_id' => $detail->id,
                         'qty_return' => 1,
-                        'return_reason' => 'Ubah alasan',
+                        'return_reason' => 'Update reason',
                         'restock_to_inventory' => true,
                     ],
                 ],

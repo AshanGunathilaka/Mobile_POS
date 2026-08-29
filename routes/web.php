@@ -274,7 +274,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
     Route::post('/supplier-returns/{supplierReturn}/complete', [SupplierReturnController::class, 'complete'])->middleware('permission:supplier-returns-update')->name('supplier-returns.complete');
     Route::post('/supplier-returns/{supplierReturn}/cancel', [SupplierReturnController::class, 'cancel'])->middleware('permission:supplier-returns-update')->name('supplier-returns.cancel');
 
-    // receivables (nota barang)
+    // receivables (goods notes)
     Route::get('/receivables', [ReceivableController::class, 'index'])->middleware('permission:receivables-access')->name('receivables.index');
     Route::get('/receivables/aging', [ReceivableController::class, 'aging'])->middleware('permission:receivables-access')->name('receivables.aging');
     Route::get('/receivables/customer-statement', [ReceivableController::class, 'customerStatement'])->middleware('permission:receivables-access')->name('receivables.customer-statement');
@@ -304,7 +304,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
     Route::get('/settings/payments', [PaymentSettingController::class, 'edit'])->middleware('permission:payment-settings-access')->name('settings.payments.edit');
     Route::put('/settings/payments', [PaymentSettingController::class, 'update'])->middleware(['permission:payment-settings-update', 'step_up'])->name('settings.payments.update');
 
-    // settings target penjualan
+    // sales target settings
     Route::get('/settings/target', [SettingController::class, 'target'])->middleware('permission:dashboard-access')->name('settings.target');
     Route::post('/settings/target', [SettingController::class, 'updateTarget'])->middleware('permission:dashboard-access')->name('settings.target.update');
     Route::get('/settings/store', [SettingController::class, 'storeProfile'])->middleware('permission:dashboard-access')->name('settings.store');

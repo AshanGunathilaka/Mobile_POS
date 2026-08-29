@@ -142,7 +142,7 @@ const ProfitReport = ({
         {
             title: "Margin Kotor",
             value: `${stats.margin}%`,
-            description: "Profit vs penjualan",
+            description: "Profit vs sales",
             icon: <IconPercentage />,
             gradient: "from-warning-500 to-warning-600",
         },
@@ -168,7 +168,7 @@ const ProfitReport = ({
                             Laporan Keuntungan
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Analisis profit dan margin
+                            Profit and margin analysis
                         </p>
                     </div>
                     <button

@@ -264,7 +264,7 @@ export default function Index({
                     />
                 </div>
 
-                <Table.Card title="Histori Shift Cashier">
+                <Table.Card title="Cashier Shift History">
                     <Table>
                         <Table.Thead>
                             <tr>
@@ -274,7 +274,7 @@ export default function Index({
                                 <Table.Th>Tutup</Table.Th>
                                 <Table.Th>Expected Cash</Table.Th>
                                 <Table.Th>Selisih</Table.Th>
-                                <Table.Th className="w-24 text-center">Aksi</Table.Th>
+                                <Table.Th className="w-24 text-center">Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>

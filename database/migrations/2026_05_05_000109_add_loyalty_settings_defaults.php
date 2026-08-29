@@ -8,10 +8,10 @@ return new class extends Migration
     public function up(): void
     {
         $defaults = [
-            ['key' => 'loyalty_enable_earn', 'value' => '1', 'description' => 'Enable loyalty pointst earning'],
-            ['key' => 'loyalty_enable_redeem', 'value' => '1', 'description' => 'Enable loyalty pointst redemption'],
-            ['key' => 'loyalty_earn_rate_amount', 'value' => '10000', 'description' => 'Spend amount required to earn 1 pointst'],
-            ['key' => 'loyalty_redeem_point_value', 'value' => '100', 'description' => 'Sri Lankan rupee value for 1 redeemed pointst'],
+            ['key' => 'loyalty_enable_earn', 'value' => '1', 'description' => 'Enable loyalty point earning'],
+            ['key' => 'loyalty_enable_redeem', 'value' => '1', 'description' => 'Enable loyalty point redemption'],
+            ['key' => 'loyalty_earn_rate_amount', 'value' => '10000', 'description' => 'Spend amount required to earn 1 point'],
+            ['key' => 'loyalty_redeem_point_value', 'value' => '100', 'description' => 'Sri Lankan rupee value for 1 redeemed point'],
             ['key' => 'loyalty_tier_regular_threshold', 'value' => '0', 'description' => 'Regular tier total spend threshold'],
             ['key' => 'loyalty_tier_silver_threshold', 'value' => '500000', 'description' => 'Silver tier total spend threshold'],
             ['key' => 'loyalty_tier_gold_threshold', 'value' => '1500000', 'description' => 'Gold tier total spend threshold'],

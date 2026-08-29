@@ -1,22 +1,22 @@
 # Member Management
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Menyediakan modul member yang utuh di atas fondasi `customers` dan `loyalty`, tanpa membuat entitas baru terpisah dari customer inti.
+Provides a complete member module on top of the `customers` and `loyalty` foundation without creating a separate entity from the core customer model.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- daftar member baru dari dashboard
-- daftar member cepat dari POS
-- upgrade customer biasa menjadi member
-- pencarian member berdasarkan nama dan nomor anggota
-- status aktif/nonaktif member tanpa menghapus histori
-- histori transaksi, poin, voucher, dan segment member
-- integrasi benefit member dengan pricing rules, loyalty points, dan voucher customer
+- list member baru from dashboard
+- list member cepat from POS
+- upgrade regular customers into members
+- member search by name and member number
+- status active/inactive member without deleting history
+- transaction history, points, vouchers, and member segments
+- integrasi benefit member with pricing rules, loyalty points, and voucher customer
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/members`
 - `members.index`
@@ -30,7 +30,7 @@ Menyediakan modul member yang utuh di atas fondasi `customers` dan `loyalty`, ta
 
 ## Permission
 
-Modul ini reuse permission customer yang sudah ada:
+Modul this reuse permission customer that already exists:
 
 - `customers-access`
 - `customers-create`
@@ -39,24 +39,24 @@ Modul ini reuse permission customer yang sudah ada:
 
 ## Alur User
 
-1. admin mendaftarkan member dari dashboard atau POS
-2. sistem otomatis menerbitkan `member_code` bila customer belum punya
-3. member bisa menerima benefit pricing, voucher, dan earn/redeem poin
-4. jika benefit perlu dihentikan, member cukup dinonaktifkan tanpa menghapus customer dan histori
+1. admin menlistkan member from dashboard or POS
+2. sistem otomatis issue `member_code` bila customer not yet punya
+3. member can receive benefit pricing, voucher, and earn/redeem points
+4. if benefit need stopped, member only deactivated without deleting customer and history
 
 ## Integrasi Data
 
 - `customers`
 - `transactions`
-- `loyalty_point_histories`
+- `loyalty_pointst_historyes`
 - `customer_vouchers`
 - `pricing_rules`
 
 ## Catatan Operasional
 
-- status nonaktif member tetap menyimpan nomor anggota dan histori supaya audit serta riwayat CRM tidak hilang
-- POS customer picker mendukung pencarian `nama`, `telepon`, dan `member_code`
-- upgrade member dari POS hanya mengubah status loyalty, tidak membuat customer baru
+- inactive member status keeps the member number and history so audit and CRM history are not lost
+- POS customer picker supports searching by `name`, `phone`, and `member_code`
+- upgrading a member from POS only updates loyalty status and does not create a new customer
 
 ## File Sentral
 

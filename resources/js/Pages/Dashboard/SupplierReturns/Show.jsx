@@ -58,7 +58,7 @@ export default function Show({ return: ret }) {
         router.post(route("supplier-returns.cancel", ret.id), {}, {
             preserveScroll: true,
             onSuccess: () => toast.success("Supplier return canceled"),
-            onError: () => toast.error("Failed membatalkan retur"),
+            onError: () => toast.error("Failed to cancel return"),
         });
     };
 
@@ -73,7 +73,7 @@ export default function Show({ return: ret }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar retur
+                    Back to return list
                 </Link>
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div>
@@ -83,12 +83,12 @@ export default function Show({ return: ret }) {
                         </div>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             Supplier: {ret.supplier?.name || "-"}
-                            &bull; Dibuat oleh {ret.creator?.name || "-"}
+                            &bull; Created by {ret.creator?.name || "-"}
                             &bull; {formatDateTime(ret.created_at)}
                         </p>
                         {ret.returned_at && (
                             <p className="text-sm text-slate-500">
-                                Diselesaikan: {formatDateTime(ret.returned_at)}
+                                Completed: {formatDateTime(ret.returned_at)}
                             </p>
                         )}
                     </div>
@@ -126,7 +126,7 @@ export default function Show({ return: ret }) {
                                     <Table.Th>Return Qty</Table.Th>
                                     <Table.Th>Price</Table.Th>
                                     <Table.Th>Subtotal</Table.Th>
-                                    <Table.Th>Alasan</Table.Th>
+                                    <Table.Th>Reason</Table.Th>
                                 </tr>
                             </Table.Thead>
                             <Table.Tbody>
@@ -178,10 +178,10 @@ export default function Show({ return: ret }) {
                     )}
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Informasi</h2>
+                        <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Information</h2>
                         <div className="space-y-2 text-sm">
                             <div className="flex justify-between">
-                                <span className="text-slate-500">Dokumen</span>
+                                <span className="text-slate-500">Document</span>
                                 <span className="font-semibold text-slate-800 dark:text-white">{ret.document_number}</span>
                             </div>
                             {ret.goodsReceiving && (
@@ -211,7 +211,7 @@ export default function Show({ return: ret }) {
                                 <span className="font-semibold text-slate-800 dark:text-white">{ret.supplier?.name || "-"}</span>
                             </div>
                             <div className="flex justify-between">
-                                <span className="text-slate-500">Date Dibuat</span>
+                                <span className="text-slate-500">Created Date</span>
                                 <span className="text-slate-800 dark:text-white">{formatDateTime(ret.created_at)}</span>
                             </div>
                             {ret.returned_at && (

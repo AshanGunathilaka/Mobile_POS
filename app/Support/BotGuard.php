@@ -75,7 +75,7 @@ class BotGuard
             event: 'security.bot_guard_blocked',
             module: 'security',
             auditable: ['target_label' => $request->route()?->getName() ?? $request->path()],
-            description: 'Permintaan auth publik diblokir oleh bot guard.',
+            description: 'Public authentication request blocked by bot guard.',
             meta: [
                 'severity' => 'warning',
                 'reason' => $reason,

@@ -77,13 +77,13 @@ class BankAccountController extends Controller
             event: 'bank_account.created',
             module: 'bank_accounts',
             auditable: $bankAccount,
-            description: 'Rekening bank ditambahkan.',
+            description: 'Bank account added.',
             after: $this->bankAccountPayload($bankAccount)
         );
 
         return redirect()
             ->route('settings.bank-accounts.index')
-            ->with('success', 'Rekening bank successfully ditambahkan.');
+            ->with('success', 'Bank account added successfully.');
     }
 
     /**
@@ -127,7 +127,7 @@ class BankAccountController extends Controller
 
         return redirect()
             ->route('settings.bank-accounts.index')
-            ->with('success', 'Rekening bank successfully diupdate.');
+            ->with('success', 'Bank account updated successfully.');
     }
 
     /**

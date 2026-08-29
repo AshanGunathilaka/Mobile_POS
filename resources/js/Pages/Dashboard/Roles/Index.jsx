@@ -219,7 +219,7 @@ export default function Index() {
                     })
                 }
                 title={
-                    data.isUpdate ? "Ubah Akses Group" : "Add Akses Group"
+                    data.isUpdate ? "Edit Access Group" : "Add Access Group"
                 }
                 icon={<IconUserShield size={20} strokeWidth={1.5} />}
             >

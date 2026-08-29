@@ -1,31 +1,31 @@
-# Unit Conversion (Multi-Satuan)
+# Unit Conversion (Multi-Unit)
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Satu produk dalam multiple satuan — pcs, box, karton, kg — dengan konversi stok otomatis dan harga berbeda per satuan.
+One product dalam multiple unit — pcs, box, carton, kg — with automatic stock conversion and different prices per unit.
 
 ## Definisi
 
 | Istilah | Arti |
 |---------|------|
-| Base Unit | Satuan dasar untuk stok. Semua stok disimpan dalam base unit |
-| Conversion Factor | Faktor konversi ke base unit (1 box = 12 pcs) |
+| Base Unit | Base unit for stock. All stock insave dalam base unit |
+| Conversion Factor | Conversion factor to base unit (1 box = 12 pcs) |
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 - 8 default unit: PCS, BOX, KARTON, KG, LITER, METER, PAK, DUS
-- Product bisa memiliki multiple satuan dengan konversi berbeda
-- Harga beli dan jual berbeda per satuan
-- Satuan dasar (base unit) untuk stok
-- Barcode spesifik per satuan
-- POS checkout menggunakan base unit qty untuk cek stok
-- Stok dikelola di base unit, otomatis dikonversi saat checkout
+- Product can memiliki multiple unit with konversi berbeda
+- Buy and sell prices berbeda per unit
+- Base unit (base unit) for stock
+- Barcode spesifik per unit
+- POS checkout menguse base unit qty for check stock
+- Stock managed in base unit, otomatis converted saat checkout
 
 ## Database
 
-- `units` table — master satuan (code, name, symbol)
+- `units` table — master unit (code, name, symbol)
 - `product_units` pivot — (product_id, unit_id, is_base, conversion_factor, buy_price, sell_price, barcode)
 - `carts` — unit_id + conversion_factor
 - `transaction_details` — unit_id + conversion_factor
@@ -36,20 +36,20 @@ Satu produk dalam multiple satuan — pcs, box, karton, kg — dengan konversi s
 
 | Method | Fungsi |
 |--------|--------|
-| `toBaseUnit(product, unitId, qty)` | Konversi qty dari unit tertentu ke base unit |
-| `fromBaseUnit(product, unitId, baseQty)` | Konversi base stock ke qty di unit tertentu |
-| `getPrice(product, unitId, type)` | Harga untuk unit tertentu (buy/sell) |
-| `getUnitLabel(product, unitId)` | Label satuan untuk display |
+| `toBaseUnit(product, unitId, qty)` | Conversion qty from specific unit to base unit |
+| `fromBaseUnit(product, unitId, baseQty)` | Conversion base stock to qty in specific unit |
+| `getPrice(product, unitId, type)` | Price for specific unit (buy/sell) |
+| `getUnitLabel(product, unitId)` | Label unit for display |
 
 ## Alur
 
-1. Admin: setup base unit + additional units per produk (via DB seeder atau langsung insert)
-2. POS: produk dengan multiple units — dropdown pilih satuan, harga otomatis berubah
-3. Checkout: qty dikonversi ke base unit untuk cek stok dan decrement
-4. Stok mutation selalu dalam base unit
+1. Admin: setup base unit + additional units per products (via DB seeder or directly insert)
+2. POS: products with multiple units use a unit dropdown and prices update automatically
+3. Checkout: quantity is converted to the base unit for stock checks and decrementing
+4. Stock mutation selalu dalam base unit
 
 ## Catatan
 
-- Product existing dianggap punya base unit PCS dengan conversion factor 1
-- Unit tidak bisa dihapus jika masih dipakai produk
-- Harga per unit disimpan di pivot, bukan hitungan dari base price * factor
+- Product existing dianggap punya base unit PCS with conversion factor 1
+- Unit not can deleted if masih used products
+- Price per unit saved in pivot, not calculated from base price * factor

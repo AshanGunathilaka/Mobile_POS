@@ -1,33 +1,33 @@
 # Import / Export CSV & Excel
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Import master data (produk, customer) dari spreadsheet. Export data ke Excel untuk backup atau analisis lanjutan.
+Import master data (products, customer) from spreadsheet. Export data to Excel for backup or advanced analysis.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 ### Export
-- **Produk** — barcode, SKU, nama, kategori, harga beli, harga jual, stok, min stok, max stok, tipe pajak, tarif pajak
-- **Customer** — nama, telepon, alamat, provinsi, kota, kecamatan, desa, status member, tier, poin
-- **Transaksi** — invoice, tanggal, kasir, pelanggan, metode, status, subtotal, diskon, ongkir, PPN, grand total (dapat difilter berdasarkan tanggal & warehouse)
+- **Products** — barcode, SKU, name, categories, prices buy, prices jual, stock, min stock, max stock, tipe pajak, rate pajak
+- **Customer** — name, phone, address, provinsi, kota, kecamatan, desa, status member, tier, points
+- **Transactions** — invoice, date, cashier, customers, metode, status, subtotal, discount, ongkir, PPN, grand total (can difilter by date & warehouse)
 
 ### Import
-- **Produk** — upload file Excel/CSV, auto-create kategori jika belum ada, update if barcode exists (updateOrCreate)
+- **Products** — upload file Excel/CSV, auto-create categories if it does not exist, update if barcode exists (updateOrCreate)
 - **Customer** — upload file Excel/CSV, validasi kolom wajib
 
 ### Template
-- Download template Excel kosong dengan header yang sesuai untuk persiapan data
+- Download template Excel empty with header that matching for preparation data
 
 ## Route
 
 | Route | Method | Fungsi |
 |-------|--------|--------|
-| `export.products` | GET | Download Excel produk |
+| `export.products` | GET | Download Excel products |
 | `export.customers` | GET | Download Excel customer |
-| `export.transactions` | GET | Download Excel transaksi (dengan filter) |
-| `import.products` | POST | Upload file import produk |
+| `export.transactions` | GET | Download Excel transactions (with filter) |
+| `import.products` | POST | Upload file import products |
 | `import.customers` | POST | Upload file import customer |
 | `import.template/{type}` | GET | Download template (products/customers) |
 
@@ -35,25 +35,25 @@ Import master data (produk, customer) dari spreadsheet. Export data ke Excel unt
 
 | Permission | Untuk apa |
 |-----------|-----------|
-| `products-export` | Download Excel produk |
-| `products-import` | Upload import produk |
+| `products-export` | Download Excel products |
+| `products-import` | Upload import products |
 | `customers-export` | Download Excel customer |
 | `customers-import` | Upload import customer |
 
 ## Format Template
 
-### Template Produk
-| barcode | sku | nama | deskripsi | kategori | harga_beli | harga_jual | stok | min_stok | max_stok | tipe_pajak | tarif_pajak |
+### Template Products
+| barcode | sku | name | description | categories | prices_buy | prices_jual | stock | min_stock | max_stock | tipe_pajak | rate_pajak |
 |---------|-----|------|-----------|----------|-----------|-----------|------|----------|----------|-----------|------------|
 
 ### Template Customer
-| nama | telepon | alamat |
+| name | phone | address |
 |------|---------|--------|
 
 ## Catatan
 
-- Import produk menggunakan `updateOrCreate` berdasarkan barcode — aman untuk re-import
+- Import products menguse `updateOrCreate` berdasarkan barcode — safe for re-import
 - Categories are created automatically if they do not exist yet
 - Format file: `.xlsx`, `.xls`, `.csv` (max 5MB)
-- Import diproses dalam batch (100 per batch) untuk performa
-- Tombol export/import ada di halaman Product dan Customer
+- Import processed dalam batch (100 per batch) for performance
+- Export/import buttons exist in pages Product and Customer

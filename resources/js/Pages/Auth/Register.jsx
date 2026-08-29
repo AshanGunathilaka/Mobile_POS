@@ -158,7 +158,7 @@ export default function Register({ botGuard }) {
                                         onChange={(e) =>
                                             setData("email", e.target.value)
                                         }
-                                        placeholder="nama@email.com"
+                                        placeholder="name@email.com"
                                         className={`w-full h-12 pl-12 pr-4 rounded-xl border-2 ${
                                             errors.email
                                                 ? "border-danger-500 focus:border-danger-500"
@@ -291,7 +291,7 @@ export default function Register({ botGuard }) {
 
                             {/* Login Link */}
                             <p className="text-center text-sm text-slate-600 dark:text-slate-400">
-                                Sudah punya akun?{" "}
+                                Already have an account?{" "}
                                 <Link
                                     href="/login"
                                     className="text-primary-500 hover:text-primary-600 font-semibold"

@@ -47,7 +47,7 @@ class StockOpnameTest extends TestCase
         $response = $this
             ->actingAs($user)
             ->post(route('stock-opnames.store'), [
-                'notes' => 'Opname bulanan gudang depan',
+                'notes' => 'Monthly stock count for the front warehouse',
             ]);
 
         $stockOpname = StockOpname::first();
@@ -55,7 +55,7 @@ class StockOpnameTest extends TestCase
         $response->assertRedirect(route('stock-opnames.show', $stockOpname));
         $this->assertNotNull($stockOpname);
         $this->assertSame('draft', $stockOpname->status);
-        $this->assertSame('Opname bulanan gudang depan', $stockOpname->notes);
+        $this->assertSame('Monthly stock count for the front warehouse', $stockOpname->notes);
         $this->assertSame($user->id, $stockOpname->created_by);
         $this->assertStringStartsWith('SO-', $stockOpname->code);
     }

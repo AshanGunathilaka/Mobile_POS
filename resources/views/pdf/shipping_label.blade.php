@@ -241,7 +241,7 @@
                 <tr>
                     <td class="text-muted" style="vertical-align: bottom; padding-bottom: 2pt;line-height: 1.5;">
                         Admin: <strong>{{ $transaction->cashier->name ?? '-' }}</strong><br>
-                        Dicetak: {{ now()->format('d/m/Y H:i') }}
+                        Printed: {{ now()->format('d/m/Y H:i') }}
                     </td>
 
                     <td style="text-align: right; width: 150pt;">

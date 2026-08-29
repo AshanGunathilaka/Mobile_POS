@@ -89,7 +89,7 @@ class StockTransferController extends Controller
     {
         $this->stockTransferService->receive($stockTransfer, $request->user()->id);
 
-        return back()->with('success', 'Stock transfer successfully diterima.');
+        return back()->with('success', 'Stock transfer received successfully.');
     }
 
     public function cancel(Request $request, StockTransfer $stockTransfer): RedirectResponse

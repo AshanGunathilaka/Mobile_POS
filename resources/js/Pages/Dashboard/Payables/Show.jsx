@@ -107,7 +107,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                             Back
                         </Link>
                         <div>
-                            <p className="text-xs text-slate-500">Dokumen</p>
+                            <p className="text-xs text-slate-500">Document</p>
                             <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                                 {payable.document_number}
                             </h1>
@@ -150,7 +150,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                 </p>
                             </div>
                             <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                                <p className="text-xs text-slate-500">Terbayar</p>
+                                <p className="text-xs text-slate-500">Paid</p>
                                 <p className="text-lg font-bold text-success-600">
                                     {formatCurrency(payable.paid)}
                                 </p>
@@ -400,7 +400,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                         </div>
                                     </div>
                                     <div className="text-right">
-                                        <p className="text-xs text-slate-500">Dokumen</p>
+                                        <p className="text-xs text-slate-500">Document</p>
                                 <p className="text-lg font-bold text-slate-900 dark:text-white">
                                     {payable.document_number}
                                 </p>
@@ -438,7 +438,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                         </p>
                                     </div>
                                     <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                                        <p className="text-xs text-slate-500">Terbayar</p>
+                                        <p className="text-xs text-slate-500">Paid</p>
                                         <p className="text-lg font-bold text-success-600">
                                             {formatCurrency(payable.paid)}
                                         </p>

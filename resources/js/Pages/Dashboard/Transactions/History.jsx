@@ -261,7 +261,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                                             Status
                                         </th>
                                         <th className="px-4 py-4 text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                                            Aksi
+                                            Actions
                                         </th>
                                     </tr>
                                 </thead>
@@ -350,7 +350,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                                                                 transaction.id
                                                             )}
                                                             className="inline-flex items-center justify-center rounded-lg bg-warning-50 px-3 py-2 text-xs font-semibold text-warning-700 hover:bg-warning-100 dark:bg-warning-950/30 dark:text-warning-300"
-                                                            title="Buat retur"
+                                                            title="Create return"
                                                         >
                                                             Return
                                                         </Link>
@@ -386,7 +386,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                                                             method="post"
                                                             as="button"
                                                             className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 text-primary-600 transition-colors hover:bg-primary-100 hover:text-primary-700 dark:bg-primary-950/30 dark:hover:bg-primary-950/50"
-                                                            title="Buat campaign share"
+                                                            title="Create share campaign"
                                                         >
                                                             <IconBuildingBank
                                                                 size={18}
@@ -676,7 +676,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                                 />
                                 <p className="text-sm text-warning-800 dark:text-warning-300">
                                     Make sure the funds have been received before
-                                    mengkonfirmasi payment ini. Tindakan ini
+                                    confirm this payment. This action
                                     cannot be canceled.
                                 </p>
                             </div>

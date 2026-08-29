@@ -155,7 +155,7 @@ class FeatureCoverageSeeder extends Seeder
     private function seedStoreSettings(): void
     {
         $settings = [
-            'monthly_sales_target' => ['value' => '15000000', 'description' => 'Target penjualan bulanan'],
+            'monthly_sales_target' => ['value' => '15000000', 'description' => 'Monthly sales target'],
             'store_name' => ['value' => 'Maju Bersama Store', 'description' => 'Store name'],
             'store_logo' => ['value' => null, 'description' => 'Store logo'],
             'store_address' => ['value' => 'Jl. Sukajadi No. 88, Bandung', 'description' => 'Full store address'],
@@ -340,12 +340,12 @@ class FeatureCoverageSeeder extends Seeder
                 [
                     'purchase_order_item_id' => $partialOrder->items[0]->id,
                     'qty_received' => 30,
-                    'notes' => 'Sebagian aqua diterima lebih awal.',
+                    'notes' => 'Some bottled water was received earlier.',
                 ],
                 [
                     'purchase_order_item_id' => $partialOrder->items[1]->id,
                     'qty_received' => 10,
-                    'notes' => 'Sebagian snack diterima sesuai surat jalan pertama.',
+                    'notes' => 'Some snacks were received according to the first delivery note.',
                 ],
             ],
             'First receiving for weekly restock PO.',
@@ -483,7 +483,7 @@ class FeatureCoverageSeeder extends Seeder
                     'qty_returned' => 2,
                     'unit_price' => $completedReceiving->items->first()?->purchaseOrderItem?->unit_price ?? 0,
                     'reason' => 'Segel kemasan rusak',
-                    'notes' => 'Dikembalikan saat inspeksi inbound.',
+                    'notes' => 'Returned during inbound inspection.',
                 ],
             ],
             $admin->id,
@@ -671,7 +671,7 @@ class FeatureCoverageSeeder extends Seeder
                 event: 'bank_account.created',
                 module: 'bank_accounts',
                 auditable: $account,
-                description: 'Rekening bank ditambahkan.',
+                description: 'Bank account added.',
                 after: [
                     'bank_name' => $account->bank_name,
                     'account_number_masked' => $auditLogService->maskAccountNumber($account->account_number),

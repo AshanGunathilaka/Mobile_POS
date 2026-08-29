@@ -85,7 +85,7 @@ export default function SearchBar({
         <div className="relative">
             {/* Search Input */}
             <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 pointster-events-none">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
                     {isSearching ? (
                         <div className="w-5 h-5 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
                     ) : (

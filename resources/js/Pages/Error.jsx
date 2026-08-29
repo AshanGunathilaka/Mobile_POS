@@ -28,11 +28,11 @@ const errorContent = {
     },
     419: {
         title: "Session Expired",
-        description: "Sesi keamanan telah berakhir. Muat ulang halaman lalu coba kembali.",
+        description: "Your security session has expired. Reload the page and try again.",
         icon: IconRefresh,
     },
     429: {
-        title: "Terlalu Banyak Permintaan",
+        title: "Too Many Requests",
         description: "Your requests are temporarily limited. Wait a moment before trying again.",
         icon: IconAlertTriangle,
     },

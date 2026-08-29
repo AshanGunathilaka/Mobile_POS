@@ -160,7 +160,7 @@ export default function CustomerSelect({
                                     ) : null}
                                     <p className="text-[11px] text-primary-500 dark:text-primary-300 truncate">
                                         {selected.is_loyalty_member
-                                            ? `${selected.loyalty_tier} • ${selected.loyalty_points || 0} pointsts`
+                                            ? `${selected.loyalty_tier} • ${selected.loyalty_points || 0} points`
                                             : "Non-member"}
                                     </p>
                                 </>
@@ -301,7 +301,7 @@ export default function CustomerSelect({
                                                     ) : null}
                                                     <p className="text-[11px] text-primary-500 dark:text-primary-300 truncate">
                                                         {customer.is_loyalty_member
-                                                            ? `${customer.loyalty_tier} • ${customer.loyalty_points || 0} pointsts`
+                                                            ? `${customer.loyalty_tier} • ${customer.loyalty_points || 0} points`
                                                             : "Non-member"}
                                                     </p>
                                                 </div>

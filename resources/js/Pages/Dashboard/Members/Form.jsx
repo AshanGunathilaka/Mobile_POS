@@ -165,15 +165,15 @@ export default function Form({ mode = "create", member = null }) {
                         className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                     >
                         <IconArrowLeft size={16} />
-                        Back ke Member
+                        Back to Members
                     </Link>
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                         {isEdit ? "Edit Member" : "Register New Member"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         {isEdit
-                            ? "Kelola status, tier, dan data dasar member tanpa memutus histori transaksi maupun reward."
-                            : "Register the customer as a member so they immediately receive pointsts, member pricing benefits, and personal vouchers."}
+                            ? "Manage member status, tier, and basic data without breaking transaction or reward history."
+                            : "Register the customer as a member so they immediately receive points, member pricing benefits, and personal vouchers."}
                     </p>
                 </div>
 
@@ -188,7 +188,7 @@ export default function Form({ mode = "create", member = null }) {
                                     Cara kerja member
                                 </p>
                                 <p className="mt-1 text-xs leading-6 text-slate-600 dark:text-slate-300">
-                                    Member otomatis memakai pricing khusus member, earn/redeem points of loyalty settings, dan bisa menerima voucher personal di CRM.
+                                    Members automatically use member-specific pricing, earn/redeem points from loyalty settings, and can receive personal vouchers in CRM.
                                 </p>
                             </div>
                         </div>
@@ -239,7 +239,7 @@ export default function Form({ mode = "create", member = null }) {
                                         Status Member
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                                        Inactivekan member jika benefit member perlu dihentikan tanpa menghapus histori.
+                                        Deactivate the member when member benefits need to be stopped without deleting history.
                                     </p>
                                 </div>
                                 <label className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -432,7 +432,7 @@ export default function Form({ mode = "create", member = null }) {
                             {processing
                                 ? "Saving..."
                                 : isEdit
-                                ? "Save Perubahan"
+                                ? "Save Changes"
                                 : "Register Member"}
                         </button>
                     </div>

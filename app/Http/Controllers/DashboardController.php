@@ -61,7 +61,7 @@ class DashboardController extends Controller
             ->get()
             ->map(function ($detail) {
                 return [
-                    'name' => $detail->product?->title ?? 'Product terhapus',
+                    'name' => $detail->product?->title ?? 'Deleted product',
                     'sku' => $detail->product?->sku ?? '-',
                     'qty' => (int) $detail->qty,
                     'total' => (int) $detail->total,

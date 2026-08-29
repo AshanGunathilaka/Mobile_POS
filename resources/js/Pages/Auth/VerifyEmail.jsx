@@ -55,7 +55,7 @@ export default function VerifyEmail({ status, botGuard }) {
                                 Verify Your Email
                             </h1>
                             <p className="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Sebelum masuk ke dashboard, klik link verifikasi
+                                Before entering the dashboard, click the verification link
                                 that we sent to your email. If the email
                                 has not arrived, resend it from this page.
                             </p>
@@ -135,7 +135,7 @@ export default function VerifyEmail({ status, botGuard }) {
                         </p>
                         <div className="mt-8 flex flex-wrap justify-center gap-3">
                             {[
-                                "Akses Terverifikasi",
+                                "Access Verified",
                                 "Account Protection",
                                 "Dashboard Aman",
                             ].map((item, index) => (

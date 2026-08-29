@@ -1,6 +1,6 @@
 # WhatsApp Gateway via whatsapp-web.js
 
-Integrasi WhatsApp native dengan whatsapp-web.js. User scan QR dari halaman Settings, kirim pesan otomatis dari campaign.
+Integrasi WhatsApp native with whatsapp-web.js. Users scan the QR code from the Settings page, send automatic messages from campaigns.
 
 ## Arsitektur
 
@@ -8,22 +8,22 @@ Integrasi WhatsApp native dengan whatsapp-web.js. User scan QR dari halaman Sett
 Laravel App ←→ Node.js Service (whatsapp-service/) ←→ WhatsApp Web (via Puppeteer)
 ```
 
-- **Node service**: Express di localhost:3001, kelola sesi WA
-- **Laravel**: `WhatsAppService.php` wrapper cURL ke Node, dipanggil dari Campaign/Setting
-- **React**: Halaman Settings dengan QR scanner + status koneksi
+- **Node service**: Express on localhost:3001, manages sessions WA
+- **Laravel**: `WhatsAppService.php` wrapper cURL wrapper to Node, called from Campaign/Setting
+- **React**: Pages Settings with QR scanner + status koneksi
 
 ## Node Service (`whatsapp-service/`)
 
-4 endpoint:
+4 endpointst:
 
-| Endpoint | Method | Function |
+| Endpointst | Method | Function |
 |----------|--------|----------|
-| `/start` | POST | Init/mulai Client WA (re-use session jika ada) |
+| `/start` | POST | Initialize/start Client WA (re-use session if present) |
 | `/status` | GET | `{connected, phone, qr}` |
 | `/send` | POST | `{target, message}` |
-| `/disconnect` | POST | Hapus session + disconnect |
+| `/disconnect` | POST | Delete session and disconnect |
 
-Session persistence via `LocalAuth` ke folder `session/`.
+Session persistence via `LocalAuth` to the folder `session/`.
 
 ## Backend Laravel
 
@@ -32,17 +32,17 @@ Session persistence via `LocalAuth` ke folder `session/`.
 - `status(): array` — panggil GET /status
 - `send(string $target, string $message): bool` — panggil POST /send
 - `disconnect(): bool` — panggil POST /disconnect
-- `isAvailable(): bool` — cek `WA_SERVICE_URL` terisi
+- `isAvailable(): bool` — check `WA_SERVICE_URL` terisi
 
-### `SettingController` — tambah method
-- `whatsapp()` — render halaman setting + status device + QR
+### `SettingController` — add methods
+- `whatsapp()` — render pages setting + status device + QR
 - `updateWhatsapp()` — save preferensi (auto-send toggle)
-- `testWhatsapp()` — test kirim ke nomor owner
+- `testWhatsapp()` — test sending to the owner number
 
 ### CrmAutomationService
 - Di `processCampaign()`: kalau WA available, kirim beneran via Node service
-- Update `CustomerCampaignLog` status jadi `sent` setelah sukses
-- Fallback ke `wa.me` jika gagal
+- Update `CustomerCampaignLog` status becomes `sent` after success
+- Fallback to `wa.me` if it fails
 
 ## Routes
 ```
@@ -62,6 +62,6 @@ POST /settings/whatsapp/disconnect        → disconnect (panggil Node)
 - `whatsapp-service/.gitignore`
 - `app/Services/WhatsAppService.php`
 - `resources/js/Pages/Dashboard/Settings/Whatsapp.jsx`
-- `routes/web.php` (ubah)
-- `database/seeders/PermissionSeeder.php` (ubah)
-- `app/Services/CrmAutomationService.php` (ubah)
+- `routess/web.php` (update)
+- `database/seeders/PermissionSeeder.php` (update)
+- `app/Services/CrmAutomationService.php` (update)

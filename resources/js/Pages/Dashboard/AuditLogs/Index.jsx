@@ -146,7 +146,7 @@ export default function Index({
                 />
             </div>
 
-            <Table.Card title="Histori Audit">
+            <Table.Card title="Audit History">
                 <Table>
                     <Table.Thead>
                         <tr>
@@ -156,7 +156,7 @@ export default function Index({
                             <Table.Th>Event</Table.Th>
                             <Table.Th>Target</Table.Th>
                             <Table.Th>Description</Table.Th>
-                            <Table.Th className="w-20 text-center">Aksi</Table.Th>
+                            <Table.Th className="w-20 text-center">Actions</Table.Th>
                         </tr>
                     </Table.Thead>
                     <Table.Tbody>
@@ -199,7 +199,7 @@ export default function Index({
                         ) : (
                             <Table.Empty
                                 colSpan={7}
-                                message="Belum ada data audit log."
+                                message="No audit log data yet."
                             />
                         )}
                     </Table.Tbody>

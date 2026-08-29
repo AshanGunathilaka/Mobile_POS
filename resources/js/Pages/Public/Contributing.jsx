@@ -14,7 +14,7 @@ import {
 const GITHUB_URL = "https://github.com/aryadwiputra/point-of-sales";
 
 const setupCommands = `git clone https://github.com/aryadwiputra/point-of-sales
-cd pointst-of-sales
+cd point-of-sales
 cp .env.example .env
 composer install && npm install
 php artisan key:generate

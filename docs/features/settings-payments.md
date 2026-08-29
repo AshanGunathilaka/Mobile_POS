@@ -1,19 +1,19 @@
 # Settings & Payments
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Mengelola konfigurasi bisnis dan pembayaran yang dipakai aplikasi secara operasional.
+Manages configuration bisnis and payments that used aplikasi secara operational.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 - payment gateway settings
 - bank account management
 - store profile settings
-- target penjualan
+- target sales
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/settings/payments`
 - `dashboard/settings/bank-accounts`
@@ -23,32 +23,32 @@ Mengelola konfigurasi bisnis dan pembayaran yang dipakai aplikasi secara operasi
 ## Permission
 
 - `payment-settings-access`
-- `dashboard-access` untuk profil toko dan target
+- `dashboard-access` for store profile and target
 
 ## Alur User
 
-1. admin mengatur gateway pembayaran
-2. admin menambah rekening bank aktif
-3. admin mengatur profil toko
-4. admin mengisi target penjualan
+1. admin configures gateway payments
+2. admin adds active bank accounts
+3. admin configures store profile
+4. admin mengisi target sales
 
 ## Integrasi Data
 
 - `payment_settings`
 - `bank_accounts`
 - `settings`
-- transaksi dan receivable/payable payment yang memakai bank account
+- transactions and receivable/payable payment that uses bank account
 
 ## Efek Bisnis Penting
 
-- payment gateway settings memengaruhi checkout
-- bank account aktif memengaruhi transfer manual dan pembayaran finansial lain
-- `APP_URL` yang salah dapat membuat webhook tidak usable
+- payment gateway settings affects checkout
+- bank account aktif affects transfer manual and payments other financial
+- `APP_URL` that is wrong can make webhooks not usable
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- payment gateway tetap memerlukan konfigurasi provider di luar aplikasi
-- warning webhook ditampilkan, tetapi deployment publik tetap tanggung jawab environment
+- payment gateway still requires configuration provider outside the application
+- warning webhook ditampilkan, remaini deployment publik remain tanggung jawab environment
 
 ## File Sentral
 

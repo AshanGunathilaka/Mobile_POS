@@ -10,7 +10,7 @@ export default function DiscountApprovals({ pendingTransactions }) {
     const confirm = (action, tx) => {
         if (!window.confirm(`${action === "approve" ? "Approve" : "Deny"} discount for transaction ${tx.invoice}?`)) return;
         router.post(route(`discount-approvals.${action}`, tx.id), {}, {
-            onSuccess: () => toast.success(action === "approve" ? "Discount disetujui" : "Discount ditolak"),
+            onSuccess: () => toast.success(action === "approve" ? "Discount approved" : "Discount rejected"),
             onError: () => toast.error("Failed"),
         });
     };

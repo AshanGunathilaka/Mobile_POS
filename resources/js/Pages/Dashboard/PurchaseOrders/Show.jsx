@@ -65,7 +65,7 @@ export default function Show({ order }) {
         router.post(route("purchase-orders.cancel", order.id), {}, {
             preserveScroll: true,
             onSuccess: () => toast.success("PO canceled"),
-            onError: () => toast.error("Failed membatalkan PO"),
+            onError: () => toast.error("Failed cancel PO"),
         });
     };
 
@@ -92,7 +92,7 @@ export default function Show({ order }) {
                             {statusBadge(order.status)}
                         </div>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Supplier: {order.supplier?.name || "-"} &bull; Dibuat oleh {order.creator?.name || "-"} &bull; {formatDateTime(order.created_at)}
+                            Supplier: {order.supplier?.name || "-"} &bull; Created by {order.creator?.name || "-"} &bull; {formatDateTime(order.created_at)}
                         </p>
                         {order.ordered_at && (
                             <p className="text-sm text-slate-500">Ordered: {formatDateTime(order.ordered_at)}</p>
@@ -192,10 +192,10 @@ export default function Show({ order }) {
                             <Table>
                                 <Table.Thead>
                                     <tr>
-                                        <Table.Th>Dokumen</Table.Th>
-                                        <Table.Th>Date Terima</Table.Th>
+                                        <Table.Th>Document</Table.Th>
+                                        <Table.Th>Received Date</Table.Th>
                                         <Table.Th>Item</Table.Th>
-                                        <Table.Th>Aksi</Table.Th>
+                                        <Table.Th>Actions</Table.Th>
                                     </tr>
                                 </Table.Thead>
                                 <Table.Tbody>
@@ -233,7 +233,7 @@ export default function Show({ order }) {
                             <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Supplier Payable</h2>
                             <div className="space-y-2 text-sm">
                                 <div className="flex justify-between">
-                                    <span className="text-slate-500">Dokumen</span>
+                                    <span className="text-slate-500">Document</span>
                                     <span className="font-medium text-slate-800 dark:text-slate-200">{order.payable.document_number}</span>
                                 </div>
                                 <div className="flex justify-between">
@@ -255,7 +255,7 @@ export default function Show({ order }) {
                     )}
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Informasi</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Information</h2>
                         <div className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
                             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                                 <p className="font-medium text-slate-700 dark:text-slate-200">Alur PO</p>

@@ -93,7 +93,7 @@ export default function ReceivablesIndex({ receivables, filters = {} }) {
                             Credit Sale (Receivable)
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Pantau receivables customer dan payment parsialnya.
+                            Monitor customer receivables and partial payments.
                         </p>
                     </div>
                     <div className="flex items-center gap-2">
@@ -124,7 +124,7 @@ export default function ReceivablesIndex({ receivables, filters = {} }) {
                             href={route("transactions.index")}
                             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold transition-colors"
                         >
-                            Buat Dari POS
+                            Create From POS
                         </Link>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ export default function ReceivablesIndex({ receivables, filters = {} }) {
                                                     "90+": "bg-danger-100 text-danger-700",
                                                 };
                                                 const bucketLabels = {
-                                                    current: "Belum Jatuh Tempo",
+                                                    current: "Not Due Yet",
                                                     "0-30": "1-30 Hari",
                                                     "31-60": "31-60 Hari",
                                                     "61-90": "61-90 Hari",

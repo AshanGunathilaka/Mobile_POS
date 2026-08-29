@@ -79,7 +79,7 @@ class GoodsReceivingController extends Controller
             }
             $outstanding = $poItem->qty_ordered - $poItem->qty_received;
             if ($item['qty_received'] > $outstanding) {
-                return back()->with('error', "Qty diterima melebihi sisa item {$poItem->product_id}.");
+                return back()->with('error', "Received quantity exceeds remaining item {$poItem->product_id}.");
             }
         }
 

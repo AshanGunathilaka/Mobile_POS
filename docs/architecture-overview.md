@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
 ## Stack
 
@@ -8,15 +8,15 @@ Kembali ke indeks dokumentasi: `docs/README.md`
 - **Frontend:** Inertia.js 3 + React 19, Vite 5
 - **Styling:** Tailwind CSS 3 (custom theme in `tailwind.config.js`)
 - **Auth/RBAC:** Spatie Laravel Permission + Laravel Breeze
-- **DB:** MySQL (default); SQLite in-memory untuk testing
+- **DB:** MySQL (default); SQLite in-memory for testing
 - **Payment Gateways:** Midtrans, Xendit
 
 ## Struktur Area Penting
 
-- `routes/web.php` — ~60+ route dashboard, public share, portal
-- `routes/api.php` — webhook Midtrans & Xendit (tanpa auth)
+- `routess/web.php` — ~60+ routes dashboard, public share, portal
+- `routess/api.php` — webhook Midtrans & Xendit (without auth)
 - `app/Http/Controllers/Apps/` — controller per modul dashboard
-- `app/Http/Controllers/Reports/` — controller laporan
+- `app/Http/Controllers/Reports/` — controller reports
 - `app/Http/Controllers/DocumentController.php` — PDF documents
 - `app/Http/Controllers/PublicPortalController.php` — customer self-service
 - `app/Http/Middleware/` — 7 custom middleware
@@ -32,19 +32,19 @@ Kembali ke indeks dokumentasi: `docs/README.md`
 ## Alur Request Umum
 
 1. Route dashboard diproteksi `auth` + `verified` + `permission`
-2. Controller menyiapkan data dari Model/Service
-3. Inertia merender page React di `resources/js/Pages/Dashboard/**/*.jsx`
-4. Permission user dishare ke frontend via `HandleInertiaRequests.php`
-5. Frontend menggunakan permission untuk visibility tombol/menu
+2. Controller menyiapkan data from Model/Service
+3. Inertia renders React pages in `resources/js/Pages/Dashboard/**/*.jsx`
+4. User permissions are shared to frontend via `HandleInertiaRequests.php`
+5. Frontend menguse permission for visibility tombol/menu
 
 ## Middleware
 
 | Alias | Class | Fungsi |
 |-------|-------|--------|
-| `permission` | Spatie PermissionMiddleware | Proteksi route berbasis permission string |
-| `active_shift` | EnsureActiveCashierShift | Wajibkan shift aktif untuk operasi POS (cart, hold, checkout) |
-| `step_up` | EnsureRecentPasswordConfirmation | Minta konfirmasi password untuk aksi sensitif (role/user CRUD, payment settings, bank accounts, payment confirmation) |
-| `bot.guard` | EnsureBotGuard | Honeypot + timer anti-bot di form login/register/forgot-password |
+| `permission` | Spatie PermissionMiddleware | Proteksi routes berbasis permission string |
+| `active_shift` | EnsureActiveCashierShift | Requires an active shift for POS operations (cart, hold, checkout) |
+| `step_up` | EnsureRecentPasswordConfirmation | Requires password confirmation for sensitive actions (role/user CRUD, payment settings, bank accounts, payment confirmation) |
+| `bot.guard` | EnsureBotGuard | Honeypot + timer anti-bot in form login/register/forgot-password |
 | `registration.enabled` | EnsurePublicRegistrationEnabled | Matikan registrasi publik (default: off) |
 | `SecureHeaders` | — | Security response headers |
 | `EnforceAbsoluteSessionLifetime` | — | Paksa logout setelah session lifetime habis |
@@ -53,49 +53,49 @@ Kembali ke indeks dokumentasi: `docs/README.md`
 
 | Service | Fungsi |
 |---------|--------|
-| `AuditLogService` | Catat perubahan penting dengan before/after snapshot |
+| `AuditLogService` | Records important changes with before/after snapshots |
 | `CashierShiftService` | Lifecycle shift: open, close, force-close, summary |
-| `StockMutationService` | Catat semua perubahan stok dengan audit trail |
+| `StockMutationService` | Records all stock changes with an audit trail |
 | `PricingService` | Engine promo: qty break, bundle, buy-x-get-y |
 | `LoyaltyService` | Points, tier, voucher — earn/redeem |
 | `TaxService` | Hitung PPN exclusive/inclusive per item |
-| `UnitConversionService` | Konversi antar satuan (pcs ↔ box ↔ kg) |
+| `UnitConversionService` | Conversion antar unit (pcs ↔ box ↔ kg) |
 | `BatchService` | Alokasi FEFO batch, expiring alerts |
-| `ReorderService` | Product perlu restock, buat draft PO |
-| `PriceListService` | Harga khusus per kelompok pelanggan |
-| `StockTransferService` | Lifecycle transfer stok antar gudang |
+| `ReorderService` | Product need restock, buat draft PO |
+| `PriceListService` | Price khusus per kelompok customers |
+| `StockTransferService` | Lifecycle transfer stock antar warehouses |
 | `ThermalPrintService` | Generate teks receipt ESC/POS |
 | `CrmAutomationService` | Campaign, reminder, automation |
-| `CustomerSegmentationService` | Auto/manual segmentasi pelanggan |
+| `CustomerSegmentationService` | Auto/manual segmentasi customers |
 | `PurchaseOrderService` | Lifecycle PO: draft, place, cancel |
-| `GoodsReceivingService` | Terima barang, update stok, buat payable |
-| `SupplierReturnService` | Retur ke supplier, koreksi stok + payable |
+| `GoodsReceivingService` | Receive goods, update stock, buat payable |
+| `SupplierReturnService` | Supplier returns, koreksi stock + payable |
 | `ReceivableService` | Aging, statement, collection stats |
-| `PayableAgingService` | Aging hutang supplier |
-| `PaymentGatewayManager` | Dispatch ke Midtrans/Xendit |
-| `WhatsAppService` | HTTP wrapper ke Node.js whatsapp-web.js service |
+| `PayableAgingService` | Aging supplier payables |
+| `PaymentGatewayManager` | Dispatches to Midtrans/Xendit |
+| `WhatsAppService` | HTTP wrapper for Node.js whatsapp-web.js service |
 
 ## Pola Integrasi Modul
 
-- **Transaction** adalah pusat: details, profits, receivable, sales returns, campaign logs, discount approvals
-- **Product** adalah pusat inventory: stock opname, stock mutation, batch, composite, pricing rules, price list items, units
-- **Warehouse** adalah dimensi baru: hampir semua tabel stok & transaksi punya `warehouse_id`
-- **Audit Log** lintas modul: setiap perubahan penting dicatat via `AuditLogService`
+- **Transaction** is the center: details, profits, receivables, sales returns, campaign logs, discount approvals
+- **Product** is the inventory center: stock counts, stock mutations, batches, composites, pricing rules, price list items, units
+- **Warehouse** is the location dimension: almost all stock and transaction tables have `warehouse_id`
+- **Audit Log** across modules: each important change is recorded through `AuditLogService`
 
 ## Alur Data Multi-Warehouse
 
 ```
-Cashier buka shift → pilih warehouse
+Cashier buka shift → select warehouse
     ↓
-POS cek stok di product_warehouse (product_id + warehouse_id)
+POS check stock in product_warehouse (product_id + warehouse_id)
     ↓
-Checkout → decrement stok di product_warehouse
+Checkout → decrement stock in product_warehouse
          → transaction.warehouse_id = shift.warehouse_id
     ↓
 PO → warehouse_id
-GR → inherit warehouse dari PO, increment stok di pivot
+GR → inherit warehouse from PO, increment stock in pivot
 Stock Transfer → source → send → receive → destination
-Stock Opname → pilih warehouse, baca stok dari pivot
+Stock Opname → select warehouse, baca stock from pivot
 ```
 
 ## WhatsApp Gateway Architecture
@@ -112,19 +112,19 @@ Stock Opname → pilih warehouse, baca stok dari pivot
                                               WhatsApp Web
 ```
 
-- `whatsapp-service/` adalah Node.js Express server yang menjalankan `whatsapp-web.js`
-- Laravel komunikasi via HTTP ke service tersebut
-- Session WhatsApp disimpan di `whatsapp-service/session/` (persistent)
-- Butuh Node.js + Chrome di server (Puppeteer internal)
+- `whatsapp-service/` existslah Node.js Express server that run `whatsapp-web.js`
+- Laravel komunikasi via HTTP to service tersebut
+- Session WhatsApp saved in `whatsapp-service/session/` (persistent)
+- Requires Node.js + Chrome in server (Puppeteer internal)
 
-## Pola Dokumentasi Fitur
+## Feature Documentation Pattern
 
-Setiap dokumen fitur di `docs/features/` mencakup:
+Each feature document in `docs/features/` covers:
 
 - tujuan modul
-- fitur yang tersedia
-- halaman dan route
-- permission yang dibutuhkan
+- available features
+- pages and routes
+- required permissions
 - alur user
 - integrasi data
-- catatan teknis/batasan
+- catatan teknis/bon top ofan

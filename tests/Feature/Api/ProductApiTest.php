@@ -141,7 +141,7 @@ class ProductApiTest extends TestCase
     {
         Sanctum::actingAs($this->user);
 
-        $product = $this->makeProduct('Product Hapus', 'DEL-001');
+        $product = $this->makeProduct('Deleted Product', 'DEL-001');
 
         $this->deleteJson("/api/v1/products/{$product->id}")->assertStatus(204);
 

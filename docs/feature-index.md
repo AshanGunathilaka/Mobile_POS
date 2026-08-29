@@ -1,6 +1,6 @@
 # Feature Index
 
-## POS & Transaksi
+## POS & Transactions
 
 | Modul | File | Status |
 |-------|------|--------|
@@ -13,14 +13,14 @@
 
 | Modul | File | Status |
 |-------|------|--------|
-| Product & Kategori | `docs/features/inventory-stock.md` | ✅ |
+| Product & Categories | `docs/features/inventory-stock.md` | ✅ |
 | Stock Opname | `docs/features/inventory-stock.md` | ✅ |
 | Stock Mutation | `docs/features/inventory-stock.md` | ✅ |
 | Multi-Warehouse & Stock Transfer | `docs/features/multi-warehouse.md` | ✅ |
 | Batch / Expiry Tracking | — | ✅ |
 | Composite Products (Kits) | — | ✅ |
 | Reorder Point | — | ✅ |
-| Unit Conversion (Multi-Satuan) | `docs/features/unit-conversion.md` | ✅ |
+| Unit Conversion (Multi-Unit) | `docs/features/unit-conversion.md` | ✅ |
 
 ## Purchasing & Finance
 
@@ -99,4 +99,4 @@
 - `planning/tier-3-implementation.md` — detail eksekusi Tier 3
 - `planning/multi-warehouse.md` — detail multi-warehouse
 - `planning/improvement-planning.md` — roadmap awal (legacy)
-- `planning/security-improvement-roadmap.md` — roadmap keamanan
+- `planning/security-improvement-roadmap.md` — security roadmap

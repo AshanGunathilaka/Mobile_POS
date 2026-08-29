@@ -219,7 +219,7 @@ export default function AddCustomerModal({
                                         Registrasi Member
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                                        Enable when the customer should immediately receive member prices and pointsts.
+                                        Enable when the customer should immediately receive member prices and points.
                                     </p>
                                 </div>
                             </div>

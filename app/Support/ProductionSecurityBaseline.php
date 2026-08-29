@@ -18,7 +18,7 @@ class ProductionSecurityBaseline
         if (config('app.debug')) {
             $issues[] = [
                 'key' => 'app_debug',
-                'message' => 'APP_DEBUG masih aktif. Inactivekan debug di production.',
+                'message' => 'APP_DEBUG is still active. Disable debug mode in production.',
             ];
         }
 
@@ -34,7 +34,7 @@ class ProductionSecurityBaseline
         if (config('session.secure') !== true) {
             $issues[] = [
                 'key' => 'session_secure_cookie',
-                'message' => 'SESSION_SECURE_COOKIE harus bernilai true di production.',
+                'message' => 'SESSION_SECURE_COOKIE must be true in production.',
             ];
         }
 

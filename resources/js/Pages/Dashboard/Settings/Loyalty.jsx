@@ -22,7 +22,7 @@ export default function Loyalty({ settings }) {
         post(route("settings.loyalty.update"), {
             preserveScroll: true,
             onSuccess: () => toast.success("Loyalty settings saved"),
-            onError: () => toast.error("Failed menyimpan pengaturan loyalty"),
+            onError: () => toast.error("Failed to save loyalty settings"),
         });
     };
 
@@ -36,7 +36,7 @@ export default function Loyalty({ settings }) {
                         Loyalty Settings
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Atur earn rate, redeem value, dan threshold tier member.
+                        Configure earn rate, redeem value, and member tier thresholds.
                     </p>
                 </div>
 
@@ -55,7 +55,7 @@ export default function Loyalty({ settings }) {
                                         Earn & Redeem
                                     </h2>
                                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                                        Kontrol perolehan dan penggunaan points.
+                                        Control points earning and redemption.
                                     </p>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ export default function Loyalty({ settings }) {
                             <div className="space-y-4">
                                 <label className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700 dark:bg-slate-800">
                                     <span className="font-medium text-slate-700 dark:text-slate-200">
-                                        Activekan earn pointsts
+                                        Enable points earning
                                     </span>
                                     <input
                                         type="checkbox"
@@ -76,7 +76,7 @@ export default function Loyalty({ settings }) {
                                 </label>
                                 <label className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm dark:border-slate-700 dark:bg-slate-800">
                                     <span className="font-medium text-slate-700 dark:text-slate-200">
-                                        Activekan redeem pointsts
+                                        Enable points redemption
                                     </span>
                                     <input
                                         type="checkbox"
@@ -93,7 +93,7 @@ export default function Loyalty({ settings }) {
 
                                 <div>
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Purchase amount for 1 pointst
+                                        Purchase amount for 1 point
                                     </label>
                                     <input
                                         type="number"
@@ -116,7 +116,7 @@ export default function Loyalty({ settings }) {
 
                                 <div>
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Sri Lankan rupee value per redeemed pointst
+                                        Sri Lankan rupee value per redeemed point
                                     </label>
                                     <input
                                         type="number"

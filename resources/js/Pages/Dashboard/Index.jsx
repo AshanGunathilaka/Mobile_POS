@@ -243,11 +243,11 @@ export default function Dashboard({
                         borderWidth: 3,
                         fill: true,
                         tension: 0.4,
-                        pointstRadius: 0,
-                        pointstHoverRadius: 6,
-                        pointstHoverBackgroundColor: "#6366f1",
-                        pointstHoverBorderColor: "#fff",
-                        pointstHoverBorderWidth: 2,
+                        pointRadius: 0,
+                        pointHoverRadius: 6,
+                        pointHoverBackgroundColor: "#6366f1",
+                        pointHoverBorderColor: "#fff",
+                        pointHoverBorderWidth: 2,
                     },
                 ],
             },
@@ -330,7 +330,7 @@ export default function Dashboard({
                     <StatCard
                         title="Sales Hari Ini"
                         value={formatCurrency(todaySales)}
-                        subtitle="Total penjualan hari ini"
+                        subtitle="Total sales today"
                         icon={IconCoin}
                         gradient="from-primary-500 to-primary-700"
                     />
@@ -386,7 +386,7 @@ export default function Dashboard({
                     title="Revenue Trend"
                     subtitle="12 data terakhir"
                     icon={IconChartBar}
-                    emptyMessage="Belum ada data pendapatan"
+                    emptyMessage="No revenue data yet"
                 >
                     {chartData.length > 0 && (
                         <div className="h-72">
@@ -434,7 +434,7 @@ export default function Dashboard({
                         title="Product Terlaris"
                         subtitle="Best seller"
                         icon={IconBox}
-                        emptyMessage="Belum ada data"
+                        emptyMessage="No data yet"
                     >
                         {topProducts.length > 0 && (
                             <div className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -506,7 +506,7 @@ export default function Dashboard({
                         title="Customer Terbaik"
                         subtitle="Top spender"
                         icon={IconUsers}
-                        emptyMessage="Belum ada data"
+                        emptyMessage="No data yet"
                     >
                         {topCustomers.length > 0 && (
                             <ul className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -539,7 +539,7 @@ export default function Dashboard({
                         title="Lokasi Terbanyak"
                         subtitle="Berdasar kelurahan transaksi"
                         icon={IconMapPin}
-                        emptyMessage="Belum ada data"
+                        emptyMessage="No data yet"
                     >
                         {topLocations.length > 0 && (
                             <ul className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -571,7 +571,7 @@ export default function Dashboard({
                     title="Transaction Terbaru"
                     subtitle="5 transaksi terakhir"
                     icon={IconReceipt}
-                    emptyMessage="Belum ada transaksi"
+                    emptyMessage="No transactions yet"
                 >
                     {recentTransactions.length > 0 && (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">

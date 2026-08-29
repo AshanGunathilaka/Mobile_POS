@@ -201,7 +201,7 @@ export default function SalesReturnForm({
                         >
                             <IconArrowLeft size={16} />
                             {salesReturn
-                                ? "Back ke daftar retur"
+                                ? "Back to return list"
                                 : "Back to transaction history"}
                         </Link>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -270,7 +270,7 @@ export default function SalesReturnForm({
                                     type="submit"
                                     icon={<IconDeviceFloppy size={18} />}
                                     className="bg-primary-500 text-white hover:bg-primary-600"
-                                    label={salesReturn ? "Save Draft" : "Buat Draft"}
+                                    label={salesReturn ? "Save Draft" : "Create Draft"}
                                     disabled={form.processing}
                                 />
                             )}
@@ -284,7 +284,7 @@ export default function SalesReturnForm({
                                     <Table.Th>Already Returned</Table.Th>
                                     <Table.Th>Sisa</Table.Th>
                                     <Table.Th>Return Qty</Table.Th>
-                                    <Table.Th>Alasan</Table.Th>
+                                    <Table.Th>Reason</Table.Th>
                                     <Table.Th>Restock</Table.Th>
                                     <Table.Th>Subtotal</Table.Th>
                                 </tr>
@@ -338,7 +338,7 @@ export default function SalesReturnForm({
                                                         event.target.value
                                                     )
                                                 }
-                                                placeholder="Alasan retur"
+                                                placeholder="Return reason"
                                                 className="h-10 min-w-48 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                             />
                                         </Table.Td>
@@ -406,7 +406,7 @@ export default function SalesReturnForm({
                                     {!transaction.customer && (
                                         <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                                             Transaction tanpa customer hanya
-                                            dapat memakai refund tunai.
+                                            can use a cash refund.
                                         </p>
                                     )}
                                 </div>
@@ -439,7 +439,7 @@ export default function SalesReturnForm({
 
                             <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                                 <PreviewRow
-                                    label="Item dipilih"
+                                    label="Selected Items"
                                     value={`${summary.selectedItemsCount} product`}
                                 />
                                 <PreviewRow
@@ -447,7 +447,7 @@ export default function SalesReturnForm({
                                     value={`${summary.totalItems} item`}
                                 />
                                 <PreviewRow
-                                    label="Stock kembali"
+                                    label="Returned Stock"
                                     value={`${summary.restockQty} item`}
                                 />
                                 <PreviewRow
@@ -469,7 +469,7 @@ export default function SalesReturnForm({
                                             )}
                                         />
                                         <PreviewRow
-                                            label="Receivable setelah retur"
+                                            label="Receivable After Return"
                                             value={formatCurrency(
                                                 summary.receivableAfter ?? 0
                                             )}
@@ -499,7 +499,7 @@ export default function SalesReturnForm({
                                     />
                                     {form.isDirty && (
                                         <p className="mt-2 text-xs text-warning-600">
-                                            Save draft terlebih dulu sebelum
+                                            Save the draft first before
                                             menyelesaikan retur.
                                         </p>
                                     )}

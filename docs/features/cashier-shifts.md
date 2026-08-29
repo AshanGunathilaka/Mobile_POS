@@ -1,21 +1,21 @@
 # Cashier Shifts
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Mengontrol sesi kerja kasir agar transaksi kasir memiliki konteks shift yang jelas, termasuk cash opening, cash closing, dan summary operasional.
+Controls cashier work sessions so cashier transactions have a clear shift context, including opening cash, closing cash, and operational summaries.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 - open shift
 - list shift
 - detail shift
 - close shift
-- force close untuk user berwenang
-- ringkasan expected cash, actual cash, selisih, transaksi, dan sales return
+- force close for authorized users
+- summary of expected cash, actual cash, variance, transactions, and sales returns
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/cashier-shifts`
 - `cashier-shifts.store`
@@ -31,28 +31,28 @@ Mengontrol sesi kerja kasir agar transaksi kasir memiliki konteks shift yang jel
 
 ## Alur User
 
-1. kasir membuka shift dengan opening cash
-2. route transaksi tertentu mewajibkan shift aktif
-3. selama shift aktif, transaksi dan sales return tercatat dalam konteks shift
-4. saat penutupan, kasir mengisi actual cash
-5. sistem menghitung selisih dan summary shift
+1. cashier open shift with opening cash
+2. specific transaction routess require an active shift
+3. while the shift is active, transactions and sales returns are recorded in the shift context
+4. when closing, the cashier enters actual cash
+5. the system calculates variance and shift summary
 
 ## Integrasi Data
 
 - `cashier_shifts`
-- transaksi cash / non-cash
+- transactions cash / non-cash
 - sales returns
 - middleware `active_shift`
 
 ## Efek Bisnis Penting
 
-- tanpa shift aktif, operasi inti transaksi diblokir
-- close shift dipakai untuk rekonsiliasi cash operasional
+- core transaction operations are blocked without an active shift
+- shift closing is used for operational cash reconciliation
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- shift tidak dimaksudkan sebagai workflow approval
-- force close dibatasi untuk user tertentu
+- shifts are not intended as an approval workflow
+- force close is limited to specific users
 
 ## File Sentral
 

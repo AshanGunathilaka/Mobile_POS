@@ -51,7 +51,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
         <>
             <Head
                 title={
-                    isEdit ? "Edit Voucher Customer" : "Buat Voucher Customer"
+                    isEdit ? "Edit Customer Voucher" : "Create Customer Voucher"
                 }
             />
 
@@ -62,12 +62,12 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                         href={route("customer-vouchers.index")}
                         icon={<IconArrowLeft size={18} />}
                         className="mb-3 border-none bg-transparent px-0 text-slate-500 shadow-none hover:bg-transparent hover:text-primary-600 dark:text-slate-400"
-                        label="Back ke voucher customer"
+                        label="Back to customer vouchers"
                     />
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
                         {isEdit
-                            ? "Edit Voucher Customer"
-                            : "Buat Voucher Customer"}
+                            ? "Edit Customer Voucher"
+                            : "Create Customer Voucher"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         Distribute promotional vouchers to selected customers.
@@ -82,10 +82,10 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                             </div>
                             <div>
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    Informasi Voucher
+                                    Voucher Information
                                 </h2>
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Tentukan customer, kode, dan identitas voucher personal.
+                                    Set the customer, code, and personal voucher identity.
                                 </p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                                         <option key={customer.id} value={customer.id}>
                                             {customer.name} | {customer.no_telp || "-"} |{" "}
                                             {customer.is_loyalty_member
-                                                ? `${customer.loyalty_tier} / ${customer.loyalty_points} pointsts`
+                                                ? `${customer.loyalty_tier} / ${customer.loyalty_points} points`
                                                 : "non-member"}
                                         </option>
                                     ))}
@@ -160,7 +160,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                         <div className="grid gap-4 md:grid-cols-2">
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Tipe Discount
+                                    Discount Type
                                 </label>
                                 <select
                                     value={data.discount_type}

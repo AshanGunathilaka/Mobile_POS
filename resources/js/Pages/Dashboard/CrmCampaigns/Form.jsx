@@ -36,7 +36,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
 
     return (
         <>
-            <Head title={isEdit ? "Edit CRM Campaign" : "Buat CRM Campaign"} />
+            <Head title={isEdit ? "Edit CRM Campaign" : "Create CRM Campaign"} />
             <div className="w-full">
                 <div className="mb-6">
                     <Button
@@ -44,13 +44,13 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                         href={route("crm-campaigns.index")}
                         icon={<IconArrowLeft size={18} />}
                         className="mb-3 border-none bg-transparent px-0 text-slate-500 shadow-none hover:bg-transparent hover:text-primary-600 dark:text-slate-400"
-                        label="Back ke CRM campaigns"
+                        label="Back to CRM campaigns"
                     />
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {isEdit ? "Edit CRM Campaign" : "Buat CRM Campaign"}
+                        {isEdit ? "Edit CRM Campaign" : "Create CRM Campaign"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Bangun audience of segment dan siapkan campaign WhatsApp/manual follow-up.
+                        Build an audience from segments and prepare a WhatsApp/manual follow-up campaign.
                     </p>
                 </div>
 
@@ -61,8 +61,8 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                                 <IconBroadcast size={22} />
                             </div>
                             <div>
-                                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Informasi Campaign</h2>
-                                <p className="text-sm text-slate-500 dark:text-slate-400">Campaign disimpan sebagai draft dan dapat diproses menjadi audience nyata.</p>
+                                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Campaign Information</h2>
+                                <p className="text-sm text-slate-500 dark:text-slate-400">Campaigns are saved as drafts and can be processed into a real audience.</p>
                             </div>
                         </div>
                         <div className="grid gap-4 md:grid-cols-2">
@@ -76,7 +76,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                                 />
                             </div>
                             <div>
-                                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Tipe Campaign</label>
+                                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Campaign Type</label>
                                 <select
                                     value={data.type}
                                     onChange={(event) => setData("type", event.target.value)}
@@ -104,7 +104,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                                     checked={data.save_as_draft}
                                     onChange={(event) => setData("save_as_draft", event.target.checked)}
                                 />
-                                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Save sebagai draft</span>
+                                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Save as draft</span>
                             </label>
                         </div>
                     </div>

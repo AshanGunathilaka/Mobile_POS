@@ -36,7 +36,7 @@ class AuthController extends Controller
         $key = 'api-login:'.$request->ip();
 
         if (RateLimiter::tooManyAttempts($key, 5)) {
-            return $this->error('Terlalu banyak percobaan login. Coba lagi nanti.', 429);
+            return $this->error('Too many login attempts. Please try again later.', 429);
         }
 
         $user = User::query()->where('email', $request->string('email')->toString())->first();

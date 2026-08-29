@@ -47,7 +47,7 @@ export default function Form({ mode = "create", segment = null }) {
 
     return (
         <>
-            <Head title={isEdit ? "Edit Segment Customer" : "Buat Segment Customer"} />
+            <Head title={isEdit ? "Edit Customer Segment" : "Create Customer Segment"} />
 
             <div className="w-full">
                 <div className="mb-6">
@@ -56,10 +56,10 @@ export default function Form({ mode = "create", segment = null }) {
                         href={route("customer-segments.index")}
                         icon={<IconArrowLeft size={18} />}
                         className="mb-3 border-none bg-transparent px-0 text-slate-500 shadow-none hover:bg-transparent hover:text-primary-600 dark:text-slate-400"
-                        label="Back ke segment customer"
+                        label="Back to customer segments"
                     />
                     <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {isEdit ? "Edit Segment Customer" : "Buat Segment Customer"}
+                        {isEdit ? "Edit Customer Segment" : "Create Customer Segment"}
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                         Group customers manually or automatically based on business behavior.
@@ -74,10 +74,10 @@ export default function Form({ mode = "create", segment = null }) {
                             </div>
                             <div>
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    Informasi Segment
+                                    Segment Information
                                 </h2>
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Segment manual bisa diatur per customer, segment otomatis dihitung oleh sistem.
+                                    Manual segments can be assigned per customer; automatic segments are calculated by the system.
                                 </p>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ export default function Form({ mode = "create", segment = null }) {
                             </div>
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Tipe Segment
+                                    Segment Type
                                 </label>
                                 <select
                                     value={data.type}

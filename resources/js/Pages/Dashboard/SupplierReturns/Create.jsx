@@ -112,18 +112,18 @@ export default function Create({ suppliers, goodsReceivings, products }) {
 
     return (
         <>
-            <Head title="Buat Supplier Return" />
+            <Head title="Create Supplier Return" />
             <div className="mb-6">
                 <Link
                     href={route("supplier-returns.index")}
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar retur
+                    Back to return list
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconTruckReturn size={28} className="text-primary-500" />
-                    Buat Supplier Return
+                    Create Supplier Return
                 </h1>
             </div>
 
@@ -253,7 +253,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Price</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Subtotal</th>
-                                            <th className="px-3 py-2 text-left font-semibold text-slate-700 dark:text-slate-200">Alasan</th>
+                                            <th className="px-3 py-2 text-left font-semibold text-slate-700 dark:text-slate-200">Reason</th>
                                             <th className="w-16 px-3 py-2"></th>
                                         </tr>
                                     </thead>
@@ -291,7 +291,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                                                         type="text"
                                                         value={item.reason || ""}
                                                         onChange={(e) => updateItem(index, "reason", e.target.value)}
-                                                        placeholder="Alasan retur"
+                                                        placeholder="Return reason"
                                                         className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                                     />
                                                 </td>

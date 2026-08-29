@@ -34,8 +34,8 @@ export default function Dashboard() {
                     total={45}
                 />
                 <Widget
-                    title={'Pengguna'}
-                    subtitle={'Total Pengguna'}
+                    title={'Users'}
+                    subtitle={'Total Users'}
                     color={'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200'}
                     icon={<IconUsers size={'20'} strokeWidth={'1.5'} />}
                     total={2}

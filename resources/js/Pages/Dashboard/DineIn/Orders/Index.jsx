@@ -33,7 +33,7 @@ export default function Index({ orders }) {
     const canProcess = can("dine-orders-process");
 
     const handleAccept = (order) => {
-        if (!confirm("Terima pesanan ini dan lanjutkan ke cashier?")) return;
+        if (!confirm("Accept this order and continue to cashier?")) return;
         router.post(
             route("dine-orders.accept", order.id),
             {},
@@ -45,7 +45,7 @@ export default function Index({ orders }) {
     };
 
     const handleReject = (order) => {
-        const reason = prompt("Alasan penolakan (opsional):");
+        const reason = prompt("Rejection reason (optional):");
         if (reason === null) return;
         router.post(
             route("dine-orders.reject", order.id),
@@ -109,7 +109,7 @@ export default function Index({ orders }) {
                                                 <>
                                                     <Button
                                                         type={"button"}
-                                                        label={"Terima"}
+                                                        label={"Accept"}
                                                         icon={<IconCheck size={16} strokeWidth={1.5} />}
                                                         className={
                                                             "bg-success-500 hover:bg-success-600 text-white"

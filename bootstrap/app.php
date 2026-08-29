@@ -98,7 +98,7 @@ return Application::configure(basePath: dirname(__DIR__))
             return Inertia::render('Error', [
                 'status' => $status,
                 'homeUrl' => $request->user() ? route('dashboard') : url('/'),
-                'homeLabel' => $request->user() ? __('Kembali ke Dashboard') : __('Kembali ke Beranda'),
+                'homeLabel' => $request->user() ? __('Back to Dashboard') : __('Back to Home'),
             ])->toResponse($request)->setStatusCode($status);
         });
     })->create();

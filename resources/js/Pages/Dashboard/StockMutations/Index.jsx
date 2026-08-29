@@ -37,7 +37,7 @@ export default function Index({ stockMutations, products, warehouses = [], filte
                     Mutasi Stock
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                    Histori perubahan stock of stock opname dan initial stock product.
+                    History of stock changes from stock counts and initial product stock.
                 </p>
             </div>
 
@@ -64,7 +64,7 @@ export default function Index({ stockMutations, products, warehouses = [], filte
                     }
                     className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                 >
-                    <option value="">All Tipe</option>
+                    <option value="">All Types</option>
                     <option value="in">In</option>
                     <option value="out">Out</option>
                     <option value="adjustment">Adjustment</option>
@@ -100,17 +100,17 @@ export default function Index({ stockMutations, products, warehouses = [], filte
                 />
             </div>
 
-            <Table.Card title="Histori Mutasi Stock">
+            <Table.Card title="Stock Mutation History">
                 <Table>
                     <Table.Thead>
                         <tr>
                             <Table.Th>Product</Table.Th>
-                            <Table.Th>Tipe</Table.Th>
+                            <Table.Th>Type</Table.Th>
                             <Table.Th>Qty</Table.Th>
                             <Table.Th>Before / After</Table.Th>
                             <Table.Th>Warehouse</Table.Th>
                             <Table.Th>Referensi</Table.Th>
-                            <Table.Th>Dibuat Oleh</Table.Th>
+                            <Table.Th>Created By</Table.Th>
                             <Table.Th>Waktu</Table.Th>
                         </tr>
                     </Table.Thead>
@@ -160,7 +160,7 @@ export default function Index({ stockMutations, products, warehouses = [], filte
                                     colSpan={8}
                                 message={
                                     <div className="text-slate-500 dark:text-slate-400">
-                                        Belum ada mutasi stock.
+                                        No stock mutations yet.
                                     </div>
                                 }
                             >

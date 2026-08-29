@@ -1,19 +1,19 @@
 # Getting Started
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Panduan ini membantu developer baru menjalankan aplikasi dari nol sampai bisa login dan mengakses modul dashboard.
+This guide helps new developers run the application from scratch until they can log in and access dashboard modules.
 
 ## Requirement Minimum
 
-- PHP 8.3+ sesuai kebutuhan Laravel 13
+- PHP 8.3+ matching Laravel requirements 13
 - Composer
 - Node.js 18+ + npm
 - MySQL / MariaDB
 - ekstensi PHP standar Laravel
-- Chrome/Chromium (untuk WhatsApp Gateway — opsional)
+- Chrome/Chromium (for WhatsApp Gateway — optional)
 
 ## Langkah Setup
 
@@ -28,36 +28,36 @@ npm run dev
 php artisan serve
 ```
 
-## Urutan Bootstrapping yang Disarankan
+## Recommended Bootstrapping Order
 
-1. isi konfigurasi database di `.env`
-2. jalankan `php artisan migrate --seed`
-3. jalankan `php artisan storage:link`
-4. jalankan frontend dengan `npm run dev`
-5. jalankan server aplikasi
-6. login menggunakan akun default
+1. fill in database configuration in `.env`
+2. run `php artisan migrate --seed`
+3. run `php artisan storage:link`
+4. run frontend with `npm run dev`
+5. run server aplikasi
+6. log in using the default account
 
 ## Default Login
 
 - Admin: `arya@gmail.com` / `password`
-- Kasir: `cashier@gmail.com` / `password`
+- Cashier: `cashier@gmail.com` / `password`
 
 ## Seed Data
 
-Seeder utama akan membuat:
+The main seeder creates:
 
 - permission
 - role
 - user default
 - payment setting awal
-- sample data operasional
+- sample data operational
 
 Catatan penting:
 
-- fitur yang bergantung pada permission baru sebaiknya selalu diuji setelah `db:seed`
-- jika permission terlihat tidak sinkron, logout-login ulang setelah seed selesai
+- features that depend on new permissions should always be tested after `db:seed`
+- if permissions look out of sync, log out and log in again after seeding completes
 
-## Setelah Aplikasi Jalan
+## After the Application Is Running
 
 Cek minimal:
 
@@ -68,13 +68,13 @@ Cek minimal:
 
 ## Tips Validasi Cepat
 
-- buka dashboard utama
-- buka transaksi kasir
-- cek histori transaksi
-- cek stock opname / cashier shift / audit logs jika migration fiturnya sudah ada
+- buka dashboard main
+- open cashier transactions
+- check history transactions
+- check stock opname / cashier shift / audit logs if the feature migration exists
 
 ## Error Umum
 
-- gambar tidak tampil: jalankan `php artisan storage:link`
-- payment webhook tidak jalan: cek `APP_URL`
-- modul baru error 500: cek apakah migration fitur sudah dijalankan
+- images do not appear: run `php artisan storage:link`
+- payment webhooks do not run: check `APP_URL`
+- new module error 500: check apakah migration feature already dirun

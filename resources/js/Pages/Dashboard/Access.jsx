@@ -35,7 +35,7 @@ const cards = [
     },
     {
         title: "Payable",
-        desc: "Catat payables supplier",
+        desc: "Record supplier payables",
         icon: <IconCurrencyDollar size={22} />,
         route: "payables.index",
         perms: ["payables-access"],

@@ -77,7 +77,7 @@ export default function Warehouses({ warehouses = [] }) {
     };
 
     const handleDelete = (w) => {
-        if (!confirm(`Delete gudang ${w.name}?`)) return;
+        if (!confirm(`Delete warehouse ${w.name}?`)) return;
         router.delete(route("settings.warehouses.destroy", w.id));
     };
 
@@ -205,7 +205,7 @@ export default function Warehouses({ warehouses = [] }) {
                                     errors={errors.name}
                                 />
                                 <div>
-                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Tipe</label>
+                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Type</label>
                                     <select
                                         value={form.type}
                                         onChange={(e) => setForm({ ...form, type: e.target.value })}

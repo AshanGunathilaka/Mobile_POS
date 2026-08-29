@@ -95,7 +95,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                             href={route("pricing-rules.create")}
                             icon={<IconCirclePlus size={18} />}
                             className="bg-primary-500 text-white shadow-lg shadow-primary-500/30 hover:bg-primary-600"
-                            label="Buat Rule"
+                            label="Create Rule"
                         />
                     )}
                 </div>
@@ -130,7 +130,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                                 onChange={(event) =>
                                     handleFilterChange("search", event.target.value)
                                 }
-                                placeholder="Search nama rule..."
+                                placeholder="Search rule name..."
                                 className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pr-11 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                             />
                             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400">
@@ -187,7 +187,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                                 <Table.Th>Discount</Table.Th>
                                 <Table.Th>Priority</Table.Th>
                                 <Table.Th>Status</Table.Th>
-                                <Table.Th className="w-28 text-center">Aksi</Table.Th>
+                                <Table.Th className="w-28 text-center">Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>

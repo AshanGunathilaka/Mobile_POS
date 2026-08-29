@@ -31,7 +31,7 @@ export default function Index({ segments, filters }) {
                             href={route("customer-segments.create")}
                             icon={<IconCirclePlus size={18} />}
                             className="bg-primary-500 text-white hover:bg-primary-600 shadow-lg shadow-primary-500/30"
-                            label="Buat Segment"
+                            label="Create Segment"
                         />
                     )}
                 </div>
@@ -43,7 +43,7 @@ export default function Index({ segments, filters }) {
                                 type="text"
                                 value={filters.search || ""}
                                 onChange={(event) => handleFilterChange("search", event.target.value)}
-                                placeholder="Search nama segment..."
+                                placeholder="Search segment name..."
                                 className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 pr-11 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                             />
                             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400">
@@ -55,7 +55,7 @@ export default function Index({ segments, filters }) {
                             onChange={(event) => handleFilterChange("type", event.target.value)}
                             className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         >
-                            <option value="">All Tipe</option>
+                            <option value="">All Types</option>
                             <option value="manual">Manual</option>
                             <option value="auto">Auto</option>
                         </select>
@@ -67,10 +67,10 @@ export default function Index({ segments, filters }) {
                         <Table.Thead>
                             <tr>
                                 <Table.Th>Segment</Table.Th>
-                                <Table.Th>Tipe</Table.Th>
+                                <Table.Th>Type</Table.Th>
                                 <Table.Th>Anggota</Table.Th>
                                 <Table.Th>Status</Table.Th>
-                                <Table.Th className="w-36 text-center">Aksi</Table.Th>
+                                <Table.Th className="w-36 text-center">Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>
@@ -122,7 +122,7 @@ export default function Index({ segments, filters }) {
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={5} message="Belum ada segment customer.">
+                                <Table.Empty colSpan={5} message="No customer segments yet.">
                                     <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                         <IconUsersGroup size={28} className="text-slate-400" />
                                     </div>

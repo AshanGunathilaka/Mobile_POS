@@ -41,7 +41,7 @@ export default function Index({ transfers }) {
                             Transfer Stock
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                            Kelola transfer stock antar gudang / cabang
+                            Manage stock transfers between warehouses / branches
                         </p>
                     </div>
                     {can("stock-transfers-create") && (
@@ -50,7 +50,7 @@ export default function Index({ transfers }) {
                             className="inline-flex items-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-primary-500/30 transition-colors hover:bg-primary-600"
                         >
                             <IconPlus size={18} />
-                            Transfer Baru
+                            New Transfer
                         </Link>
                     )}
                 </div>
@@ -59,13 +59,13 @@ export default function Index({ transfers }) {
                     <Table>
                         <Table.Thead>
                             <tr>
-                                <Table.Th>Dokumen</Table.Th>
-                                <Table.Th>Asal</Table.Th>
-                                <Table.Th>Tujuan</Table.Th>
+                                <Table.Th>Document</Table.Th>
+                                <Table.Th>Source</Table.Th>
+                                <Table.Th>Destination</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th>Item</Table.Th>
-                                <Table.Th>Dibuat</Table.Th>
-                                <Table.Th className="w-24 text-center">Aksi</Table.Th>
+                                <Table.Th>Created</Table.Th>
+                                <Table.Th className="w-24 text-center">Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>

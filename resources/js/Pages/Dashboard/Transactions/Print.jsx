@@ -163,7 +163,7 @@ export default function Print({ transaction }) {
                             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                         >
                             <IconArrowLeft size={18} />
-                            Back ke cashier
+                            Back to cashier
                         </Link>
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
@@ -782,7 +782,7 @@ export default function Print({ transaction }) {
                                 />
                                 <p className="text-sm text-warning-800 dark:text-warning-300">
                                     Make sure the funds have been received before
-                                    mengkonfirmasi payment ini. Tindakan ini
+                                    confirm this payment. This action
                                     cannot be canceled.
                                 </p>
                             </div>

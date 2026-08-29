@@ -55,7 +55,7 @@ export default function Index({ returns, filters, suppliers }) {
                         Supplier Return
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Kelola retur barang ke supplier.
+                        Manage goods returns to suppliers.
                     </p>
                 </div>
                 {can("supplier-returns-create") && (
@@ -108,13 +108,13 @@ export default function Index({ returns, filters, suppliers }) {
                 <Table>
                     <Table.Thead>
                         <tr>
-                            <Table.Th>Dokumen</Table.Th>
+                            <Table.Th>Document</Table.Th>
                             <Table.Th>Supplier</Table.Th>
                             <Table.Th>Status</Table.Th>
                             <Table.Th>Item</Table.Th>
                             <Table.Th>Date</Table.Th>
-                            <Table.Th>Dibuat Oleh</Table.Th>
-                            <Table.Th className="w-24 text-center">Aksi</Table.Th>
+                            <Table.Th>Created By</Table.Th>
+                            <Table.Th className="w-24 text-center">Actions</Table.Th>
                         </tr>
                     </Table.Thead>
                     <Table.Tbody>

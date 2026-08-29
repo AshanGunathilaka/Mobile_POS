@@ -1,21 +1,21 @@
 # Audit Logs
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Menyediakan jejak aktivitas untuk perubahan penting di modul sensitif agar developer dan admin bisa melakukan penelusuran perubahan.
+Provides an activity trail for important changes in sensitive modules so developers and admins can trace changes.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 - list audit log
-- filter berdasarkan user, module, event, tanggal, dan keyword
+- filter by user, module, event, date, and keyword
 - detail audit log
 - before / after payload
-- meta tambahan
-- ip address dan user agent
+- meta addan
+- IP address and user agent
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/audit-logs`
 - `audit-logs.show`
@@ -24,31 +24,31 @@ Menyediakan jejak aktivitas untuk perubahan penting di modul sensitif agar devel
 
 - `audit-logs-access`
 
-## Modul yang Sudah Terintegrasi
+## Modul that Sudah Terintegrasi
 
-Saat ini audit log digunakan pada beberapa aksi penting seperti:
+Audit logs are currently used for several important actions such as:
 
 - payment settings update
 - cashier shift open / close / force close
 - sales return create / update / complete
-- konfirmasi pembayaran transaksi
-- dan modul admin lain yang memanggil `AuditLogService`
+- confirmation payments transactions
+- and other admin modules that call `AuditLogService`
 
 ## Integrasi Data
 
 - `audit_logs`
-- relasi ke `users`
-- relasi polymorphic ke model yang diaudit bila tersedia
+- relationship to `users`
+- relationship polymorphic to audited model when available
 
 ## Efek Bisnis Penting
 
-- audit log bukan pengganti authorization
-- audit log membantu analisis perubahan, terutama pada konfigurasi, transaksi, dan inventory-adjacent flow
+- audit log not pengganti authorization
+- audit log helps analyze changes, especially on configuration, transactions, and inventory-adjacent flow
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- cakupan event bergantung pada controller/service yang secara eksplisit memanggil `AuditLogService`
-- tidak semua CRUD otomatis tercatat
+- coverage event depends on controller/service that explicitly calls `AuditLogService`
+- not all CRUD otomatis recorded
 
 ## File Sentral
 

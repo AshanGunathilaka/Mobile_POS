@@ -38,7 +38,7 @@ export default function Edit({ category }) {
         e.preventDefault();
         post(route("categories.update", category.id), {
             onSuccess: () => toast.success("Category updated successfully"),
-            onError: () => toast.error("Failed memperbarui kategori"),
+            onError: () => toast.error("Failed to update category"),
         });
     };
 
@@ -105,7 +105,7 @@ export default function Edit({ category }) {
                                 />
                                 <Textarea
                                     label="Description"
-                                    placeholder="Description kategori"
+                                    placeholder="Category description"
                                     errors={errors.description}
                                     onChange={(e) =>
                                         setData("description", e.target.value)
@@ -131,7 +131,7 @@ export default function Edit({ category }) {
                                 <IconDeviceFloppy size={18} />
                                 {processing
                                     ? "Saving..."
-                                    : "Save Perubahan"}
+                                    : "Save Changes"}
                             </button>
                         </div>
                     </div>

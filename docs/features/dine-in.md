@@ -1,95 +1,95 @@
-# Fitur Dine-In (QR Menu)
+# Features Dine-In (QR Menu)
 
 ## Ringkasan
 
-Modul dine-in memungkinkan pelanggan memindai QR code di meja untuk melihat menu dan memesan langsung dariHP mereka. Pesanan masuk ke dashboard staff untuk dikonfirmasi, lalu diproses di kasir.
+The dine-in module lets customers scan a QR code at the table, view the menu, and order directly from their phone. Orders arrive on the staff dashboard for confirmation and are then processed by the cashier.
 
 ## Alur Kerja
 
 ```
-Pelanggan scan QR
-  → Lihat menu & pilih item
-  → Pilih metode pembayaran (kasir / online)
+Customers scan QR
+  → View menu & select item
+  → Pilih metode payments (cashier / online)
   → Pesanan terkirim → status: submitted
 
-Staff lihat pesanan di dashboard
-  → Terima (accept) → stok dipotong, lanjut ke kasir
-  → Atau Tolak (reject) dengan alasan
+Staff view orders in the dashboard
+  → Receive (accept) → stock deducted, continue to cashier
+  → Atau Tolak (reject) with alasan
 
-Jika bayar online:
-  → Pelanggan bayar via Midtrans/Xendit
-  → Webhook konfirmasi → status: completed
+If pay online:
+  → Customers pay via Midtrans/Xendit
+  → Webhook confirmation → status: completed
 
-Jika bayar di kasir:
-  → Staff proses di halaman kasir seperti biasa
+If pay at cashier:
+  → Staff process it on the cashier page as usual
 ```
 
 ## Database
 
 ### Tabel: `dine_areas`
-Area/grouping meja (contoh: Indoor, Outdoor, VIP).
+Area/grouping tables (contoh: Indoor, Outdoor, VIP).
 
-| Field | Tipe | Deskripsi |
+| Field | Type | Description |
 |-------|------|-----------|
-| `name` | string | Nama area |
-| `sort_order` | integer | Urutan tampil |
-| `is_active` | boolean | Area aktif/nonaktif |
+| `name` | string | Name area |
+| `sort_order` | integer | Display order |
+| `is_active` | boolean | Area active/inactive |
 
 ### Tabel: `dine_tables`
-Meja individual dengan QR token.
+Meja individual with QR token.
 
-| Field | Tipe | Deskripsi |
+| Field | Type | Description |
 |-------|------|-----------|
-| `dine_area_id` | foreignId | Relasi ke area (nullable) |
-| `name` | string | Nama meja (contoh: M1, Outdoor-1) |
-| `token` | uuid | UUID auto-generate (unik per meja) |
+| `dine_area_id` | foreignId | Relationship to area (nullable) |
+| `name` | string | Name tables (contoh: M1, Outdoor-1) |
+| `token` | uuid | UUID auto-generate (unik per tables) |
 | `capacity` | integer | Kapasitas orang |
 | `pos_x` | integer | Posisi grid X (0-24) |
 | `pos_y` | integer | Posisi grid Y (0-14) |
-| `shape` | enum | `circle` atau `square` |
-| `is_active` | boolean | Meja aktif/nonaktif |
+| `shape` | enum | `circle` or `square` |
+| `is_active` | boolean | Table active/inactive |
 
 ### Tabel: `dine_orders`
-Header pesanan pelanggan.
+Header orders customers.
 
-| Field | Tipe | Deskripsi |
+| Field | Type | Description |
 |-------|------|-----------|
 | `dine_table_id` | foreignId | Meja tujuan |
 | `customer_id` | foreignId | (nullable) |
-| `access_token` | uuid | Token unik untuk halaman status |
+| `access_token` | uuid | Unique token for pages status |
 | `status` | enum | submitted/accepted/completed/rejected/cancelled |
-| `notes` | text | Catatan pesanan |
+| `notes` | text | Catatan orders |
 | `payment_option` | enum | pay_at_counter / pay_online |
 | `payment_method` | string | midtrans/xendit (nullable) |
 | `payment_status` | string | pending/paid/failed (nullable) |
-| `payment_reference` | string | Reference dari gateway (nullable) |
-| `payment_url` | string | URL pembayaran (nullable) |
-| `cashier_id` | foreignId | Kasir yang konfirmasi (nullable) |
-| `transaction_id` | foreignId | Transaction terkait (nullable) |
-| `subtotal` | integer | Total pesanan |
-| `item_count` | integer | Jumlah item |
+| `payment_reference` | string | Reference from gateway (nullable) |
+| `payment_url` | string | URL payments (nullable) |
+| `cashier_id` | foreignId | Cashier that confirmation (nullable) |
+| `transaction_id` | foreignId | Related transaction (nullable) |
+| `subtotal` | integer | Total orders |
+| `item_count` | integer | Quantity item |
 
 ### Tabel: `dine_order_items`
-Item-item dalam pesanan.
+Item-item dalam orders.
 
-| Field | Tipe | Deskripsi |
+| Field | Type | Description |
 |-------|------|-----------|
-| `dine_order_id` | foreignId | Header pesanan |
+| `dine_order_id` | foreignId | Header orders |
 | `product_id` | foreignId | Product dipesan |
 | `unit_id` | foreignId | Unit (nullable) |
-| `qty` | integer | Jumlah |
-| `price` | integer | Harga saat pemesanan |
+| `qty` | integer | Quantity |
+| `price` | integer | Price saat pemesanan |
 | `note` | string | Catatan item (nullable) |
 
-## Pengaturan
+## Settings
 
 Dikontrol via `Setting` table:
 
-| Key | Default | Deskripsi |
+| Key | Default | Description |
 |-----|---------|-----------|
-| `dine_in_enabled` | true | Fitur dine-in aktif |
-| `dine_in_self_order_enabled` | true | Pelanggan bisa pesan sendiri |
-| `dine_in_pay_online_enabled` | true | Opsi bayar online tersedia |
+| `dine_in_enabled` | true | Dine-in feature is active |
+| `dine_in_self_order_enabled` | true | Customers can order by themselves |
+| `dine_in_pay_online_enabled` | true | Option pay online available |
 
 ## Routes
 
@@ -112,65 +112,65 @@ Dikontrol via `Setting` table:
 
 ### Publik
 
-| Method | Route | Deskripsi |
+| Method | Route | Description |
 |--------|-------|-----------|
-| GET | `/dine/{token}` | Halaman menu publik |
-| POST | `/dine/{token}/order` | Submit pesanan |
-| GET | `/dine-order/{accessToken}` | Halaman status pesanan |
-| GET | `/dine-order/{accessToken}/check` | Endpoint polling status (JSON) |
+| GET | `/dine/{token}` | Pages menu publik |
+| POST | `/dine/{token}/order` | Submit orders |
+| GET | `/dine-order/{accessToken}` | Pages status orders |
+| GET | `/dine-order/{accessToken}/check` | Endpointst polling status (JSON) |
 
 ## Permissions
 
-| Permission | Deskripsi |
+| Permission | Description |
 |------------|-----------|
-| `dine-tables-access` | Lihat area & meja |
-| `dine-tables-create` | Tambah area/meja |
-| `dine-tables-update` | Edit posisi meja |
-| `dine-tables-delete` | Hapus meja |
-| `dine-orders-access` | Lihat daftar pesanan |
-| `dine-orders-process` | Terima/tolak pesanan |
+| `dine-tables-access` | View area & tables |
+| `dine-tables-create` | Add area/tables |
+| `dine-tables-update` | Edit posisi tables |
+| `dine-tables-delete` | Delete tables |
+| `dine-orders-access` | View list orders |
+| `dine-orders-process` | Receive/reject orders |
 
-**Role cashier** mendapat: `dine-orders-access` + `dine-orders-process`
+**Role cashier** gets: `dine-orders-access` + `dine-orders-process`
 
-## Fitur Main
+## Features Main
 
 ### Floor Plan Editor (SVG Grid)
 - Tampilan grid SVG 25x15 cell (40px/cell)
-- Drag-and-drop meja untuk reposisi
-- Mode daftar sebagai alternatif
+- Drag-and-drop tables for reposisi
+- Mode list as an alternative
 - Filter per area
 
 ### QR Code Generation
 - QR berisi URL: `{APP_URL}/dine/{token}`
 - Di-generate via `simplesoftwareio/simple-qrcode`
-- Download PNG dari dashboard
+- Download PNG from dashboard
 
-### Self-Order Pelanggan
-- Pilih kategori & produk
+### Self-Order Customers
+- Pilih categories & products
 - Keranjang real-time
-- Catatan opsional per item
-- Dua opsi: Bayar di Kasir / Bayar Online
+- Catatan optional per item
+- Dua opsi: Pay at Cashier / Pay Online
 
 ### Polling Status
-- Halaman status auto-refresh setiap 5 detik saat status = submitted
-- Notifikasi visual per status (menunggu/diterima/selesai/ditolak)
+- Pages status auto-refresh each 5 detik saat status = submitted
+- Notifications visual per status (waiting/received/completed/direject)
 
-### Konversi Staff
-- Accept: stok dipotong langsung, pesanan siap diproses
-- Reject: dengan alasan opsional
-- Konfirmasi dari kasir via halaman POS seperti transaksi biasa
+### Conversion Staff
+- Accept: stock deducted directly, orders siap processed
+- Reject: with alasan optional
+- Confirmation from cashier via pages POS seperti transactions biasa
 
-## Pembayaran Online
+## Payments Online
 
-Jika `payment_option = pay_online`:
-1. Frontend POST ke `/dine/{token}/order` dengan `payment_option: pay_online`
-2. Backend bisa membuat payment via PaymentGatewayManager (di-extend jika diperlukan)
-3. Webhook dari Midtrans/Xendit update `payment_status` dan `status`
+If `payment_option = pay_online`:
+1. Frontend posts to `/dine/{token}/order` with `payment_option: pay_online`
+2. Backend can create a payment via PaymentGatewayManager (extended if needed)
+3. Webhook from Midtrans/Xendit update `payment_status` and `status`
 
 ## Catatan Teknis
 
 - QR generator: `simplesoftwareio/simple-qrcode`
-- Status polling: fetch JSON setiap 5 detik (tanpa broadcast/realtime dependency)
-- Stok dipotong saat `accept` — bukan saat submit
+- Status polling: fetch JSON each 5 detik (without broadcast/realtime dependency)
+- Stock deducted saat `accept` — not saat submit
 - Core POS (`TransactionController`) TIDAK dimodifikasi
-- Cart tetap berbasis `cashier_id` — tidak terpengaruh oleh dine-in
+- Cart remain berbasis `cashier_id` — not affected by dine-in

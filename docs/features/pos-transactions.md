@@ -1,36 +1,36 @@
 # POS & Transactions
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
 ## Daftar Isi
 
-- Tujuan
-- Fitur Saat Ini
-- Halaman dan Route
+- Purpose
+- Features Saat Ini
+- Pages and Route
 - Permission
 - Alur User
 - Integrasi Data
-- Batasan Saat Ini
+- Bon top ofan Saat Ini
 - File Sentral
 
-## Tujuan
+## Purpose
 
-Menyediakan alur kasir cepat untuk pencarian produk, pengelolaan cart, checkout, hold/resume, dan distribusi dokumen transaksi.
+Provides a fast cashier flow for product search, cart management, checkout, hold/resume, and transaction document distribution.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- cari produk via barcode / pencarian
+- search products by barcode / keyword
 - cart multi-item
 - update qty cart
 - hold transaction
 - resume held cart
 - clear held cart
-- checkout tunai, bank transfer, Midtrans, Xendit, pay later
+- checkout with cash, bank transfer, Midtrans, Xendit, and pay later
 - print invoice / receipt / shipping label
-- share invoice publik
-- add customer langsung dari POS
+- share public invoices
+- add customer directly from POS
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/transactions`
 - `dashboard/transactions/history`
@@ -50,16 +50,16 @@ Menyediakan alur kasir cepat untuk pencarian produk, pengelolaan cart, checkout,
 
 - `transactions-access`
 
-Operasi transaksional tertentu juga mewajibkan middleware `active_shift`.
+Operasi transactional specific juga requires middleware `active_shift`.
 
 ## Alur User
 
-1. kasir membuka halaman transaksi
-2. jika shift aktif, kasir dapat cari produk dan membangun cart
-3. cart dapat di-hold lalu di-resume
-4. checkout membuat transaksi, detail, profit, dan pengurangan stok
-5. jika `pay_later`, sistem membuat receivable
-6. user diarahkan ke dokumen print / invoice
+1. cashier open pages transactions
+2. if a shift is active, the cashier can search products and build a cart
+3. carts can be held and resumed
+4. checkout creates transactions, detail, profit, and reduction stock
+5. if `pay_later`, the system creates receivable
+6. the user is redirected to printable documents / invoices
 
 ## Integrasi Data
 
@@ -70,14 +70,14 @@ Operasi transaksional tertentu juga mewajibkan middleware `active_shift`.
 - `bank_accounts`
 - `payment_settings`
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- operasi cart dan checkout bergantung pada shift aktif
-- payment gateway bergantung pada konfigurasi valid
-- checkout masih menjadi pusat perubahan stok penjualan
+- cart and checkout operations depend on an active shift
+- payment gateway depends on configuration valid
+- checkout remains the main source of sales stock changes
 
 ## File Sentral
 
-- `routes/web.php`
+- `routess/web.php`
 - `app/Http/Controllers/Apps/TransactionController.php`
 - `resources/js/Pages/Dashboard/Transactions`

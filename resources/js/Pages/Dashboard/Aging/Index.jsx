@@ -30,7 +30,7 @@ const formatDate = (value) => {
 
 const agingBucketLabel = (bucket) => {
     const map = {
-        current: "Belum Jatuh Tempo",
+        current: "Not Due Yet",
         "0-30": "1-30 Hari",
         "31-60": "31-60 Hari",
         "61-90": "61-90 Hari",
@@ -71,7 +71,7 @@ export default function AgingIndex() {
                         Aging & Pengingat
                     </h1>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Ringkasan receivables dan payables berdasarkan aging bucket, plus pengingat due date.
+                        Receivables and payables summary by aging bucket, plus due date reminders.
                     </p>
                 </div>
 

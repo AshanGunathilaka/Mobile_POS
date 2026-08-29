@@ -139,7 +139,7 @@ export default function Edit({ customer }) {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600 mb-3"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke Customer
+                    Back to Customers
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUsers size={28} className="text-primary-500" />
@@ -352,7 +352,7 @@ export default function Edit({ customer }) {
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors disabled:opacity-50"
                         >
                             <IconDeviceFloppy size={18} />
-                            {processing ? "Saving..." : "Save Perubahan"}
+                            {processing ? "Saving..." : "Save Changes"}
                         </button>
                     </div>
                 </div>

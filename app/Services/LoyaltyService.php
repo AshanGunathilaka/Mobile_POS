@@ -90,19 +90,19 @@ class LoyaltyService
         Setting::setMany([
             'loyalty_enable_earn' => [
                 'value' => $payload['enable_earn'] ? '1' : '0',
-                'description' => 'Enable loyalty pointst earning',
+                'description' => 'Enable loyalty point earning',
             ],
             'loyalty_enable_redeem' => [
                 'value' => $payload['enable_redeem'] ? '1' : '0',
-                'description' => 'Enable loyalty pointst redemption',
+                'description' => 'Enable loyalty point redemption',
             ],
             'loyalty_earn_rate_amount' => [
                 'value' => (string) $payload['earn_rate_amount'],
-                'description' => 'Purchase amount required to earn 1 pointst',
+                'description' => 'Purchase amount required to earn 1 point',
             ],
             'loyalty_redeem_point_value' => [
                 'value' => (string) $payload['redeem_point_value'],
-                'description' => 'Sri Lankan rupee value for 1 redeemed pointst',
+                'description' => 'Sri Lankan rupee value for 1 redeemed point',
             ],
             'loyalty_tier_regular_threshold' => [
                 'value' => (string) $payload['tiers'][self::TIER_REGULAR],
@@ -337,7 +337,7 @@ class LoyaltyService
                 LoyaltyPointHistory::TYPE_REDEEM,
                 -$redeemedPoints,
                 (int) ($transaction->loyalty_discount_total ?? 0),
-                'Redeemed pointsts on transaction '.$transaction->invoice
+                'Redeemed points on transaction '.$transaction->invoice
             );
         }
 
@@ -354,7 +354,7 @@ class LoyaltyService
                 LoyaltyPointHistory::TYPE_VOUCHER,
                 0,
                 (int) ($transaction->customer_voucher_discount ?? 0),
-                'Voucher '.$voucher->code.' digunakan'
+                'Voucher '.$voucher->code.' used'
             );
         }
 
@@ -382,7 +382,7 @@ class LoyaltyService
                 LoyaltyPointHistory::TYPE_EARN,
                 $earnedPoints,
                 (int) $transaction->grand_total,
-                'Transaction pointsts '.$transaction->invoice
+                'Transaction points '.$transaction->invoice
             );
         }
 

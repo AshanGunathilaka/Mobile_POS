@@ -53,7 +53,7 @@ export default function Show({
                         className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                     >
                         <IconArrowLeft size={16} />
-                        Back ke Member
+                        Back to Members
                     </Link>
 
                     <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -90,7 +90,7 @@ export default function Show({
                         <div className="flex items-center gap-2">
                             <span className="inline-flex items-center gap-1 rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-950/40 dark:text-primary-300">
                                 <IconCoins size={14} />
-                                {member.loyalty_points || 0} pointsts
+                                {member.loyalty_points || 0} points
                             </span>
                             <Link
                                 href={route("members.edit", member.id)}
@@ -140,7 +140,7 @@ export default function Show({
                                 </div>
                                 <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Kunjungan Terakhir
+                                        Last Visit
                                     </p>
                                     <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
                                         {stats?.last_visit
@@ -185,7 +185,7 @@ export default function Show({
                                 <div className="rounded-2xl bg-slate-50 px-4 py-8 text-center dark:bg-slate-800/50">
                                     <IconDatabaseOff size={28} className="mx-auto mb-3 text-slate-400" />
                                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                                        Belum ada transaksi member.
+                                        No member transactions yet.
                                     </p>
                                 </div>
                             )}
@@ -195,7 +195,7 @@ export default function Show({
                             <div className="mb-4 flex items-center gap-2">
                                 <IconGift size={18} className="text-primary-500" />
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    Histori Reward
+                                    Reward History
                                 </h2>
                             </div>
                             {hasRewardHistory ? (
@@ -225,7 +225,7 @@ export default function Show({
                                                         {history.points_delta >= 0
                                                             ? "+"
                                                             : ""}
-                                                        {history.points_delta} pointsts
+                                                        {history.points_delta} points
                                                     </p>
                                                     <p className="text-xs text-slate-500 dark:text-slate-400">
                                                         {formatDateTime(history.created_at)}
@@ -239,7 +239,7 @@ export default function Show({
                                 <div className="rounded-2xl bg-slate-50 px-4 py-8 text-center dark:bg-slate-800/50">
                                     <IconDatabaseOff size={28} className="mx-auto mb-3 text-slate-400" />
                                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                                        Belum ada histori reward.
+                                        No reward history yet.
                                     </p>
                                 </div>
                             )}
@@ -249,7 +249,7 @@ export default function Show({
                     <div className="space-y-6">
                         <section className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                             <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                                Informasi Member
+                                Member Information
                             </h2>
                             <div className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
                                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
@@ -265,7 +265,7 @@ export default function Show({
                                         Saldo Points
                                     </p>
                                     <p className="mt-1 font-semibold text-slate-900 dark:text-white">
-                                        {member.loyalty_points || 0} pointsts
+                                        {member.loyalty_points || 0} points
                                     </p>
                                 </div>
                                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
@@ -333,7 +333,7 @@ export default function Show({
                                 <div className="rounded-2xl bg-slate-50 px-4 py-8 text-center dark:bg-slate-800/50">
                                     <IconDatabaseOff size={28} className="mx-auto mb-3 text-slate-400" />
                                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                                        Belum ada data product favorit.
+                                        No favorite product data yet.
                                     </p>
                                 </div>
                             )}

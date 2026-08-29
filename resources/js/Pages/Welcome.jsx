@@ -63,7 +63,7 @@ const features = [
     {
         icon: IconUsers,
         title: "CRM & Loyalty",
-        desc: "Member tiers, loyalty pointsts, vouchers, automatic customer segmentation, and marketing campaigns.",
+        desc: "Member tiers, loyalty points, vouchers, automatic customer segmentation, and marketing campaigns.",
     },
     {
         icon: IconBrandWhatsapp,
@@ -123,7 +123,7 @@ const faqs = [
 ];
 
 const quickStart = `git clone https://github.com/aryadwiputra/point-of-sales
-cd pointst-of-sales
+cd point-of-sales
 composer install && npm install
 cp .env.example .env
 php artisan key:generate
@@ -155,7 +155,7 @@ export default function Welcome() {
                         </h1>
 
                         <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                            Dikasir is a complete pointst of sale app for Sri Lankan shops and small
+                            Dikasir is a complete point of sale app for Sri Lankan shops and small
                             businesses, with multi-warehouse inventory, tax, loyalty, CRM,
                             WhatsApp, and offline mode. Self-hosted, with your data fully under
                             your control.
@@ -183,7 +183,7 @@ export default function Welcome() {
                     </div>
 
                     <div className="mt-16 relative">
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent z-10 pointster-events-none h-32 bottom-0 top-auto" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none h-32 bottom-0 top-auto" />
                         <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-white dark:bg-slate-900">
                             <div className="bg-slate-100 dark:bg-slate-800 px-4 py-3 flex items-center gap-2">
                                 <div className="flex gap-2">

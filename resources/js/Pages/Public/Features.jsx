@@ -46,7 +46,7 @@ const modules = [
             "Complete stock mutation history",
             "Batch and expiry tracking with FEFO",
             "Composite products and kits",
-            "Reorder pointsts with purchase order recommendations",
+            "Reorder points with purchase order recommendations",
             "Low-stock notifications",
         ],
     },
@@ -84,7 +84,7 @@ const modules = [
         features: [
             "Customer management with regional fields",
             "Member tiers: regular, silver, gold, and platinum",
-            "Loyalty pointsts for earning and redemption",
+            "Loyalty points for earning and redemption",
             "Customer vouchers",
             "Manual and rule-based segmentation",
             "Campaign automation for reminders and promotions",

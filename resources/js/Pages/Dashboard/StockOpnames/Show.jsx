@@ -160,7 +160,7 @@ export default function Show({
                 preserveScroll: true,
                 onSuccess: () => {
                     setShowProductModal(false);
-                    toast.success("Product ditambahkan ke sesi");
+                    toast.success("Product added ke sesi");
                 },
                 onError: () => toast.error("Failed menambahkan product"),
             }
@@ -248,7 +248,7 @@ export default function Show({
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar stock opname
+                    Back to stock opname list
                 </Link>
 
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -268,12 +268,12 @@ export default function Show({
                             </span>
                         </div>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Dibuat oleh {stockOpname.creator?.name || "-"} •{" "}
+                            Created by {stockOpname.creator?.name || "-"} •{" "}
                             {formatDateTime(stockOpname.created_at)}
                         </p>
                         {!isDraft && (
                             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                                Difinalisasi oleh {stockOpname.finalizer?.name || "-"} •{" "}
+                                Finalized by {stockOpname.finalizer?.name || "-"} •{" "}
                                 {formatDateTime(stockOpname.finalized_at)}
                             </p>
                         )}
@@ -342,7 +342,7 @@ export default function Show({
                                     <Table.Th>Stock Sistem</Table.Th>
                                     <Table.Th>Stock Fisik</Table.Th>
                                     <Table.Th>Selisih</Table.Th>
-                                    <Table.Th>Alasan</Table.Th>
+                                    <Table.Th>Reason</Table.Th>
                                     <Table.Th className="w-24 text-center">Save</Table.Th>
                                 </tr>
                             </Table.Thead>
@@ -493,18 +493,18 @@ export default function Show({
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                         <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                            Informasi Sesi
+                            Session Information
                         </h2>
                         <div className="space-y-3 text-sm text-slate-500 dark:text-slate-400">
                             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                                 <p className="font-medium text-slate-700 dark:text-slate-200">
-                                    Cara penggunaan
+                                    How to use
                                 </p>
                                 <ul className="mt-2 space-y-2">
                                     <li>1. Add products to the stock count session.</li>
                                     <li>2. Input stock fisik hasil hitung lapangan.</li>
-                                    <li>3. Isi alasan jika terdapat selisih stock.</li>
-                                    <li>4. Finalize setelah semua item valid.</li>
+                                    <li>3. Enter a reason if there is a stock discrepancy.</li>
+                                    <li>4. Finalize after all items are valid.</li>
                                 </ul>
                             </div>
                         </div>

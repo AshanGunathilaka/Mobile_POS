@@ -28,7 +28,7 @@ export default function Index({ campaigns, filters }) {
                             onChange={(event) => handleFilterChange("type", event.target.value)}
                             className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                         >
-                            <option value="">All Tipe</option>
+                            <option value="">All Types</option>
                             <option value="promo_broadcast">Promo Broadcast</option>
                             <option value="invoice_share">Invoice Share</option>
                             <option value="due_date_reminder">Due Date Reminder</option>
@@ -55,7 +55,7 @@ export default function Index({ campaigns, filters }) {
                                 <Table.Th>Campaign</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th>Target</Table.Th>
-                                <Table.Th>Aksi Cepat</Table.Th>
+                                <Table.Th>Quick Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>

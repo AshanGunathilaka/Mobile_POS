@@ -42,7 +42,7 @@ class DiscountApprovalController extends Controller
 
         $this->logAndUpdate($transaction, 'approved');
 
-        return back()->with('success', 'Discount disetujui.');
+        return back()->with('success', 'Discount approved.');
     }
 
     public function deny(Request $request, Transaction $transaction)
@@ -51,7 +51,7 @@ class DiscountApprovalController extends Controller
 
         $this->logAndUpdate($transaction, 'denied', $request->notes);
 
-        return back()->with('success', 'Discount ditolak.');
+        return back()->with('success', 'Discount rejected.');
     }
 
     private function logAndUpdate(Transaction $transaction, string $status, ?string $notes = null): void

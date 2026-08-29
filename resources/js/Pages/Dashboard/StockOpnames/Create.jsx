@@ -23,7 +23,7 @@ export default function Create({ warehouses = [] }) {
 
     return (
         <>
-            <Head title="Buat Stock Opname" />
+            <Head title="Create Stock Opname" />
 
             <div className="mb-6">
                 <Link
@@ -31,11 +31,11 @@ export default function Create({ warehouses = [] }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke daftar stock opname
+                    Back to stock opname list
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconClipboardCheck size={28} className="text-primary-500" />
-                    Buat Sesi Stock Opname
+                    Create Stock Count Session
                 </h1>
             </div>
 
@@ -60,7 +60,7 @@ export default function Create({ warehouses = [] }) {
 
                     <Textarea
                         label="Catatan Sesi"
-                        placeholder="Contoh: opname bulanan gudang depan"
+                        placeholder="Example: monthly stock count for the front warehouse"
                         value={data.notes}
                         onChange={(event) => setData("notes", event.target.value)}
                         errors={errors.notes}
@@ -72,7 +72,7 @@ export default function Create({ warehouses = [] }) {
                             type="submit"
                             icon={<IconClipboardCheck size={18} />}
                             className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
-                            label={processing ? "Saving..." : "Buat Sesi"}
+                            label={processing ? "Saving..." : "Create Session"}
                             disabled={processing}
                         />
                     </div>

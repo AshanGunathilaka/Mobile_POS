@@ -57,7 +57,7 @@ export default function AppLayout({ children }) {
             {/* Mobile overlay */}
             <div
                 className={`fixed inset-0 bg-slate-900/40 md:hidden transition-opacity duration-300 ${
-                    sidebarOpen ? "opacity-100 pointster-events-auto z-30" : "opacity-0 pointster-events-none"
+                    sidebarOpen ? "opacity-100 pointer-events-auto z-30" : "opacity-0 pointer-events-none"
                 }`}
                 onClick={() => setSidebarOpen(false)}
             />

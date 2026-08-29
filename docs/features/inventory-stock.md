@@ -1,21 +1,21 @@
 # Inventory & Stock
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Menjaga akurasi stok melalui master produk, stock opname, dan histori mutasi stok.
+Maintains stock accuracy through product master data, stock counts, and stock mutation history.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- CRUD produk
-- initial stock saat create product
-- stock tidak bisa diubah langsung dari edit product
+- CRUD products
+- thistial stock saat create product
+- stock not can updated directly from edit product
 - stock opname draft → finalized
 - stock mutation list
 - low stock notification
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/products`
 - `dashboard/stock-opnames`
@@ -29,12 +29,12 @@ Menjaga akurasi stok melalui master produk, stock opname, dan histori mutasi sto
 
 ## Alur User
 
-1. product is created with initial stock
-2. initial stock menghasilkan stock mutation awal
+1. product is created with thistial stock
+2. thistial stock menghasilkan stock mutation awal
 3. stock count is created as a draft
-4. produk ditambahkan ke sesi opname
-5. stok fisik diisi per item
-6. finalize mengubah stok produk dan membuat stock mutation adjustment
+4. products added to sesi opname
+5. stock fisik filled per item
+6. finalization updates stock products and creates stock mutation adjustment
 
 ## Integrasi Data
 
@@ -46,14 +46,14 @@ Menjaga akurasi stok melalui master produk, stock opname, dan histori mutasi sto
 
 ## Efek Bisnis Penting
 
-- edit product tidak lagi menjadi jalur mutasi stok
-- sales return dan stock opname dapat menambah stok kembali
-- histori mutasi adalah audit trail inventory utama
+- editing a product is no longer a stock mutation path
+- sales returns and stock counts can add stock back
+- history mutasi existslah audit trail inventory main
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- belum multi warehouse
-- mutasi stok belum mencakup semua sumber operasional secara penuh
+- not yet multi warehouse
+- mutasi stock not yet mencakup all sumber operational secara full
 
 ## File Sentral
 

@@ -84,7 +84,7 @@ export default function ForgotPassword({ status, botGuard }) {
                                                 ? "border-danger-500 focus:border-danger-500"
                                                 : "border-slate-200 dark:border-slate-700 focus:border-primary-500"
                                         } bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-4 focus:ring-primary-500/20 transition-all`}
-                                        placeholder="nama@email.com"
+                                        placeholder="name@email.com"
                                     />
                                 </div>
                                 {errors.email && (

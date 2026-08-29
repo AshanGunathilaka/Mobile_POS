@@ -89,7 +89,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                             Supplier Payable
                         </h1>
                         <p className="text-sm text-slate-500">
-                            Catat dan lacak payment payables ke supplier.
+                            Record and track supplier payable payments.
                         </p>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                     </div>
                     <div>
                         <label className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Nomor Dokumen
+                            Document Number
                         </label>
                         <input
                             value={data.document_number}
@@ -171,7 +171,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                             value={data.note}
                             onChange={(e) => setData("note", e.target.value)}
                             className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm"
-                            placeholder="Catatan tambahan (opsional)"
+                            placeholder="Additional notes (optional)"
                         />
                     </div>
                 </form>
@@ -237,7 +237,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                     <div className="w-full overflow-x-auto hidden sm:block">
                         <div className="min-w-[720px]">
                             <div className="grid grid-cols-12 px-3 sm:px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800">
-                                <div className="col-span-2">Dokumen</div>
+                                <div className="col-span-2">Document</div>
                                 <div className="col-span-2">Supplier</div>
                                 <div className="col-span-2 text-right">Total</div>
                                 <div className="col-span-2 text-right">Sisa</div>
@@ -299,7 +299,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                                     <div className="flex items-start justify-between">
                                         <div className="space-y-1">
                                             <p className="text-xs text-slate-500 dark:text-slate-400">
-                                                Dokumen
+                                                Document
                                             </p>
                                             <p className="text-base font-semibold text-slate-900 dark:text-white">
                                                 {item.document_number || "-"}

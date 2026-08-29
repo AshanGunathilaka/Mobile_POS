@@ -1,71 +1,71 @@
 # PPN Tax Management
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Dukungan PPN (Pajak Pertambahan Nilai) pada transaksi, dengan mode exclusive/inclusive per produk, NPWP/NIB toko, dan tarif default yang bisa dikonfigurasi.
+Supports VAT on transactions, with exclusive/inclusive modes per product, store tax/business registration numbers, and configurable default rates.
 
 ## Definisi
 
 | Istilah | Arti |
 |---------|------|
-| Tax Exclusive | Harga produk **belum** termasuk PPN. PPN ditambahkan ke grand total |
-| Tax Inclusive | Harga produk **sudah** termasuk PPN. PPN dipisah untuk reporting |
-| NPWP | Nomor Pokok Wajib Pajak — identitas pajak toko |
-| PPN | Pajak Pertambahan Nilai (default 11%) |
+| Tax Exclusive | Price products **not yet** including VAT. PPN added to grand total |
+| Tax Inclusive | Price products **already** including VAT. PPN separated for reporting |
+| NPWP | Nomor Pokok Wajib Tax — identitas pajak toko |
+| PPN | Tax Peraddan Nilai (default 11%) |
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- PPN per produk (exclusive/inclusive), tarif bisa berbeda per produk
-- Default tarif PPN bisa diatur di Settings → Profil Toko (default 11.00%)
-- Tax calculation di checkout: otomatis menambah PPN ke grand total
-- Baris PPN tampil di: checkout preview, print invoice, PDF invoice, PDF receipt 80mm & 58mm, thermal receipt
-- Grand total sudah termasuk PPN
-- NPWP dan NIB toko di Settings → Profil Toko
-- Laporan — PPN sudah termasuk di grand total
+- PPN per products (exclusive/inclusive), rate can berbeda per products
+- Default rate PPN can configured in Settings → Profil Toko (default 11.00%)
+- Tax calculation in checkout automatically adds VAT to the grand total
+- Baris PPN shown in: checkout preview, print invoice, PDF invoice, PDF receipt 80mm & 58mm, thermal receipt
+- Grand total already including VAT
+- Tax ID and business registration number toko in Settings → Profil Toko
+- Reports — VAT is already included in the grand total
 
 ## Database
 
 ### Products
-- `tax_type` — `exclusive` atau `inclusive`
+- `tax_type` — `exclusive` or `inclusive`
 - `tax_rate` — persentase (decimal 5,2), default 11.00
 
 ### Transactions
-- `tax_rate` — tarif yang dipakai (nullable)
+- `tax_rate` — rate that used (nullable)
 - `tax_total` — total PPN dalam rupiah
-- `customer_npwp` — NPWP customer (opsional)
+- `customer_npwp` — NPWP customer (optional)
 
 ### Settings
 - `store_npwp` — NPWP toko
 - `store_nib` — NIB toko
-- `tax_default_rate` — tarif default untuk produk baru
+- `tax_default_rate` — rate default for products baru
 
-## Halaman dan Route
+## Pages and Route
 
 | Route | Fungsi |
 |-------|--------|
-| `settings.store` | Atur NPWP, NIB, tarif PPN default |
+| `settings.store` | Configure tax ID, business registration number, and default VAT rate |
 
 ## Alur Perhitungan
 
 ### Exclusive (default)
 ```
-Harga produk: LKR 10.000
+Price products: LKR 10.000
 PPN 11%:      LKR  1.100
 Total:        LKR 11.100
 ```
 
 ### Inclusive
 ```
-Harga produk: LKR 11.100 (sudah include PPN)
-PPN 11%:      LKR  1.100 (dihitung: 11100 - (11100 / 1.11))
+Price products: LKR 11.100 (already include PPN)
+PPN 11%:      LKR  1.100 (calculated: 11100 - (11100 / 1.11))
 Total:        LKR 10.000 + LKR 1.100
 ```
 
 ## Catatan
 
-- Tax hanya mempengaruhi grand_total, tidak mempengaruhi diskon/voucher/loyalty
-- Shipping cost juga dikenakan PPN dengan rate yang sama
-- Jika `tax_rate = 0`, PPN tidak dihitung
-- Setting NPWP/NIB tidak wajib — bisa dikosongkan
+- Tax hanya mempengaruhi grand_total, not mempengaruhi discount/voucher/loyalty
+- Shipping cost juga charged PPN with rate that same
+- If `tax_rate = 0`, PPN not calculated
+- Setting NPWP/NIB not wajib — can diemptykan

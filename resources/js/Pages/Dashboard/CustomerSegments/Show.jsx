@@ -28,7 +28,7 @@ export default function Show({ segment, customers = [] }) {
             <div className="mb-6">
                 <Link href={route("customer-segments.index")} className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600">
                     <IconArrowLeft size={16} />
-                    Back ke segment customer
+                    Back to customer segments
                 </Link>
 
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -69,7 +69,7 @@ export default function Show({ segment, customers = [] }) {
                                 <Table.Th>Customer</Table.Th>
                                 <Table.Th>Source</Table.Th>
                                 <Table.Th>Matched</Table.Th>
-                                <Table.Th className="w-28 text-center">Aksi</Table.Th>
+                                <Table.Th className="w-28 text-center">Actions</Table.Th>
                             </tr>
                         </Table.Thead>
                         <Table.Tbody>
@@ -101,7 +101,7 @@ export default function Show({ segment, customers = [] }) {
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={4} message="Belum ada anggota segment.">
+                                <Table.Empty colSpan={4} message="No segment members yet.">
                                     <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
                                         <IconDatabaseOff size={28} className="text-slate-400" />
                                     </div>

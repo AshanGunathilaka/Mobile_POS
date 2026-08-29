@@ -145,7 +145,7 @@ export default function Index({ salesReturns, filters }) {
                                 <th className="px-4 py-3 text-left">Method</th>
                                 <th className="px-4 py-3 text-right">Nominal</th>
                                 <th className="px-4 py-3 text-center">Status</th>
-                                <th className="px-4 py-3 text-center">Aksi</th>
+                                <th className="px-4 py-3 text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -195,7 +195,7 @@ export default function Index({ salesReturns, filters }) {
                                                 )}
                                                 className="inline-flex rounded-lg bg-primary-50 px-3 py-2 text-xs font-semibold text-primary-700 hover:bg-primary-100 dark:bg-primary-950/40 dark:text-primary-300"
                                             >
-                                                Lihat
+                                                View
                                             </Link>
                                         </td>
                                     </tr>

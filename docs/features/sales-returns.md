@@ -1,23 +1,23 @@
 # Sales Returns
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Mengoreksi transaksi penjualan yang sudah terjadi melalui retur parsial atau penuh yang tetap menjaga stok, profit, dan piutang tetap sinkron.
+Corrects completed sales transactions through partial or full returns while keeping stock, profit, and receivables synchronized.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- create draft sales return dari histori transaksi
-- update draft retur
-- complete retur
-- refund tunai
+- create draft sales return from history transactions
+- update return drafts
+- complete returns
+- cash refunds
 - store credit
-- restock ke inventory
-- koreksi receivable untuk transaksi `pay_later`
-- histori retur penjualan
+- restock to inventory
+- receivable correction for `pay_later` transactions
+- history sales returns
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/transactions/history`
 - `dashboard/sales-returns`
@@ -35,13 +35,13 @@ Mengoreksi transaksi penjualan yang sudah terjadi melalui retur parsial atau pen
 
 ## Alur User
 
-1. user membuka histori transaksi
-2. jika transaksi masih punya qty yang returnable, tombol retur tampil
-3. user membuat draft retur dari transaksi asal
-4. user memilih qty retur, alasan, dan opsi restock
-5. user menyimpan draft
-6. user menyelesaikan retur
-7. sistem memperbarui stok, profit, dan receivable bila relevan
+1. user open history transactions
+2. if the transaction still has returnable quantity, the return button appears
+3. the user creates a return draft from the source transaction
+4. the user selects return quantity, reason, and restock option
+5. the user saves the draft
+6. the user completes the return
+7. the system updates stock, profit, and receivables when relevant
 
 ## Integrasi Data
 
@@ -56,15 +56,15 @@ Mengoreksi transaksi penjualan yang sudah terjadi melalui retur parsial atau pen
 
 ## Efek Bisnis Penting
 
-- retur completed bisa menambah stok kembali
-- retur pada transaksi piutang bisa mengurangi total receivable
-- overpayment dari piutang dapat berubah menjadi refund atau customer credit
+- completed returns can add stock back
+- returns on receivable transactions can reduce the total receivable
+- overpayment from receivables can become a refund or customer credit
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- fitur ini bergantung pada migration tabel retur
-- flow tukar barang tidak termasuk
-- shipping cost tidak menjadi bagian nominal retur
+- this feature depends on return table migrations
+- exchange flow is not included
+- shipping cost is not part of the return amount
 
 ## File Sentral
 

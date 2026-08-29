@@ -104,7 +104,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
             route("receivables.collection-notes", receivable.id),
             {
                 preserveScroll: true,
-                onSuccess: () => toast.success("Catatan penagihan successfully disimpan"),
+                onSuccess: () => toast.success("Collection note saved successfully"),
                 onError: () => toast.error("Failed menyimpan catatan penagihan"),
             }
         );
@@ -195,7 +195,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 </p>
                             </div>
                             <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                                <p className="text-xs text-slate-500">Terbayar</p>
+                                <p className="text-xs text-slate-500">Paid</p>
                                 <p className="text-lg font-bold text-success-600">
                                     {formatCurrency(receivable.paid)}
                                 </p>
@@ -281,7 +281,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                         href={route("transactions.print", receivable.invoice)}
                                         className="text-primary-600 font-semibold"
                                     >
-                                        Lihat
+                                        View
                                     </Link>
                                 </div>
                             )}
@@ -306,7 +306,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 </p>
                             )}
                             {collectionNotesForm.wasSuccessful && (
-                                <p className="text-xs text-success-500">Tersimpan!</p>
+                                <p className="text-xs text-success-500">Saved!</p>
                             )}
                             <button
                                 type="submit"
@@ -526,7 +526,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                         </p>
                                     </div>
                                     <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                                        <p className="text-xs text-slate-500">Terbayar</p>
+                                        <p className="text-xs text-slate-500">Paid</p>
                                         <p className="text-lg font-bold text-success-600">
                                             {formatCurrency(receivable.paid)}
                                         </p>

@@ -155,7 +155,7 @@ export default function CustomerHistoryPanel({
                     <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         {stats.last_visit || "-"}
                     </p>
-                    <p className="text-xs text-slate-500">Kunjungan Terakhir</p>
+                    <p className="text-xs text-slate-500">Last Visit</p>
                 </div>
                 <div className="bg-white dark:bg-slate-900 p-3 text-center">
                     <div className="flex items-center justify-center mb-1">
@@ -228,7 +228,7 @@ export default function CustomerHistoryPanel({
             {recent_transactions && recent_transactions.length > 0 && (
                 <div className="px-4 py-3 border-t border-slate-100 dark:border-slate-800">
                     <p className="text-xs font-semibold text-slate-500 uppercase mb-2">
-                        Transaction Terakhir
+                        Last Transaction
                     </p>
                     <div className="space-y-2 max-h-[150px] overflow-y-auto">
                         {recent_transactions.map((tx) => (
@@ -280,7 +280,7 @@ export default function CustomerHistoryPanel({
                                     }`}
                                 >
                                     {entry.points_delta >= 0 ? "+" : ""}
-                                    {entry.points_delta} pointsts
+                                    {entry.points_delta} points
                                 </p>
                             </div>
                         ))}
@@ -321,7 +321,7 @@ export function CustomerHistoryButton({
             <button
                 onClick={() => setShowHistory(true)}
                 className={`p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-primary-500 transition-colors ${className}`}
-                title="Lihat riwayat"
+                title="View riwayat"
             >
                 <IconHistory size={16} />
             </button>

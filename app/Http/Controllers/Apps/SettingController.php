@@ -45,10 +45,10 @@ class SettingController extends Controller
         Setting::set(
             'monthly_sales_target',
             $request->monthly_sales_target,
-            'Target penjualan bulanan'
+            'Monthly sales target'
         );
 
-        return back()->with('success', 'Target successfully disimpan');
+        return back()->with('success', 'Target saved successfully');
     }
 
     /**

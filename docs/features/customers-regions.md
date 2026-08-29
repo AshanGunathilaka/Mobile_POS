@@ -1,20 +1,20 @@
 # Customers & Regions
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Menyediakan master data customer yang lebih kaya daripada POS basic, termasuk alamat wilayah Indonesia dan histori transaksi.
+Provides richer customer master data than basic POS, including Indonesian regional addresses and transaction history.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 - CRUD customer
-- create customer dari dashboard
-- create customer via AJAX dari POS
-- data alamat lengkap dengan wilayah Indonesia
-- histori transaksi customer
+- create customer from dashboard
+- create customer via AJAX from POS
+- data address lengkap with wilayah Indonesia
+- history transactions customer
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/customers`
 - `customers.storeAjax`
@@ -29,25 +29,25 @@ Menyediakan master data customer yang lebih kaya daripada POS basic, termasuk al
 - `customers-create`
 - `customers-edit`
 - `customers-delete`
-- histori customer memakai `transactions-access`
+- history customer uses `transactions-access`
 
 ## Alur User
 
-1. user membuat atau mengedit customer
-2. pilihan wilayah dimuat bertingkat dari province ke village
-3. customer dapat dipakai saat checkout
-4. histori transaksi customer dapat dibuka dari dashboard
+1. users create or edit customer
+2. region options loaded hierarchically from province to village
+3. customer can used saat checkout
+4. history transactions customer can dibuka from dashboard
 
 ## Integrasi Data
 
 - `customers`
-- transaksi terkait customer
-- data wilayah dari `laravolt/indonesia`
+- customer-related transactions
+- data wilayah from `laravolt/indonesia`
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- customer tanpa data lengkap tetap bisa dipakai transaksi
-- history customer berfokus pada histori transaksi, bukan loyalty
+- customer without data lengkap remain can used transactions
+- history customer focuses on history transactions, not loyalty
 
 ## File Sentral
 

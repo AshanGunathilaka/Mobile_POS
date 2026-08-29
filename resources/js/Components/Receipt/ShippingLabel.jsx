@@ -167,7 +167,7 @@ export default function ShippingLabel({ transaction, store = {} }) {
                 {/* Footer Barcode */}
                 <div className="flex justify-between items-end mt-4 pt-4 border-t-2 border-slate-100">
                     <div className="text-[10px] text-slate-400 font-medium italic">
-                        Dicetak pada: {new Date().toLocaleString('en-LK')}
+                        Printed on: {new Date().toLocaleString('en-LK')}
                     </div>
                     <div className="flex flex-col items-end">
                         <SimpleBarcode value={transaction?.invoice} />

@@ -1,40 +1,40 @@
 # Thermal Printer
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Cetak receipt ke printer thermal (ESC/POS protocol) langsung dari browser via WebUSB, atau melalui server-side text generation.
+Print receipts to printers thermal (ESC/POS protocol) directly from browser via WebUSB, or through server-side text generation.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
 ### ThermalPrintService (Server-side)
 - Generate teks receipt dalam format monospace
-- Support 80mm (48 karakter) dan 58mm (32 karakter)
-- Format: header toko, invoice info, item list, subtotal, diskon, PPN, total, pembayaran, footer
-- Output: plain text (`generateReceiptText`) dan HTML (`generateReceiptHtml`)
+- Support 80mm (48 karakter) and 58mm (32 karakter)
+- Format: header toko, invoice info, item list, subtotal, discount, PPN, total, payments, footer
+- Output: plain text (`generateReceiptText`) and HTML (`generateReceiptHtml`)
 
 ### Thermal Print Route
 - `GET /dashboard/documents/transactions/{invoice}/print/thermal` — HTML receipt
-- Dapat dibuka di tab baru untuk print via browser
+- Can be opened in tab baru for print via browser
 
 ### Printer Settings
 - Paper size: 80mm / 58mm
-- Auto-print toggle (cetak otomatis setelah transaksi)
-- WebUSB: koneksi printer thermal via USB langsung dari browser
+- Auto-print toggle (automatically print after transactions)
+- WebUSB: connect thermal printers by USB directly from the browser
 
 ### WebUSB Print Button
-- Tombol "Thermal" di halaman print transaksi
+- Tombol "Thermal" in pages print transactions
 - Fetch HTML receipt → buka tab baru siap print
-- Dapat dikoneksikan ke printer thermal USB via WebUSB API
+- Can be connected to printer thermal USB via WebUSB API
 
 ## Route
 
 | Route | Method | Fungsi |
 |-------|--------|--------|
 | `pdf.transactions.thermal` | GET | HTML receipt thermal |
-| `settings.printer` | GET | Halaman settings printer |
-| `settings.printer.update` | POST | Simpan settings printer |
+| `settings.printer` | GET | Pages settings printer |
+| `settings.printer.update` | POST | Save settings printer |
 
 ## Format Receipt (80mm)
 
@@ -45,8 +45,8 @@ Cetak receipt ke printer thermal (ESC/POS protocol) langsung dari browser via We
 --------------------------------
 No: TRX-XXXXXXXXXX
 Tgl: 22/06/2026 14:30
-Kasir: Arya
-Pelanggan: Umum
+Cashier: Arya
+Customers: Umum
 --------------------------------
 Product A
 2x @ 10.000          20.000
@@ -58,13 +58,13 @@ PPN                   3.850
 --------------------------------
 TOTAL                38.850
 Tunai                50.000
-Kembali              11.150
+Back              11.150
 --------------------------------
-        Terima kasih
+        Receive kasih
 ```
 
 ## Catatan
 
-- Untuk auto-print via USB: browser Chrome/Edge dengan WebUSB support
-- Untuk print via jaringan: gunakan `NetworkPrintConnector` atau `WindowsPrintConnector`
-- Setting auto-print belum terintegrasi penuh dengan checkout flow
+- Untuk auto-print via USB: browser Chrome/Edge with WebUSB support
+- Untuk print via network: use `NetworkPrintConnector` or `WindowsPrintConnector`
+- Setting auto-print not yet integrated full with checkout flow

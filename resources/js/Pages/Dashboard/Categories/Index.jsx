@@ -100,7 +100,7 @@ export default function Index({ categories }) {
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             {categories.total || categories.data?.length || 0}{" "}
-                            kategori terdaftar
+                            registered categories
                         </p>
                     </div>
                     {canCreateCategories && (
@@ -127,7 +127,7 @@ export default function Index({ categories }) {
                 <div className="w-full sm:w-80">
                     <Search
                         url={route("categories.index")}
-                        placeholder="Search kategori..."
+                        placeholder="Search categories..."
                     />
                 </div>
                 <div className="flex items-center gap-2">

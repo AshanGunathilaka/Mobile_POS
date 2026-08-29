@@ -41,7 +41,7 @@ class ImportExportController extends Controller
 
         $successCount = $import->getRowCount();
 
-        return back()->with('success', "Import selesai. {$successCount} product diimport.");
+        return back()->with('success', "Import completed. {$successCount} products imported.");
     }
 
     public function importCustomers(Request $request)
@@ -53,14 +53,14 @@ class ImportExportController extends Controller
         $import = new CustomersImport;
         Excel::import($import, $request->file('file'));
 
-        return back()->with('success', 'Import customer selesai.');
+        return back()->with('success', 'Customer import completed.');
     }
 
     public function downloadTemplate(string $type)
     {
         $headings = match ($type) {
             'products' => ['barcode', 'sku', 'name', 'description', 'category', 'buy_price', 'sell_price', 'stock', 'min_stock', 'max_stock', 'tax_type', 'tax_rate'],
-            'customers' => ['nama', 'telepon', 'alamat'],
+            'customers' => ['name', 'phone', 'address'],
             default => abort(404),
         };
 

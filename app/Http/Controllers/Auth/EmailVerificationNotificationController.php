@@ -28,7 +28,7 @@ class EmailVerificationNotificationController extends Controller
             event: 'auth.verification_resent',
             module: 'auth',
             auditable: $request->user(),
-            description: 'Email verifikasi dikirim ulang.',
+            description: 'Verification email resent.',
             meta: [
                 'severity' => 'info',
                 'route' => $request->route()?->getName(),

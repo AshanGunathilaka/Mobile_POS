@@ -1,33 +1,33 @@
-# Dokumentasi Point of Sales
+# Point of Sales Documentation
 
-Dokumentasi ini ditujukan untuk developer yang ingin setup, memahami alur modul, dan melakukan maintenance aplikasi.
+This documentation is for developers who want to set up the app, understand module flows, and maintain the application.
 
 ## Daftar Isi
 
 ### Onboarding
-- `docs/getting-started.md` — setup dari awal
+- `docs/getting-started.md` — setup from scratch
 - `docs/configuration.md` — environment, payment, tax, printer
 
 ### Arsitektur
 - `docs/architecture-overview.md` — stack, middleware, service layer
-- `docs/feature-index.md` — indeks semua modul
+- `docs/feature-index.md` — index of all modules
 
-### POS & Transaksi
+### POS & Transactions
 - `docs/features/pos-transactions.md` — cart, hold/resume, checkout multi-payment
-- `docs/features/sales-returns.md` — retur penjualan, refund, store credit
-- `docs/features/cashier-shifts.md` — buka/tutup shift kasir
-- `docs/features/customer-portal.md` — invoice publik, bayar piutang online 🆕
+- `docs/features/sales-returns.md` — sales returns, refund, store credit
+- `docs/features/cashier-shifts.md` — open/close cashier shifts
+- `docs/features/customer-portal.md` — public invoices, pay receivables online 🆕
 - `docs/features/dine-in.md` — QR menu, self-order, floor plan 🆕
 
 ### Inventory & Warehouse
-- `docs/features/inventory-stock.md` — produk, stock opname, mutation
-- `docs/features/multi-warehouse.md` — multi-gudang, stock transfer 🆕
-- `docs/features/unit-conversion.md` — multi-satuan (pcs, box, kg) 🆕
+- `docs/features/inventory-stock.md` — products, stock counts, mutations
+- `docs/features/multi-warehouse.md` — multi-warehouse, stock transfer 🆕
+- `docs/features/unit-conversion.md` — multi-unit (pcs, box, kg) 🆕
 
 ### Purchasing & Finance
 - `docs/features/purchasing-chain.md` — PO, goods receiving, supplier return 🆕
-- `docs/features/payables-suppliers.md` — hutang supplier
-- `docs/features/receivables.md` — piutang pelanggan
+- `docs/features/payables-suppliers.md` — supplier payables
+- `docs/features/receivables.md` — customer receivables
 - `docs/features/tax-management.md` — PPN, NPWP, NIB 🆕
 
 ### Pricing & Loyalty
@@ -47,7 +47,7 @@ Dokumentasi ini ditujukan untuk developer yang ingin setup, memahami alur modul,
 
 ### Tools & Integrations
 - `docs/features/import-export.md` — CSV/Excel import & export 🆕
-- `docs/features/mobile-pos.md` — PWA, barcode scanner kamera 🆕
+- `docs/features/mobile-pos.md` — PWA, barcode scanner camera 🆕
 - `docs/features/thermal-printer.md` — ESC/POS, WebUSB 🆕
 
 ### Planning
@@ -56,15 +56,15 @@ Dokumentasi ini ditujukan untuk developer yang ingin setup, memahami alur modul,
 - `planning/tier-2-implementation.md` — detail Tier 2
 - `planning/tier-3-implementation.md` — detail Tier 3
 
-## Cara Membaca Dokumentasi
+## How to Read the Documentation
 
-1. Jika baru pertama kali: mulai dari `docs/getting-started.md`
-2. Jika ingin paham struktur: baca `docs/architecture-overview.md`
-3. Jika ingin kerja di modul tertentu: buka `docs/feature-index.md` → masuk ke dokumen fitur terkait
-4. Jika ada masalah akses: cek `docs/features/rbac-users-roles.md`
+1. If this is your first time: start from `docs/getting-started.md`
+2. If ingin paham struktur: baca `docs/architecture-overview.md`
+3. If you want to work on a specific module: buka `docs/feature-index.md` → open the related feature document
+4. If there is an access issue: check `docs/features/rbac-users-roles.md`
 
 ## Catatan
 
-- Dokumentasi mencakup seluruh fitur yang sudah ada di repo
-- Planning file tersimpan di folder `planning/`
-- Setiap dokumen fitur mencakup tujuan, route, permission, alur user
+- The documentation covers all features currently in the repository
+- Planning files are stored in the folder `planning/`
+- Each feature document covers purpose, routess, permissions, and user flow

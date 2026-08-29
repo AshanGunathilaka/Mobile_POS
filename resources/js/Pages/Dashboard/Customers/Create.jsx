@@ -88,7 +88,7 @@ export default function Create() {
     const submit = (e) => {
         e.preventDefault();
         post(route("customers.store"), {
-            onSuccess: () => toast.success("Customer successfully ditambahkan"),
+            onSuccess: () => toast.success("Customer added successfully"),
             onError: () => toast.error("Failed menyimpan customer"),
         });
     };
@@ -103,7 +103,7 @@ export default function Create() {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600 mb-3"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke Customer
+                    Back to Customers
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUsers size={28} className="text-primary-500" />
@@ -142,7 +142,7 @@ export default function Create() {
                                         Aktivasi Loyalty Member
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                                        Members earn pointsts, receive vouchers, and get special prices.
+                                        Members earn points, receive vouchers, and get special prices.
                                     </p>
                                 </div>
                                 <label className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">

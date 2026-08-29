@@ -57,7 +57,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
             helper:
                 summary?.top_member?.name
                     ? `Top member: ${summary.top_member.name}`
-                    : "Belum ada top member",
+                    : "No top members yet",
         },
     ];
 
@@ -72,7 +72,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                             Member
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Kelola pendaftaran, status, dan performa member tanpa memisahkan data of customer inti.
+                            Manage member registration, status, and performance without separating core customer data.
                         </p>
                     </div>
                     <Link
@@ -158,9 +158,9 @@ export default function Index({ members, filters, tierOptions, summary }) {
                                 <Table.Th>Points</Table.Th>
                                 <Table.Th>Total Belanja</Table.Th>
                                 <Table.Th>Transactions</Table.Th>
-                                <Table.Th>Terakhir Belanja</Table.Th>
+                                <Table.Th>Last Purchase</Table.Th>
                                 <Table.Th className="w-28 text-center">
-                                    Aksi
+                                    Actions
                                 </Table.Th>
                             </tr>
                         </Table.Thead>
@@ -176,7 +176,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                                                 {member.name}
                                             </Link>
                                             <p className="text-xs text-slate-500 dark:text-slate-400">
-                                                {member.member_code || "Belum ada nomor anggota"}
+                                                {member.member_code || "No member number yet"}
                                             </p>
                                             <p className="text-xs text-slate-500 dark:text-slate-400">
                                                 {member.no_telp || "-"}

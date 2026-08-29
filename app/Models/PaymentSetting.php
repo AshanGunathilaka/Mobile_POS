@@ -71,7 +71,7 @@ class PaymentSetting extends Model
             $gateways[] = [
                 'value' => self::GATEWAY_XENDIT,
                 'label' => 'Xendit',
-                'description' => 'Buat invoice otomatis menggunakan Xendit.',
+                'description' => 'Create invoices automatically using Xendit.',
             ];
         }
 

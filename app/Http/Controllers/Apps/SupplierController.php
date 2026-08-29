@@ -29,7 +29,7 @@ class SupplierController extends Controller
 
         Supplier::create($data);
 
-        return back()->with('success', 'Supplier successfully ditambahkan.');
+        return back()->with('success', 'Supplier added successfully.');
     }
 
     public function update(Request $request, Supplier $supplier)

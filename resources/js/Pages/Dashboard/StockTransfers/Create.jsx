@@ -56,7 +56,7 @@ export default function Create({ warehouses, products }) {
             <Head title="Transfer Stock Baru" />
             <div className="mb-6">
                 <Link href={route("stock-transfers.index")} className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600">
-                    <IconArrowLeft size={16} /> Back ke daftar transfer
+                    <IconArrowLeft size={16} /> Back to transfer list
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconArrowsLeftRight size={28} className="text-primary-500" />
@@ -67,10 +67,10 @@ export default function Create({ warehouses, products }) {
             <form onSubmit={submit} className="max-w-5xl">
                 <div className="space-y-6">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Informasi Transfer</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Transfer Information</h2>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Warehouse Asal</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Source Warehouse</label>
                                 <select
                                     value={data.source_warehouse_id}
                                     onChange={(e) => setData({ ...data, source_warehouse_id: e.target.value })}
@@ -82,7 +82,7 @@ export default function Create({ warehouses, products }) {
                                 {errors.source_warehouse_id && <p className="mt-1 text-xs text-danger-500">{errors.source_warehouse_id}</p>}
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Warehouse Tujuan</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Destination Warehouse</label>
                                 <select
                                     value={data.destination_warehouse_id}
                                     onChange={(e) => setData({ ...data, destination_warehouse_id: e.target.value })}
@@ -94,7 +94,7 @@ export default function Create({ warehouses, products }) {
                                 {errors.destination_warehouse_id && <p className="mt-1 text-xs text-danger-500">{errors.destination_warehouse_id}</p>}
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Nomor Dokumen</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Document Number</label>
                                 <input type="text" value={data.document_number} onChange={(e) => setData("document_number", e.target.value)} placeholder="Kosongkan auto-generate" className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
                             </div>
                             <div>

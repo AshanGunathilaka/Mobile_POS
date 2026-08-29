@@ -15,7 +15,7 @@ export default function Show({ campaign }) {
     const processCampaign = () => {
         router.post(route("crm-campaigns.process", campaign.id), {}, {
             preserveScroll: true,
-            onSuccess: () => toast.success("Campaign successfully diproses"),
+            onSuccess: () => toast.success("Campaign processed successfully"),
             onError: () => toast.error("Failed memproses campaign"),
         });
     };
@@ -24,7 +24,7 @@ export default function Show({ campaign }) {
         router.post(route("crm-campaigns.cancel", campaign.id), {}, {
             preserveScroll: true,
             onSuccess: () => toast.success("Campaign canceled"),
-            onError: () => toast.error("Failed membatalkan campaign"),
+            onError: () => toast.error("Failed cancel campaign"),
         });
     };
 
@@ -34,13 +34,13 @@ export default function Show({ campaign }) {
             <div className="mb-6">
                 <Link href={route("crm-campaigns.index")} className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600">
                     <IconArrowLeft size={16} />
-                    Back ke CRM campaigns
+                    Back to CRM campaigns
                 </Link>
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">{campaign.name}</h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            {campaign.type} • status {campaign.status} • diproses {formatDateTime(campaign.processed_at)}
+                            {campaign.type} • status {campaign.status} • processed {formatDateTime(campaign.processed_at)}
                         </p>
                     </div>
                     <div className="flex gap-2">
@@ -78,7 +78,7 @@ export default function Show({ campaign }) {
                                     <Table.Th>Customer</Table.Th>
                                     <Table.Th>Status</Table.Th>
                                     <Table.Th>Payload</Table.Th>
-                                    <Table.Th className="w-36 text-center">Aksi</Table.Th>
+                                    <Table.Th className="w-36 text-center">Actions</Table.Th>
                                 </tr>
                             </Table.Thead>
                             <Table.Tbody>

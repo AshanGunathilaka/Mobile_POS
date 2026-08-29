@@ -34,7 +34,7 @@ export default function Create() {
         e.preventDefault();
         post(route("categories.store"), {
             onSuccess: () => toast.success("Category added successfully"),
-            onError: () => toast.error("Failed menyimpan kategori"),
+            onError: () => toast.error("Failed to save category"),
         });
     };
 
@@ -102,7 +102,7 @@ export default function Create() {
                                 />
                                 <Textarea
                                     label="Description"
-                                    placeholder="Description kategori"
+                                    placeholder="Category description"
                                     errors={errors.description}
                                     onChange={(e) =>
                                         setData("description", e.target.value)

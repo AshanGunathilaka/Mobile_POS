@@ -72,7 +72,7 @@ export default function Payment({
         if (source.configured) {
             return (
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                    Tersimpan: <span className="font-medium">{source.masked}</span>. {keepMessage}
+                    Saved: <span className="font-medium">{source.masked}</span>. {keepMessage}
                 </p>
             );
         }
@@ -90,7 +90,7 @@ export default function Payment({
                     Payment Gateway Settings
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                    Konfigurasi metode payment dan gateway
+                    Configure payment methods and gateways
                 </p>
             </div>
 
@@ -171,7 +171,7 @@ export default function Payment({
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                         Manual payment by bank transfer. Cashiers will
                         creating a transaction with pending status, then
-                        admin mengkonfirmasi setelah dana diterima.
+                        the admin confirms after funds are received.
                     </p>
                         <a
                             href={route("settings.bank-accounts.index")}
@@ -211,7 +211,7 @@ export default function Payment({
                     <div
                         className={`space-y-4 ${
                             !data.midtrans_enabled
-                                ? "opacity-50 pointster-events-none"
+                                ? "opacity-50 pointer-events-none"
                                 : ""
                         }`}
                     >
@@ -301,7 +301,7 @@ export default function Payment({
                     <div
                         className={`space-y-4 ${
                             !data.xendit_enabled
-                                ? "opacity-50 pointster-events-none"
+                                ? "opacity-50 pointer-events-none"
                                 : ""
                         }`}
                     >
@@ -387,7 +387,7 @@ export default function Payment({
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                         Copy the URL below and paste it into the Midtrans/Xendit dashboard
-                        sebagai Notification/Callback URL.
+                        as the Notification/Callback URL.
                     </p>
                     {webhookWarnings.length > 0 && (
                         <div className="mb-4 space-y-2">

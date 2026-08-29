@@ -105,7 +105,7 @@ export default function ConfirmPassword({ challenge = null }) {
                                 {processing ? (
                                     <>
                                         <IconLoader2 size={18} className="animate-spin" />
-                                        Memverifikasi...
+                                        Verifying...
                                     </>
                                 ) : (
                                     "Lanjutkan"
@@ -120,7 +120,7 @@ export default function ConfirmPassword({ challenge = null }) {
                         <div className="w-24 h-24 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-8">
                             <IconShieldLock size={48} />
                         </div>
-                        <h2 className="text-3xl font-bold mb-4">Proteksi Aksi Admin</h2>
+                        <h2 className="text-3xl font-bold mb-4">Admin Action Protection</h2>
                         <p className="text-lg opacity-90">
                             Password confirmation helps protect sensitive actions when an admin session has been active for a long time.
                         </p>

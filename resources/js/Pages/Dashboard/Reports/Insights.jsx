@@ -358,7 +358,7 @@ export default function Insights({
                             Advanced Sales Insights
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Insight operasional penjualan, margin, product, dan
+                            Operational insights for sales, margin, products, and
                             performa cashier dalam satu dashboard.
                         </p>
                     </div>
@@ -466,7 +466,7 @@ export default function Insights({
                                         setSelectedCategory(value);
                                         handleChange("category_id", value ? String(value.id) : "");
                                     }}
-                                    placeholder="All kategori"
+                                    placeholder="All categories"
                                     searchable
                                 />
                             </div>
@@ -501,7 +501,7 @@ export default function Insights({
                     />
                     <ChartCard
                         title="Sales by Day"
-                        subtitle="Tren omzet harian pada periode aktif."
+                        subtitle="Daily revenue trend for the active period."
                         chartRef={salesDayChartRef}
                         hasData={dayChartData.length > 0}
                     />
@@ -575,7 +575,7 @@ export default function Insights({
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={5} message="Belum ada data top selling pada periode ini." />
+                                <Table.Empty colSpan={5} message="No top-selling data for this period." />
                             )}
                         </Table.Tbody>
                     </Table>
@@ -613,7 +613,7 @@ export default function Insights({
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={5} message="Belum ada data low performing pada periode ini." />
+                                <Table.Empty colSpan={5} message="No low-performing data for this period." />
                             )}
                         </Table.Tbody>
                     </Table>
@@ -626,7 +626,7 @@ export default function Insights({
                                 Margin per Product / Category
                             </h2>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                                Perbandingan omzet, profit, dan margin kotor.
+                                Revenue, profit, and gross margin comparison.
                             </p>
                         </div>
                         <div className="inline-flex rounded-xl bg-slate-100 p-1 dark:bg-slate-800">
@@ -672,7 +672,7 @@ export default function Insights({
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={5} message="Belum ada data margin pada periode ini." />
+                                <Table.Empty colSpan={5} message="No margin data for this period." />
                             )}
                         </Table.Tbody>
                     </Table>
@@ -703,7 +703,7 @@ export default function Insights({
                                     </tr>
                                 ))
                             ) : (
-                                <Table.Empty colSpan={6} message="Belum ada data performa cashier pada periode ini." />
+                                <Table.Empty colSpan={6} message="No cashier performance data for this period." />
                             )}
                         </Table.Tbody>
                     </Table>
@@ -801,7 +801,7 @@ export default function Insights({
                             ) : (
                                 <Table.Empty
                                     colSpan={6}
-                                    message="Belum ada customer repeat pada periode ini."
+                                    message="No repeat customer data for this period."
                                 />
                             )}
                         </Table.Tbody>
@@ -912,7 +912,7 @@ export default function Insights({
                             ) : (
                                 <Table.Empty
                                     colSpan={7}
-                                    message="Belum ada data stock coverage pada periode ini."
+                                    message="No stock coverage data for this period."
                                 />
                             )}
                         </Table.Tbody>
@@ -956,7 +956,7 @@ export default function Insights({
                             <Table.Thead>
                                 <tr>
                                     <Table.Th>Rule</Table.Th>
-                                    <Table.Th>Tipe</Table.Th>
+                                    <Table.Th>Type</Table.Th>
                                     <Table.Th>Status</Table.Th>
                                     <Table.Th>Periode</Table.Th>
                                 </tr>
@@ -1046,7 +1046,7 @@ export default function Insights({
                                 ))
                             ) : (
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Belum ada audit promo terbaru.
+                                    No recent promotion audit yet.
                                 </p>
                             )}
                         </div>
@@ -1114,7 +1114,7 @@ export default function Insights({
                             </div>
                             <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Voucher Digunakan
+                                    Vouchers Used
                                 </p>
                                 <p className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">
                                     {(
@@ -1169,7 +1169,7 @@ export default function Insights({
                                 ) : (
                                     <Table.Empty
                                         colSpan={4}
-                                        message="Belum ada member loyalty."
+                                        message="No loyalty members yet."
                                     />
                                 )}
                             </Table.Tbody>
@@ -1249,7 +1249,7 @@ export default function Insights({
                         <Table.Thead>
                             <tr>
                                 <Table.Th>Campaign</Table.Th>
-                                <Table.Th>Tipe</Table.Th>
+                                <Table.Th>Type</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th className="text-right">Target</Table.Th>
                                 <Table.Th>Processed</Table.Th>
@@ -1280,7 +1280,7 @@ export default function Insights({
                             ) : (
                                 <Table.Empty
                                     colSpan={5}
-                                    message="Belum ada campaign CRM terbaru."
+                                    message="No recent CRM campaigns yet."
                                 />
                             )}
                         </Table.Tbody>

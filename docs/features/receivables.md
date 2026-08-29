@@ -1,21 +1,21 @@
 # Receivables
 
-Kembali ke indeks dokumentasi: `docs/README.md`
+Back to the documentation index: `docs/README.md`
 
-## Tujuan
+## Purpose
 
-Mencatat piutang pelanggan yang berasal dari transaksi `pay_later` dan menyediakan alur pelunasan bertahap.
+Records customer receivables from `pay_later` transactions and provides a gradual settlement flow.
 
-## Fitur Saat Ini
+## Features Saat Ini
 
-- list piutang
+- receivables list
 - filter status, customer, invoice, due date
-- detail piutang
-- pembayaran parsial
+- receivable details
+- payments partial
 - status `unpaid`, `partial`, `paid`, `overdue`
 - PDF receivable
 
-## Halaman dan Route
+## Pages and Route
 
 - `dashboard/receivables`
 - `receivables.show`
@@ -29,10 +29,10 @@ Mencatat piutang pelanggan yang berasal dari transaksi `pay_later` dan menyediak
 
 ## Alur User
 
-1. checkout `pay_later` membuat receivable
-2. user memantau daftar piutang
-3. user mencatat pembayaran
-4. sistem memperbarui nilai `paid`, `remaining`, dan `status`
+1. `pay_later` checkout creates receivable
+2. users monitor the receivables list
+3. users record payments
+4. the system updates `paid`, `remaining`, and `status`
 
 ## Integrasi Data
 
@@ -44,13 +44,13 @@ Mencatat piutang pelanggan yang berasal dari transaksi `pay_later` dan menyediak
 
 ## Efek Bisnis Penting
 
-- pembayaran receivable ikut memengaruhi `payment_status` transaksi terkait
-- sales return dapat mengoreksi total receivable jika retur berasal dari transaksi piutang
+- receivable payments also affect `payment_status` on related transactions
+- sales returns can correct the total receivable if the return comes from a receivable transaction
 
-## Batasan Saat Ini
+## Bon top ofan Saat Ini
 
-- belum ada reminder otomatis eksternal
-- belum ada approval flow pembayaran
+- no reminder otomatis eksternal
+- no approval flow payments
 
 ## File Sentral
 

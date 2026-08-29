@@ -49,7 +49,7 @@ export default function Create({ categories }) {
     const submit = (e) => {
         e.preventDefault();
         post(route("products.store"), {
-            onSuccess: () => toast.success("Product successfully ditambahkan"),
+            onSuccess: () => toast.success("Product successfully added"),
             onError: () => toast.error("Failed menyimpan product"),
         });
     };
@@ -65,7 +65,7 @@ export default function Create({ categories }) {
                     className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600 mb-3"
                 >
                     <IconArrowLeft size={16} />
-                    Back ke Product
+                    Back to Products
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconPackage size={28} className="text-primary-500" />
@@ -96,7 +96,7 @@ export default function Create({ categories }) {
                                             className="mx-auto text-slate-400 mb-2"
                                         />
                                         <p className="text-sm text-slate-500">
-                                            Belum ada gambar
+                                            No image yet
                                         </p>
                                     </div>
                                 )}
@@ -117,7 +117,7 @@ export default function Create({ categories }) {
                         <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
                             <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-4 flex items-center gap-2">
                                 <IconBarcode size={18} />
-                                Informasi Dasar
+                                Basic Information
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="md:col-span-2">
@@ -126,7 +126,7 @@ export default function Create({ categories }) {
                                         data={categories}
                                         selected={selectedCategory}
                                         setSelected={setSelectedCategoryHandler}
-                                        placeholder="Select kategori"
+                                        placeholder="Select category"
                                         errors={errors.category_id}
                                         searchable={true}
                                         displayKey="name"

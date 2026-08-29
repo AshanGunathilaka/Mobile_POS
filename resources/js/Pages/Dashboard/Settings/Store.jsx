@@ -165,7 +165,7 @@ export default function Store({ settings }) {
                     <div className="border-t border-slate-100 dark:border-slate-800 pt-6">
                         <h2 className="text-lg font-semibold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
                             <IconReceiptTax size={20} className="text-primary-500" />
-                            Informasi Tax & Legal
+                            Tax & Legal Information
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <Input

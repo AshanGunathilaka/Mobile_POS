@@ -524,7 +524,7 @@ export default function Index({ products }) {
                         />
                     </div>
                     <h3 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-1">
-                        Belum Ada Product
+                        No Products Yet
                     </h3>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                         Add your first product to get started.

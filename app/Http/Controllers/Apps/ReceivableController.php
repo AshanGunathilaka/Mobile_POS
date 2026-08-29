@@ -154,6 +154,6 @@ class ReceivableController extends Controller
 
         $receivable->update(['collection_notes' => $validated['collection_notes'] ?? null]);
 
-        return back()->with('success', 'Catatan penagihan successfully disimpan.');
+        return back()->with('success', 'Collection note saved successfully.');
     }
 }
