@@ -134,7 +134,7 @@ export default function ShippingLabel({ transaction, store = {} }) {
                                 <div className="flex gap-2 mt-2">
                                     <IconMapPin size={16} className="text-slate-400 shrink-0 mt-0.5" />
                                     <p className="text-xs text-slate-600 leading-relaxed italic uppercase">
-                                        {customer.address || "Ambil di Store"}
+                                        {customer.address || "Pickup at Store"}
                                     </p>
                                 </div>
                                 {region && (

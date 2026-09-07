@@ -321,21 +321,21 @@ export default function Dashboard({
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors shadow-lg shadow-primary-500/30"
                     >
                         <IconShoppingCart size={18} />
-                        <span>Transaction Baru</span>
+                        <span>New Transaction</span>
                     </Link>
                 </div>
 
                 {/* Main Stat Cards - Reorganized */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <StatCard
-                        title="Sales Hari Ini"
+                        title="Today's Sales"
                         value={formatCurrency(todaySales)}
                         subtitle="Total sales today"
                         icon={IconCoin}
                         gradient="from-primary-500 to-primary-700"
                     />
                     <StatCard
-                        title="Profit Hari Ini"
+                        title="Today's Profit"
                         value={formatCurrency(todayProfit)}
                         subtitle="Profit bersih hari ini"
                         icon={IconTrendingUp}
@@ -349,7 +349,7 @@ export default function Dashboard({
                         icon={IconTarget}
                     />
                     <StatCard
-                        title="Transaction Hari Ini"
+                        title="Today's Transactions"
                         value={todayTransactions}
                         subtitle="Transactions"
                         icon={IconClock}

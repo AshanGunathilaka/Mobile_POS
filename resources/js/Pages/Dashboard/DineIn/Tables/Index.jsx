@@ -202,13 +202,13 @@ export default function Index({ tables, areas, filters }) {
 
     return (
         <>
-            <Head title="Meja Dine-In" />
+            <Head title="Dine-In Tables" />
 
             <div className="mb-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                            Meja Dine-In
+                            Dine-In Tables
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             {tables.length} registered tables
@@ -230,7 +230,7 @@ export default function Index({ tables, areas, filters }) {
                                 className={
                                     "bg-primary-500 hover:bg-primary-600 text-white shadow-lg shadow-primary-500/30"
                                 }
-                                label={"Add Meja"}
+                                label={"Add Table"}
                                 onClick={openCreate}
                             />
                         )}
@@ -303,11 +303,11 @@ export default function Index({ tables, areas, filters }) {
                     </svg>
                 </div>
             ) : tables.length > 0 ? (
-                <Table.Card title={"Register Meja"}>
+                <Table.Card title={"Table List"}>
                     <Table>
                         <Table.Thead>
                             <tr>
-                                <Table.Th>Meja</Table.Th>
+                                <Table.Th>Table</Table.Th>
                                 <Table.Th>Area</Table.Th>
                                 <Table.Th>Kapasitas</Table.Th>
                                 <Table.Th>Status</Table.Th>
@@ -404,7 +404,7 @@ export default function Index({ tables, areas, filters }) {
                             type={"link"}
                             icon={<IconCirclePlus size={18} />}
                             className={"bg-primary-500 hover:bg-primary-600 text-white"}
-                            label={"Add Meja"}
+                            label={"Add Table"}
                             onClick={openCreate}
                         />
                     )}
@@ -414,11 +414,11 @@ export default function Index({ tables, areas, filters }) {
             <Modal
                 open={modalOpen}
                 onClose={() => setModalOpen(false)}
-                title={editingTable ? `Edit Meja: ${editingTable.name}` : "Add Meja"}
+                title={editingTable ? `Edit Table: ${editingTable.name}` : "Add Table"}
             >
                 <form onSubmit={submit} className="space-y-4">
                     <Input
-                        label="Name Meja"
+                        label="Table Name"
                         value={data.name}
                         onChange={(e) => setData("name", e.target.value)}
                         error={errors.name}
@@ -432,7 +432,7 @@ export default function Index({ tables, areas, filters }) {
                             onChange={(e) => setData("dine_area_id", e.target.value)}
                             className="w-full px-3 py-1.5 border border-slate-300 dark:border-slate-700 rounded-lg text-sm bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-0"
                         >
-                            <option value="">Tanpa Area</option>
+                            <option value="">No Area</option>
                             {areas.map((area) => (
                                 <option key={area.id} value={area.id}>
                                     {area.name}
@@ -490,7 +490,7 @@ export default function Index({ tables, areas, filters }) {
                             className="w-4 h-4 rounded border-slate-300 text-primary-500 focus:ring-primary-500"
                         />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
-                            Meja aktif
+                            Active table
                         </span>
                     </label>
                     <div className="flex justify-end gap-3 pt-2">

@@ -91,7 +91,7 @@ export default function Index({ orders }) {
                                         <div>
                                             <div className="flex items-center gap-2 mb-1">
                                                 <span className="font-semibold text-slate-800 dark:text-slate-200">
-                                                    {order.table?.name ?? "Meja"}
+                                                    {order.table?.name ?? "Table"}
                                                 </span>
                                                 <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${status.color}`}>
                                                     <StatusIcon size={12} />

@@ -96,7 +96,7 @@ export default function VerifyEmail({ status, botGuard }) {
                                                 size={20}
                                                 className="animate-spin"
                                             />
-                                            Mengirim ulang...
+                                            Resending...
                                         </>
                                     ) : (
                                         <>

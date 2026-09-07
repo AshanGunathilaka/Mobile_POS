@@ -70,13 +70,13 @@ export default function Index({ areas }) {
 
     return (
         <>
-            <Head title="Area Dine-In" />
+            <Head title="Dine-In Areas" />
 
             <div className="mb-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                            Area Dine-In
+                            Dine-In Areas
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             {areas.length} area terdaftar
@@ -97,13 +97,13 @@ export default function Index({ areas }) {
             </div>
 
             {areas.length > 0 ? (
-                <Table.Card title={"Data Area"}>
+                <Table.Card title={"Area List"}>
                     <Table>
                         <Table.Thead>
                             <tr>
                                 <Table.Th className="w-10">No</Table.Th>
-                                <Table.Th>Name Area</Table.Th>
-                                <Table.Th>Amount Meja</Table.Th>
+                                <Table.Th>Area Name</Table.Th>
+                                <Table.Th>Number of Tables</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th></Table.Th>
                             </tr>
@@ -195,7 +195,7 @@ export default function Index({ areas }) {
             >
                 <form onSubmit={submit} className="space-y-4">
                     <Input
-                        label="Name Area"
+                        label="Area Name"
                         value={data.name}
                         onChange={(e) => setData("name", e.target.value)}
                         error={errors.name}
@@ -218,7 +218,7 @@ export default function Index({ areas }) {
                             className="w-4 h-4 rounded border-slate-300 text-primary-500 focus:ring-primary-500"
                         />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
-                            Area aktif
+                            Active area
                         </span>
                     </label>
                     <div className="flex justify-end gap-3 pt-2">

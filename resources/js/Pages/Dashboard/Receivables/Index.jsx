@@ -178,10 +178,10 @@ export default function ReceivablesIndex({ receivables, filters = {} }) {
                                                 };
                                                 const bucketLabels = {
                                                     current: "Not Due Yet",
-                                                    "0-30": "1-30 Hari",
-                                                    "31-60": "31-60 Hari",
-                                                    "61-90": "61-90 Hari",
-                                                    "90+": "90+ Hari",
+                                                    "0-30": "1-30 Days",
+                                                    "31-60": "31-60 Days",
+                                                    "61-90": "61-90 Days",
+                                                    "90+": "90+ Days",
                                                 };
                                                 return (
                                                     <div key={bucket.bucket} className="flex items-center justify-between">

@@ -185,7 +185,7 @@ export default function Warehouses({ warehouses = [] }) {
                 {showForm && (
                     <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 space-y-4">
                         <h3 className="font-semibold text-slate-800 dark:text-white">
-                            {editing ? "Edit Warehouse" : "Add Warehouse Baru"}
+                            {editing ? "Edit Warehouse" : "Add New Warehouse"}
                         </h3>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

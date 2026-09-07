@@ -266,7 +266,7 @@ const Sales = ({ transactions, summary, filters, cashiers, customers, warehouses
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                                        Date Akhir
+                                        End Date
                                     </label>
                                     <input
                                         type="date"

@@ -425,7 +425,7 @@ export default function Insights({
                                 </div>
                                 <div>
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Date Akhir
+                                        End Date
                                     </label>
                                     <input
                                         type="date"
@@ -850,7 +850,7 @@ export default function Insights({
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th className="text-right">Stock</Table.Th>
                                 <Table.Th className="text-right">Qty Sold</Table.Th>
-                                <Table.Th className="text-right">Avg / Hari</Table.Th>
+                                <Table.Th className="text-right">Avg / Day</Table.Th>
                                 <Table.Th className="text-right">Coverage</Table.Th>
                                 <Table.Th>Last Sold</Table.Th>
                             </tr>
@@ -1056,7 +1056,7 @@ export default function Insights({
                         <div className="mb-4 grid gap-3 md:grid-cols-2">
                             <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Total Member
+                                    Total Members
                                 </p>
                                 <p className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">
                                     {(loyaltySummary.total_members ?? 0).toLocaleString("en-LK")}

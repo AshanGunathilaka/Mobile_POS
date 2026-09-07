@@ -174,7 +174,7 @@ export default function Edit({ customer }) {
                             <div className="flex items-center justify-between gap-4">
                                 <div>
                                     <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                                        Status Loyalty
+                                        Loyalty Status
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
                                         Member code: {customer.member_code || "-"} | current points: {customer.loyalty_points || 0}

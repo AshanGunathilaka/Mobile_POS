@@ -83,7 +83,7 @@ export default function DineMenu({ table, categories, products, selfOrderEnabled
                         <div>
                             <h1 className="font-bold text-slate-900 text-lg">{storeName}</h1>
                             <p className="text-xs text-slate-500">
-                                Meja {table.name}
+                                Table {table.name}
                                 {table.area_name ? ` · ${table.area_name}` : ""}
                             </p>
                         </div>

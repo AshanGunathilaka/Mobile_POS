@@ -149,7 +149,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                                 </select>
                             </div>
                             <div>
-                                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Status Receivable</label>
+                                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Receivable Status</label>
                                 <select
                                     value={data.audience_filters.receivable_status}
                                     onChange={(event) => setAudienceFilter("receivable_status", event.target.value)}

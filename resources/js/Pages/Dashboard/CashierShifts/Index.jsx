@@ -287,7 +287,7 @@ export default function Index({
                                                     {shift.user?.name || "-"}
                                                 </p>
                                                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                                                    Modal {formatCurrency(shift.opening_cash)}
+                                                    Cost {formatCurrency(shift.opening_cash)}
                                                 </p>
                                             </div>
                                         </Table.Td>

@@ -58,7 +58,7 @@ export default function Create() {
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUserPlus size={28} className="text-primary-500" />
-                    Add User Baru
+                    Add New User
                 </h1>
             </div>
 

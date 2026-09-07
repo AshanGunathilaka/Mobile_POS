@@ -131,7 +131,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors shadow-lg shadow-primary-500/30"
                         >
                             <IconReceipt size={18} />
-                            <span>Transaction Baru</span>
+                            <span>New Transaction</span>
                         </Link>
                     </div>
                 </div>
@@ -176,7 +176,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                                        Date Akhir
+                                        End Date
                                     </label>
                                     <input
                                         type="date"

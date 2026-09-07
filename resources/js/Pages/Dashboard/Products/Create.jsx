@@ -69,7 +69,7 @@ export default function Create({ categories }) {
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconPackage size={28} className="text-primary-500" />
-                    Add Product Baru
+                    Add New Product
                 </h1>
             </div>
 

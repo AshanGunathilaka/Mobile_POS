@@ -53,13 +53,13 @@ export default function PriceLists({ priceLists }) {
                         <p className="text-sm text-slate-500 dark:text-slate-400">Price khusus per kelompok customer</p>
                     </div>
                     <button onClick={() => { resetForm(); setShowForm(true); }} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors">
-                        <IconPlus size={18} /> Baru
+                        <IconPlus size={18} /> New
                     </button>
                 </div>
 
                 {showForm && (
                     <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
-                        <h3 className="font-semibold mb-4">{editing ? "Edit Price List" : "Price List Baru"}</h3>
+                        <h3 className="font-semibold mb-4">{editing ? "Edit Price List" : "New Price List"}</h3>
                         <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
                             <div className="grid grid-cols-2 gap-4">
                                 <div>

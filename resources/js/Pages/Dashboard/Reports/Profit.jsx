@@ -140,7 +140,7 @@ const ProfitReport = ({
             gradient: "from-primary-500 to-primary-700",
         },
         {
-            title: "Margin Kotor",
+            title: "Gross Margin",
             value: `${stats.margin}%`,
             description: "Profit vs sales",
             icon: <IconPercentage />,
@@ -217,7 +217,7 @@ const ProfitReport = ({
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                                        Date Akhir
+                                        End Date
                                     </label>
                                     <input
                                         type="date"

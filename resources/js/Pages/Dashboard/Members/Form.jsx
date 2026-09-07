@@ -236,7 +236,7 @@ export default function Form({ mode = "create", member = null }) {
                             <div className="flex items-center justify-between gap-4">
                                 <div>
                                     <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                                        Status Member
+                                        Member Status
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
                                         Deactivate the member when member benefits need to be stopped without deleting history.

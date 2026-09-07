@@ -108,7 +108,7 @@ export default function Show({ transfer }) {
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Actions</h2>
                                 <div className="mt-4 space-y-3">
                                     {can("stock-transfers-send") && (
-                                        <button onClick={() => confirmAction("send", "mengirim")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-600">
+                                        <button onClick={() => confirmAction("send", "send")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-600">
                                             <IconSend size={18} /> Send Goods
                                         </button>
                                     )}

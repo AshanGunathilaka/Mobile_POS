@@ -107,7 +107,7 @@ export default function Create() {
                 </Link>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconUsers size={28} className="text-primary-500" />
-                    Add Customer Baru
+                    Add New Customer
                 </h1>
             </div>
 
@@ -164,7 +164,7 @@ export default function Create() {
                             {data.is_loyalty_member && (
                                 <div className="mt-4">
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Tier Awal
+                                        Initial Tier
                                     </label>
                                     <select
                                         value={data.loyalty_tier}

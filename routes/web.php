@@ -36,7 +36,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DineMenuController;
 use App\Http\Controllers\DineOrderController;
 use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
@@ -80,9 +79,6 @@ Route::get('/share/transactions/{invoice}', [DocumentController::class, 'publicI
 // Customer portal routes (no login, token-based)
 Route::get('/portal/transactions/{invoice}', [PublicPortalController::class, 'showTransaction'])->name('portal.transaction');
 Route::post('/portal/receivables/{receivable}/pay', [PublicPortalController::class, 'payReceivable'])->name('portal.receivable.pay');
-
-// Language switch
-Route::post('/language/switch', [LanguageController::class, 'switch'])->name('language.switch');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified', 'permission:dashboard-access'])->name('dashboard');

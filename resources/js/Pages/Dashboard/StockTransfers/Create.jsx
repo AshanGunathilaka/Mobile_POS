@@ -53,14 +53,14 @@ export default function Create({ warehouses, products }) {
 
     return (
         <>
-            <Head title="Transfer Stock Baru" />
+            <Head title="New Stock Transfer" />
             <div className="mb-6">
                 <Link href={route("stock-transfers.index")} className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600">
                     <IconArrowLeft size={16} /> Back to transfer list
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconArrowsLeftRight size={28} className="text-primary-500" />
-                    Transfer Stock Baru
+                    New Stock Transfer
                 </h1>
             </div>
 

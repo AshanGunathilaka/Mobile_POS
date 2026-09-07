@@ -37,7 +37,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
 
     const summaryCards = [
         {
-            label: "Total Member",
+            label: "Total Members",
             value: summary?.total_members || 0,
             helper: "All members ever registered",
         },
