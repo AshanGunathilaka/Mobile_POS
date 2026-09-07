@@ -69,13 +69,13 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
             case "partial":
                 return (
                     <span className={`${base} bg-primary-100 text-primary-700`}>
-                        Parsial
+                        Partial
                     </span>
                 );
             case "overdue":
                 return (
                     <span className={`${base} bg-rose-100 text-rose-700`}>
-                        Jatuh Tempo
+                        Overdue
                     </span>
                 );
             default:
@@ -105,7 +105,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
             {
                 preserveScroll: true,
                 onSuccess: () => toast.success("Collection note saved successfully"),
-                onError: () => toast.error("Failed menyimpan catatan penagihan"),
+                onError: () => toast.error("Failed to save collection notes"),
             }
         );
     };
@@ -117,7 +117,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
 
     return (
         <>
-            <Head title={`Nota ${receivable.invoice}`} />
+            <Head title={`Invoice ${receivable.invoice}`} />
             <div className="space-y-6">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                     <div className="flex items-center gap-3">
@@ -181,7 +181,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 )}
                             </div>
                             <div className="text-right">
-                                <p className="text-slate-500">Jatuh Tempo</p>
+                                <p className="text-slate-500">Overdue</p>
                                 <p className="font-semibold text-slate-800 dark:text-white">
                                     {formatDate(receivable.due_date)}
                                 </p>
@@ -257,7 +257,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
 
                     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 print:hidden">
                         <p className="text-sm font-semibold text-slate-800 dark:text-white mb-3">
-                            Detail Nota
+                            Invoice Details
                         </p>
                         <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                             <div className="flex justify-between">
@@ -267,7 +267,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 </span>
                             </div>
                             <div className="flex justify-between">
-                                <span>Jatuh Tempo</span>
+                                <span>Overdue</span>
                                 <span>{formatDate(receivable.due_date)}</span>
                             </div>
                             <div className="flex justify-between">
@@ -289,7 +289,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
 
                         <form onSubmit={submitCollectionNotes} className="mt-4 space-y-3">
                             <label className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                                Catatan Penagihan
+                                Collection Notes
                             </label>
                             <textarea
                                 rows={3}
@@ -298,7 +298,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                     collectionNotesForm.setData("collection_notes", e.target.value)
                                 }
                                 className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-3 py-2 text-sm text-slate-800 dark:text-slate-200 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-                                placeholder="Catatan proses penagihan..."
+                                placeholder="Collection process notes..."
                             />
                             {collectionNotesForm.errors.collection_notes && (
                                 <p className="text-xs text-danger-500">
@@ -313,7 +313,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 disabled={collectionNotesForm.processing}
                                 className="w-full h-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors disabled:opacity-50"
                             >
-                                {collectionNotesForm.processing ? "Saving..." : "Save Catatan"}
+                                {collectionNotesForm.processing ? "Saving..." : "Save Notes"}
                             </button>
                         </form>
 
@@ -339,7 +339,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 </div>
                                 <div>
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Date Bayar
+                                        Payment Date
                                     </label>
                                     <input
                                         type="date"
@@ -378,7 +378,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 {data.method === "bank_transfer" && (
                                     <div>
                                         <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                                            Rekening
+                                            Account
                                         </label>
                                         <select
                                             value={data.bank_account_id}
@@ -398,14 +398,14 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                 )}
                                 <div>
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Catatan (opsional)
+                                        Notes (optional)
                                     </label>
                                     <textarea
                                         rows={2}
                                         value={data.note}
                                         onChange={(e) => setData("note", e.target.value)}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500"
-                                        placeholder="Catatan payment"
+                                        placeholder="Payment notes"
                                     />
                                 </div>
                                 <button
@@ -457,7 +457,7 @@ export default function ReceivableShow({ receivable, bankAccounts = [] }) {
                                     onClick={() => setShowPreview(false)}
                                     className="text-sm px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                                 >
-                                    Tutup
+                                    Close
                                 </button>
                             </div>
                         </div>

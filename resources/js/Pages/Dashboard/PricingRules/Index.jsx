@@ -282,7 +282,7 @@ export default function Index({ rules, filters, summary = {}, recentAudits = [] 
                 {recentAudits.length > 0 && (
                     <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
                         <h2 className="text-base font-semibold text-slate-900 dark:text-white">
-                            Aktivitas Promo Terbaru
+                            Latest Promo Activity
                         </h2>
                         <div className="mt-4 space-y-3">
                             {recentAudits.map((audit) => (

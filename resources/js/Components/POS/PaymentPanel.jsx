@@ -151,7 +151,7 @@ export default function PaymentPanel({
         if (!hasItems) return "Cart Empty";
         if (!selectedCustomer) return "Select Customer";
         if (isCashPayment && remaining > 0)
-            return `Kurang ${formatPrice(remaining)}`;
+            return `Short ${formatPrice(remaining)}`;
         return "Complete Transaction";
     }, [hasItems, selectedCustomer, isCashPayment, remaining]);
 
@@ -182,7 +182,7 @@ export default function PaymentPanel({
                     </div>
                     <div className="flex justify-between text-sm">
                         <span className="text-slate-500 dark:text-slate-400">
-                            Promo Otomatis
+                            Automatic Promo
                         </span>
                         <span className="font-medium text-danger-500">
                             - {formatPrice(promoDiscount)}
@@ -248,14 +248,14 @@ export default function PaymentPanel({
                                         e.target.value.replace(/[^\d]/g, "")
                                     )
                                 }
-                                placeholder={`Maks ${availablePoints} points`}
+                                placeholder={`Max ${availablePoints} points`}
                                 className="w-full h-11 px-4 rounded-xl border border-slate-200 dark:border-slate-700
                                     bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200
                                     focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500
                                     transition-all text-base"
                             />
                             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                                Saldo tersedia: {availablePoints} points
+                                Available balance: {availablePoints} points
                             </p>
                         </div>
 

@@ -157,7 +157,7 @@ const ProfitReport = ({
 
     return (
         <>
-            <Head title="Laporan Keuntungan" />
+            <Head title="Profit Report" />
 
             <div className="space-y-6">
                 {/* Header */}
@@ -165,7 +165,7 @@ const ProfitReport = ({
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                             <IconCoin size={28} className="text-success-500" />
-                            Laporan Keuntungan
+                            Profit Report
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             Profit and margin analysis

@@ -146,7 +146,7 @@ export default function CustomerHistoryPanel({
                     <p className="text-sm font-bold text-success-600 dark:text-success-400">
                         {formatPrice(stats.total_spent)}
                     </p>
-                    <p className="text-xs text-slate-500">Total Belanja</p>
+                    <p className="text-xs text-slate-500">Total Spend</p>
                 </div>
                 <div className="bg-white dark:bg-slate-900 p-3 text-center">
                     <div className="flex items-center justify-center mb-1">

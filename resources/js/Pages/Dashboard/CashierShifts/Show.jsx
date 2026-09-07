@@ -95,10 +95,10 @@ export default function Show({ cashierShift, canForceClose = false }) {
                             <span>Back to shift history</span>
                         </Link>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-                            Shift Cashier {cashierShift.user?.name || "-"}
+                            Cashier Shift {cashierShift.user?.name || "-"}
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Dibuka {formatDateTime(cashierShift.opened_at)}
+                            Opened {formatDateTime(cashierShift.opened_at)}
                         </p>
                     </div>
                     <span
@@ -119,7 +119,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                    <MetricCard title="Modal Awal" value={formatCurrency(cashierShift.opening_cash)} icon={IconWallet} />
+                    <MetricCard title="Opening Cash" value={formatCurrency(cashierShift.opening_cash)} icon={IconWallet} />
                     <MetricCard title="Expected Cash" value={formatCurrency(cashierShift.expected_cash)} icon={IconCashBanknote} />
                     <MetricCard title="Cash Sales" value={formatCurrency(cashierShift.cash_sales_total)} icon={IconReceipt} />
                     <MetricCard title="Refund Cash" value={formatCurrency(cashierShift.cash_refund_total)} icon={IconRotateClockwise2} />
@@ -128,7 +128,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                 <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                            Ringkasan Shift
+                            Shift Summary
                         </h2>
                         <div className="mt-5 grid gap-4 md:grid-cols-2">
                             <div>
@@ -140,11 +140,11 @@ export default function Show({ cashierShift, canForceClose = false }) {
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.warehouse?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Dibuka Oleh</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Opened By</p>
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{cashierShift.opened_by?.name || "-"}</p>
                             </div>
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Waktu Tutup</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Closed Time</p>
                                 <p className="mt-2 text-sm text-slate-900 dark:text-white">{formatDateTime(cashierShift.closed_at)}</p>
                             </div>
                             <div>
@@ -171,11 +171,11 @@ export default function Show({ cashierShift, canForceClose = false }) {
 
                         <div className="mt-5 grid gap-4 md:grid-cols-2">
                             <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Catatan Shift</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Shift Notes</p>
                                 <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">{cashierShift.notes || "No opening notes."}</p>
                             </div>
                             <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Catatan Closing</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Closing Notes</p>
                                 <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">{cashierShift.close_notes || "No closing notes."}</p>
                             </div>
                         </div>
@@ -209,7 +209,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                         {canCloseShift && (
                             <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    Tutup Shift
+                                    Close Shift
                                 </h2>
                                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                                     Enter final physical cash to finalize cash closing.
@@ -229,7 +229,7 @@ export default function Show({ cashierShift, canForceClose = false }) {
                                         )}
                                     </div>
                                     <div>
-                                        <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Catatan Closing</label>
+                                        <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Closing Notes</label>
                                         <textarea
                                             rows={4}
                                             value={closeNotes}

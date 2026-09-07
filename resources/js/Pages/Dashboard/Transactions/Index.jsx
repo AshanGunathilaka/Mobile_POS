@@ -372,7 +372,7 @@ export default function Index({
 
     const handleHoldCart = async (label = null) => {
         if (carts.length === 0) {
-            toast.error("Keranjang kosong");
+            toast.error("Cart is empty");
             return;
         }
 
@@ -462,7 +462,7 @@ export default function Index({
     // Handle submit transaction
     const handleSubmitTransaction = () => {
         if (carts.length === 0) {
-            toast.error("Keranjang masih kosong");
+            toast.error("Cart is still empty");
             return;
         }
 
@@ -592,7 +592,7 @@ export default function Index({
                         <div className="mt-6 grid gap-4 md:grid-cols-2">
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Modal Awal
+                                    Opening Cash
                                 </label>
                                 <input
                                     type="number"
@@ -608,7 +608,7 @@ export default function Index({
                             </div>
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Catatan
+                                    Notes
                                 </label>
                                 <input
                                     type="text"
@@ -673,7 +673,7 @@ export default function Index({
                     >
                         <IconReceipt size={18} />
                         <span className="relative inline-flex items-center gap-1">
-                            Keranjang
+                            Cart
                             {cartCount > 0 && (
                                 <span className="inline-flex items-center justify-center px-1.5 min-w-[20px] h-5 text-[11px] font-bold bg-primary-500 text-white rounded-full">
                                     {cartCount}
@@ -756,7 +756,7 @@ export default function Index({
                             <div className="flex items-center justify-between mb-3">
                                 <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
                                     <IconShoppingCart size={16} />
-                                    Keranjang
+                                    Cart
                                 </h3>
                                 {carts.length > 0 && (
                                     <span className="px-2.5 py-0.5 text-xs font-bold bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300 rounded-full whitespace-nowrap">
@@ -904,7 +904,7 @@ export default function Index({
                                         className="mx-auto text-slate-300 dark:text-slate-600 mb-2"
                                     />
                                     <p className="text-sm text-slate-400">
-                                        Keranjang kosong
+                                        Cart is empty
                                     </p>
                                 </div>
                             )}
@@ -952,7 +952,7 @@ export default function Index({
                             {payLater && (
                                 <div>
                                     <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
-                                        Date Jatuh Tempo
+                                        Due Date
                                     </label>
                                     <input
                                         type="date"
@@ -1181,7 +1181,7 @@ export default function Index({
                                                 )
                                             )
                                         }
-                                        placeholder={`Maks ${
+                                        placeholder={`Max ${
                                             pricingPreview?.summary
                                                 ?.available_loyalty_points ?? 0
                                         } points`}
@@ -1301,7 +1301,7 @@ export default function Index({
                             {paymentMethod === "cash" && (
                                 <div>
                                     <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-2">
-                                        Amount Bayar (LKR)
+                                        Payment Amount (LKR)
                                     </label>
                                     <div className="relative">
                                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">
@@ -1340,7 +1340,7 @@ export default function Index({
                         {promoDiscount > 0 && (
                             <div className="flex justify-between items-center mb-2 text-sm">
                                 <span className="text-slate-500">
-                                    Promo Otomatis
+                                    Automatic Promo
                                 </span>
                                 <span className="text-emerald-600">
                                     -{formatPrice(promoDiscount)}
@@ -1464,12 +1464,12 @@ export default function Index({
                                     <IconReceipt size={18} />
                                     <span>
                                         {!carts.length
-                                            ? "Keranjang Kosong"
+                                            ? "Cart Empty"
                                             : !selectedCustomer
                                             ? "Select Customer"
                                             : paymentMethod === "cash" &&
                                               cash < payable
-                                            ? `Kurang ${formatPrice(
+                                            ? `Short ${formatPrice(
                                                   payable - cash
                                               )}`
                                             : isLoadingPricing
@@ -1488,7 +1488,7 @@ export default function Index({
                 isOpen={numpadOpen}
                 onClose={() => setNumpadOpen(false)}
                 onConfirm={handleNumpadConfirm}
-                title="Amount Bayar"
+                title="Payment Amount"
                 initialValue={Number(cashInput) || 0}
                 isCurrency={true}
             />
@@ -1511,7 +1511,7 @@ export default function Index({
                                 ["F2", "Complete Transaction"],
                                 ["F3", "Toggle Products/Cart"],
                                 ["F4", "Tampilkan Bantuan"],
-                                ["Esc", "Tutup Modal"],
+                                ["Esc", "Close Modal"],
                             ].map(([key, desc]) => (
                                 <div
                                     key={key}
@@ -1530,7 +1530,7 @@ export default function Index({
                             onClick={() => setShowShortcuts(false)}
                             className="mt-6 w-full py-2.5 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium"
                         >
-                            Tutup
+                            Close
                         </button>
                     </div>
                 </div>

@@ -166,7 +166,7 @@ export default function AgingIndex() {
                                 <div>
                                     <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-1.5">
                                         <IconClock size={16} className="text-warning-500" />
-                                        Akan Jatuh Tempo
+                                        Due Soon
                                     </h3>
                                     <div className="space-y-2">
                                         {payableNotifications.map((item) => (
@@ -219,7 +219,7 @@ export default function AgingIndex() {
                                 <div>
                                     <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-1.5">
                                         <IconClock size={16} className="text-warning-500" />
-                                        Akan Jatuh Tempo
+                                        Due Soon
                                     </h3>
                                     <div className="space-y-2">
                                         {receivableNotifications.map((item) => (

@@ -104,7 +104,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
             return;
         }
         post(route("supplier-returns.store"), {
-            onError: () => toast.error("Failed membuat retur supplier"),
+            onError: () => toast.error("Failed to create supplier return"),
         });
     };
 
@@ -119,7 +119,7 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back to return list
+                    Back to returns
                 </Link>
                 <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                     <IconTruckReturn size={28} className="text-primary-500" />
@@ -170,12 +170,12 @@ export default function Create({ suppliers, goodsReceivings, products }) {
                                 </select>
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Catatan</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Notes</label>
                                 <input
                                     type="text"
                                     value={data.notes}
                                     onChange={(e) => setData("notes", e.target.value)}
-                                    placeholder="Catatan retur"
+                                    placeholder="Return notes"
                                     className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                 />
                             </div>

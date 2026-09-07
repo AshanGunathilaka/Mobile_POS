@@ -628,7 +628,7 @@ const History = ({ transactions, filters, warehouses = [] }) => {
                                         Confirm Payment
                                     </h3>
                                     <p className="text-sm opacity-90">
-                                        Transfer Bank
+                                        Bank Transfer
                                     </p>
                                 </div>
                             </div>

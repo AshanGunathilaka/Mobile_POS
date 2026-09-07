@@ -142,12 +142,12 @@ export default function Form({ mode = "create", member = null }) {
                     toast.success(
                         isEdit
                             ? "Member data updated successfully"
-                            : "Member baru successfully didaftarkan"
+                            : "New member registered successfully"
                     ),
                 onError: () =>
                     toast.error(
                         isEdit
-                            ? "Failed memperbarui data member"
+                            ? "Failed to update member data"
                             : "Failed mendaftarkan member"
                     ),
             }
@@ -201,7 +201,7 @@ export default function Form({ mode = "create", member = null }) {
                             </div>
                             <div>
                                 <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                    Profil Member
+                                    Member Profile
                                 </h2>
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
                                     Complete basic member identity for search and CRM history.

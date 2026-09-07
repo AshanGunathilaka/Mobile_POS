@@ -148,7 +148,7 @@ export default function Show({
         notesForm.patch(route("stock-opnames.update", stockOpname.id), {
             preserveScroll: true,
             onSuccess: () => toast.success("Session notes updated"),
-            onError: () => toast.error("Failed memperbarui catatan sesi"),
+            onError: () => toast.error("Failed to update session notes"),
         });
     };
 
@@ -219,7 +219,7 @@ export default function Show({
             {
                 preserveScroll: true,
                 onSuccess: () => toast.success("Stock count item updated"),
-                onError: () => toast.error("Failed memperbarui item opname"),
+                onError: () => toast.error("Failed to update opname item"),
                 onFinish: () => setSavingItemId(null),
             }
         );
@@ -231,7 +231,7 @@ export default function Show({
             {},
             {
                 preserveScroll: true,
-                onSuccess: () => toast.success("Stock opname difinalisasi"),
+                onSuccess: () => toast.success("Stock opname finalized"),
                 onError: () =>
                     toast.error("Failed to finalize. Check the invalid items."),
             }
@@ -419,7 +419,7 @@ export default function Show({
                                                         }
                                                         placeholder={
                                                             isDifferent
-                                                                ? "Wajib isi alasan"
+                                                                ? "Reason is required"
                                                                 : "No perlu"
                                                         }
                                                         className="h-10 w-full min-w-48 rounded-lg border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
@@ -467,7 +467,7 @@ export default function Show({
                         className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
                     >
                         <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                            Catatan Sesi
+                            Session Notes
                         </h2>
                         <textarea
                             value={notesForm.data.notes}
@@ -477,7 +477,7 @@ export default function Show({
                             }
                             rows={4}
                             className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
-                            placeholder="Catatan sesi stock opname"
+                            placeholder="Stock opname session notes"
                         />
                         {canManageDraft && (
                             <div className="mt-4 flex justify-end">
@@ -485,7 +485,7 @@ export default function Show({
                                     type="submit"
                                     icon={<IconDeviceFloppy size={18} />}
                                     className="bg-primary-500 hover:bg-primary-600 text-white"
-                                    label="Save Catatan"
+                                    label="Save Notes"
                                 />
                             </div>
                         )}

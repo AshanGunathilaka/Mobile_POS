@@ -126,7 +126,7 @@ export default function Index({ stockOpnames, filters, warehouses = [] }) {
                 <Table>
                     <Table.Thead>
                         <tr>
-                            <Table.Th>Kode</Table.Th>
+                            <Table.Th>Code</Table.Th>
                             <Table.Th>Status</Table.Th>
                             <Table.Th>Amount Item</Table.Th>
                             <Table.Th>Created By</Table.Th>

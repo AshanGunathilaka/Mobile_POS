@@ -55,7 +55,7 @@ const coverageStatusConfig = {
             "bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300",
     },
     low: {
-        label: "Rendah",
+        label: "Low",
         className:
             "bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300",
     },
@@ -245,7 +245,7 @@ export default function Insights({
                 labels: hourChartData.map((item) => item.label),
                 datasets: [
                     {
-                        label: "Omzet",
+                        label: "Revenue",
                         data: hourChartData.map((item) => item.revenue_total),
                         backgroundColor: "#3b82f6",
                         borderRadius: 8,
@@ -281,7 +281,7 @@ export default function Insights({
                 labels: dayChartData.map((item) => item.label),
                 datasets: [
                     {
-                        label: "Omzet",
+                        label: "Revenue",
                         data: dayChartData.map((item) => item.revenue_total),
                         borderColor: "#10b981",
                         backgroundColor: "rgba(16, 185, 129, 0.15)",
@@ -511,7 +511,7 @@ export default function Insights({
                     <SummaryCard
                         title="Customer Active"
                         value={(repeatSummary.active_customers ?? 0).toLocaleString("en-LK")}
-                        description={`${repeatSummary.new_customers ?? 0} customer baru`}
+                        description={`${repeatSummary.new_customers ?? 0} new customers`}
                         icon={IconUsers}
                         gradient="from-sky-500 to-sky-700"
                     />
@@ -550,7 +550,7 @@ export default function Insights({
                                 <Table.Th>Product</Table.Th>
                                 <Table.Th>Category</Table.Th>
                                 <Table.Th className="text-right">Qty</Table.Th>
-                                <Table.Th className="text-right">Omzet</Table.Th>
+                                <Table.Th className="text-right">Revenue</Table.Th>
                                 <Table.Th className="text-right">Profit</Table.Th>
                             </tr>
                         </Table.Thead>
@@ -588,7 +588,7 @@ export default function Insights({
                                 <Table.Th>Product</Table.Th>
                                 <Table.Th>Stock</Table.Th>
                                 <Table.Th className="text-right">Qty Sold</Table.Th>
-                                <Table.Th className="text-right">Omzet</Table.Th>
+                                <Table.Th className="text-right">Revenue</Table.Th>
                                 <Table.Th>Last Sold</Table.Th>
                             </tr>
                         </Table.Thead>
@@ -651,7 +651,7 @@ export default function Insights({
                             <tr>
                                 <Table.Th>{marginView === "product" ? "Product" : "Category"}</Table.Th>
                                 <Table.Th className="text-right">Qty</Table.Th>
-                                <Table.Th className="text-right">Omzet</Table.Th>
+                                <Table.Th className="text-right">Revenue</Table.Th>
                                 <Table.Th className="text-right">Profit</Table.Th>
                                 <Table.Th className="text-right">Margin %</Table.Th>
                             </tr>
@@ -685,7 +685,7 @@ export default function Insights({
                                 <Table.Th>Cashier</Table.Th>
                                 <Table.Th className="text-right">Transactions</Table.Th>
                                 <Table.Th className="text-right">Items Sold</Table.Th>
-                                <Table.Th className="text-right">Omzet</Table.Th>
+                                <Table.Th className="text-right">Revenue</Table.Th>
                                 <Table.Th className="text-right">Profit</Table.Th>
                                 <Table.Th className="text-right">Avg Basket</Table.Th>
                             </tr>
@@ -748,7 +748,7 @@ export default function Insights({
                                 <Table.Th>Customer</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th className="text-right">Transactions</Table.Th>
-                                <Table.Th className="text-right">Omzet</Table.Th>
+                                <Table.Th className="text-right">Revenue</Table.Th>
                                 <Table.Th className="text-right">Avg Basket</Table.Th>
                                 <Table.Th>Last Purchase</Table.Th>
                             </tr>
@@ -820,7 +820,7 @@ export default function Insights({
                         </div>
                         <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                                Stock Rendah
+                                Low Stock
                             </p>
                             <p className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">
                                 {(stockCoverageSummary.low ?? 0).toLocaleString("en-LK")}
@@ -958,7 +958,7 @@ export default function Insights({
                                     <Table.Th>Rule</Table.Th>
                                     <Table.Th>Type</Table.Th>
                                     <Table.Th>Status</Table.Th>
-                                    <Table.Th>Periode</Table.Th>
+                                    <Table.Th>Period</Table.Th>
                                 </tr>
                             </Table.Thead>
                             <Table.Tbody>
@@ -1027,7 +1027,7 @@ export default function Insights({
                         </Table>
                         <div className="mt-4 space-y-2">
                             <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
-                                Audit Promo Terbaru
+                                Latest Promo Audit
                             </h3>
                             {promoRecentAudits.length > 0 ? (
                                 promoRecentAudits.map((audit) => (
@@ -1064,7 +1064,7 @@ export default function Insights({
                             </div>
                             <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                                    Saldo Points
+                                    Point Balance
                                 </p>
                                 <p className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">
                                     {(loyaltySummary.points_balance_total ?? 0).toLocaleString("en-LK")}
@@ -1141,7 +1141,7 @@ export default function Insights({
                                     <Table.Th>Member</Table.Th>
                                     <Table.Th>Tier</Table.Th>
                                     <Table.Th className="text-right">Points</Table.Th>
-                                    <Table.Th className="text-right">Total Belanja</Table.Th>
+                                    <Table.Th className="text-right">Total Spend</Table.Th>
                                 </tr>
                             </Table.Thead>
                             <Table.Tbody>

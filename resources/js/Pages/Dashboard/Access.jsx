@@ -48,7 +48,7 @@ const cards = [
         perms: ["suppliers-access"],
     },
     {
-        title: "Laporan",
+        title: "Reports",
         desc: "View sales reports",
         icon: <IconChartArrowsVertical size={22} />,
         route: "reports.sales.index",

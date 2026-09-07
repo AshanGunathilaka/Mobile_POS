@@ -23,7 +23,7 @@ export default function ConfirmPassword({ challenge = null }) {
 
     const challengeLabel = useMemo(() => {
         if (!challenge?.route) {
-            return "aksi sensitif";
+            return "sensitive action";
         }
 
         return challenge.route.replaceAll(".", " / ");

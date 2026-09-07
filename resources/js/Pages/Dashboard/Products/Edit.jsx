@@ -149,7 +149,7 @@ export default function Edit({ categories, product }) {
                                         setData("barcode", e.target.value)
                                     }
                                     errors={errors.barcode}
-                                    placeholder="Kode product"
+                                    placeholder="Product code"
                                 />
                                 <Input
                                     type="text"

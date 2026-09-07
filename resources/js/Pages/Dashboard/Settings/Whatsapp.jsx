@@ -60,7 +60,7 @@ export default function Whatsapp({ settings, waStatus }) {
         post(route("settings.whatsapp.update"), {
             preserveScroll: true,
             onSuccess: () => toast.success("WhatsApp settings saved"),
-            onError: () => toast.error("Failed menyimpan"),
+            onError: () => toast.error("Failed to save"),
         });
     };
 
@@ -68,9 +68,9 @@ export default function Whatsapp({ settings, waStatus }) {
         if (!testNumber) return toast.error("Enter a destination number");
         try {
             await axios.post(route("settings.whatsapp.test"), { target: testNumber });
-            toast.success("Pesan test terkirim!");
+            toast.success("Test message sent!");
         } catch (e) {
-            toast.error("Failed mengirim");
+            toast.error("Failed to send");
         }
     };
 
@@ -96,7 +96,7 @@ export default function Whatsapp({ settings, waStatus }) {
                             {status.connected
                                 ? `Terhubung (${status.phone})`
                                 : status.starting
-                                    ? "Menghubungkan..."
+                                    ? "Connecting..."
                                     : "Terputus"}
                         </span>
                     </div>
@@ -114,7 +114,7 @@ export default function Whatsapp({ settings, waStatus }) {
                         <button onClick={handleConnect} disabled={processing || status.starting}
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors disabled:opacity-50">
                             <IconPlugConnected size={18} />
-                            {status.starting ? "Menghubungkan..." : "Hubungkan WhatsApp"}
+                            {status.starting ? "Connecting..." : "Connect WhatsApp"}
                         </button>
                     )}
                     {status.connected && (
@@ -139,15 +139,15 @@ export default function Whatsapp({ settings, waStatus }) {
                     <label className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
                         <input type="checkbox" checked={data.wa_enabled} onChange={(e) => setData("wa_enabled", e.target.checked)}
                             className="rounded border-slate-300 text-primary-600 focus:ring-primary-500" />
-                        Activekan WhatsApp Gateway
+                        Enable WhatsApp Gateway
                     </label>
 
                     <div className="border-t border-slate-100 dark:border-slate-800 pt-4">
-                        <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Kirim Otomatis</h3>
+                        <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Automatic Sending</h3>
                         <label className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 cursor-pointer mb-2">
                             <input type="checkbox" checked={data.wa_auto_reminder} onChange={(e) => setData("wa_auto_reminder", e.target.checked)}
                                 className="rounded border-slate-300 text-primary-600 focus:ring-primary-500" />
-                            Kirim reminder receivables otomatis
+                            Send receivable reminders automatically
                         </label>
                         <label className="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 cursor-pointer">
                             <input type="checkbox" checked={data.wa_auto_invoice} onChange={(e) => setData("wa_auto_invoice", e.target.checked)}
@@ -167,14 +167,14 @@ export default function Whatsapp({ settings, waStatus }) {
                 {/* Test Send */}
                 {status.connected && (
                     <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 max-w-lg">
-                        <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Test Kirim Pesan</h3>
+                        <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Send Test Message</h3>
                         <div className="flex gap-2">
                             <input type="text" value={testNumber} onChange={(e) => setTestNumber(e.target.value)}
                                 placeholder="0812xxxxxxx"
                                 className="flex-1 h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm" />
                             <button onClick={handleTest} disabled={processing}
                                 className="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors disabled:opacity-50">
-                                Kirim
+                                Send
                             </button>
                         </div>
                     </div>

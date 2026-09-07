@@ -106,7 +106,7 @@ export default function Show({
                                     className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-3 py-1 text-xs font-semibold text-white transition hover:bg-primary-600"
                                 >
                                     <IconCrown size={14} />
-                                    Jadikan Member
+                                    Make Member
                                 </Link>
                             ) : null}
                         </div>
@@ -117,7 +117,7 @@ export default function Show({
                     <div className="space-y-6">
                         <section className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                             <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                                Ringkasan Customer
+                                Customer Summary
                             </h2>
                             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                                 <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
@@ -130,7 +130,7 @@ export default function Show({
                                 </div>
                                 <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Total Belanja
+                                        Total Spend
                                     </p>
                                     <p className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
                                         {formatPrice(stats?.total_spent || 0)}
@@ -138,7 +138,7 @@ export default function Show({
                                 </div>
                                 <div className="rounded-2xl bg-slate-50 p-4 dark:bg-slate-800/60">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Member Sejak
+                                        Member Since
                                     </p>
                                     <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
                                         {customer.loyalty_member_since
@@ -318,7 +318,7 @@ export default function Show({
                                 </div>
                                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800">
                                     <p className="text-xs uppercase tracking-wide text-slate-500">
-                                        Saldo Points
+                                        Point Balance
                                     </p>
                                     <p className="mt-1 font-semibold text-slate-900 dark:text-white">
                                         {customer.loyalty_points} points

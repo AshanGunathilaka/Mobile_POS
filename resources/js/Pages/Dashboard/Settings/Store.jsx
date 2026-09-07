@@ -54,7 +54,7 @@ export default function Store({ settings }) {
 
     return (
         <>
-            <Head title="Profil Store" />
+            <Head title="Store Profile" />
 
             <div className="space-y-6">
                 <div>
@@ -127,7 +127,7 @@ export default function Store({ settings }) {
                                     value={data.store_city}
                                     errors={errors.store_city}
                                     onChange={(e) => setData("store_city", e.target.value)}
-                                    placeholder="contoh: Surabaya"
+                                    placeholder="example: Colombo"
                                     icon={<IconMapPin size={16} />}
                                 />
                                 <Input
@@ -209,7 +209,7 @@ export default function Store({ settings }) {
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors disabled:opacity-50"
                         >
                             <IconDeviceFloppy size={18} />
-                            {processing ? "Saving..." : "Save Profil"}
+                            {processing ? "Saving..." : "Save Profile"}
                         </button>
                     </div>
                 </form>

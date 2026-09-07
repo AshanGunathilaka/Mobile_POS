@@ -60,13 +60,13 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
             case "partial":
                 return (
                     <span className={`${base} bg-primary-100 text-primary-700`}>
-                        Parsial
+                        Partial
                     </span>
                 );
             case "overdue":
                 return (
                     <span className={`${base} bg-rose-100 text-rose-700`}>
-                        Jatuh Tempo
+                        Overdue
                     </span>
                 );
             default:
@@ -136,7 +136,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                 )}
                             </div>
                             <div className="text-right">
-                                <p className="text-slate-500">Jatuh Tempo</p>
+                                <p className="text-slate-500">Overdue</p>
                                 <p className="font-semibold text-slate-800 dark:text-white">
                                     {formatDate(payable.due_date)}
                                 </p>
@@ -222,7 +222,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                 </span>
                             </div>
                             <div className="flex justify-between">
-                                <span>Jatuh Tempo</span>
+                                <span>Overdue</span>
                                 <span>{formatDate(payable.due_date)}</span>
                             </div>
                             <div className="flex justify-between">
@@ -253,7 +253,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                 </div>
                                 <div>
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Date Bayar
+                                        Payment Date
                                     </label>
                                     <input
                                         type="date"
@@ -292,7 +292,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                 {data.method === "bank_transfer" && (
                                     <div>
                                         <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                                            Rekening
+                                            Account
                                         </label>
                                         <select
                                             value={data.bank_account_id}
@@ -312,14 +312,14 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                 )}
                                 <div>
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                                        Catatan (opsional)
+                                        Notes (optional)
                                     </label>
                                     <textarea
                                         rows={2}
                                         value={data.note}
                                         onChange={(e) => setData("note", e.target.value)}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500"
-                                        placeholder="Catatan payment"
+                                        placeholder="Payment notes"
                                     />
                                 </div>
                                 <button
@@ -369,7 +369,7 @@ export default function PayableShow({ payable, bankAccounts = [] }) {
                                     onClick={() => setShowPreview(false)}
                                     className="text-sm px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                                 >
-                                    Tutup
+                                    Close
                                 </button>
                             </div>
                         </div>

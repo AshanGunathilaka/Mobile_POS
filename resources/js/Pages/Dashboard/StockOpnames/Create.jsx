@@ -17,7 +17,7 @@ export default function Create({ warehouses = [] }) {
         event.preventDefault();
 
         post(route("stock-opnames.store"), {
-            onError: () => toast.error("Failed membuat sesi stock opname"),
+            onError: () => toast.error("Failed to create stock opname session"),
         });
     };
 
@@ -59,7 +59,7 @@ export default function Create({ warehouses = [] }) {
                     </div>
 
                     <Textarea
-                        label="Catatan Sesi"
+                        label="Session Notes"
                         placeholder="Example: monthly stock count for the front warehouse"
                         value={data.notes}
                         onChange={(event) => setData("notes", event.target.value)}

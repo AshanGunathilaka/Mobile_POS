@@ -142,7 +142,7 @@ export default function Show({ segment, customers = [] }) {
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                         <div className="mb-4 flex items-center gap-2">
                             <IconUsersGroup size={18} className="text-primary-500" />
-                            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Ringkasan Rule</h2>
+                            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Rule Summary</h2>
                         </div>
                         <dl className="space-y-3 text-sm">
                             <div className="flex items-center justify-between gap-4">

@@ -117,7 +117,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
 
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Kode Voucher
+                                    Voucher Code
                                 </label>
                                 <input
                                     type="text"
@@ -144,7 +144,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
                                     onChange={(event) =>
                                         setData("name", event.target.value)
                                     }
-                                    placeholder="Contoh: Voucher Member Mei"
+                                    placeholder="Example: May Member Voucher"
                                     className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                 />
                                 <InputError message={errors.name} />
@@ -154,7 +154,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
                         <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">
-                            Benefit & Periode
+                            Benefit & Period
                         </h2>
 
                         <div className="grid gap-4 md:grid-cols-2">
@@ -194,7 +194,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
 
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Minimum Belanja
+                                    Minimum Spend
                                 </label>
                                 <input
                                     type="number"
@@ -256,7 +256,7 @@ export default function Form({ mode = "create", voucher = null, customers = [] }
 
                             <div className="md:col-span-2">
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Catatan
+                                    Notes
                                 </label>
                                 <textarea
                                     rows="4"

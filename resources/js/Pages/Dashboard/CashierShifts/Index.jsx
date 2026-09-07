@@ -82,14 +82,14 @@ export default function Index({
 
     return (
         <>
-            <Head title="Shift Cashier" />
+            <Head title="Cashier Shift" />
 
             <div className="space-y-6">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
                         <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white">
                             <IconHistory size={28} className="text-primary-500" />
-                            Shift Cashier
+                            Cashier Shift
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400">
                             Open shifts, monitor active shifts, and review cash closing.
@@ -120,7 +120,7 @@ export default function Index({
                         <form onSubmit={handleOpenShift} className="grid gap-4 md:grid-cols-4">
                             <div>
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Modal Awal
+                                    Opening Cash
                                 </label>
                                 <input
                                     type="number"
@@ -152,7 +152,7 @@ export default function Index({
                             </div>
                             <div className="md:col-span-2">
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Catatan
+                                    Notes
                                 </label>
                                 <input
                                     type="text"
@@ -195,7 +195,7 @@ export default function Index({
                         </div>
                         <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
                             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                                Modal Awal
+                                Opening Cash
                             </p>
                             <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-white">
                                 {formatCurrency(activeShift.opening_cash)}
@@ -271,7 +271,7 @@ export default function Index({
                                 <Table.Th>Cashier</Table.Th>
                                 <Table.Th>Status</Table.Th>
                                 <Table.Th>Opened</Table.Th>
-                                <Table.Th>Tutup</Table.Th>
+                                <Table.Th>Close</Table.Th>
                                 <Table.Th>Expected Cash</Table.Th>
                                 <Table.Th>Selisih</Table.Th>
                                 <Table.Th className="w-24 text-center">Actions</Table.Th>

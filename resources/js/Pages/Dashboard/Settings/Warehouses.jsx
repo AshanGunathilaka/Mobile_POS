@@ -190,7 +190,7 @@ export default function Warehouses({ warehouses = [] }) {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <Input
-                                    label="Kode"
+                                    label="Code"
                                     placeholder="WH-002"
                                     value={form.code}
                                     onChange={(e) => setForm({ ...form, code: e.target.value })}

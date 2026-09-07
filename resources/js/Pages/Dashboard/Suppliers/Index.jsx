@@ -51,7 +51,7 @@ export default function SuppliersIndex({ suppliers = [] }) {
     };
 
     const remove = (id) => {
-        if (!confirm("Delete supplier ini?")) return;
+        if (!confirm("Delete this supplier?")) return;
         destroy(route("suppliers.destroy", id));
     };
 

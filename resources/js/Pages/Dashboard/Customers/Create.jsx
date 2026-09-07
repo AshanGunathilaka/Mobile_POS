@@ -89,7 +89,7 @@ export default function Create() {
         e.preventDefault();
         post(route("customers.store"), {
             onSuccess: () => toast.success("Customer added successfully"),
-            onError: () => toast.error("Failed menyimpan customer"),
+            onError: () => toast.error("Failed to save customer"),
         });
     };
 
@@ -139,7 +139,7 @@ export default function Create() {
                             <div className="flex items-center justify-between gap-4">
                                 <div>
                                     <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                                        Aktivasi Loyalty Member
+                                        Enable Loyalty Membership
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
                                         Members earn points, receive vouchers, and get special prices.

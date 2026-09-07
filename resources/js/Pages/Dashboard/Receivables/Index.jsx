@@ -35,9 +35,9 @@ const statusBadge = (value) => {
         case "paid":
             return <span className={`${base} bg-success-100 text-success-700`}>Paid</span>;
         case "partial":
-            return <span className={`${base} bg-primary-100 text-primary-700`}>Parsial</span>;
+            return <span className={`${base} bg-primary-100 text-primary-700`}>Partial</span>;
         case "overdue":
-            return <span className={`${base} bg-rose-100 text-rose-700`}>Jatuh Tempo</span>;
+            return <span className={`${base} bg-rose-100 text-rose-700`}>Overdue</span>;
         default:
             return <span className={`${base} bg-amber-100 text-amber-700`}>Unpaid</span>;
     }
@@ -250,9 +250,9 @@ export default function ReceivablesIndex({ receivables, filters = {} }) {
                                 >
                                     <option value="">All Status</option>
                                     <option value="unpaid">Unpaid</option>
-                                    <option value="partial">Parsial</option>
+                                    <option value="partial">Partial</option>
                                     <option value="paid">Paid</option>
-                                    <option value="overdue">Jatuh Tempo</option>
+                                    <option value="overdue">Overdue</option>
                                 </select>
                             </div>
                             <button
@@ -271,7 +271,7 @@ export default function ReceivablesIndex({ receivables, filters = {} }) {
                                         <div className="col-span-2">Customer</div>
                                         <div className="col-span-2 text-right">Total</div>
                                         <div className="col-span-2 text-right">Sisa</div>
-                                        <div className="col-span-2 text-right">Jatuh Tempo</div>
+                                        <div className="col-span-2 text-right">Overdue</div>
                                         <div className="col-span-2 text-center">Status</div>
                                     </div>
                                     {rows.length > 0 ? (

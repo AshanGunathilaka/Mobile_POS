@@ -176,7 +176,7 @@ export default function Form({ mode = "create", campaign = null, audienceOptions
                     </div>
 
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Template Pesan</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Message Template</h2>
                         <textarea
                             rows="5"
                             value={data.message_template}

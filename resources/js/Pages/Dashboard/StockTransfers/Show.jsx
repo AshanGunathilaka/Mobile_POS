@@ -24,7 +24,7 @@ export default function Show({ transfer }) {
     const { can } = useAuthorization();
 
     const confirmAction = (action, label) => {
-        if (!confirm(`Yeskin ingin ${label} transfer ini?`)) return;
+        if (!confirm(`Are you sure you want to ${label} this transfer?`)) return;
         router.post(route(`stock-transfers.${action}`, transfer.id));
     };
 
@@ -73,7 +73,7 @@ export default function Show({ transfer }) {
                                 </div>
                             )}
                             <div className="sm:col-span-2">
-                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Catatan</p>
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Notes</p>
                                 <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{transfer.notes || "-"}</p>
                             </div>
                         </div>

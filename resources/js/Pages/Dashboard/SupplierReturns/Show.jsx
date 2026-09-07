@@ -50,7 +50,7 @@ export default function Show({ return: ret }) {
         router.post(route("supplier-returns.complete", ret.id), {}, {
             preserveScroll: true,
             onSuccess: () => toast.success("Supplier return completed successfully"),
-            onError: () => toast.error("Failed menyelesaikan retur"),
+            onError: () => toast.error("Failed to complete the return"),
         });
     };
 
@@ -73,7 +73,7 @@ export default function Show({ return: ret }) {
                     className="mb-3 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-primary-600"
                 >
                     <IconArrowLeft size={16} />
-                    Back to return list
+                    Back to returns
                 </Link>
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div>
@@ -172,7 +172,7 @@ export default function Show({ return: ret }) {
                 <div className="space-y-6">
                     {ret.notes && (
                         <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Catatan</h2>
+                            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Notes</h2>
                             <p className="text-sm text-slate-600 dark:text-slate-400">{ret.notes}</p>
                         </div>
                     )}

@@ -47,7 +47,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
             helper: "Masih menerima benefit member",
         },
         {
-            label: "Omzet Member",
+            label: "Member Revenue",
             value: formatCurrency(summary?.member_revenue || 0),
             helper: "Kontribusi transaksi of member",
         },
@@ -156,7 +156,7 @@ export default function Index({ members, filters, tierOptions, summary }) {
                                 <Table.Th>Member</Table.Th>
                                 <Table.Th>Tier</Table.Th>
                                 <Table.Th>Points</Table.Th>
-                                <Table.Th>Total Belanja</Table.Th>
+                                <Table.Th>Total Spend</Table.Th>
                                 <Table.Th>Transactions</Table.Th>
                                 <Table.Th>Last Purchase</Table.Th>
                                 <Table.Th className="w-28 text-center">

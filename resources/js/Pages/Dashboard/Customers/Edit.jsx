@@ -125,7 +125,7 @@ export default function Edit({ customer }) {
         e.preventDefault();
         post(route("customers.update", customer.id), {
             onSuccess: () => toast.success("Customer updated successfully"),
-            onError: () => toast.error("Failed memperbarui customer"),
+            onError: () => toast.error("Failed to update customer"),
         });
     };
 
@@ -177,7 +177,7 @@ export default function Edit({ customer }) {
                                         Status Loyalty
                                     </p>
                                     <p className="text-xs text-slate-500 dark:text-slate-400">
-                                        Member code: {customer.member_code || "-"} | points saat ini: {customer.loyalty_points || 0}
+                                        Member code: {customer.member_code || "-"} | current points: {customer.loyalty_points || 0}
                                     </p>
                                 </div>
                                 <label className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">

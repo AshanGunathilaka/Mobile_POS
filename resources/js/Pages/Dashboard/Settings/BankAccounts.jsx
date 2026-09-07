@@ -38,7 +38,7 @@ export default function BankAccounts({ bankAccounts = [] }) {
             <div className="mb-6">
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <IconBuildingBank size={28} className="text-primary-500" />
-                    Rekening Bank
+                    Bank Accounts
                 </h1>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                     Manage bank accounts for transfer payments
@@ -49,7 +49,7 @@ export default function BankAccounts({ bankAccounts = [] }) {
                 <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
                     <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                         <h3 className="font-semibold text-slate-800 dark:text-white">
-                            Register Rekening ({bankAccounts.length})
+                            Registered Accounts ({bankAccounts.length})
                         </h3>
                         {canUpdatePaymentSettings && (
                             <Link

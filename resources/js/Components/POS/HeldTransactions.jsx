@@ -155,7 +155,7 @@ export default function HeldTransactions({
                                 className="px-2 py-1 rounded bg-amber-500 hover:bg-amber-600 text-white text-xs font-medium disabled:opacity-50 flex items-center gap-1"
                                 title={
                                     hasActiveCart
-                                        ? "Kosongkan keranjang dulu"
+                                        ? "Clear the cart first"
                                         : "Lanjutkan"
                                 }
                             >

@@ -343,7 +343,7 @@ export default function Dashboard({
                         trend="up"
                     />
                     <TargetCard
-                        title="Target Bulan Ini"
+                        title="This Month's Target"
                         current={currentMonthSales}
                         target={monthlyTarget}
                         icon={IconTarget}
@@ -568,8 +568,8 @@ export default function Dashboard({
 
                 {/* Recent Transactions */}
                 <ListCard
-                    title="Transaction Terbaru"
-                    subtitle="5 transaksi terakhir"
+                    title="Latest Transactions"
+                    subtitle="Last 5 transactions"
                     icon={IconReceipt}
                     emptyMessage="No transactions yet"
                 >

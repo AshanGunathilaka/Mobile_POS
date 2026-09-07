@@ -130,7 +130,7 @@ export default function Index({ vouchers, filters = {} }) {
                     <Table>
                         <Table.Thead>
                             <tr>
-                                <Table.Th>Kode</Table.Th>
+                                <Table.Th>Code</Table.Th>
                                 <Table.Th>Customer</Table.Th>
                                 <Table.Th>Benefit</Table.Th>
                                 <Table.Th>Status</Table.Th>

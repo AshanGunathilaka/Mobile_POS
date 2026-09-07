@@ -47,13 +47,13 @@ export default function BankAccountForm({ bankAccount = null }) {
 
     return (
         <>
-            <Head title={isEdit ? "Edit Rekening Bank" : "Add Rekening Bank"} />
+            <Head title={isEdit ? "Edit Bank Accounts" : "Add Bank Accounts"} />
             <div className="max-w-3xl space-y-6">
                 <div className="flex items-center justify-between">
                     <div>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                             <IconBuildingBank size={28} className="text-primary-500" />
-                            {isEdit ? "Edit Rekening Bank" : "Add Rekening Bank"}
+                            {isEdit ? "Edit Bank Accounts" : "Add Bank Accounts"}
                         </h1>
                         <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                             Enter bank account details for transfer payments.
@@ -82,7 +82,7 @@ export default function BankAccountForm({ bankAccount = null }) {
                             disabled={!canUpdatePaymentSettings}
                         />
                         <Input
-                            label="Nomor Rekening"
+                            label="Account Number"
                             placeholder="1234567890"
                             value={data.account_number}
                             onChange={(e) => setData("account_number", e.target.value)}

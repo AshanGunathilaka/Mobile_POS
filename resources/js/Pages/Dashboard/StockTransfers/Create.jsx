@@ -45,7 +45,7 @@ export default function Create({ warehouses, products }) {
             return;
         }
         post(route("stock-transfers.store"), {
-            onError: () => toast.error("Failed membuat transfer"),
+            onError: () => toast.error("Failed to create transfer"),
         });
     };
 
@@ -95,10 +95,10 @@ export default function Create({ warehouses, products }) {
                             </div>
                             <div>
                                 <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Document Number</label>
-                                <input type="text" value={data.document_number} onChange={(e) => setData("document_number", e.target.value)} placeholder="Kosongkan auto-generate" className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
+                                <input type="text" value={data.document_number} onChange={(e) => setData("document_number", e.target.value)} placeholder="Leave empty to auto-generate" className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Catatan</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Notes</label>
                                 <input type="text" value={data.notes} onChange={(e) => setData("notes", e.target.value)} placeholder="Opsional" className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200" />
                             </div>
                         </div>

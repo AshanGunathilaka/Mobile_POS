@@ -65,7 +65,7 @@ export default function DineMenu({ table, categories, products, selfOrderEnabled
             {
                 onSuccess: () => setSubmitting(false),
                 onError: () => {
-                    toast.error("Failed mengirim pesanan.");
+                    toast.error("Failed to send order.");
                     setSubmitting(false);
                 },
             }
@@ -216,7 +216,7 @@ export default function DineMenu({ table, categories, products, selfOrderEnabled
                         <div className="mt-4 pt-3 border-t border-slate-200">
                             <textarea
                                 className="textarea textarea-bordered w-full text-sm"
-                                placeholder="Catatan pesanan (opsional)"
+                                placeholder="Order notes (optional)"
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value)}
                                 rows={2}
@@ -236,7 +236,7 @@ export default function DineMenu({ table, categories, products, selfOrderEnabled
                                 disabled={submitting}
                                 className="btn bg-primary-500 hover:bg-primary-600 text-white"
                             >
-                                {submitting ? "Mengirim..." : "Pesan — Bayar di Cashier"}
+                                {submitting ? "Sending..." : "Order - Pay at Cashier"}
                             </button>
                             {payOnlineEnabled && (
                                 <button
@@ -247,7 +247,7 @@ export default function DineMenu({ table, categories, products, selfOrderEnabled
                                     disabled={submitting}
                                     className="btn btn-outline border-primary-500 text-primary-600 hover:bg-primary-50"
                                 >
-                                    Pesan — Bayar Online
+                                    Order - Pay Online
                                 </button>
                             )}
                         </div>

@@ -73,7 +73,7 @@ export default function Index({ salesReturns, filters }) {
                                 code: event.target.value,
                             }))
                         }
-                        placeholder="Kode retur"
+                        placeholder="Return code"
                         className="h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm dark:border-slate-700 dark:bg-slate-800"
                     />
                     <input
@@ -123,7 +123,7 @@ export default function Index({ salesReturns, filters }) {
                         >
                             <option value="">All metode</option>
                             <option value="refund_cash">Refund Cash</option>
-                            <option value="store_credit">Saldo Store</option>
+                            <option value="store_credit">Store Credit</option>
                         </select>
                         <button
                             type="submit"
@@ -138,7 +138,7 @@ export default function Index({ salesReturns, filters }) {
                     <table className="w-full text-sm">
                         <thead className="border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
                             <tr>
-                                <th className="px-4 py-3 text-left">Kode</th>
+                                <th className="px-4 py-3 text-left">Code</th>
                                 <th className="px-4 py-3 text-left">Invoice</th>
                                 <th className="px-4 py-3 text-left">Date</th>
                                 <th className="px-4 py-3 text-left">Customer</th>
@@ -166,7 +166,7 @@ export default function Index({ salesReturns, filters }) {
                                         </td>
                                         <td className="px-4 py-4">
                                             {item.return_type === "store_credit"
-                                                ? "Saldo Store"
+                                                ? "Store Credit"
                                                 : "Refund Cash"}
                                         </td>
                                         <td className="px-4 py-4 text-right font-medium text-slate-900 dark:text-white">

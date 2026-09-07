@@ -100,7 +100,7 @@ export default function Create({ orders }) {
                             <option value="">Select an ordered PO...</option>
                             {orders.map((order) => (
                                 <option key={order.id} value={order.id}>
-                                    {order.document_number} - {order.supplier?.name || "Tanpa Supplier"}
+                                    {order.document_number} - {order.supplier?.name || "No Supplier"}
                                 </option>
                             ))}
                         </select>
@@ -121,7 +121,7 @@ export default function Create({ orders }) {
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Already Accepted</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Sisa</th>
                                             <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Qty Received</th>
-                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Catatan</th>
+                                            <th className="px-3 py-2 text-right font-semibold text-slate-700 dark:text-slate-200">Notes</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -167,7 +167,7 @@ export default function Create({ orders }) {
 
                     {selectedOrder && data.items.length > 0 && (
                         <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
-                            <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Catatan Penerimaan</h2>
+                            <h2 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Receiving Notes</h2>
                             <textarea
                                 value={data.notes}
                                 onChange={(e) => setData("notes", e.target.value)}
@@ -190,7 +190,7 @@ export default function Create({ orders }) {
                                 type="submit"
                                 icon={<IconTruckDelivery size={18} />}
                                 className="bg-success-500 hover:bg-success-600 text-white shadow-lg shadow-success-500/30"
-                                label={processing ? "Saving..." : "Confirm Penerimaan"}
+                                label={processing ? "Saving..." : "Confirm Receiving"}
                                 disabled={processing}
                             />
                         )}

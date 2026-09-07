@@ -23,8 +23,8 @@ const STATUS_CONFIG = {
 };
 
 const PAY_CONFIG = {
-    pay_at_counter: { label: "Bayar di Cashier", color: "text-slate-600 dark:text-slate-400" },
-    pay_online: { label: "Bayar Online", color: "text-primary-600 dark:text-primary-400" },
+    pay_at_counter: { label: "Pay at Cashier", color: "text-slate-600 dark:text-slate-400" },
+    pay_online: { label: "Pay Online", color: "text-primary-600 dark:text-primary-400" },
 };
 
 export default function Index({ orders }) {
@@ -140,7 +140,7 @@ export default function Index({ orders }) {
                                                         {item.product?.title ?? "Product"}
                                                     </p>
                                                     {item.note && (
-                                                        <p className="text-xs text-slate-400 mt-0.5">Catatan: {item.note}</p>
+                                                        <p className="text-xs text-slate-400 mt-0.5">Notes: {item.note}</p>
                                                     )}
                                                 </div>
                                                 <div className="text-right">
@@ -155,7 +155,7 @@ export default function Index({ orders }) {
                                     {order.notes && (
                                         <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800">
                                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                                                <span className="font-medium">Catatan:</span> {order.notes}
+                                                <span className="font-medium">Notes:</span> {order.notes}
                                             </p>
                                         </div>
                                     )}

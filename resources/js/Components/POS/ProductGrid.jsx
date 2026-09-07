@@ -74,7 +74,7 @@ function ProductCard({ product, onAddToCart, isAdding }) {
                 {!hasStock && (
                     <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center">
                         <span className="px-3 py-1 bg-danger-500 text-white text-xs font-semibold rounded-full">
-                            Habis
+                            Out of Stock
                         </span>
                     </div>
                 )}

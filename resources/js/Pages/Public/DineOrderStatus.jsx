@@ -84,7 +84,7 @@ export default function DineOrderStatus({ order, table, storeName }) {
 
                         {currentOrder.notes && (
                             <div className="mt-4 p-3 bg-slate-50 rounded-lg">
-                                <p className="text-xs text-slate-500 mb-1">Catatan:</p>
+                                <p className="text-xs text-slate-500 mb-1">Notes:</p>
                                 <p className="text-sm text-slate-700">{currentOrder.notes}</p>
                             </div>
                         )}

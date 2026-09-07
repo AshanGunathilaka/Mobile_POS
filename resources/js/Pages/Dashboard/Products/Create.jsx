@@ -50,7 +50,7 @@ export default function Create({ categories }) {
         e.preventDefault();
         post(route("products.store"), {
             onSuccess: () => toast.success("Product successfully added"),
-            onError: () => toast.error("Failed menyimpan product"),
+            onError: () => toast.error("Failed to save product"),
         });
     };
 

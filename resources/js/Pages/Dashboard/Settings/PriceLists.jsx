@@ -87,7 +87,7 @@ export default function PriceLists({ priceLists }) {
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-1">Catatan</label>
+                                <label className="block text-sm font-medium mb-1">Notes</label>
                                 <textarea value={form.notes} onChange={e => setForm({...form, notes: e.target.value})} className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm" rows={2} />
                             </div>
                             <div className="flex gap-3">

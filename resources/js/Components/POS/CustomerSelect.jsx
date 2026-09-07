@@ -210,7 +210,7 @@ export default function CustomerSelect({
                         className="h-12 w-12 rounded-xl border-2 border-dashed border-primary-300 dark:border-primary-700
                             text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-950/30
                             flex items-center justify-center transition-colors"
-                        title="Add customer baru"
+                        title="Add new customers"
                     >
                         <IconUserPlus size={20} />
                     </button>
@@ -326,7 +326,7 @@ export default function CustomerSelect({
                                         }}
                                         className="mt-2 text-sm text-primary-500 hover:text-primary-600 font-medium"
                                     >
-                                        + Add customer baru
+                                        + Add new customers
                                     </button>
                                 </div>
                             )}

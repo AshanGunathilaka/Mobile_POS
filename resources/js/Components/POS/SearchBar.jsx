@@ -213,7 +213,7 @@ export default function SearchBar({
                                         </p>
                                         {product.stock <= 0 && (
                                             <span className="text-xs text-danger-500 font-medium">
-                                                Habis
+                                                Out of Stock
                                             </span>
                                         )}
                                     </div>

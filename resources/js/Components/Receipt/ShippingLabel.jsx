@@ -156,7 +156,7 @@ export default function ShippingLabel({ transaction, store = {} }) {
                                     {transaction?.details?.map(item => `${item.product?.title} (x${item.qty})`).join(", ")}
                                 </div>
                                 <div className="pt-2 border-t border-slate-200 flex justify-between items-center">
-                                    <span className="text-[10px] font-bold text-slate-400 uppercase">Total Bayar</span>
+                                    <span className="text-[10px] font-bold text-slate-400 uppercase">Total Payment</span>
                                     <span className="text-sm font-black text-slate-900">{formatPrice(transaction?.grand_total)}</span>
                                 </div>
                             </div>

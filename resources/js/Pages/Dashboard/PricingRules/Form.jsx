@@ -693,7 +693,7 @@ export default function Form({
                     )}
 
                     <CardSection
-                        title="Jadwal & Catatan"
+                        title="Jadwal & Notes"
                         description="Use a schedule when the promotion should only be active during a specific period."
                     >
                         <div className="grid gap-4 md:grid-cols-2">
@@ -725,7 +725,7 @@ export default function Form({
                             </div>
                             <div className="md:col-span-2">
                                 <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                    Catatan
+                                    Notes
                                 </label>
                                 <textarea
                                     rows="3"
@@ -744,7 +744,7 @@ export default function Form({
                                         setData("is_active", event.target.checked)
                                     }
                                 />
-                                Activekan rule ini
+                                Enable this rule
                             </label>
                         </div>
                     </CardSection>

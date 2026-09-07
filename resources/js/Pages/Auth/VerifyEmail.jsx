@@ -101,7 +101,7 @@ export default function VerifyEmail({ status, botGuard }) {
                                     ) : (
                                         <>
                                             <IconRefresh size={18} />
-                                            Kirim Ulang Email Verifikasi
+                                            Resend Verification Email
                                         </>
                                     )}
                                 </button>

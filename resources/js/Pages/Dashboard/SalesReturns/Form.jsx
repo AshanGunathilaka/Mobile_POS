@@ -168,7 +168,7 @@ export default function SalesReturnForm({
                 toast.success(
                     salesReturn ? "Return draft updated" : "Return draft created"
                 ),
-            onError: () => toast.error("Failed menyimpan draft retur"),
+            onError: () => toast.error("Failed to save return draft"),
         });
     };
 
@@ -179,7 +179,7 @@ export default function SalesReturnForm({
             {
                 preserveScroll: true,
                 onSuccess: () => toast.success("Sales return completed"),
-                onError: () => toast.error("Failed menyelesaikan retur"),
+                onError: () => toast.error("Failed to complete the return"),
             }
         );
     };
@@ -201,7 +201,7 @@ export default function SalesReturnForm({
                         >
                             <IconArrowLeft size={16} />
                             {salesReturn
-                                ? "Back to return list"
+                                ? "Back to returns"
                                 : "Back to transaction history"}
                         </Link>
                         <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -241,7 +241,7 @@ export default function SalesReturnForm({
                         value={transaction.customer?.name || "Umum"}
                     />
                     <InfoCard
-                        label="Method Bayar"
+                        label="Payment Method"
                         value={transaction.payment_method
                             ?.replaceAll("_", " ")
                             .toUpperCase()}
@@ -399,7 +399,7 @@ export default function SalesReturnForm({
                                         </option>
                                         {transaction.customer && (
                                             <option value="store_credit">
-                                                Saldo Store / Credit
+                                                Store Balance / Credit
                                             </option>
                                         )}
                                     </select>
@@ -413,7 +413,7 @@ export default function SalesReturnForm({
 
                                 <div>
                                     <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                        Catatan
+                                        Notes
                                     </label>
                                     <textarea
                                         rows={4}
@@ -426,7 +426,7 @@ export default function SalesReturnForm({
                                             )
                                         }
                                         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
-                                        placeholder="Catatan retur"
+                                        placeholder="Return notes"
                                     />
                                 </div>
                             </div>
@@ -443,7 +443,7 @@ export default function SalesReturnForm({
                                     value={`${summary.selectedItemsCount} product`}
                                 />
                                 <PreviewRow
-                                    label="Total qty retur"
+                                    label="Total return qty"
                                     value={`${summary.totalItems} item`}
                                 />
                                 <PreviewRow
@@ -463,7 +463,7 @@ export default function SalesReturnForm({
                                 {transaction.receivable && (
                                     <>
                                         <PreviewRow
-                                            label="Receivable saat ini"
+                                            label="Current Receivable"
                                             value={formatCurrency(
                                                 transaction.receivable.total
                                             )}
@@ -477,7 +477,7 @@ export default function SalesReturnForm({
                                     </>
                                 )}
                                 <PreviewRow
-                                    label="Nominal retur"
+                                    label="Return Amount"
                                     value={formatCurrency(summary.totalAmount)}
                                     strong
                                 />
@@ -500,7 +500,7 @@ export default function SalesReturnForm({
                                     {form.isDirty && (
                                         <p className="mt-2 text-xs text-warning-600">
                                             Save the draft first before
-                                            menyelesaikan retur.
+                                            complete the return.
                                         </p>
                                     )}
                                 </div>

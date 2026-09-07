@@ -61,9 +61,9 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
             case "paid":
                 return <span className={`${base} bg-success-100 text-success-700`}>Paid</span>;
             case "partial":
-                return <span className={`${base} bg-primary-100 text-primary-700`}>Parsial</span>;
+                return <span className={`${base} bg-primary-100 text-primary-700`}>Partial</span>;
             case "overdue":
-                return <span className={`${base} bg-rose-100 text-rose-700`}>Jatuh Tempo</span>;
+                return <span className={`${base} bg-rose-100 text-rose-700`}>Overdue</span>;
             default:
                 return <span className={`${base} bg-amber-100 text-amber-700`}>Unpaid</span>;
         }
@@ -143,7 +143,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                     </div>
                     <div>
                         <label className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Jatuh Tempo
+                            Overdue
                         </label>
                         <input
                             type="date"
@@ -164,7 +164,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                     </div>
                     <div className="md:col-span-5">
                         <label className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Catatan
+                            Notes
                         </label>
                         <textarea
                             rows={2}
@@ -219,9 +219,9 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                         >
                             <option value="">All Status</option>
                             <option value="unpaid">Unpaid</option>
-                            <option value="partial">Parsial</option>
+                            <option value="partial">Partial</option>
                             <option value="paid">Paid</option>
-                            <option value="overdue">Jatuh Tempo</option>
+                            <option value="overdue">Overdue</option>
                         </select>
                     </div>
                     <button
@@ -241,7 +241,7 @@ export default function PayablesIndex({ payables, filters = {}, suppliers = [] }
                                 <div className="col-span-2">Supplier</div>
                                 <div className="col-span-2 text-right">Total</div>
                                 <div className="col-span-2 text-right">Sisa</div>
-                                <div className="col-span-2 text-right">Jatuh Tempo</div>
+                                <div className="col-span-2 text-right">Overdue</div>
                                 <div className="col-span-2 text-center min-w-[140px]">Status</div>
                             </div>
                             {rows.length ? (

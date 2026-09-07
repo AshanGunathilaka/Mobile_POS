@@ -108,10 +108,10 @@ export default function ForgotPassword({ status, botGuard }) {
                                     {processing ? (
                                         <>
                                             <IconLoader2 size={18} className="animate-spin" />
-                                            Mengirim...
+                                            Sending...
                                         </>
                                     ) : (
-                                        "Kirim Link Reset"
+                                        "Send Reset Link"
                                     )}
                                 </button>
                             </div>

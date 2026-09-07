@@ -80,7 +80,7 @@ export default function BarcodeScanner({ onScan, onClose }) {
                         onClick={onClose}
                         className="px-6 py-2.5 rounded-xl bg-white/10 text-white text-sm font-medium hover:bg-white/20"
                     >
-                        Tutup
+                        Close
                     </button>
                 </div>
             )}

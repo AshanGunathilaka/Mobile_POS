@@ -7,7 +7,7 @@ import { IconBackspace, IconX, IconCheck } from "@tabler/icons-react";
  * @param {boolean} isOpen - Controls modal visibility
  * @param {function} onClose - Called when modal should close
  * @param {function} onConfirm - Called with the final value when confirmed
- * @param {string} title - Modal title (e.g., "Amount Bayar", "Quantity")
+ * @param {string} title - Modal title (e.g., "Payment Amount", "Quantity")
  * @param {number} initialValue - Starting value
  * @param {number} minValue - Minimum allowed value
  * @param {number} maxValue - Maximum allowed value

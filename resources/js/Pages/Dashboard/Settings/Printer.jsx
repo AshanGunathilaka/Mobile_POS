@@ -15,7 +15,7 @@ export default function Printer({ settings }) {
         post(route("settings.printer.update"), {
             preserveScroll: true,
             onSuccess: () => toast.success("Printer settings saved"),
-            onError: () => toast.error("Failed menyimpan"),
+            onError: () => toast.error("Failed to save"),
         });
     };
 

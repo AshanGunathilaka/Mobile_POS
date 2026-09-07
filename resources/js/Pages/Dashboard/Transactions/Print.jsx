@@ -80,7 +80,7 @@ export default function Print({ transaction }) {
 
     const paymentLabels = {
         cash: "Cash",
-        bank_transfer: "Transfer Bank",
+        bank_transfer: "Bank Transfer",
         midtrans: "Midtrans",
         xendit: "Xendit",
         pay_later: "Receivable",
@@ -96,7 +96,7 @@ export default function Print({ transaction }) {
         failed: "Failed",
         expired: "Expired",
         unpaid: "Unpaid",
-        partial: "Parsial",
+        partial: "Partial",
     };
     const paymentStatusKey = (transaction?.payment_status || "").toLowerCase();
     const paymentStatusLabel =
@@ -628,7 +628,7 @@ export default function Print({ transaction }) {
                                     </div>
                                     {promoDiscountTotal > 0 && (
                                         <div className="flex justify-between text-slate-600 dark:text-slate-400">
-                                            <span>Promo Otomatis</span>
+                                            <span>Automatic Promo</span>
                                             <span>
                                                 -{" "}
                                                 {formatPrice(
@@ -736,7 +736,7 @@ export default function Print({ transaction }) {
                                         Confirm Payment
                                     </h3>
                                     <p className="text-sm opacity-90">
-                                        Transfer Bank
+                                        Bank Transfer
                                     </p>
                                 </div>
                             </div>

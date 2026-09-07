@@ -156,7 +156,7 @@ export default function Form({ mode = "create", segment = null }) {
                                 {data.auto_rule_type === "spending" && (
                                     <div>
                                         <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                                            Minimum Total Belanja
+                                            Minimum Total Spend
                                         </label>
                                         <input
                                             type="number"

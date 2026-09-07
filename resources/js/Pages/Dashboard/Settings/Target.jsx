@@ -22,7 +22,7 @@ export default function Target({ settings }) {
         post(route("settings.target.update"), {
             preserveScroll: true,
             onSuccess: () => toast.success("Target saved successfully"),
-            onError: () => toast.error("Failed menyimpan target"),
+            onError: () => toast.error("Failed to save target"),
         });
     };
 

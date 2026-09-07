@@ -72,7 +72,7 @@ export default function Create({ suppliers, products, warehouses = [] }) {
             return;
         }
         post(route("purchase-orders.store"), {
-            onError: () => toast.error("Failed membuat purchase order"),
+            onError: () => toast.error("Failed to create purchase order"),
         });
     };
 
@@ -137,12 +137,12 @@ export default function Create({ suppliers, products, warehouses = [] }) {
                                 />
                             </div>
                             <div>
-                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Catatan</label>
+                                <label className="mb-1 block text-sm font-semibold text-slate-700 dark:text-slate-200">Notes</label>
                                 <input
                                     type="text"
                                     value={data.notes}
                                     onChange={(e) => setData("notes", e.target.value)}
-                                    placeholder="Catatan PO"
+                                    placeholder="PO notes"
                                     className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
                                 />
                                 {errors.notes && <p className="mt-1 text-xs text-danger-500">{errors.notes}</p>}

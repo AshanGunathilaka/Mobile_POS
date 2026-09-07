@@ -111,7 +111,7 @@ function EmptyCart() {
                 />
             </div>
             <h3 className="text-base font-medium text-slate-600 dark:text-slate-400">
-                Keranjang Kosong
+                Cart Empty
             </h3>
             <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">
                 Click a product to add it
@@ -142,7 +142,7 @@ export default function CartPanel({
                         className="text-slate-600 dark:text-slate-400"
                     />
                     <h2 className="text-base font-semibold text-slate-800 dark:text-white">
-                        Keranjang
+                        Cart
                     </h2>
                 </div>
                 {totalItems > 0 && (

@@ -78,7 +78,7 @@ export default function TransactionDetail({ transaction, token }) {
                                         form.submit();
                                     }}
                                 >
-                                    Bayar Sekarang
+                                    Pay Now
                                 </a>
                             </div>
                         )}

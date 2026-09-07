@@ -51,7 +51,7 @@ export default function Index({ areas }) {
             toast.success(editingArea ? "Area updated successfully." : "Area added successfully.");
             setModalOpen(false);
         };
-        const onError = () => toast.error("Failed menyimpan area.");
+        const onError = () => toast.error("Failed to save area.");
 
         if (editingArea) {
             patch(route("dine-areas.update", editingArea.id), { onSuccess, onError });

@@ -87,7 +87,7 @@ function ProductCard({
                 <div className="absolute top-2 right-2">
                     {outOfStock ? (
                         <span className="px-2 py-1 text-xs font-semibold bg-danger-500 text-white rounded-full">
-                            Habis
+                            Out of Stock
                         </span>
                     ) : lowStock ? (
                         <span className="px-2 py-1 text-xs font-semibold bg-warning-500 text-white rounded-full">
